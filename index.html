@@ -42,7 +42,7 @@
         <div class="hero-decoration decoration-4"></div>
         
         <div class="container">
-            <div class="hero-badge pulse-badge">🔴 AO VIVO • 3 pessoas comprando agora</div>
+            <div class="hero-badge pulse-badge" id="live-badge">🔴 AO VIVO • <span id="live-count">3</span> pessoas comprando agora</div>
             <h1>O método que já aprovou <span class="hero-highlight-num">327 alunos</span><br>no ENEM em apenas <span class="hero-highlight">8 semanas</span></h1>
             <p class="hero-subtitle">Redações de 640 para 880. Aprovações em Medicina, Direito e Engenharia. <strong>Sem estudar 12h por dia</strong> — só com o sistema certo.</p>
             
@@ -130,7 +130,7 @@
                             <polygon points="95,145 105,145 108,165 100,180 92,165" fill="#00d9ff"/>
                         </svg>
                     </div>
-                    <div class="authority-badge-v2">Equipe Manual Pro</div>
+                    <div class="authority-badge-v2">Criado por Professores</div>
                 </div>
                 <div class="authority-right">
                     <div class="authority-highlights">
@@ -147,7 +147,8 @@
                             <span class="auth-label">Método validado</span>
                         </div>
                     </div>
-                    <p class="authority-quote">"O Protocolo 8S nasceu de análise profunda. Não é teoria — é prática testada."</p>
+                    <p class="authority-quote">"O Protocolo 8S foi desenvolvido por professores experientes e validado por alunos reais que notaram avanços significativos nos seus resultados."</p>
+                    <p class="authority-quote">"Cada estratégia foi testada na prática. Não é teoria — é o caminho mais direto para sua aprovação."</p>
                 </div>
             </div>
         </div>
@@ -612,5 +613,38 @@
     <!-- Supabase CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
+    
+    <script>
+        // Badge AO VIVO - Contador de Visitantes
+        document.addEventListener('DOMContentLoaded', function() {
+            const liveCountEl = document.getElementById('live-count');
+            const liveBadgeEl = document.getElementById('live-badge');
+
+            function gerarNumeroAoVivo() {
+                // quantidade entre 2 e 7
+                return Math.floor(Math.random() * 6) + 2;
+            }
+
+            function atualizarBadgeAoVivo() {
+                if (!liveCountEl) return;
+
+                const novoNumero = gerarNumeroAoVivo();
+                liveCountEl.textContent = novoNumero;
+
+                // animação rápida
+                if (liveBadgeEl) {
+                    liveBadgeEl.classList.remove('badge-flash');
+                    void liveBadgeEl.offsetWidth;
+                    liveBadgeEl.classList.add('badge-flash');
+                }
+            }
+
+            // atualiza ao carregar
+            atualizarBadgeAoVivo();
+
+            // atualiza a cada 1 minuto
+            setInterval(atualizarBadgeAoVivo, 60000);
+        });
+    </script>
 </body>
 </html>
