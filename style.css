@@ -3371,3 +3371,304 @@ footer a:hover {
   letter-spacing: 1.5px; text-transform: uppercase;
   padding: 3px 12px; border-radius: 12px; margin-top: 6px;
 }
+
+/* ===== SEÇÃO: O QUE VOCÊ RECEBE ===== */
+.section-produtos {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #0a0e1a 0%, #0d1225 50%, #0a0e1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.section-produtos::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(255,140,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.section-title .eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff8c00;
+  background: rgba(255,140,0,0.1);
+  border: 1px solid rgba(255,140,0,0.3);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.section-title h2 {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+}
+.section-title h2 span { color: #ff8c00; }
+.section-title p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== GRADE PRINCIPAL (4 PRODUTOS) ===== */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto 64px;
+}
+
+.produto-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,140,0,0.15);
+  border-radius: 20px;
+  padding: 28px 20px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.produto-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,140,0,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.produto-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,140,0,0.5);
+  box-shadow: 0 20px 60px rgba(255,140,0,0.12);
+}
+
+/* MOCKUP 3D da capa */
+.mockup-wrapper {
+  perspective: 800px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+.mockup-book {
+  position: relative;
+  width: 160px;
+  transform: rotateY(-18deg) rotateX(4deg);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+}
+.produto-card:hover .mockup-book {
+  transform: rotateY(-10deg) rotateX(2deg) scale(1.05);
+}
+.mockup-book img {
+  width: 100%;
+  border-radius: 6px 10px 10px 6px;
+  display: block;
+}
+/* Spine do livro */
+.mockup-book::before {
+  content: '';
+  position: absolute;
+  top: 2px; bottom: 2px;
+  left: -14px;
+  width: 14px;
+  background: linear-gradient(90deg, #1a1a2e 0%, #2a2a4e 50%, #1e1e38 100%);
+  transform-origin: right;
+  transform: rotateY(-90deg);
+  border-radius: 4px 0 0 4px;
+}
+/* Reflexo sutil no topo */
+.mockup-book::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 30%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+  border-radius: 6px 10px 0 0;
+  pointer-events: none;
+}
+
+/* Badge de destaque */
+.produto-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(255,140,0,0.2);
+  color: #ff8c00;
+  border: 1px solid rgba(255,140,0,0.4);
+}
+.produto-badge.bonus-badge {
+  background: rgba(130,80,255,0.2);
+  color: #a97eff;
+  border-color: rgba(130,80,255,0.4);
+}
+
+.produto-nome {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.produto-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+
+/* ===== DIVISOR DE BÔNUS ===== */
+.bonus-header {
+  text-align: center;
+  margin: 0 auto 36px;
+  max-width: 600px;
+}
+.bonus-header .eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a97eff;
+  background: rgba(130,80,255,0.1);
+  border: 1px solid rgba(130,80,255,0.3);
+  padding: 6px 20px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.bonus-header h3 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.bonus-header h3 span { color: #a97eff; }
+.bonus-header p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ===== GRADE DE BÔNUS (3 ITENS) ===== */
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.bonus-card {
+  background: rgba(130,80,255,0.04);
+  border: 1px solid rgba(130,80,255,0.18);
+  border-radius: 16px;
+  padding: 22px 18px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+.bonus-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(130,80,255,0.08) 0%, transparent 70%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.bonus-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(130,80,255,0.45);
+}
+
+.bonus-preco-original {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: line-through;
+  margin-top: 10px;
+}
+.bonus-preco-gratis {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 1px;
+}
+
+/* ===== VALOR TOTAL ===== */
+.valor-total-box {
+  max-width: 520px;
+  margin: 48px auto 0;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px 28px;
+  text-align: center;
+}
+.valor-total-box .label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+.valor-total-box .riscado {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  text-decoration: line-through;
+}
+.valor-total-box .preco-final {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ff8c00;
+  line-height: 1.1;
+  margin: 4px 0;
+}
+.valor-total-box .economia {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(74,222,128,0.12);
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.25);
+  border-radius: 100px;
+  padding: 4px 14px;
+  margin-top: 8px;
+}
+
+.btn-cta {
+  display: block;
+  max-width: 400px;
+  margin: 24px auto 0;
+  background: linear-gradient(135deg, #ff8c00, #ff6000);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 18px 32px;
+  border-radius: 12px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 32px rgba(255,140,0,0.35);
+}
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255,140,0,0.5);
+}
+.btn-subinfo {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.5px;
+}
+
