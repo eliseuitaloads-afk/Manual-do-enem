@@ -3500,8 +3500,8 @@ footer a:hover {
 
 /* Badge de destaque */
 .produto-badge {
-  position: absolute;
-  top: 14px; right: 14px;
+  display: inline-block;
+  margin-bottom: 14px;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1px;
