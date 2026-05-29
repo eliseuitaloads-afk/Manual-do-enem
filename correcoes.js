@@ -68,7 +68,7 @@
 
   /* ── 4. BOTÃO CTA PRINCIPAL — aviso se ainda for "#" ── */
   function verificarCTA() {
-    const LINK_REAL = 'SEU_LINK_AQUI'; // ← SUBSTITUA pelo link real do Kiwify/Hotmart
+    const LINK_REAL = 'https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN'; // ← SUBSTITUA pelo link real do Kiwify/Hotmart
 
     document.querySelectorAll('a[href="#"], a[href=""]').forEach(function (btn) {
       const txt = btn.textContent.toLowerCase();
