@@ -151,4 +151,104 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s ease';
         revealObserver.observe(el);
     });
+
+    // 8. Notificações Flutuantes (Social Proof)
+    const toast = document.getElementById('social-proof-toast');
+    const toastAvatar = document.getElementById('toast-avatar');
+    const toastTitle = document.getElementById('toast-title');
+    const toastDesc = document.getElementById('toast-desc');
+
+    if (toast && toastAvatar && toastTitle && toastDesc) {
+        const notifications = [
+            {
+                icon: '🎉',
+                title: 'Nova inscrição! ⚡',
+                desc: 'Mariana S. (SP) acabou de adquirir o Protocolo 8S.',
+                isLive: false
+            },
+            {
+                icon: '🔴',
+                title: 'Ao Vivo agora',
+                desc: '12 pessoas estão analisando a oferta neste minuto.',
+                isLive: true
+            },
+            {
+                icon: '🔥',
+                title: 'Vaga Garantida! 🚀',
+                desc: 'Lucas M. (RJ) comprou via PIX e garantiu o desconto.',
+                isLive: false
+            },
+            {
+                icon: '🩺',
+                title: 'Futuro Aprovado!',
+                desc: 'Beatriz F. (MG) entrou para a turma de Medicina.',
+                isLive: false
+            },
+            {
+                icon: '⚡',
+                title: 'Acesso imediato',
+                desc: 'Felipe T. (RS) acabou de receber os materiais no e-mail.',
+                isLive: false
+            },
+            {
+                icon: '🔴',
+                title: 'Alta Demanda',
+                desc: '5 pessoas estão finalizando a inscrição no checkout.',
+                isLive: true
+            },
+            {
+                icon: '🎉',
+                title: 'Nova inscrição! ⚡',
+                desc: 'Gabi R. (BA) aproveitou o bônus de Redação Nota 900+.',
+                isLive: false
+            },
+            {
+                icon: '🎯',
+                title: 'Foco no ENEM',
+                desc: 'Pedro H. (PR) iniciou sua preparação com o Cronograma 8S.',
+                isLive: false
+            }
+        ];
+
+        let notifIndex = 0;
+
+        function showNotification() {
+            const item = notifications[notifIndex];
+            
+            // Atualiza conteúdo
+            toastAvatar.textContent = item.icon;
+            toastTitle.textContent = item.title;
+            toastDesc.textContent = item.desc;
+            
+            // Adiciona ou remove badge de live
+            let badge = toastAvatar.querySelector('.social-proof-toast-badge');
+            if (!badge) {
+                badge = document.createElement('span');
+                badge.className = 'social-proof-toast-badge';
+                toastAvatar.appendChild(badge);
+            }
+            
+            if (item.isLive) {
+                badge.className = 'social-proof-toast-badge live';
+            } else {
+                badge.className = 'social-proof-toast-badge';
+            }
+
+            // Mostra o toast
+            toast.classList.add('show');
+
+            // Esconde após 5 segundos
+            setTimeout(() => {
+                toast.classList.remove('show');
+                
+                // Prepara a próxima notificação com um intervalo randômico de 6 a 12 segundos
+                notifIndex = (notifIndex + 1) % notifications.length;
+                const nextDelay = Math.floor(Math.random() * 6000) + 6000;
+                setTimeout(showNotification, nextDelay);
+            }, 5000);
+        }
+
+        // Primeira notificação aparece após 4 segundos da página carregar
+        setTimeout(showNotification, 4000);
+    }
 });
