@@ -1,604 +1,422 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo 8S — Sistema de Aprovação em 8 Semanas | Manual Pro do ENEM</title>
-    <meta name="description" content="Protocolo 8S: Um sistema passo a passo que mostra exatamente o que fazer todos os dias até sua aprovação. De estudante desorganizado a aprovado em 8 semanas.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Pro do ENEM — Organize, Direcione e Eleve sua Nota</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-effects">
-        <div class="flare-bg flare-cyan"></div>
-        <div class="flare-bg flare-purple"></div>
-        <div class="flare-bg flare-pink"></div>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <p>⚡ OFERTA ESPECIAL DISPONÍVEL APENAS NOS DIAS <span>31, 1 E 2 DE JUNHO</span></p>
+</div>
+
+<!-- TRUST BADGE -->
+<div style="text-align:center;padding:20px 20px 0;">
+  <div class="trust-badge">
+    <span>🔒</span>
+    <div>
+      <span>COMPRA 100% SEGURA E PROTEGIDA</span>
+      <small>7 DIAS DE GARANTIA INCONDICIONAL</small>
     </div>
+  </div>
+</div>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="navbar-logo">
-                <img src="logo.png" alt="Manual Pro do ENEM" />
-            </a>
-            <div class="navbar-right">
-                <div class="navbar-guarantee">
-                    <span class="nav-guarantee-icon">🔒</span>
-                    <span>7 dias de garantia</span>
-                </div>
-                <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="navbar-cta">Garantir por R$ 37,90 →</a>
-            </div>
-        </div>
-    </nav>
+<!-- HERO -->
+<div class="hero">
+  <h1>O <span>Método Pro ENEM</span> — Estrutura Completa para Sair do Estudo Aleatório e Chegar na Aprovação</h1>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <!-- Decorative elements -->
-        <div class="hero-decoration decoration-1"></div>
-        <div class="hero-decoration decoration-2"></div>
-        <div class="hero-decoration decoration-3"></div>
-        <div class="hero-decoration decoration-4"></div>
-        
-        <div class="container">
-            <div class="hero-badge pulse-badge" id="live-badge">🔴 AO VIVO • <span id="live-count">3</span> pessoas comprando agora</div>
-            <h1>O método que já aprovou <span class="hero-highlight-num">327 alunos</span><br>no ENEM em apenas <span class="hero-highlight">8 semanas</span></h1>
-            <p class="hero-subtitle">Redações de 640 para 880. Aprovações em Medicina, Direito e Engenharia. <strong>Sem estudar 12h por dia</strong> — só com o sistema certo.</p>
-            
-            <!-- Hero Stats Mini -->
-            <div class="hero-stats-mini">
-                <div class="hero-stat">
-                    <span class="hero-stat-num">327+</span>
-                    <span class="hero-stat-label">Aprovados</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num">+180</span>
-                    <span class="hero-stat-label">Pontos</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num">900+</span>
-                    <span class="hero-stat-label">Redação</span>
-                </div>
-            </div>
+  <!-- PRODUCT IMAGE -->
+  <img src="top-enem.png" alt="Método Pro ENEM" class="hero-img">
 
-            <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="hero-cta">Quero Começar Agora 🚀</a>
-            <p class="hero-trust">✓ <strong>Acesso imediato</strong> | ✓ <strong>7 dias de garantia</strong> | ✓ <strong>Sem risco</strong></p>
-        </div>
-    </section>
+  <p class="hero-sub">O método que já ajudou centenas de estudantes a organizar o estudo, revisar do jeito certo e elevar a nota no ENEM — tudo em um único guia estruturado.</p>
 
-    <!-- URGENCY BAR -->
-    <section class="urgency-bar">
-        <div class="container urgency-container">
-            <div class="urgency-item">
-                <span class="urgency-icon">⏰</span>
-                <div>
-                    <div class="urgency-label">Oferta expira em:</div>
-                    <div class="urgency-timer">
-                        <span id="u-hours">23</span>:<span id="u-minutes">59</span>:<span id="u-seconds">56</span>
-                    </div>
-                </div>
-            </div>
-            <div class="urgency-item">
-                <span class="urgency-icon">🔥</span>
-                <div>
-                    <div class="urgency-label">Vagas restantes:</div>
-                    <div class="urgency-value"><span class="urgency-number">27</span> de 50</div>
-                </div>
-            </div>
-            <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="urgency-cta">Garantir →</a>
-        </div>
-    </section>
+  <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="btn-green">QUERO O MÉTODO AGORA!</a>
+  <p class="hero-microcopy">Você recebe tudo na hora, direto no seu e-mail</p>
 
-    <!-- AUTHORITY SECTION (REFEITA) -->
-    <section class="section authority-v2">
-        <div class="container">
-            <h2 class="section-title">Por Trás do Protocolo</h2>
-            <div class="authority-card-v2">
-                <div class="authority-left">
-                    <div class="authority-avatar-new">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#00d9ff"/>
-                                    <stop offset="100%" stop-color="#7c3aed"/>
-                                </linearGradient>
-                                <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stop-color="#1a1f3a"/>
-                                    <stop offset="100%" stop-color="#0a0e27"/>
-                                </linearGradient>
-                            </defs>
-                            <!-- Background circle -->
-                            <circle cx="100" cy="100" r="95" fill="url(#avatarBg)"/>
-                            <!-- Body/Shirt -->
-                            <path d="M 30 200 Q 30 140 100 140 Q 170 140 170 200 Z" fill="url(#shirtGrad)"/>
-                            <!-- Neck -->
-                            <rect x="85" y="120" width="30" height="25" fill="#d4a574" rx="3"/>
-                            <!-- Head -->
-                            <circle cx="100" cy="95" r="35" fill="#e6b889"/>
-                            <!-- Hair -->
-                            <path d="M 65 85 Q 65 55 100 55 Q 135 55 135 85 Q 135 75 130 75 L 70 75 Q 65 75 65 85 Z" fill="#2d1810"/>
-                            <!-- Glasses -->
-                            <circle cx="85" cy="95" r="9" fill="none" stroke="#1a1f3a" stroke-width="2"/>
-                            <circle cx="115" cy="95" r="9" fill="none" stroke="#1a1f3a" stroke-width="2"/>
-                            <line x1="94" y1="95" x2="106" y2="95" stroke="#1a1f3a" stroke-width="2"/>
-                            <!-- Smile -->
-                            <path d="M 88 108 Q 100 118 112 108" fill="none" stroke="#1a1f3a" stroke-width="2" stroke-linecap="round"/>
-                            <!-- Tie -->
-                            <polygon points="95,145 105,145 108,165 100,180 92,165" fill="#00d9ff"/>
-                        </svg>
-                    </div>
-                    <div class="authority-badge-v2">Criado por Professores</div>
-                </div>
-                <div class="authority-right">
-                    <div class="authority-highlights">
-                        <div class="auth-highlight">
-                            <span class="auth-num">2.400+</span>
-                            <span class="auth-label">Redações analisadas</span>
-                        </div>
-                        <div class="auth-highlight">
-                            <span class="auth-num">327+</span>
-                            <span class="auth-label">Alunos acompanhados</span>
-                        </div>
-                        <div class="auth-highlight">
-                            <span class="auth-num">100%</span>
-                            <span class="auth-label">Método validado</span>
-                        </div>
-                    </div>
-                    <p class="authority-quote">"O Protocolo 8S foi desenvolvido por professores experientes e validado por alunos reais que notaram avanços significativos nos seus resultados."</p>
-                    <p class="authority-quote">"Cada estratégia foi testada na prática. Não é teoria — é o caminho mais direto para sua aprovação."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS SECTION -->
-    <section class="section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">2.4K+</div>
-                    <div class="stat-label">Redações Analisadas</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">327+</div>
-                    <div class="stat-label">Alunos Impactados</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">84</div>
-                    <div class="stat-label">Alunos com 900+ em Redação</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">119</div>
-                    <div class="stat-label">Aprovações Conquistadas</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INVISIBLE ERRORS SECTION -->
-    <section class="section" style="background: linear-gradient(180deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.02) 100%); border-top: 1px solid rgba(239, 68, 68, 0.1);">
-        <div class="container">
-            <h2 class="section-title" style="color: var(--primary-pink);">Os Erros Invisíveis que Travam Sua Aprovação</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto;">
-                <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(236, 72, 153, 0.05)); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 25px;">
-                    <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 12px; font-weight: 800;">❌ Estudar Tudo</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Você trata todos os assuntos como iguais. Mas 40% do ENEM vem de apenas 8 tópicos. Você está desperdiçando 60% do seu tempo.</p>
-                </div>
-                <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(236, 72, 153, 0.05)); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 25px;">
-                    <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 12px; font-weight: 800;">❌ Revisar Errado</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Sem um sistema de revisão espaçada, você esquece 80% do conteúdo em poucos dias. É neurociência, não é culpa sua.</p>
-                </div>
-                <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(236, 72, 153, 0.05)); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 25px;">
-                    <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 12px; font-weight: 800;">❌ Sem Controle</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Você não sabe em quais matérias está fraco. Continua estudando o que já sabe e ignora o que vai cair.</p>
-                </div>
-                <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(236, 72, 153, 0.05)); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 25px;">
-                    <h3 style="font-size: 1.2rem; color: #fff; margin-bottom: 12px; font-weight: 800;">❌ Redação Sem Estrutura</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Sem uma estrutura clara e pronta, sua redação fica confusa. Você perde 200+ pontos mesmo sabendo o conteúdo.</p>
-                </div>
-            </div>
-            <!-- CTA Intermediário -->
-            <div class="cta-middle">
-                <p class="cta-middle-text">Reconheceu algum erro? <strong>Hora de mudar.</strong></p>
-                <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="btn-middle">Ver Como Funciona →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- METHODOLOGY SECTION (3 FASES) -->
-    <section class="section" style="background: linear-gradient(180deg, rgba(0, 217, 255, 0.08) 0%, rgba(124, 58, 237, 0.04) 100%); border-top: 1px solid rgba(0, 217, 255, 0.1); border-bottom: 1px solid rgba(0, 217, 255, 0.1);">
-        <div class="container">
-            <h2 class="section-title">Como o Protocolo 8S Funciona</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto;">
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3); font-weight: 800; color: #fff;">1</div>
-                    <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 12px; font-weight: 800;">Organização</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Você descobre exatamente o que estudar, em qual ordem, e por quê. Sem decisões, sem desperdício.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3); font-weight: 800; color: #fff;">2</div>
-                    <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 12px; font-weight: 800;">Execução</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Você aplica com exercícios, revisão espaçada e estruturas prontas. Tudo testado e validado.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-pink), #ff6b9d); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3); font-weight: 800; color: #fff;">3</div>
-                    <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 12px; font-weight: 800;">Evolução</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Você acompanha sua melhora em tempo real e corrige erros antes da prova. Sem surpresas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ANTES VS DEPOIS (VISUAL) -->
-    <section class="section compare-section">
-        <div class="container">
-            <h2 class="section-title">Antes vs Depois</h2>
-            <div class="compare-grid">
-                <div class="compare-card compare-before">
-                    <div class="compare-tag compare-tag-bad">ANTES</div>
-                    <div class="compare-icon">😩</div>
-                    <h3>Estudo Caótico</h3>
-                    <ul class="compare-list">
-                        <li>❌ Estuda sem direção</li>
-                        <li>❌ Esquece rápido</li>
-                        <li>❌ Redação mediana</li>
-                        <li>❌ Frustração constante</li>
-                        <li>❌ Procrastina</li>
-                    </ul>
-                </div>
-                
-                <div class="compare-arrow">
-                    <div class="arrow-icon">→</div>
-                    <div class="arrow-label">Protocolo 8S</div>
-                </div>
-                
-                <div class="compare-card compare-after">
-                    <div class="compare-tag compare-tag-good">DEPOIS</div>
-                    <div class="compare-icon">🎯</div>
-                    <h3>Estudo com Método</h3>
-                    <ul class="compare-list">
-                        <li>✅ Sabe o que estudar</li>
-                        <li>✅ Retém 95% do conteúdo</li>
-                        <li>✅ Redação 900+</li>
-                        <li>✅ Progresso claro</li>
-                        <li>✅ Foco absoluto</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="cta-inline">
-                <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="btn-inline btn-inline-lg">Quero Minha Transformação 🚀</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- TICKER DE APROVADOS (MOVIMENTO) -->
-    <section class="ticker-section">
-        <div class="ticker-header">
-            <span class="ticker-dot"></span>
-            <span>Aprovações em Tempo Real</span>
-        </div>
-        <div class="ticker-wrap">
-            <div class="ticker-track">
-                <div class="ticker-item">🎉 <strong>Maria S.</strong> passou em Medicina</div>
-                <div class="ticker-item">🎉 <strong>João P.</strong> +210 pontos na nota</div>
-                <div class="ticker-item">🎉 <strong>Ana L.</strong> redação 940</div>
-                <div class="ticker-item">🎉 <strong>Pedro M.</strong> aprovado em Direito</div>
-                <div class="ticker-item">🎉 <strong>Carla R.</strong> passou em Engenharia</div>
-                <div class="ticker-item">🎉 <strong>Lucas F.</strong> +180 pontos</div>
-                <div class="ticker-item">🎉 <strong>Juliana T.</strong> redação 920</div>
-                <div class="ticker-item">🎉 <strong>Rafael B.</strong> aprovado em Psicologia</div>
-                <!-- Duplicated for infinite loop -->
-                <div class="ticker-item">🎉 <strong>Maria S.</strong> passou em Medicina</div>
-                <div class="ticker-item">🎉 <strong>João P.</strong> +210 pontos na nota</div>
-                <div class="ticker-item">🎉 <strong>Ana L.</strong> redação 940</div>
-                <div class="ticker-item">🎉 <strong>Pedro M.</strong> aprovado em Direito</div>
-                <div class="ticker-item">🎉 <strong>Carla R.</strong> passou em Engenharia</div>
-                <div class="ticker-item">🎉 <strong>Lucas F.</strong> +180 pontos</div>
-                <div class="ticker-item">🎉 <strong>Juliana T.</strong> redação 920</div>
-                <div class="ticker-item">🎉 <strong>Rafael B.</strong> aprovado em Psicologia</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROOF SECTION (MOBILE MOCKUPS) -->
-    <section class="section" style="background: linear-gradient(180deg, rgba(0, 217, 255, 0.08) 0%, rgba(124, 58, 237, 0.04) 100%); border-top: 1px solid rgba(0, 217, 255, 0.1); border-bottom: 1px solid rgba(0, 217, 255, 0.1);">
-        <div class="container">
-            <h2 class="section-title">Provas Reais de Quem Aplicou o Método</h2>
-            <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">Depoimentos, aprovação e resultados que mostram o que é possível quando o aluno aplica a metodologia certa.</p>
-            <div class="proof-section">
-                <!-- MOCKUP 1: NOTA 920 -->
-                <div class="mockup-card">
-                    <div class="phone-frame">
-                        <div class="phone-screen screen-depoimento">
-                            <img src="depoimento.png" alt="Print de Depoimento" class="mockup-img depoimento-img">
-                        </div>
-                    </div>
-                    <h3>Print de Depoimento</h3>
-                    <p>Mensagem real de aluna que conquistou excelente desempenho no ENEM.</p>
-                </div>
-
-                <!-- MOCKUP 2: APROVAÇÃO -->
-                <div class="mockup-card mockup-glow">
-                    <div class="phone-frame phone-glow">
-                        <div class="phone-screen screen-aprovado">
-                            <img src="aprovado.png" alt="Aprovação Real" class="mockup-img aprovado-img">
-                        </div>
-                    </div>
-                    <h3>Aprovação Real</h3>
-                    <p>Aluno aprovado em Medicina após aplicar o método.</p>
-                </div>
-
-                <!-- MOCKUP 3: ANTES VS DEPOIS -->
-                <div class="mockup-card">
-                    <div class="phone-frame">
-                        <div class="phone-screen screen-top-enem">
-                            <img src="top-enem.png" alt="Arte TOP ENEM" class="mockup-img top-enem-img">
-                        </div>
-                    </div>
-                    <h3>Milhares Já Alcançaram a Nota de Corte</h3>
-                    <p>Agora a pergunta é: você está pronto para ser o próximo?</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BLOCO DE PRODUTOS E OFERTA -->
-    <section class="sp" id="oferta">
-
-      <!-- HEADER -->
-      <div class="sp__header">
-        <div class="sp__eyebrow">📦 O Que Você Recebe</div>
-        <h2 class="sp__h2">Tudo Para Ir do Zero <span>à Aprovação</span></h2>
-        <p class="sp__sub">5 materiais principais + 3 bônus exclusivos num único acesso.</p>
-      </div>
-    
-      <!-- ─── PRODUTOS PRINCIPAIS ─── -->
-      <div class="sp__div">
-        <div class="sp__div-line"></div>
-        <span class="sp__div-pill pill-orange">⚡ Materiais Principais</span>
-        <div class="sp__div-line"></div>
-      </div>
-    
-      <div class="sp__grid5">
-    
-        <div class="sp__card sp__card--main">
-          <span class="sp__badge sb-main">Principal</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="protocolo-8s.png" alt="Protocolo 8S Completo" loading="lazy"></div></div>
-          <div class="sp__card-name">Protocolo 8S Completo</div>
-          <div class="sp__card-desc">O sistema das 8 semanas de transformação, passo a passo.</div>
-        </div>
-    
-        <div class="sp__card sp__card--main">
-          <span class="sp__badge sb-novo">Novo</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="manual-pro.png" alt="Manual Pro Completo" loading="lazy"></div></div>
-          <div class="sp__card-name">Manual Pro Completo</div>
-          <div class="sp__card-desc">Guia do sistema de aprovação do diagnóstico à aprovação.</div>
-        </div>
-    
-        <div class="sp__card sp__card--main">
-          <span class="sp__badge sb-main">Principal</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="memorizacao-3.png" alt="Memorização 3.0" loading="lazy"></div></div>
-          <div class="sp__card-name">Memorização 3.0</div>
-          <div class="sp__card-desc">Técnicas para fixar conteúdo e lembrar na hora da prova.</div>
-        </div>
-    
-        <div class="sp__card sp__card--main">
-          <span class="sp__badge sb-main">Principal</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="cronograma-8s.png" alt="Cronograma 8 Semanas" loading="lazy"></div></div>
-          <div class="sp__card-name">Cronograma 8 Semanas</div>
-          <div class="sp__card-desc">Plano semana a semana para sair do zero até a aprovação.</div>
-        </div>
-    
-        <div class="sp__card sp__card--main">
-          <span class="sp__badge sb-main">Principal</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="mapa-calor.png" alt="Mapa de Calor ENEM" loading="lazy"></div></div>
-          <div class="sp__card-name">Mapa de Calor ENEM</div>
-          <div class="sp__card-desc">50+ assuntos com maior chance de cair. Estude o que importa.</div>
-        </div>
-    
-      </div>
-    
-      <!-- ─── BÔNUS ─── -->
-      <div class="sp__div">
-        <div class="sp__div-line"></div>
-        <span class="sp__div-pill pill-purple">🎁 Bônus Exclusivos</span>
-        <div class="sp__div-line"></div>
-      </div>
-    
-      <div class="sp__grid3">
-    
-        <div class="sp__card sp__card--bonus">
-          <span class="sp__badge sb-bonus">Bônus 1</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="redacao-900.png" alt="Redação Nota 900+ Ultra" loading="lazy"></div></div>
-          <div class="sp__card-name">Redação Nota 900+</div>
-          <div class="sp__card-desc">Estrutura pronta e técnicas avançadas para nota máxima.</div>
-          <div class="sp__card-preco">R$ 47,00</div>
-          <div class="sp__card-gratis">✓ GRÁTIS</div>
-        </div>
-    
-        <div class="sp__card sp__card--bonus">
-          <span class="sp__badge sb-bonus">Bônus 2</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="mapas-mentais.png" alt="Mapas Mentais ENEM" loading="lazy"></div></div>
-          <div class="sp__card-name">Mapas Mentais ENEM</div>
-          <div class="sp__card-desc">Revisão ultra rápida. Memorize mais em menos tempo.</div>
-          <div class="sp__card-preco">R$ 67,00</div>
-          <div class="sp__card-gratis">✓ GRÁTIS</div>
-        </div>
-    
-        <div class="sp__card sp__card--bonus">
-          <span class="sp__badge sb-bonus">Bônus 3</span>
-          <div class="sp__wrap"><div class="sp__book"><img src="temas-quentes.png" alt="Lista de Temas Quentes" loading="lazy"></div></div>
-          <div class="sp__card-name">Lista de Temas Quentes</div>
-          <div class="sp__card-desc">Os assuntos com maior chance de cair em 2025/2026.</div>
-          <div class="sp__card-preco">R$ 37,00</div>
-          <div class="sp__card-gratis">✓ GRÁTIS</div>
-        </div>
-    
-      </div>
-    
-      <!-- ─── RESUMO + CTA ─── -->
-      <div class="sp__resumo">
-        <div class="sp__box">
-    
-          <ul class="sp__lista">
-            <li><span class="ck ck-main">✓</span> Protocolo 8S Completo</li>
-            <li><span class="ck ck-main">✓</span> Manual Pro Completo</li>
-            <li><span class="ck ck-main">✓</span> Guia de Memorização 3.0</li>
-            <li><span class="ck ck-main">✓</span> Cronograma de 8 Semanas</li>
-            <li><span class="ck ck-main">✓</span> Mapa de Calor do ENEM</li>
-            <li><span class="ck ck-bonus">✓</span><span><span style="color:#c084fc">Bônus:</span> Redação Nota 900+ Ultra</span></li>
-            <li><span class="ck ck-bonus">✓</span><span><span style="color:#c084fc">Bônus:</span> Mapas Mentais ENEM</span></li>
-            <li><span class="ck ck-bonus">✓</span><span><span style="color:#c084fc">Bônus:</span> Lista de Temas Quentes</span></li>
-          </ul>
-    
-          <div class="sp__preco-box">
-            <div class="sp__preco-de">De R$ 194,00</div>
-            <div class="sp__preco-por">R$ 37,90</div>
-            <div class="sp__preco-eco">🔒 Você economiza R$ 156,10</div>
-            <div class="sp__lancamento">⏳ Preço de lançamento — válido somente esta semana</div>
-          </div>
-    
-        </div>
-    
-        <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="sp__btn">
-          Quero Começar Agora 🚀
-        </a>
-    
-        <div class="sp__btn-info">
-          <span>🔐 Compra Segura</span>
-          <span>⚡ Acesso Imediato</span>
-          <span>📱 Funciona no Celular</span>
-        </div>
-    
-        <div class="sp__pag">
-          <span class="sp__pag-lbl">Pague via</span>
-          <span class="pix">PIX</span>
-          <span class="crt">CARTÃO</span>
-          <span class="parc">· até 3x sem juros</span>
-        </div>
-    
-      </div>
-    
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="section" id="faq">
-        <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-accordion" style="max-width: 800px; margin: 0 auto;">
-                
-                <div class="faq-item">
-                    <button class="faq-toggle" onclick="toggleFAQ(this)">
-                        <span class="faq-question">Como funciona o acesso?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Após a compra, você recebe um link de download com todos os materiais. Acesso imediato, 24/7.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-toggle" onclick="toggleFAQ(this)">
-                        <span class="faq-question">Posso devolver se não gostar?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Sim! Você tem 7 dias de garantia 100%. Se não funcionar, devolvemos seu dinheiro sem perguntas.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-toggle" onclick="toggleFAQ(this)">
-                        <span class="faq-question">Quanto tempo leva para ver resultados?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Muitos alunos veem mudanças em 2-3 semanas. Mas o método foi desenvolvido para 8 semanas de transformação completa.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-toggle" onclick="toggleFAQ(this)">
-                        <span class="faq-question">Funciona para todas as disciplinas?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer" style="display: none;">
-                        <p>Sim! O método cobre todas as áreas do ENEM: Linguagens, Matemática, Ciências da Natureza, Ciências Humanas e Redação.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA SECTION (XEQUE-MATE) -->
-    <section class="section" style="background: linear-gradient(180deg, rgba(0, 217, 255, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%); border-top: 1px solid rgba(0, 217, 255, 0.15); text-align: center; padding: 80px 20px;">
-        <div class="container">
-            <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 30px; font-weight: 900; line-height: 1.4;">Você pode continuar estudando do mesmo jeito...<br><span style="color: var(--primary-cyan);">ou começar hoje com um sistema que já funciona.</span></h2>
-            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;">327+ alunos já transformaram sua forma de estudar com o Protocolo 8S. Suas aprovações em Medicina, Engenharia e Direito provam que funciona. Você pode ser o próximo.</p>
-            <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="cta-button" style="display: inline-block; font-size: 1.1rem; padding: 16px 40px;">Garantir Meu Acesso Agora por R$ 37,90 🚀</a>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 20px;">Acesso imediato | 7 dias de garantia | Sem risco</p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer style="background: rgba(0, 0, 0, 0.3); border-top: 1px solid rgba(0, 217, 255, 0.1); padding: 40px 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
-        <div class="container">
-            <p>© 2024 Manual Pro do ENEM. Todos os direitos reservados.</p>
-            <p style="margin-top: 10px;">Desenvolvido com ❤️ para sua aprovação.</p>
-        </div>
-    </footer>
-
-    <!-- Supabase CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="script.js"></script>
-    
-    <script>
-        // Badge AO VIVO - Contador de Visitantes
-        document.addEventListener('DOMContentLoaded', function() {
-            const liveCountEl = document.getElementById('live-count');
-            const liveBadgeEl = document.getElementById('live-badge');
-
-            function gerarNumeroAoVivo() {
-                // quantidade entre 2 e 7
-                return Math.floor(Math.random() * 6) + 2;
-            }
-
-            function atualizarBadgeAoVivo() {
-                if (!liveCountEl) return;
-
-                const novoNumero = gerarNumeroAoVivo();
-                liveCountEl.textContent = novoNumero;
-
-                // animação rápida
-                if (liveBadgeEl) {
-                    liveBadgeEl.classList.remove('badge-flash');
-                    void liveBadgeEl.offsetWidth;
-                    liveBadgeEl.classList.add('badge-flash');
-                }
-            }
-
-            // atualiza ao carregar
-            atualizarBadgeAoVivo();
-
-            // atualiza a cada 1 minuto
-            setInterval(atualizarBadgeAoVivo, 60000);
-        });
-    </script>
-    <!-- CONTAINER DE NOTIFICAÇÃO FLUTUANTE (SOCIAL PROOF) -->
-    <div id="social-proof-toast" class="social-proof-toast">
-        <div class="social-proof-toast-avatar" id="toast-avatar">🚀</div>
-        <div class="social-proof-toast-content">
-            <h4 class="social-proof-toast-title" id="toast-title">Compra Realizada!</h4>
-            <p class="social-proof-toast-desc" id="toast-desc">Alguém acabou de adquirir o Protocolo 8S.</p>
-        </div>
+  <!-- SOCIAL PROOF -->
+  <div class="social-proof">
+    <div class="avatars">
+      <div class="avatar">👩</div>
+      <div class="avatar">🧑</div>
+      <div class="avatar">👩</div>
+      <div class="avatar">🧑</div>
+      <div class="avatar">👩</div>
     </div>
+    <p>MAIS DE 1.000 ESTUDANTES!</p>
+  </div>
+</div>
 
-    <script src="correcoes.js"></script>
+<!-- PRODUCT PREVIEW -->
+<div class="preview-section">
+  <h3>Veja o material que você vai receber na prática</h3>
+  <div class="preview-track-wrap">
+    <div class="preview-track" id="previewTrack">
+      <div class="preview-card"><img src="protocolo-8s.png" alt="Protocolo 8S Completo"></div>
+      <div class="preview-card"><img src="manual-pro.png" alt="Manual Pro Completo"></div>
+      <div class="preview-card"><img src="mapa-calor.png" alt="Mapa de Calor ENEM"></div>
+      <div class="preview-card"><img src="protocolo-8s.png" alt="Cronograma 8 Semanas"></div>
+      <div class="preview-card"><img src="memorizacao-3.png" alt="Guia de Memorização 3.0"></div>
+      <div class="preview-card"><img src="temas-quentes.png" alt="Lista Temas Quentes"></div>
+      <div class="preview-card"><img src="mapas-mentais.png" alt="Mapas Mentais ENEM"></div>
+      <div class="preview-card"><img src="redacao-900.png" alt="Redação Nota 900 ULTRA"></div>
+    </div>
+  </div>
+  <p style="text-align:center;color:rgba(255,255,255,.4);font-size:13px;margin-top:12px;">← Arraste e veja o produto →</p>
+</div>
+
+<!-- O QUE VAI APRENDER -->
+<section class="section section-light">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-eyebrow">📋 Conteúdo completo</span>
+      <h2 class="section-h2">O que você vai <span>aprender</span></h2>
+      <p class="section-sub">Tudo que você encontrará dentro do Método Pro do ENEM</p>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-item"><div class="learn-num">01</div><span>Diagnóstico do seu nível atual e mapeamento de lacunas</span></div>
+      <div class="learn-item"><div class="learn-num">02</div><span>Sequência de estudo por frequência no ENEM</span></div>
+      <div class="learn-item"><div class="learn-num">03</div><span>Blocos de sessão ativa com foco real</span></div>
+      <div class="learn-item"><div class="learn-num">04</div><span>Síntese e consolidação em mapas estratégicos</span></div>
+      <div class="learn-item"><div class="learn-num">05</div><span>Simulados no padrão ENEM com análise de erros</span></div>
+      <div class="learn-item"><div class="learn-num">06</div><span>Revisão espaçada (Spacing) que evita o esquecimento</span></div>
+      <div class="learn-item"><div class="learn-num">07</div><span>Scorecard: acompanhamento de desempenho por área</span></div>
+      <div class="learn-item"><div class="learn-num">08</div><span>Estrutura completa de redação para nota 900</span></div>
+      <div class="learn-item"><div class="learn-num">09</div><span>Mapa de calor do ENEM 2020–2025 por assunto</span></div>
+      <div class="learn-item"><div class="learn-num">10</div><span>Lista de 54 temas quentes por disciplina</span></div>
+      <div class="learn-item"><div class="learn-num">11</div><span>Cronograma de 8 semanas semana a semana</span></div>
+      <div class="learn-item"><div class="learn-num">12</div><span>Técnica de Sharing para fixação definitiva</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES 2x2 -->
+<section class="section section-white">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:0;">
+      <h2 class="section-h2">Por que o <span>Método Pro do ENEM funciona</span></h2>
+      <p class="section-sub">Método validado, não lista de dicas</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🗺️</span>
+        <h4>Você sabe exatamente o que estudar</h4>
+        <p>Chega de improvisar. O diagnóstico inicial + o cronograma de 8 semanas te dão um caminho claro dia a dia — sem precisar decidir nada na hora.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🧠</span>
+        <h4>Revisão que realmente fixa</h4>
+        <p>O sistema de Spacing e Síntese usa repetição espaçada para construir memória de longo prazo. Você para de esquecer o que estudou antes da prova.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h4>Você sabe onde está perdendo ponto</h4>
+        <p>O Scorecard pessoal mostra seus acertos, erros e evolução por área. Você foca energia onde realmente importa — sem desperdício.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <h4>Foco no que mais cai</h4>
+        <p>O Mapa de Calor de 2020 a 2025 mostra exatamente quais assuntos têm mais frequência na prova. Você para de estudar o que não vai cair.</p>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:15px;font-weight:600;color:#0f2540;margin-top:28px;">E muito mais, com um método que respeita seu ritmo e garante evolução real.</p>
+  </div>
+</section>
+
+<!-- COUNTDOWN + IDEAL PRA VOCÊ -->
+<section class="section" style="background:#0f2540;padding-top:0;padding-bottom:0;">
+  <div class="countdown-bar">
+    <p>APROVEITE O PREÇO PROMOCIONAL POR TEMPO LIMITADO</p>
+    <div class="countdown-digits">
+      <div class="cd-block"><span class="cd-num" id="cdH">05</span><span class="cd-label">HORAS</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block"><span class="cd-num" id="cdM">00</span><span class="cd-label">MIN</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-block"><span class="cd-num" id="cdS">00</span><span class="cd-label">SEG</span></div>
+    </div>
+  </div>
+  <div style="background:#0f2540;padding:48px 20px;text-align:center;">
+    <h2 class="section-h2 section-h2-white" style="margin-bottom:8px;">Aprenda a Estudar do Jeito Certo. <span style="color:#60a5fa;">Sem Método Aleatório, Sem Nota Parada.</span></h2>
+    <br>
+    <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="btn-green" style="max-width:500px;display:block;margin:0 auto;">QUERO O MÉTODO PRO DO ENEM AGORA!</a>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-h2">Ideal para você <span>que deseja:</span></h2>
+    </div>
+    <div class="ideal-grid">
+      <div class="ideal-card"><div class="ideal-check">✓</div><span>Parar de estudar sem saber o que vai cair na prova</span></div>
+      <div class="ideal-card"><div class="ideal-check">✓</div><span>Já tentou se organizar mas nunca conseguiu manter</span></div>
+      <div class="ideal-card"><div class="ideal-check">✓</div><span>Quer aumentar a nota sem precisar estudar o dobro</span></div>
+      <div class="ideal-card"><div class="ideal-check">✓</div><span>Precisa de uma rotina que caiba na sua vida real</span></div>
+      <div class="ideal-card"><div class="ideal-check">✓</div><span>Quer tirar uma redação acima de 800 pontos</span></div>
+      <div class="ideal-card"><div class="ideal-check">✓</div><span>Busca um método prático, direto ao ponto</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VAI RECEBER -->
+<section class="section section-white">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:28px;">
+      <div class="section-eyebrow-pill">🔥 O QUE VOCÊ VAI RECEBER AO ADQUIRIR SEU PRODUTO</div>
+    </div>
+    <div class="produto-wrap">
+      <div class="produto-img">
+        <img src="manual-pro.png" alt="Manual Pro do ENEM">
+      </div>
+      <div class="produto-card">
+        <span class="badge-acesso">⚡ ACESSO IMEDIATO</span>
+        <h3>Método Pro do ENEM</h3>
+        <p>No <strong>Método Pro do ENEM</strong> você vai receber:</p>
+        <ul class="produto-list">
+          <li><span class="chk">✓</span> Protocolo 8S Completo — método das 8 semanas</li>
+          <li><span class="chk">✓</span> Manual Pro Completo — 55 páginas estruturadas</li>
+          <li><span class="chk">✓</span> Mapa de Calor ENEM — o que mais cai (2020–2025)</li>
+          <li><span class="chk">✓</span> Cronograma de 8 Semanas — dia a dia, semana a semana</li>
+          <li><span class="chk">✓</span> Guia de Memorização 3.0 — técnicas validadas de fixação</li>
+        </ul>
+        <p class="mais">E muito mais conteúdo prático e estruturado!</p>
+        <p class="entrega">Você recebe tudo na hora, direto no seu e-mail</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="section" style="background:#0f2540;">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-h2 section-h2-white">E NÃO PARA POR AÍ... TEM MAIS!</h2>
+      <p class="section-sub-white" style="margin-bottom:20px;">Você também vai receber...</p>
+      <div class="section-eyebrow-pill">🔥 3 BÔNUS EXCLUSIVOS</div>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-img"><span class="bonus-badge">BÔNUS #1</span><img src="temas-quentes.png" alt="Lista de Temas Quentes"></div>
+        <div class="bonus-body">
+          <h4>Lista de Temas Quentes ENEM</h4>
+          <p>54 temas de 8 disciplinas ranqueados por probabilidade de cair. Dados estatísticos de frequência e os temas com maior chance de aparecer no próximo ENEM.</p>
+          <div class="bonus-price"><del>R$19,90</del><strong>GRÁTIS</strong></div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-img"><span class="bonus-badge">BÔNUS #2</span><img src="mapas-mentais.png" alt="Mapas Mentais"></div>
+        <div class="bonus-body">
+          <h4>Mapas Mentais ENEM</h4>
+          <p>Mapas mentais prontos das principais disciplinas do ENEM. Revisão visual e rápida para fixar os conceitos mais cobrados na prova.</p>
+          <div class="bonus-price"><del>R$29,90</del><strong>GRÁTIS</strong></div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-img"><span class="bonus-badge">BÔNUS #3</span><img src="redacao-900.png" alt="Redação Nota 900"></div>
+        <div class="bonus-body">
+          <h4>Redação Nota 900 ULTRA</h4>
+          <p>Estrutura completa para tirar nota 900 na redação do ENEM. Introdução, desenvolvimento, conclusão, repertório e proposta de intervenção com agente, ação e finalidade.</p>
+          <div class="bonus-price"><del>R$29,90</del><strong>GRÁTIS</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇO -->
+<section class="section preco-section" id="comprar">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:28px;">
+      <div class="section-eyebrow-pill">⏰ ÚLTIMA CHANCE: OFERTA TERMINA HOJE</div>
+      <h2 class="section-h2">Escolha o Melhor <span>Plano Para Você!</span></h2>
+    </div>
+    <div class="preco-card">
+      <div class="mais-vendido-wrap">
+        <span class="mais-vendido-badge">⚡ MAIS VENDIDO</span>
+      </div>
+      <div class="oferta-bar">🔒 ÚLTIMA CHANCE: OFERTA TERMINA HOJE</div>
+      <div class="preco-body">
+        <p class="eyebrow">Todos os bônus inclusos</p>
+        <h3>Método Pro do ENEM Premium</h3>
+        <div class="preco-product-img">
+          <img src="manual-pro.png" alt="Método Pro do ENEM Premium">
+        </div>
+        <span class="bonus-inclusos-badge">⚡ +3 bônus inclusos</span>
+        <ul class="preco-list">
+          <li><span class="chk">✓</span> Protocolo 8S Completo — método das 8 semanas</li>
+          <li><span class="chk">✓</span> Manual Pro Completo — 55 páginas estruturadas</li>
+          <li><span class="chk">✓</span> Mapa de Calor ENEM — o que mais cai (2020–2025)</li>
+          <li><span class="chk">✓</span> Cronograma de 8 Semanas — dia a dia</li>
+          <li><span class="chk">✓</span> Guia de Memorização 3.0</li>
+          <li><span class="chk">✓</span> 🎁 Bônus #1 — Lista de Temas Quentes ENEM</li>
+          <li><span class="chk">✓</span> 🎁 Bônus #2 — Mapas Mentais ENEM</li>
+          <li><span class="chk">✓</span> 🎁 Bônus #3 — Redação Nota 900 ULTRA</li>
+          <li><span class="chk" style="color:#2563eb;">🔵</span> <span><strong>Garantia:</strong> 7 dias, 100% do valor devolvido</span></li>
+        </ul>
+        <p class="preco-riscado">de <del>R$247,00</del> por:</p>
+        <div class="preco-valor">
+          <span class="preco-rs">R$</span>
+          <span class="preco-num">37,90</span>
+        </div>
+        <p class="preco-parcelamento">ou 5x de R$7,96 no cartão</p>
+        <span class="economia-badge">• Você economiza R$209,10</span>
+        <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="preco-cta">GARANTIR ACESSO AGORA →</a>
+        <p class="preco-gar">Compra 100% segura · Acesso imediato</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<div class="garantia-section">
+  <div class="garantia-badge">
+    <span class="g-num">7</span>
+    <span class="g-dias">DIAS</span>
+  </div>
+  <h3>Garantia de 7 dias</h3>
+  <p>Você tem 7 dias para testar o Método Pro do ENEM. Se por qualquer motivo não gostar, devolvemos 100% do seu investimento, sem perguntas e sem burocracia.</p>
+</div>
+
+<!-- DEPOIMENTOS -->
+<div class="depo-section">
+  <div class="container text-center">
+    <h2 class="section-h2">Veja o que nossos alunos <span>estão dizendo</span></h2>
+    <p class="section-sub">Leia os depoimentos de quem já tomou a decisão certa.</p>
+
+    <div class="depo-card-single" id="depoCard">
+      <div class="depo-stars-yellow">★★★★★</div>
+      <p class="depo-quote" id="depoQuote">"Estudava todo dia e a nota não saía do lugar. Com o Método Pro do ENEM entendi que o problema não era esforço — era que eu não tinha método. Em 6 semanas minha nota em Humanas subiu 80 pontos."</p>
+      <p class="depo-author-name" id="depoName">Ana Paula S.</p>
+      <p class="depo-author-product" id="depoProduct">Método Pro do ENEM</p>
+    </div>
+    <div class="depo-nav" id="depoNav">
+      <div class="depo-dot active" onclick="showDepo(0)"></div>
+      <div class="depo-dot" onclick="showDepo(1)"></div>
+      <div class="depo-dot" onclick="showDepo(2)"></div>
+      <div class="depo-dot" onclick="showDepo(3)"></div>
+    </div>
+    <div class="depo-arrows">
+      <button class="depo-arrow" onclick="prevDepo()">←</button>
+      <button class="depo-arrow" onclick="nextDepo()">→</button>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="container text-center">
+    <h2 class="section-h2">Perguntas Frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>O acesso é imediato após o pagamento?</summary>
+        <p>Sim. Assim que o pagamento é confirmado, você recebe o acesso por e-mail e já pode baixar todos os materiais no mesmo momento — Guia, Protocolos, Bônus e Cronograma.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso ter alguma base para começar?</summary>
+        <p>Não. O Método Pro do ENEM começa com um diagnóstico do seu nível atual. A partir daí, o cronograma é adaptado para onde você está — seja do zero ou em nível intermediário.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Em quanto tempo vou ver resultados?</summary>
+        <p>A maioria dos estudantes já vê diferença na organização e foco a partir da primeira semana. Em simulados, resultados começam a aparecer entre a 3ª e a 5ª semana do protocolo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O material funciona em celular e tablet?</summary>
+        <p>Sim. Todos os PDFs são 100% otimizados para leitura mobile. Você acessa e estuda pelo celular, tablet ou computador — sem instalação.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso comprar outros cursos junto?</summary>
+        <p>Não. O pacote entrega tudo: método de estudo, cronograma, revisão, redação, simulados, análise do que mais cai e lista de temas quentes. Um lugar só, uma vez só.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu não conseguir seguir as 8 semanas exatas?</summary>
+        <p>O Método Pro do ENEM foi desenhado para ser adaptável. Se precisar de 10 ou 12 semanas, a lógica funciona igual. O importante é a sequência — não o tempo fixo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como vou receber o material?</summary>
+        <p>Após o pagamento confirmado, você recebe um e-mail com o link para baixar todos os arquivos em PDF. O acesso é vitalício — você pode baixar quando quiser.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Tenho quanto tempo de acesso?</summary>
+        <p>O acesso é vitalício. Você paga uma única vez e fica com todos os materiais para sempre, incluindo qualquer atualização futura que fizermos.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu não gostar do material?</summary>
+        <p>Você tem 7 dias de garantia incondicional. Se por qualquer motivo não gostar, basta enviar um e-mail e devolvemos 100% do valor — sem perguntas, sem burocracia.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vou conseguir aumentar minha nota com esse material?</summary>
+        <p>O Método Pro do ENEM não promete milagre — promete método. Estudantes que seguiram o sistema reportam aumentos de 40 a 120 pontos nas áreas de conhecimento. O resultado depende da execução.</p>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER CTA -->
+<div style="background:#0f2540;padding:48px 20px;text-align:center;">
+  <h2 style="font-size:clamp(24px,3.5vw,36px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.2;">
+    Se você quer passar no ENEM,<br>estude com <span style="color:#60a5fa;">estrutura.</span>
+  </h2>
+  <p style="font-size:16px;color:rgba(255,255,255,.65);max-width:500px;margin:0 auto 28px;line-height:1.7;">Para de perder tempo caçando conteúdo na internet. Abre o Guia, segue o cronograma, executa a rotina. Todo dia.</p>
+  <a href="https://ggcheckout.app/checkout/v2/5S8etIb8jfjiv0tPYQKN" target="_blank" rel="noopener" class="btn-green" style="max-width:480px;">QUERO O MÉTODO PRO DO ENEM — R$37,90 →</a>
+  <p style="color:rgba(255,255,255,.35);font-size:13px;margin-top:12px;">Acesso imediato · Pagamento único · Garantia de 7 dias</p>
+</div>
+
+<!-- CONTAINER DE NOTIFICAÇÃO FLUTUANTE (SOCIAL PROOF) -->
+<div id="social-proof-toast" class="social-proof-toast">
+    <div class="social-proof-toast-avatar" id="toast-avatar">🚀</div>
+    <div class="social-proof-toast-content">
+        <h4 class="social-proof-toast-title" id="toast-title">Compra Realizada!</h4>
+        <p class="social-proof-toast-desc" id="toast-desc">Alguém acabou de adquirir o Protocolo 8S.</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">© 2026 Método Pro do ENEM. Todos os direitos reservados.</p>
+  <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. A compra desse material não garante nenhum tipo de resultado. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais de alunos.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="correcoes.js"></script>
+
+<script>
+// Countdown timer
+(function(){
+  var h=5,m=0,s=0;
+  setInterval(function(){
+    if(s>0){s--;}
+    else if(m>0){m--;s=59;}
+    else if(h>0){h--;m=59;s=59;}
+    document.getElementById('cdH').textContent=String(h).padStart(2,'0');
+    document.getElementById('cdM').textContent=String(m).padStart(2,'0');
+    document.getElementById('cdS').textContent=String(s).padStart(2,'0');
+  },1000);
+})();
+
+// Depoimentos carousel
+var depos=[
+  {q:'"Estudava todo dia e a nota não saía do lugar. Com o Método Pro do ENEM entendi que o problema não era esforço — era que eu não tinha método. Em 6 semanas minha nota em Humanas subiu 80 pontos."',n:'Ana Paula S.',p:'Aprovada — UFPE Medicina'},
+  {q:'"Minha redação ficou travada por 2 anos. O Protocolo Redação que vem junto desbloqueou isso em uma semana. Tirei 860 — nunca tinha passado de 620."',n:'Lucas M.',p:'Aprovado — USP Direito'},
+  {q:'"Terceiro ENEM. Sempre faltava 30, 40 pontos. O Mapa de Calor do bônus foi o diferencial — parei de estudar o que não cai e finalmente cheguei lá."',n:'Camila T.',p:'Aprovada — UFMG Engenharia'},
+  {q:'"O cronograma de 8 semanas mudou tudo. Antes eu ficava sem saber o que estudar todo dia. Agora só abro o guia e executo. Simples assim."',n:'Rafael N.',p:'Método Pro do ENEM'}
+];
+var cur=0;
+function showDepo(i){
+  cur=i;
+  document.getElementById('depoQuote').textContent=depos[i].q;
+  document.getElementById('depoName').textContent=depos[i].n;
+  document.getElementById('depoProduct').textContent=depos[i].p;
+  document.querySelectorAll('.depo-dot').forEach(function(d,j){
+    d.classList.toggle('active',j===i);
+  });
+}
+function nextDepo(){showDepo((cur+1)%depos.length);}
+function prevDepo(){showDepo((cur-1+depos.length)%depos.length);}
+setInterval(nextDepo,5000);
+</script>
 </body>
 </html>
-
