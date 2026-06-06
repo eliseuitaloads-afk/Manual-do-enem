@@ -251,4 +251,67 @@ document.addEventListener('DOMContentLoaded', () => {
         // Primeira notificação aparece após 4 segundos da página carregar
         setTimeout(showNotification, 4000);
     }
+
+    // 9. Carrossel de Prévia do Produto (com autoplay e setas de navegação)
+    const track = document.getElementById('previewTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (track && prevBtn && nextBtn) {
+        let autoScrollInterval;
+        const scrollAmount = 336; // 320px width + 16px gap
+        
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                const maxScrollLeft = track.scrollWidth - track.clientWidth;
+                if (track.scrollLeft >= maxScrollLeft - 10) {
+                    // Voltar pro início de forma suave
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            }, 3000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        function resetAutoScroll() {
+            stopAutoScroll();
+            startAutoScroll();
+        }
+
+        // Eventos dos botões
+        prevBtn.addEventListener('click', () => {
+            const maxScrollLeft = track.scrollWidth - track.clientWidth;
+            if (track.scrollLeft <= 10) {
+                // Ir pro final
+                track.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+            resetAutoScroll();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxScrollLeft = track.scrollWidth - track.clientWidth;
+            if (track.scrollLeft >= maxScrollLeft - 10) {
+                // Ir pro início
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+            resetAutoScroll();
+        });
+
+        // Pausar autoplay quando o usuário passar o mouse ou tocar
+        track.addEventListener('mouseenter', stopAutoScroll);
+        track.addEventListener('mouseleave', startAutoScroll);
+        track.addEventListener('touchstart', stopAutoScroll);
+        track.addEventListener('touchend', startAutoScroll);
+
+        // Iniciar autoplay
+        startAutoScroll();
+    }
 });
