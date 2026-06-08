@@ -2,7 +2,14 @@
 // ATENÇÃO: Substitua os valores abaixo pelas suas credenciais do projeto no Supabase (Settings -> API)
 const SUPABASE_URL = 'https://yabqimecuuafugaxlttj.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlhYnFpbWVjdXVhZnVnYXhsdHRqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njc3MjMxOSwiZXhwIjoyMDkyMzQ4MzE5fQ.GLKssb8-k0bJ1leCG_17inHmfXa8YU6OgTpxu_niiVM';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let supabase = null;
+if (window.supabase && typeof window.supabase.createClient === 'function') {
+    try {
+        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    } catch (e) {
+        console.error('Erro ao inicializar Supabase:', e);
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Fade-in animation on scroll
@@ -259,17 +266,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (track && prevBtn && nextBtn) {
         let autoScrollInterval;
-        const scrollAmount = 336; // 320px width + 16px gap
+        const cardWidth = 320;
+        const gap = 16;
+        const scrollAmount = cardWidth + gap; // 336px
         
+        function scrollCarousel(direction) {
+            // Desativa temporariamente o scroll-snap para evitar conflitos na animação
+            track.style.scrollSnapType = 'none';
+            
+            const maxScrollLeft = track.scrollWidth - track.clientWidth;
+            let targetScroll = track.scrollLeft;
+
+            if (direction === 'next') {
+                if (track.scrollLeft >= maxScrollLeft - 15) {
+                    targetScroll = 0; // Volta para o início
+                } else {
+                    targetScroll = track.scrollLeft + scrollAmount;
+                }
+            } else if (direction === 'prev') {
+                if (track.scrollLeft <= 15) {
+                    targetScroll = maxScrollLeft; // Vai para o final
+                } else {
+                    targetScroll = track.scrollLeft - scrollAmount;
+                }
+            }
+
+            track.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
+
+            // Reativa scroll-snap depois que a animação termina (500ms é seguro)
+            setTimeout(() => {
+                track.style.scrollSnapType = 'x mandatory';
+            }, 500);
+        }
+
         function startAutoScroll() {
             autoScrollInterval = setInterval(() => {
-                const maxScrollLeft = track.scrollWidth - track.clientWidth;
-                if (track.scrollLeft >= maxScrollLeft - 10) {
-                    // Voltar pro início de forma suave
-                    track.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                }
+                scrollCarousel('next');
             }, 3000);
         }
 
@@ -283,25 +318,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Eventos dos botões
-        prevBtn.addEventListener('click', () => {
-            const maxScrollLeft = track.scrollWidth - track.clientWidth;
-            if (track.scrollLeft <= 10) {
-                // Ir pro final
-                track.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
-            } else {
-                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            }
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollCarousel('prev');
             resetAutoScroll();
         });
 
-        nextBtn.addEventListener('click', () => {
-            const maxScrollLeft = track.scrollWidth - track.clientWidth;
-            if (track.scrollLeft >= maxScrollLeft - 10) {
-                // Ir pro início
-                track.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollCarousel('next');
             resetAutoScroll();
         });
 
@@ -314,4 +339,5 @@ document.addEventListener('DOMContentLoaded', () => {
         // Iniciar autoplay
         startAutoScroll();
     }
+
 });
