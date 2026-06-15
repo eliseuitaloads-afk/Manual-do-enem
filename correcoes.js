@@ -102,7 +102,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     iniciarTimer();
     iniciarContador();
-    corrigirCopyright();
+    // corrigirCopyright();
     verificarCTA();
     fixarAncora();
   });
