@@ -11,7 +11,7 @@ if (window.supabase && typeof window.supabase.createClient === 'function') {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
     // 1. Fade-in animation on scroll
     const observerOptions = {
         root: null,
@@ -275,18 +275,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
         function getScrollAmount() {
             const firstCard = track.querySelector('.preview-card');
-            const cardWidth = firstCard ? firstCard.clientWidth : 320;
-            const gap = 12; // Gap de 12px do CSS (.preview-track)
+            const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 320;
+            const gap = 16; // Gap de 16px do CSS (.preview-track)
             return cardWidth + gap;
         }
         
         function scrollCarousel(direction) {
-            // Desativa temporariamente o scroll-snap para evitar conflitos na animação
-            track.style.scrollSnapType = 'none';
-            
             const maxScrollLeft = track.scrollWidth - track.clientWidth;
-            let targetScroll = track.scrollLeft;
             const scrollAmount = getScrollAmount();
+            let targetScroll = track.scrollLeft;
 
             if (direction === 'next') {
                 if (track.scrollLeft >= maxScrollLeft - 15) {
@@ -306,11 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 left: targetScroll,
                 behavior: 'smooth'
             });
-
-            // Reativa scroll-snap depois que a animação termina (500ms é seguro)
-            setTimeout(() => {
-                track.style.scrollSnapType = 'x mandatory';
-            }, 500);
         }
 
         function startAutoScroll() {
@@ -350,5 +342,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Iniciar autoplay
         startAutoScroll();
     }
+}
 
-});
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
