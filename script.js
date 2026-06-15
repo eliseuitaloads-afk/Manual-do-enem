@@ -265,12 +265,12 @@ function init() {
         setTimeout(showNotification, 4000);
     }
 
-    // 9. Carrossel de Prévia do Produto (com autoplay e setas de navegação)
+    // 9. Carrossel de Prévia do Produto (com autoplay)
     const track = document.getElementById('previewTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    if (track && prevBtn && nextBtn) {
+    if (track) {
         let autoScrollInterval;
         
         function getScrollAmount() {
@@ -306,38 +306,88 @@ function init() {
         }
 
         function startAutoScroll() {
+            stopAutoScroll(); // Evitar múltiplos timers rodando em paralelo
             autoScrollInterval = setInterval(() => {
                 scrollCarousel('next');
             }, 3000);
         }
 
         function stopAutoScroll() {
-            clearInterval(autoScrollInterval);
+            if (autoScrollInterval) {
+                clearInterval(autoScrollInterval);
+            }
         }
 
-        function resetAutoScroll() {
-            stopAutoScroll();
-            startAutoScroll();
+        // Adiciona os ouvintes se os botões existirem (para caso sejam recolocados futuramente)
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                scrollCarousel('prev');
+                startAutoScroll();
+            });
         }
 
-        // Eventos dos botões
-        prevBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            scrollCarousel('prev');
-            resetAutoScroll();
-        });
-
-        nextBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            scrollCarousel('next');
-            resetAutoScroll();
-        });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                scrollCarousel('next');
+                startAutoScroll();
+            });
+        }
 
         // Pausar autoplay quando o usuário passar o mouse ou tocar
         track.addEventListener('mouseenter', stopAutoScroll);
         track.addEventListener('mouseleave', startAutoScroll);
-        track.addEventListener('touchstart', stopAutoScroll);
-        track.addEventListener('touchend', startAutoScroll);
+        track.addEventListener('touchstart', stopAutoScroll, { passive: true });
+        track.addEventListener('touchend', startAutoScroll, { passive: true });
+
+        // Suporte para arrastar com o mouse no Desktop
+        let isDown = false;
+        let startX;
+        let scrollLeftVal;
+
+        track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            track.style.scrollSnapType = 'none';
+            track.style.scrollBehavior = 'auto'; // Arrasta em tempo real sem atraso de animação
+            startX = e.pageX - track.offsetLeft;
+            scrollLeftVal = track.scrollLeft;
+            stopAutoScroll();
+        });
+
+        track.addEventListener('mouseleave', () => {
+            if (isDown) {
+                isDown = false;
+                track.style.scrollSnapType = 'x mandatory';
+                track.style.scrollBehavior = 'smooth';
+                startAutoScroll();
+            }
+        });
+
+        track.addEventListener('mouseup', () => {
+            if (isDown) {
+                isDown = false;
+                track.style.scrollSnapType = 'x mandatory';
+                track.style.scrollBehavior = 'smooth';
+                
+                // Força o snap suave no card mais próximo após soltar o mouse
+                const scrollAmount = getScrollAmount();
+                const nearestIndex = Math.round(track.scrollLeft / scrollAmount);
+                track.scrollTo({
+                    left: nearestIndex * scrollAmount,
+                    behavior: 'smooth'
+                });
+                startAutoScroll();
+            }
+        });
+
+        track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1.5; // Velocidade de arraste
+            track.scrollLeft = scrollLeftVal - walk;
+        });
 
         // Iniciar autoplay
         startAutoScroll();
