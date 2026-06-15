@@ -70,6 +70,7 @@ body{font-family:'Inter',sans-serif;background:#f0f4ff;color:#0f2540;overflow-x:
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;
   object-fit:cover;
+  object-position:top;
 }
 .avatar:first-child{margin-left:0;}
 .social-proof p{font-size:15px;font-weight:800;color:#0f2540;text-transform:uppercase;letter-spacing:.04em;}

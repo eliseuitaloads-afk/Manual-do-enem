@@ -118,13 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Smooth scroll para anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const href = this.getAttribute('href');
+            if (href === '#' || href === '') return;
+            try {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            } catch (err) {
+                console.error('Erro ao rolar suavemente:', err);
             }
         });
     });
@@ -266,9 +272,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (track && prevBtn && nextBtn) {
         let autoScrollInterval;
-        const cardWidth = 320;
-        const gap = 16;
-        const scrollAmount = cardWidth + gap; // 336px
+        
+        function getScrollAmount() {
+            const firstCard = track.querySelector('.preview-card');
+            const cardWidth = firstCard ? firstCard.clientWidth : 320;
+            const gap = 12; // Gap de 12px do CSS (.preview-track)
+            return cardWidth + gap;
+        }
         
         function scrollCarousel(direction) {
             // Desativa temporariamente o scroll-snap para evitar conflitos na animação
@@ -276,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const maxScrollLeft = track.scrollWidth - track.clientWidth;
             let targetScroll = track.scrollLeft;
+            const scrollAmount = getScrollAmount();
 
             if (direction === 'next') {
                 if (track.scrollLeft >= maxScrollLeft - 15) {
