@@ -164,9 +164,9 @@ src="https://www.facebook.com/tr?id=1230467649080404&ev=PageView&noscript=1"
   .materiais{background:#fff;padding-top:34px}
   .seta{font-size:34px;color:var(--vermelho);animation:bounce 1.4s infinite;line-height:1;margin-bottom:4px}
   @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
-  .showcase{overflow:hidden;padding:22px 0 10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-  .showcase-track{display:flex;width:max-content;animation:scrollx 32s linear infinite}
-  .showcase:hover .showcase-track,.showcase:active .showcase-track{animation-play-state:paused}
+  .showcase{overflow-x:auto;padding:22px 0 10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);scrollbar-width:none;-ms-overflow-style:none}
+  .showcase::-webkit-scrollbar{display:none}
+  .showcase-track{display:flex;width:max-content}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .cap{flex:0 0 150px;margin-right:14px;aspect-ratio:3/4;border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(21,41,77,.14);border:1px solid var(--borda);background:var(--azul-papel);display:flex;align-items:center;justify-content:center;color:#9aa6b6;font-size:12px;text-align:center;padding:10px}
   .cap img{width:100%;height:100%;object-fit:cover}
@@ -208,7 +208,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- VÍDEO — cole o embed do vídeo que já está na página original -->
     <div class="video">
-      <iframe src="https://www.youtube.com/embed/bhxcquwSJ_Q?rel=0&modestbranding=1" title="Conheça o Método Pro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/OeMHqzx6o8g?autoplay=1&mute=1&loop=1&playlist=OeMHqzx6o8g&controls=1&playsinline=1&rel=0&modestbranding=1" title="Conheça o Método Pro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="preco-box">
@@ -233,7 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="seta">↓</div>
     <span class="eyebrow">Veja o tanto de material que vem dentro</span>
     <h2 class="titulo">Tudo isso é seu assim que você entra</h2>
-    <div class="showcase">
+    <div class="showcase" id="carrossel-materiais">
       <div class="showcase-track" id="track">
         <div class="cap"><img src="metodo-pro-enem.png" alt="Capa Geral"></div>
         <div class="cap"><img src="manual-pro-completo.png" alt="Manual Pro Completo"></div>
@@ -439,7 +439,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer>
   <b>Método Pro do ENEM</b><br>
-  © 2026 · Todos os direitos reservados · Pagamento processado pela Kiwify
+  © 2024 · Todos os direitos reservados
 </footer>
 
 
@@ -478,14 +478,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 (function(){
-  // Duplica as capas uma vez pra o loop ficar contínuo (sem salto).
-  var track = document.getElementById('track');
-  if(track){
-    track.innerHTML += track.innerHTML;
-    // velocidade proporcional à quantidade de capas (≈4s por capa)
-    var qtd = track.children.length / 2;
-    track.style.animationDuration = (qtd * 4) + 's';
+  function start(){
+    var track = document.querySelector('#carrossel-materiais'); // <- ajuste p/ o container real do carrossel de capas
+    if(!track){ return; }
+
+    // duplica os itens 1x p/ loop infinito sem "salto"
+    track.insertAdjacentHTML('beforeend', track.innerHTML);
+
+    var half = track.scrollWidth / 2;
+    var speed = 0.5;        // velocidade (px por frame) — sobe/desce se quiser
+    var paused = false, t;
+
+    function pause(){ paused = true; clearTimeout(t); }
+    function resume(){ clearTimeout(t); t = setTimeout(function(){ paused = false; }, 1500); }
+
+    track.addEventListener('mouseenter', pause);
+    track.addEventListener('mouseleave', resume);
+    track.addEventListener('mousedown', pause);
+    window.addEventListener('mouseup', resume);
+    track.addEventListener('touchstart', pause, {passive:true});
+    track.addEventListener('touchend', resume);
+
+    window.addEventListener('resize', function(){ half = track.scrollWidth / 2; });
+
+    function tick(){
+      if(!paused){
+        track.scrollLeft += speed;
+        if(track.scrollLeft >= half){ track.scrollLeft -= half; }
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
+  if(document.readyState === 'complete'){ start(); }
+  else { window.addEventListener('load', start); }
 })();
 </script>
 
