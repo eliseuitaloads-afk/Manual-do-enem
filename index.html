@@ -166,7 +166,7 @@ src="https://www.facebook.com/tr?id=1230467649080404&ev=PageView&noscript=1"
   @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
   .showcase{display:flex;flex-wrap:nowrap;overflow-x:auto;padding:22px 0 10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);scrollbar-width:none;-ms-overflow-style:none}
   .showcase::-webkit-scrollbar{display:none}
-  .showcase-track{display:flex;flex-wrap:nowrap !important;width:max-content}
+  .showcase-track{display:flex;flex-wrap:nowrap !important;width:max-content;flex-shrink:0}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .cap{flex:0 0 150px;flex-shrink:0 !important;margin-right:14px;aspect-ratio:3/4;border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(21,41,77,.14);border:1px solid var(--borda);background:var(--azul-papel);display:flex;align-items:center;justify-content:center;color:#9aa6b6;font-size:12px;text-align:center;padding:10px}
   .cap img{width:100%;height:100%;object-fit:cover}
@@ -498,6 +498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.addEventListener('mouseup', resume);
     track.addEventListener('touchstart', pause, {passive:true});
     track.addEventListener('touchend', resume);
+    track.addEventListener('touchcancel', resume);
 
     window.addEventListener('resize', function(){ half = track.scrollWidth / 2; });
 
