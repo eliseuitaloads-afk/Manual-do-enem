@@ -31,6 +31,15 @@ src="https://www.facebook.com/tr?id=1230467649080404&ev=PageView&noscript=1"
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plataforma Pro do ENEM — Aulas completas, passo a passo</title>
 <meta name="description" content="Acesso a mais de 100 aulas completas do ENEM, 100% no passo a passo, organizadas por matéria. Já fez a prova ou nunca fez: você vai se sair bem.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Plataforma Pro do ENEM — Aulas completas, passo a passo">
+<meta property="og:description" content="Mais de 100 aulas completas do ENEM, organizadas por matéria, na ordem do que mais cai. Acesso imediato.">
+<meta property="og:image" content="https://manual-do-enem.vercel.app/og-image.png">
+<meta property="og:url" content="https://manual-do-enem.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plataforma Pro do ENEM — Aulas completas, passo a passo">
+<meta name="twitter:description" content="Mais de 100 aulas completas do ENEM, na ordem do que mais cai.">
+<meta name="twitter:image" content="https://manual-do-enem.vercel.app/og-image.png">
 
 <!-- ================================================================= -->
 <!--  CHECKOUT — troque os "#" pelos seus links (Ctrl+F):              -->
@@ -127,7 +136,10 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 /* PLANOS empilhados */
 .planos{max-width:460px;margin:32px auto 0;display:flex;flex-direction:column;gap:20px}
 .plano{background:#fff;border:2px solid var(--linha);border-radius:22px;padding:28px;position:relative}
-.plano.dest{border-color:var(--azul);box-shadow:0 20px 50px rgba(37,99,235,.16)}
+.plano:not(.dest){opacity:0.92;transition:opacity 0.2s ease}
+.plano:not(.dest):hover{opacity:1}
+.plano.dest{border:2.5px solid var(--azul);box-shadow:0 20px 50px rgba(37,99,235,.16);background:linear-gradient(180deg, #F2F7FF 0%, #FFFFFF 60%);opacity:1}
+.plano.dest:hover{opacity:1}
 .selo{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--azul);color:#fff;font-size:12px;font-weight:800;padding:6px 18px;border-radius:99px;white-space:nowrap;font-family:'Plus Jakarta Sans';letter-spacing:.4px}
 .plano h3{font-size:21px;font-weight:800;text-align:center}
 .plano .pdesc{font-size:13.5px;color:var(--cinza);margin:6px 0 16px;text-align:center}
@@ -418,7 +430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer>
   <p><b>Método Pro do ENEM</b> · Estude só o que cai.</p>
-  <p style="margin-top:6px"><a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a> · © 2026</p>
+  <p style="margin-top:6px"><a href="termos.html">Termos de Uso</a> · <a href="privacidade.html">Política de Privacidade</a> · © 2026</p>
 </footer>
 
 <!-- MODAL CONDIÇÃO ESPECIAL -->
