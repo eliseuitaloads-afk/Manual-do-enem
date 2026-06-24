@@ -168,8 +168,39 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .gar p{font-size:14.5px;color:var(--cinza);margin:0}
 
 /* DEPOIMENTOS */
-.deps{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
-.deps img { width: 100%; height: auto; border-radius: 14px; display: block; box-shadow: 0 8px 22px rgba(14,26,43,.12); }
+.deps-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 10px 0 20px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.deps-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollx 40s linear infinite;
+}
+.deps-track img {
+  height: 250px;
+  width: auto;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(14,26,43,.06);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.deps-track img:hover {
+  transform: translateY(-4px);
+}
+.deps-container:hover .deps-track {
+  animation-play-state: paused;
+}
+@keyframes scrollx {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
 .faq{margin-top:22px;max-width:680px;margin-left:auto;margin-right:auto}
 .q{background:#fff;border:1px solid var(--linha);border-radius:12px;margin-bottom:10px;overflow:hidden}
@@ -197,7 +228,6 @@ footer a{color:#9AA3B5}
   .hero h1{font-size:27px}.hero .sub{font-size:16px}
   h2.tit{font-size:23px}
   .dentro{grid-template-columns:1fr}
-  .deps{grid-template-columns:1fr}
   .final h2{font-size:23px}
 }
 </style>
@@ -353,11 +383,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- DEPOIMENTOS EM IMAGEM -->
-<section>
+<section style="overflow: hidden;">
   <div class="wrap">
     <div class="kick">Quem já tá usando</div>
-    <h2 class="tit">O que os alunos falam</h2>
-    <div class="deps">
+    <h2 class="tit" style="margin-bottom: 24px;">O que os alunos falam</h2>
+  </div>
+  
+  <div class="deps-container">
+    <div class="deps-track">
+      <!-- Bloco original -->
+      <img src="depoimento-1.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-2.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-3.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-4.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-5.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-6.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-7.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-8.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-9.png" alt="Depoimento de aluno" loading="lazy">
+      
+      <!-- Bloco duplicado para loop infinito -->
       <img src="depoimento-1.png" alt="Depoimento de aluno" loading="lazy">
       <img src="depoimento-2.png" alt="Depoimento de aluno" loading="lazy">
       <img src="depoimento-3.png" alt="Depoimento de aluno" loading="lazy">
