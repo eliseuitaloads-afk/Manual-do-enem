@@ -56,9 +56,18 @@ src="https://www.facebook.com/tr?id=1230467649080404&ev=PageView&noscript=1"
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --azul:#2563EB; --azul-esc:#1740B0; --azul-claro:#EAF1FF;
-  --verde:#16A34A; --verde-esc:#12833c; --vermelho:#E11D2A;
-  --tinta:#0E1A2B; --cinza:#5B6677; --linha:#E5EAF1; --fundo:#F4F8FF;
+  --azul:#6B2FBF;        /* roxo principal (era azul) */
+  --azul-esc:#4A1E8F;    /* roxo escuro */
+  --azul-claro:#F1E9FF;  /* roxo bem claro (fundos) */
+  --verde:#16A34A;       /* CTA continua verde (converte e contrasta no roxo) */
+  --verde-esc:#12833c;
+  --vermelho:#E11D2A;    /* urgência */
+  --tinta:#1A1033;       /* texto principal (roxo-quase-preto) */
+  --cinza:#6A6480;       /* texto secundário */
+  --linha:#E9E3F2;       /* bordas */
+  --fundo:#F7F4FC;       /* fundo alternado das seções */
+  --amarelo-enem:#FFD60A;/* amarelo de destaque */
+  --laranja:#FF6500;     /* laranja de apoio */
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -275,6 +284,21 @@ footer a{color:#9AA3B5}
 .gar2 h3 b{color:var(--verde)}
 .gar2 p{font-size:15px;color:var(--cinza);max-width:520px;margin:0 auto 10px}
 .gar2 p b{color:var(--tinta)}
+
+/* ---- HERO ESCURO em ROXO (substitui o fundo do .heroX) ---- */
+.heroX{
+  background:
+    radial-gradient(900px 500px at 50% -8%, rgba(157,78,255,.30), transparent 60%),
+    linear-gradient(180deg,#1A0B33 0%, #25104A 55%, #1A0B33 100%) !important;
+}
+/* a 3ª linha da headline em AMARELO (no lugar do verde) — dá a cara de ENEM */
+.hx-h .b3{color:var(--amarelo-enem) !important}
+.hx-pill b{color:var(--amarelo-enem) !important}
+
+/* ---- selo "MAIS ESCOLHIDO" e detalhes ganham amarelo/laranja ---- */
+.selo{background:linear-gradient(90deg,var(--laranja),#FF8A00) !important}
+.kick{color:var(--azul)}              /* rótulos das seções em roxo */
+.hero h1 .az{color:var(--azul)}       /* caso ainda use o hero claro */
 </style>
 </head>
 <body>
@@ -523,6 +547,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <p><b>Método Pro do ENEM</b> · Estude só o que cai.</p>
   <p style="margin-top:6px"><a href="termos.html">Termos de Uso</a> · <a href="privacidade.html">Política de Privacidade</a> · © 2026</p>
+  <p style="margin-top:10px;font-size:11.5px;color:#9AA3B5;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5">
+    Material de estudo independente. Não possui vínculo, patrocínio ou
+    endosso do INEP ou do Ministério da Educação. "ENEM" é citado apenas
+    para indicar o exame ao qual o conteúdo se destina.
+  </p>
 </footer>
 
 <!-- MODAL CONDIÇÃO ESPECIAL -->
