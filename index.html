@@ -140,7 +140,7 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .itens li{display:flex;gap:9px;font-size:14.5px;padding:7px 0;align-items:flex-start}
 .itens li .v{color:var(--verde);font-weight:800;flex:0 0 16px}
 .itens li.off{color:#AAB2C0}.itens li.off .v{color:#CDD3DD}
-.bp{display:block;width:100%;text-align:center;text-decoration:none;font-family:'Plus Jakarta Sans';font-weight:800;font-size:16px;padding:17px;border-radius:999px;cursor:pointer;border:0}
+.bp{display:block;width:100%;text-decoration:none;text-align:center;font-family:'Plus Jakarta Sans';font-weight:800;font-size:16px;padding:17px;border-radius:999px;cursor:pointer;border:0}
 .bp.b1{background:#fff;border:2px solid var(--azul);color:var(--azul)}
 .bp.b2{background:var(--verde);color:#fff;box-shadow:0 10px 24px rgba(22,163,74,.3)}
 
@@ -167,14 +167,9 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .gar h3{font-size:19px;font-weight:800;margin-bottom:5px}
 .gar p{font-size:14.5px;color:var(--cinza);margin:0}
 
+/* DEPOIMENTOS */
 .deps{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
-.dep{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:18px}
-.dep .top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.dep .av{width:38px;height:38px;border-radius:50%;background:var(--azul);color:#fff;display:grid;place-items:center;font-weight:800}
-.dep .nm{font-weight:700;font-size:14px;line-height:1.2}
-.dep .vf{font-size:11px;color:var(--verde);font-weight:600}
-.dep .st{color:#FFB400;font-size:13px;margin-bottom:6px}
-.dep p{font-size:14px;margin:0}
+.deps img { width: 100%; height: auto; border-radius: 14px; display: block; box-shadow: 0 8px 22px rgba(14,26,43,.12); }
 
 .faq{margin-top:22px;max-width:680px;margin-left:auto;margin-right:auto}
 .q{background:#fff;border:1px solid var(--linha);border-radius:12px;margin-bottom:10px;overflow:hidden}
@@ -189,6 +184,219 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .final p{color:#D6E2FF;font-size:16.5px;max-width:480px;margin:0 auto 20px}
 .final .pp{color:#fff;font-size:15px;margin-bottom:18px}.final .pp b{font-size:26px;font-family:'Plus Jakarta Sans'}
 .final .cta{background:#fff;color:var(--verde)}
+
+footer{text-align:center;padding:32px 20px;color:#9AA3B5;font-size:13px}
+footer a{color:#9AA3B5}
+
+.pop{position:fixed;left:18px;bottom:18px;background:#fff;border:1px solid var(--linha);border-radius:13px;box-shadow:0 12px 34px rgba(14,26,43,.18);padding:12px 15px 12px 12px;display:flex;gap:11px;align-items:center;max-width:300px;z-index:50;transform:translateY(140%);transition:.45s;font-size:13px}
+.pop.show{transform:none}
+.pop .ck{width:30px;height:30px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 30px}
+.pop b{font-weight:700}
+
+@media(max-width:760px){
+  .hero h1{font-size:27px}.hero .sub{font-size:16px}
+  h2.tit{font-size:23px}
+  .dentro{grid-template-columns:1fr}
+  .deps{grid-template-columns:1fr}
+  .final h2{font-size:23px}
+}
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QC7Q98F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="urg">⏰ Oferta de lançamento termina em <b id="cd">23:59:59</b></div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Mais de 100 aulas completas do ENEM, <span class="az">passo a passo</span>, num lugar só.</h1>
+    <p class="sub">Tudo organizado por matéria, na ordem do que mais cai. Você abre e estuda — não fica procurando.</p>
+
+    <div class="caixa">
+      <p>Aqui você tem acesso a <b>dezenas de aulas completas pro ENEM, 100% no passo a passo</b>. Cada matéria explicada do começo ao fim, na ordem que a prova cobra.</p>
+      <p>Se você <b>já fez o ENEM antes</b>, vai fechar as lacunas e render mais. Se é a <b>primeira vez</b>, começa com o caminho pronto na mão, sem se perder. Funciona pros dois.</p>
+    </div>
+
+    <a href="#planos" class="cta">QUERO ESTUDAR DO JEITO CERTO →</a>
+    <div class="badges">✅ Acesso imediato &nbsp; 🔒 Pagamento seguro &nbsp; 🛡️ Garantia de 7 dias</div>
+
+    <!-- MOCKUP CELULAR — quando tiver print real da plataforma, troque a tela
+         por: <img src="PRINT.png" style="width:100%;display:block"> dentro de .screen -->
+    <div class="device">
+      <div class="glow"></div>
+      <div class="phone">
+        <div class="screen">
+          <div class="ptop"><b>Pro do ENEM</b><span>32%</span></div>
+          <div class="pplayer"><div class="pp-play"></div><div class="pp-tag">Linguagens · Aula 3</div></div>
+          <div class="pi on"><span class="pd done">✓</span><div class="pt">Interpretação de texto <small>12 aulas</small></div></div>
+          <div class="pi"><span class="pd"></span><div class="pt">Figuras de linguagem <small>8 aulas</small></div></div>
+          <div class="pi"><span class="pd"></span><div class="pt">Funções da linguagem <small>6 aulas</small></div></div>
+          <div class="pbar"><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kick">Por dentro</div>
+    <h2 class="tit">Você abre e já sabe o que estudar</h2>
+    <div class="dentro">
+      <div class="dcard"><div class="em">🎬</div><h3>Aulas completas</h3><p>Mais de 100 aulas, do começo ao fim de cada assunto. Nada pela metade.</p></div>
+      <div class="dcard"><div class="em">🎯</div><h3>Na ordem do que cai</h3><p>A sequência segue o que o ENEM mais cobra. Você foca no que vale ponto.</p></div>
+      <div class="dcard"><div class="em">📊</div><h3>Acompanha sua evolução</h3><p>Marca o que já viu e enxerga o quanto falta. Bate a sensação de avanço.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap dor">
+    <div class="kick">Se você se reconhece nisso…</div>
+    <h2 class="tit">Você abre o YouTube pra estudar e some 40 minutos depois</h2>
+    <p>Procura "função do primeiro grau" e aparecem 200 vídeos, três propagandas e um corte de podcast. Quando vê, já foi meia hora e <strong>você nem começou a estudar de verdade</strong>.</p>
+    <p>E tem a pergunta que ninguém responde: <strong>isso cai no ENEM ou não?</strong> Você estuda no escuro, sem saber se tá no caminho ou perdendo tempo.</p>
+    <p>Não é falta de esforço. É falta de direção.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kick">A virada</div>
+    <h2 class="tit">A gente fez o trabalho chato no seu lugar</h2>
+    <p class="lead">Reunimos as melhores aulas de cada matéria e montamos a trilha completa do ENEM. Você não procura mais nada.</p>
+    <div class="virada">
+      <div class="l sim"><span class="s">✓</span> Você abre e <b>já sabe por onde começar</b> — sem paralisia.</div>
+      <div class="l sim"><span class="s">✓</span> Estuda na ordem do que <b>mais cai</b>, matéria por matéria.</div>
+      <div class="l sim"><span class="s">✓</span> Acompanha a evolução e <b>sente que tá andando</b>.</div>
+      <div class="l nao"><span class="s">✗</span> Sem garimpar vídeo, sem aba aberta demais, sem se perder.</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="planos">
+  <div class="wrap">
+    <div class="kick">Escolha seu acesso</div>
+    <h2 class="tit">Garanta o seu agora</h2>
+    <p class="lead">Acesso vitalício. Paga uma vez, usa até o dia da prova.</p>
+
+    <div class="planos">
+      <!-- PREMIUM -->
+      <div class="plano dest">
+        <span class="selo">⭐ MAIS ESCOLHIDO</span>
+        <h3>Pacote Completo</h3>
+        <p class="pdesc">A plataforma + todo o Método Pro. O caminho completo até a prova.</p>
+        <div class="pre"><span class="de">De R$ 97</span><span class="por"><small>R$</small> 37</span></div>
+        <div class="parc">ou 6x de R$ 6,26 · acesso vitalício</div>
+        <ul class="itens">
+          <li><span class="v">✓</span> <b>+100 aulas completas do ENEM</b></li>
+          <li><span class="v">✓</span> Acompanhamento da sua evolução</li>
+          <li><span class="v">✓</span> <b>Método Redação Nota 900</b></li>
+          <li><span class="v">✓</span> <b>Método Destrava Redação</b></li>
+          <li><span class="v">✓</span> <b>Mapas Mentais ENEM</b></li>
+          <li><span class="v">✓</span> <b>Método Manual Pro Completo do ENEM</b></li>
+        </ul>
+        <a href="#CHECKOUT_PREMIUM" class="bp b2">QUERO O PACOTE COMPLETO →</a>
+      </div>
+
+      <!-- BÁSICO -->
+      <div class="plano">
+        <h3>Plano Básico</h3>
+        <p class="pdesc">Só a plataforma de aulas, no celular e no computador.</p>
+        <div class="pre"><span class="por"><small>R$</small> 14<small>,90</small></span></div>
+        <div class="parc">pagamento único · acesso vitalício</div>
+        <ul class="itens">
+          <li><span class="v">✓</span> +100 aulas completas do ENEM</li>
+          <li><span class="v">✓</span> Acesso no celular e no computador</li>
+          <li class="off"><span class="v">✗</span> Acompanhamento da evolução</li>
+          <li class="off"><span class="v">✗</span> Método Redação Nota 900 + Destrava Redação</li>
+          <li class="off"><span class="v">✗</span> Mapas Mentais + Método Manual Pro</li>
+        </ul>
+        <button class="bp b1" onclick="abrirEspecial()">Escolher Plano Básico</button>
+      </div>
+    </div>
+    <p class="badges" style="text-align:center;margin-top:20px">🔒 Pagamento 100% seguro · Pix ou cartão</p>
+  </div>
+</section>
+
+<!-- imagens reais do método -->
+<section>
+  <div class="wrap">
+    <div class="kick">No pacote completo vem junto</div>
+    <h2 class="tit">Todo o Método Pro, sem pagar à parte</h2>
+    <div class="matgrid">
+      <img src="https://metodoproenem.vercel.app/redacao-nota-900.png" alt="Redação Nota 900" loading="lazy">
+      <img src="https://metodoproenem.vercel.app/mapas-mentais-enem.png" alt="Mapas Mentais ENEM" loading="lazy">
+      <img src="https://metodoproenem.vercel.app/manual-pro-completo.png" alt="Manual Pro Completo" loading="lazy">
+      <img src="https://metodoproenem.vercel.app/mapa-de-calor-enem.png" alt="Mapa de Calor ENEM" loading="lazy">
+    </div>
+    <div style="text-align:center;margin-top:30px"><a href="#CHECKOUT_PREMIUM" class="cta">QUERO O PACOTE COMPLETO →</a></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kick">7 dias</div>
+    <h2 class="tit">Risco zero pra você</h2>
+    <div class="gar">
+      <div class="e">🛡️</div>
+      <div>
+        <h3>Entra, testa, decide com calma</h3>
+        <p>Você tem 7 dias pra ver tudo por dentro. Se achar que não te ajuda, é só pedir o reembolso e devolvo o valor. Sem pergunta nenhuma. O risco é todo meu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS EM IMAGEM -->
+<section>
+  <div class="wrap">
+    <div class="kick">Quem já tá usando</div>
+    <h2 class="tit">O que os alunos falam</h2>
+    <div class="deps">
+      <img src="depoimento-1.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-2.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-3.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-4.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-5.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-6.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-7.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-8.png" alt="Depoimento de aluno" loading="lazy">
+      <img src="depoimento-9.png" alt="Depoimento de aluno" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kick">Antes de comprar</div>
+    <h2 class="tit">Tire suas dúvidas</h2>
+    <div class="faq">
+      <details class="q"><summary>Como funcionam as aulas?</summary><div class="a">São aulas completas em vídeo, organizadas por matéria e na ordem do que mais cai no ENEM. Tudo numa plataforma só — você abre, escolhe a matéria e segue a trilha, sem caçar vídeo solto.</div></details>
+      <details class="q"><summary>Como recebo o acesso depois de comprar?</summary><div class="a">Na hora. Assim que o pagamento é aprovado, o acesso chega no seu e-mail. Você entra e já começa a estudar.</div></details>
+      <details class="q"><summary>Funciona no celular?</summary><div class="a">Funciona. Celular, tablet ou computador. Dá pra estudar no ônibus, na fila, em qualquer lugar com internet.</div></details>
+      <details class="q"><summary>Serve pra quem nunca fez o ENEM?</summary><div class="a">Serve. Cada matéria começa do básico e vai subindo. Já fez antes ou é a primeira vez, você pega do começo ou vai direto no ponto que tem mais dificuldade.</div></details>
+      <details class="q"><summary>Qual a diferença dos planos?</summary><div class="a">No básico você leva a plataforma de aulas. No completo, leva a plataforma <b>mais</b> o Método Pro: Método Redação Nota 900, Método Destrava Redação, Mapas Mentais ENEM e Método Manual Pro Completo do ENEM. As aulas dão o conteúdo; o método dá a estratégia.</div></details>
+      <details class="q"><summary>E se eu não gostar?</summary><div class="a">Você tem 7 dias de garantia. Não gostou, devolvo o valor sem pergunta nenhuma.</div></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final">
+      <div class="kick" style="color:#BBD0FF">Última chamada</div>
+      <h2>O ENEM não espera você se organizar</h2>
+      <p>Cada dia procurando aula no YouTube é um dia que você não estudou. Comece hoje com tudo no lugar certo.</p>
+      <div class="pp">a partir de <b>R$ 14,90</b></div>
+      <a href="#planos" class="cta">GARANTIR MEU ACESSO →</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <p><b>Método Pro do ENEM</b> · Estude só o que cai.</p>
