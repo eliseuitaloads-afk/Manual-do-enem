@@ -299,6 +299,67 @@ footer a{color:#9AA3B5}
 .selo{background:linear-gradient(90deg,var(--laranja),#FF8A00) !important}
 .kick{color:var(--azul)}              /* rótulos das seções em roxo */
 .hero h1 .az{color:var(--azul)}       /* caso ainda use o hero claro */
+
+/* ---- HERO ESCURO TEXTO ---- */
+.heroX { color: #fff; }
+.heroX h1 { color: #fff !important; }
+.heroX h1 .az { color: var(--amarelo-enem) !important; }
+.heroX .sub { color: #D6E2FF !important; }
+.heroX .badges { color: #D6E2FF !important; }
+
+/* ---- MOCKUP IMAGEM HERO ---- */
+.hero-prod{position:relative;max-width:640px;margin:34px auto 0}
+.hero-prod::before{
+  content:"";position:absolute;top:8%;left:50%;transform:translateX(-50%);
+  width:78%;height:80%;border-radius:50%;
+  background:radial-gradient(circle, rgba(157,78,255,.55), transparent 65%);
+  filter:blur(36px);z-index:0;
+}
+.hero-prod img{position:relative;z-index:1;width:100%;display:block;
+  filter:drop-shadow(0 26px 50px rgba(0,0,0,.55));}
+@media(max-width:760px){.hero-prod{max-width:100%}}
+
+/* ---------- 1) FADE-IN + SLIDE-UP AO ROLAR ---------- */
+/* aplicado automático em toda <section> via script */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease-out, transform .7s ease-out}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ---------- 2) CASCATA (stagger) ---------- */
+/* adicione class="stagger" no container; os filhos entram em sequência */
+.stagger > *{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out, transform .6s ease-out}
+.stagger.in > *{opacity:1;transform:translateY(0)}
+.stagger.in > *:nth-child(1){transition-delay:0ms}
+.stagger.in > *:nth-child(2){transition-delay:90ms}
+.stagger.in > *:nth-child(3){transition-delay:180ms}
+.stagger.in > *:nth-child(4){transition-delay:270ms}
+.stagger.in > *:nth-child(5){transition-delay:360ms}
+.stagger.in > *:nth-child(6){transition-delay:450ms}
+.stagger.in > *:nth-child(7){transition-delay:540ms}
+.stagger.in > *:nth-child(8){transition-delay:630ms}
+
+/* ---------- 3) HOVER SCALE (cards e botões) ---------- */
+.dcard,.plano,.dep,.matgrid img,.q{transition:transform .25s ease-out, box-shadow .25s ease-out, border-color .25s ease-out}
+.dcard:hover,.dep:hover{transform:scale(1.015)}
+.matgrid img:hover{transform:scale(1.03)}
+.bp,.cta,.hx-cta{transition:transform .15s ease-out, box-shadow .15s ease-out, filter .15s ease-out}
+.bp:active,.cta:active,.hx-cta:active{transform:scale(.98)}
+
+/* ---------- 4) FLOAT (flutuação suave) ---------- */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float{animation:floatY 3.4s ease-in-out infinite}
+
+/* ---------- 5) PULSE-GLOW (botão que respira) ---------- */
+@keyframes pulseGlow{
+  0%,100%{box-shadow:0 10px 26px rgba(22,163,74,.32), 0 0 0 0 rgba(22,163,74,.45)}
+  50%{box-shadow:0 10px 26px rgba(22,163,74,.32), 0 0 0 14px rgba(22,163,74,0)}
+}
+.pulse{animation:pulseGlow 2.2s ease-in-out infinite}
+
+/* respeita quem prefere menos movimento (acessibilidade) */
+@media (prefers-reduced-motion: reduce){
+  .reveal,.stagger > *{opacity:1 !important;transform:none !important;transition:none}
+  .float,.pulse{animation:none}
+}
 </style>
 </head>
 <body>
@@ -310,20 +371,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="urg">⏰ Oferta de lançamento termina em <b id="cd">23:59:59</b></div>
 
-<header class="hero">
+<header class="hero heroX">
   <div class="wrap">
     <h1>Mais de 100 aulas completas do ENEM, <span class="az">passo a passo</span>, num lugar só.</h1>
     <p class="sub">Tudo organizado por matéria, na ordem do que mais cai. Você abre e estuda — não fica procurando.</p>
 
-    <div class="caixa">
-      <p>Aqui você tem acesso a <b>dezenas de aulas completas pro ENEM, 100% no passo a passo</b>. Cada matéria explicada do começo ao fim, na ordem que a prova cobra.</p>
-      <p>Se você <b>já fez o ENEM antes</b>, vai fechar as lacunas e render mais. Se é a <b>primeira vez</b>, começa com o caminho pronto na mão, sem se perder. Funciona pros dois.</p>
+    <div class="hero-prod float">
+      <img src="hero-produto.png" alt="Plataforma Pro do ENEM: aulas no notebook e celular + materiais do Método Pro">
     </div>
 
-    <a href="#planos" class="cta">QUERO ESTUDAR DO JEITO CERTO →</a>
+    <a href="#planos" class="cta hx-cta pulse">QUERO ESTUDAR DO JEITO CERTO →</a>
     <div class="badges">✅ Acesso imediato &nbsp; 🔒 Pagamento seguro &nbsp; 🛡️ Garantia de 7 dias</div>
-
-
   </div>
 </header>
 
@@ -331,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="kick">Por dentro</div>
     <h2 class="tit">Você abre e já sabe o que estudar</h2>
-    <div class="dentro">
+    <div class="dentro stagger">
       <div class="dcard"><div class="em">🎬</div><h3>Aulas completas</h3><p>Mais de 100 aulas, do começo ao fim de cada assunto. Nada pela metade.</p></div>
       <div class="dcard"><div class="em">🎯</div><h3>Na ordem do que cai</h3><p>A sequência segue o que o ENEM mais cobra. Você foca no que vale ponto.</p></div>
       <div class="dcard"><div class="em">📊</div><h3>Acompanha sua evolução</h3><p>Marca o que já viu e enxerga o quanto falta. Bate a sensação de avanço.</p></div>
@@ -429,7 +487,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="tit">Garanta o seu agora</h2>
     <p class="lead">Acesso vitalício. Paga uma vez, usa até o dia da prova.</p>
 
-    <div class="planos">
+    <div class="planos stagger">
       <!-- PREMIUM -->
       <div class="plano dest">
         <span class="selo">⭐ MAIS ESCOLHIDO</span>
@@ -491,7 +549,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   
   <div class="deps-container">
-    <div class="deps-track">
+    <div class="deps-track stagger">
       <!-- Bloco original -->
       <img src="depoimento-1.png" alt="Depoimento de aluno" loading="lazy">
       <img src="depoimento-2.png" alt="Depoimento de aluno" loading="lazy">
@@ -596,6 +654,36 @@ const pop=document.getElementById('pop'), popn=document.getElementById('popn');
 let i=0;
 function showPop(){ popn.textContent=nomes[i%nomes.length]; i++; pop.classList.add('show'); setTimeout(function(){pop.classList.remove('show');},4500); }
 setTimeout(function loop(){ showPop(); setTimeout(loop,12000); },6000);
+</script>
+
+<!-- ====== cole antes de </body> ====== -->
+<script>
+(function(){
+  // marca toda <section> e o header do hero pra revelar ao rolar
+  var alvos = document.querySelectorAll('section, header.heroX, header.hero');
+  alvos.forEach(function(el){
+    // não esconde o primeiro (hero) pra não dar "flash" no topo
+    if(el.matches('header')) return;
+    el.classList.add('reveal');
+  });
+
+  if(!('IntersectionObserver' in window)){
+    // navegador antigo: mostra tudo
+    document.querySelectorAll('.reveal,.stagger').forEach(function(e){e.classList.add('in');});
+    return;
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+
+  document.querySelectorAll('.reveal, .stagger').forEach(function(e){ io.observe(e); });
+})();
 </script>
 </body>
 </html>
