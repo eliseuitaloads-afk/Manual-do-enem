@@ -242,6 +242,39 @@ footer a{color:#9AA3B5}
   .dentro{grid-template-columns:1fr}
   .final h2{font-size:23px}
 }
+
+/* ---- PRA QUEM É ---- */
+.praquem{max-width:640px;margin:28px auto 0}
+.pq-grupo{margin-bottom:22px}
+.pq-h{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.pq-h .ic{width:26px;height:26px;border-radius:50%;background:#EAF7EE;color:var(--verde);display:grid;place-items:center;font-weight:800;font-size:14px;flex:0 0 26px}
+.pq-grupo p{font-size:14.5px;color:var(--cinza);margin:0 0 0 35px}
+.pq-nao{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:18px 20px;margin-top:24px}
+.pq-nao .l{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;padding:6px 0}
+.pq-nao .l .x{color:var(--vermelho);font-weight:800;flex:0 0 18px}
+
+/* ---- ANTES x DEPOIS ---- */
+.ad{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:30px auto 0}
+.ad .col{border-radius:18px;padding:24px}
+.ad .antes{background:#FDF0F0;border:1px solid #F6D5D5}
+.ad .depois{background:#EAF7EE;border:1px solid #CDEBD6}
+.ad .col h3{font-family:'Plus Jakarta Sans';font-size:16px;font-weight:800;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.ad .antes h3{color:#C0392B}
+.ad .depois h3{color:var(--verde-esc)}
+.ad .col .i{display:flex;gap:9px;font-size:14px;padding:7px 0;align-items:flex-start;line-height:1.4}
+.ad .antes .i span{color:#D9534F;font-weight:800;flex:0 0 16px}
+.ad .depois .i span{color:var(--verde);font-weight:800;flex:0 0 16px}
+.ad-seta{text-align:center;font-size:13px;color:var(--cinza);margin-top:16px}
+@media(max-width:680px){.ad{grid-template-columns:1fr}}
+
+/* ---- GARANTIA REFORÇADA ---- */
+.gar2{background:linear-gradient(160deg,#EAF7EE,#fff);border:1px solid #CDEBD6;border-radius:22px;padding:34px 28px;max-width:680px;margin:14px auto 0;text-align:center}
+.gar2 .escudo{width:84px;height:84px;border-radius:50%;background:#fff;border:2px solid var(--verde);display:grid;place-items:center;font-size:40px;margin:0 auto 16px;box-shadow:0 10px 30px rgba(22,163,74,.18)}
+.gar2 .tagp{font-size:12.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--verde-esc);margin-bottom:8px}
+.gar2 h3{font-family:'Plus Jakarta Sans';font-size:24px;font-weight:800;margin:0 0 12px}
+.gar2 h3 b{color:var(--verde)}
+.gar2 p{font-size:15px;color:var(--cinza);max-width:520px;margin:0 auto 10px}
+.gar2 p b{color:var(--tinta)}
 </style>
 </head>
 <body>
@@ -306,6 +339,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ===================== 1) PRA QUEM É ===================== -->
+<section class="alt">
+  <div class="wrap">
+    <div class="kick">É pra você?</div>
+    <h2 class="tit">Pra quem é a Plataforma Pro</h2>
+    <div class="praquem">
+
+      <div class="pq-grupo">
+        <div class="pq-h"><span class="ic">✓</span> Quem estuda sozinho</div>
+        <p>Se você estuda por conta própria e se perde no meio de tanto vídeo solto na internet.</p>
+      </div>
+
+      <div class="pq-grupo">
+        <div class="pq-h"><span class="ic">✓</span> Quem vai prestar pela primeira vez</div>
+        <p>Começa com o caminho pronto na mão, na ordem do que cai, sem precisar descobrir tudo sozinho.</p>
+      </div>
+
+      <div class="pq-grupo">
+        <div class="pq-h"><span class="ic">✓</span> Quem já fez o ENEM e quer melhorar</div>
+        <p>Fecha as lacunas das matérias que te derrubaram e chega na prova rendendo mais.</p>
+      </div>
+
+      <div class="pq-nao">
+        <div class="l"><span class="x">✗</span> Não precisa pagar cursinho caro</div>
+        <div class="l"><span class="x">✗</span> Não precisa estudar 10 horas por dia</div>
+        <div class="l"><span class="x">✗</span> Não precisa garimpar aula no YouTube</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== 2) ANTES x DEPOIS ===================== -->
+<section>
+  <div class="wrap">
+    <div class="kick">A diferença</div>
+    <h2 class="tit">Como seu estudo muda</h2>
+    <div class="ad">
+      <div class="col antes">
+        <h3>😣 Estudando sem direção</h3>
+        <div class="i"><span>✗</span> Abre o YouTube e se perde em vídeo solto</div>
+        <div class="i"><span>✗</span> Não sabe o que cai e o que ignorar</div>
+        <div class="i"><span>✗</span> Estuda muito e sente que não rende</div>
+        <div class="i"><span>✗</span> Bate aquela ansiedade de estar atrasado</div>
+        <div class="i"><span>✗</span> Começa, para, recomeça do zero</div>
+      </div>
+      <div class="col depois">
+        <h3>🚀 Com a Plataforma Pro</h3>
+        <div class="i"><span>✓</span> Abre e já sabe exatamente o que estudar</div>
+        <div class="i"><span>✓</span> Foca só no que mais cai na prova</div>
+        <div class="i"><span>✓</span> Cada hora de estudo rende de verdade</div>
+        <div class="i"><span>✓</span> Tem clareza e segue uma trilha pronta</div>
+        <div class="i"><span>✓</span> Acompanha sua evolução e não desiste</div>
+      </div>
+    </div>
+    <p class="ad-seta">A mesma dedicação, com direção. É só isso que muda — e muda tudo.</p>
+  </div>
+</section>
+
 <section class="alt" id="planos">
   <div class="wrap">
     <div class="kick">Escolha seu acesso</div>
@@ -353,16 +446,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<section class="alt">
+<!-- ===================== 3) GARANTIA REFORÇADA ===================== -->
+<section>
   <div class="wrap">
-    <div class="kick">7 dias</div>
-    <h2 class="tit">Risco zero pra você</h2>
-    <div class="gar">
-      <div class="e">🛡️</div>
-      <div>
-        <h3>Entra, testa, decide com calma</h3>
-        <p>Você tem 7 dias pra ver tudo por dentro. Se achar que não te ajuda, é só pedir o reembolso e devolvo o valor. Sem pergunta nenhuma. O risco é todo meu.</p>
-      </div>
+    <div class="gar2">
+      <div class="escudo">🛡️</div>
+      <div class="tagp">🔒 Compra protegida</div>
+      <h3>Garantia incondicional de <b>7 dias</b></h3>
+      <p>Você tem <b>7 dias</b> pra entrar, ver as aulas e testar a plataforma com calma.</p>
+      <p>Se achar que não é pra você, é só pedir o reembolso e <b>todo o valor volta pra você</b>. Sem pergunta, sem burocracia, sem risco.</p>
     </div>
   </div>
 </section>
