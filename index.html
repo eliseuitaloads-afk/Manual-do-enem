@@ -338,13 +338,148 @@ footer a{color:#9AA3B5}
 .stagger.in > *:nth-child(7){transition-delay:540ms}
 .stagger.in > *:nth-child(8){transition-delay:630ms}
 
-/* ---------- 3) HOVER SCALE (cards e botões) ---------- */
-.dcard,.plano,.dep,.matgrid img,.q{transition:transform .25s ease-out, box-shadow .25s ease-out, border-color .25s ease-out}
-.dcard:hover,.plano:hover,.q:hover{transform:scale(1.015)}
-.dep:hover{transform:scale(1.03)}
-.matgrid img:hover{transform:scale(1.03)}
-.bp,.cta,.hx-cta{transition:transform .15s ease-out, box-shadow .15s ease-out, filter .15s ease-out}
-.bp:active,.cta:active,.hx-cta:active{transform:scale(.98)}
+/* ---------- 3) INTERATIVE EFFECTS (cards, botões e imagens) ---------- */
+/* Botões Gerais */
+.cta, .bp {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s, filter 0.25s;
+  z-index: 1;
+}
+.cta:hover, .bp:hover {
+  transform: scale(1.05);
+}
+.cta:active, .bp:active {
+  transform: scale(0.98) !important;
+}
+
+/* Shimmer (efeito de brilho) */
+.cta::after, .bp::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  z-index: 2;
+}
+.cta:hover::after, .bp:hover::after {
+  left: 150%;
+  transition: left 0.5s ease-in-out;
+}
+
+/* Ripple (efeito de ondulação) */
+.cta::before, .bp::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+  z-index: 0;
+}
+.cta:hover::before, .bp:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Botão Roxo Contornado */
+.bp.b1 {
+  transition: background-color 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.bp.b1::after {
+  background: linear-gradient(90deg, transparent, rgba(107, 47, 191, 0.15), transparent);
+}
+.bp.b1:hover {
+  background: var(--azul);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(107, 47, 191, 0.3);
+}
+.bp.b1:hover::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+/* Botão Verde Cheio */
+.bp.b2:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 14px 28px rgba(22, 163, 74, 0.4);
+}
+
+/* Imagens de Depoimentos (Carrossel) */
+.deps-track img {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s, filter 0.45s;
+}
+.deps-track img:hover {
+  transform: translateY(-12px) scale(1.05) rotate(-2deg) !important;
+  box-shadow: 0 16px 36px rgba(107, 47, 191, 0.25) !important;
+  filter: brightness(1.08) saturate(1.15) !important;
+}
+
+/* Imagens de Grid de Matérias */
+.matgrid img {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s, filter 0.45s;
+}
+.matgrid img:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 16px 36px rgba(107, 47, 191, 0.25);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+/* Imagem Hero */
+.hero-prod img {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.45s;
+}
+.hero-prod:hover img {
+  transform: scale(1.05) rotate(-1deg);
+  filter: brightness(1.10) drop-shadow(0 30px 60px rgba(0,0,0,.65));
+}
+
+/* Cards de Recursos (.dcard) */
+.dcard {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s, border-color 0.35s;
+}
+.dcard:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--azul);
+  box-shadow: 0 12px 28px rgba(107, 47, 191, 0.15);
+}
+
+/* Cards de Planos (.plano) */
+.plano {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s, border-color 0.35s, opacity 0.2s ease;
+}
+.plano:hover {
+  transform: translateY(-6px);
+  border-color: var(--azul);
+  box-shadow: 0 20px 40px rgba(107, 47, 191, 0.18);
+}
+
+/* Garantia Reforçada (.gar2) */
+.gar2 {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.35s, box-shadow 0.35s;
+}
+.gar2:hover {
+  transform: translateY(-4px);
+  border-color: var(--verde);
+  box-shadow: 0 16px 36px rgba(22, 163, 74, 0.15);
+}
+.gar2 .escudo {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.gar2:hover .escudo {
+  transform: scale(1.1) rotate(10deg);
+}
+
+/* FAQ/Accordion (.q) */
+.q {
+  transition: border-color 0.35s, box-shadow 0.35s;
+}
+.q:hover {
+  border-color: var(--azul);
+  box-shadow: 0 8px 20px rgba(107, 47, 191, 0.08);
+}
 
 /* ---------- 4) FLOAT (flutuação suave) ---------- */
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
