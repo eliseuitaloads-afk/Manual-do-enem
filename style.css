@@ -546,7 +546,7 @@ footer .footer-copy{font-size:13px;color:#9ca3af;margin-bottom:8px;}
   border: 1px solid var(--linha);
   margin-bottom: 14px;
   background: #fdfdfd;
-  aspect-ratio: 16/10;
+  aspect-ratio: 2/3;
   display: flex;
   align-items: center;
   justify-content: center;
