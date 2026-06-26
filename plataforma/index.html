@@ -101,6 +101,23 @@ src="https://www.facebook.com/tr?id=1013102888134689&ev=PageView&noscript=1"
 </script>
 <!-- TikTok Pixel Code End -->
 
+<!-- Supabase Auth Integration -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabase = window.supabase.createClient('PROJECT_URL', 'ANON_KEY');
+
+async function checkAuth() {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) {
+    window.location.href = '/plataforma/login.html';
+  } else {
+    document.documentElement.style.display = '';
+  }
+}
+document.documentElement.style.display = 'none';
+checkAuth();
+</script>
+
 <!-- ============================================================= -->
 <!--  AULAS: cada item é PLAYLIST (list:"ID") ou VÍDEO (yt:"ID").   -->
 <!--  Pra trocar/adicionar, edite o objeto CURSO abaixo.           -->
@@ -287,7 +304,11 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
   <button class="menu-btn" onclick="document.getElementById('mnav').classList.toggle('show')">☰</button>
   <div class="logo">Pro do <b>ENEM</b></div>
   <nav class="nav" id="mnav"></nav>
-  <div class="prog-top">Seu progresso: <b id="topPct">0%</b></div>
+  <div class="prog-top">
+    Seu progresso: <b id="topPct">0%</b>
+    <span style="margin: 0 4px; color: var(--line);">|</span>
+    <button onclick="logout()" style="background: rgba(255,255,255,0.08); border: 1px solid var(--line); color: #fff; font-family: inherit; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; cursor: pointer; transition: background 0.2s;">Sair</button>
+  </div>
 </header>
 
 <section class="hero">
@@ -439,6 +460,11 @@ function continuar(){
 }
 
 nav(); render();
+
+async function logout(){
+  await supabase.auth.signOut();
+  window.location.href = '/plataforma/login.html';
+}
 </script>
 </body>
 </html>
