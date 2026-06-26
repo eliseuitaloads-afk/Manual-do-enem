@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plataforma Pro do ENEM — Área de Aulas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1013102888134689');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1013102888134689&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;
+  var ttq=w[t]=w[t]||[];
+
+  ttq.methods=[
+    "page",
+    "track",
+    "identify",
+    "instances",
+    "debug",
+    "on",
+    "off",
+    "once",
+    "ready",
+    "alias",
+    "group",
+    "enableCookie",
+    "disableCookie",
+    "holdConsent",
+    "revokeConsent",
+    "grantConsent"
+  ];
+
+  ttq.setAndDefer=function(t,e){
+    t[e]=function(){
+      t.push([e].concat(Array.prototype.slice.call(arguments,0)));
+    };
+  };
+
+  for(var i=0;i<ttq.methods.length;i++){
+    ttq.setAndDefer(ttq,ttq.methods[i]);
+  }
+
+  ttq.instance=function(t){
+    for(
+      var e=ttq._i[t]||[],
+      n=0;
+      n<ttq.methods.length;
+      n++
+    ){
+      ttq.setAndDefer(e,ttq.methods[n]);
+    }
+    return e;
+  };
+
+  ttq.load=function(e,n){
+    var r="https://analytics.tiktok.com/i18n/pixel/events.js";
+    var o=n&&n.partner;
+
+    ttq._i=ttq._i||{};
+    ttq._i[e]=[];
+    ttq._i[e]._u=r;
+    ttq._t=ttq._t||{};
+    ttq._t[e]=+new Date;
+    ttq._o=ttq._o||{};
+    ttq._o[e]=n||{};
+
+    n=document.createElement("script");
+    n.type="text/javascript";
+    n.async=true;
+    n.src=r+"?sdkid="+e+"&lib="+t;
+
+    e=document.getElementsByTagName("script")[0];
+    e.parentNode.insertBefore(n,e);
+  };
+
+  ttq.load('D8V6PMBC77U6CH9FIFQ0');
+  ttq.page();
+
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+<!-- ============================================================= -->
+<!--  AULAS: cada item é PLAYLIST (list:"ID") ou VÍDEO (yt:"ID").   -->
+<!--  Pra trocar/adicionar, edite o objeto CURSO abaixo.           -->
+<!-- ============================================================= -->
+<script>
+const CURSO = {
+  materias: [
+    { id:"linguagens", nome:"Linguagens e Códigos", cor:"#E11D48", aulas:[
+      { titulo:"No ENEM com Noslen", canal:"Professor Noslen", dur:"89 vídeos", list:"PLVyIxkvuIqxoW6YdJXPU6j8ROqfEd7Hmi" },
+      { titulo:"Simplificando a Gramática", canal:"Professor Noslen", dur:"64 vídeos", list:"PLVyIxkvuIqxr0qdFNkzivFbP6B4BSkPyC" },
+      { titulo:"Competências ENEM", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxoySveaq4KmVHtZoWozyyzM" },
+      { titulo:"Literatura ENEM", canal:"Descomplica", dur:"Playlist", list:"PLgIWHtlPYF81Re7G1r73aw1Z-NI5wGJ5Y" },
+      { titulo:"Figuras de Linguagem", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxoapwhijYMdYSu9rhp7Wonn" },
+      { titulo:"Curso de Crase", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxqRz6fFI4BKFcoN3gJXwn7O" },
+      { titulo:"Gêneros Textuais", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxpL2kQRhgdA-jeLMfVqO1ai" },
+      { titulo:"Exercícios Resolvidos ENEM", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxrt4sPt4CB26mqH3vPe4AVF" },
+    ]},
+    { id:"matematica", nome:"Matemática", cor:"#2563EB", aulas:[
+      { titulo:"Dicas e Macetes ENEM", canal:"Professor Ferretto", dur:"37 vídeos", list:"PLTPg64KdGgYjb2GvL5cmV6GqwRG5p52pc" },
+      { titulo:"ENEM 2023 — Questões Resolvidas", canal:"Professor Ferretto", dur:"90 vídeos", list:"PLTPg64KdGgYiJMc9Ho1wjo5piQiVDp0FL" },
+      { titulo:"Maratona ENEM — revisão", canal:"Professor Ferretto", dur:"Playlist", list:"PLTPg64KdGgYj8gSp5IsMA3nZf6YJnWJDJ" },
+      { titulo:"Geometria Espacial", canal:"Professor Ferretto", dur:"Playlist", list:"PLTPg64KdGgYhFc07ntMRv3kufYGOA4Hi-" },
+      { titulo:"Pílulas de Conhecimento", canal:"Professor Ferretto", dur:"Playlist", list:"PLTPg64KdGgYj35vANZSW62NyHyufByNCo" },
+    ]},
+    { id:"natureza", nome:"Ciências da Natureza", cor:"#16A34A", aulas:[
+      { titulo:"Física ENEM (curso)", canal:"Física Total", dur:"Playlist", list:"PLu_gVuwI17I-s-1Tl16-mVUwVo1-06SX4" },
+      { titulo:"Física do Zero", canal:"Mestres do ENEM", dur:"19 lições", list:"PLkTvHJfFH_rE0gEPPANMJvPw8Ux7UtAkE" },
+      { titulo:"750+ em Ciências da Natureza", canal:"Mestres do ENEM", dur:"22 vídeos", list:"PL8Sb1J47vKz5vvRoRhaXGiK37-rbhz2ak" },
+      { titulo:"Física Básica do Zero", canal:"Mestres do ENEM", dur:"Aula", yt:"L0tDWm8QfCU" },
+      { titulo:"Toda a Física em 12 horas", canal:"Mestres do ENEM", dur:"Aulão", yt:"M58XvuZ4Zy8" },
+      { titulo:"Física — 10 temas que mais caem", canal:"Mestres do ENEM", dur:"Aulão", yt:"hxciSW_B8Hw" },
+      { titulo:"Química em 1h (TOP dicas)", canal:"Química do Sucesso", dur:"7 vídeos", list:"PLyLiYLybj4m0HCP8a7fK1dbmgZgrZvC2-" },
+      { titulo:"ENEM | Química (completo)", canal:"Curso Enem Gratuito", dur:"71 vídeos", list:"PL8vXuI6zmpdj_YFEHTaBDccdSCC1LVNH0" },
+      { titulo:"Química Geral (completo)", canal:"Química do Sucesso", dur:"Playlist", list:"PLyLiYLybj4m3yRHPWgdiLwCNY3l8wtYnw" },
+      { titulo:"Radioatividade", canal:"Química do Sucesso", dur:"Playlist", list:"PLyLiYLybj4m3p2CRbPlDThiMIRgBhgml-" },
+      { titulo:"Videoaulas de Biologia", canal:"Paulo Jubilut", dur:"39 vídeos", list:"PLXXIkklJqmKn8tv__SljfEOVV2DFJRgvI" },
+      { titulo:"Biologia — Resoluções comentadas", canal:"Biologia Total", dur:"Playlist", list:"PLBeDi4xHURWFZef01qSpGX1-yHQguJhp6" },
+      { titulo:"Biologia do Zero (completo)", canal:"Biologia Total", dur:"Playlist", list:"PL8Sb1J47vKz6CAVoJA-J3UCrhBT0HJbX4" },
+      { titulo:"Doenças e Ecologia que mais caem", canal:"Paulo Jubilut", dur:"Playlist", list:"PLXXIkklJqmKmvWMS8-Tsr85ZWQlGKVtQW" },
+    ]},
+    { id:"humanas", nome:"Ciências Humanas", cor:"#EA580C", aulas:[
+      { titulo:"História para o ENEM", canal:"Parabólica", dur:"106 vídeos", list:"PLMra4G0-Z7pMYLE-D-ptnHt1IW_Y1hn8H" },
+      { titulo:"História do Brasil", canal:"Parabólica", dur:"Playlist", list:"PLMra4G0-Z7pPPztK7F69zHzpzAtaHEnJ5" },
+      { titulo:"História do Brasil (curso)", canal:"Curso Enem Gratuito", dur:"Playlist", list:"PLQVUQftDIJQH8qKoQP7vlSR2awzAlFpZR" },
+      { titulo:"Curso de Sociologia", canal:"Parabólica", dur:"63 vídeos", list:"PLMra4G0-Z7pMnBecUK6b8VpwDceBI7xcE" },
+      { titulo:"Sociologia 2025", canal:"Parabólica", dur:"69 vídeos", list:"PLMra4G0-Z7pPzFof8g0i3k39DThQkWNxL" },
+      { titulo:"Geografia Completo", canal:"GabaritaGeo", dur:"Playlist", list:"PLh-pzm2_vyyzF-OzP4Ef9P0eSotSk-dmC" },
+      { titulo:"Filosofia para o ENEM", canal:"Parabólica", dur:"Playlist", list:"PLMra4G0-Z7pOBZjKCxen5cRa6iUMAdYKh" },
+      { titulo:"Toda a História do ENEM (revisão)", canal:"Débora Aladim", dur:"Aulão", yt:"cuHddXfinDE" },
+      { titulo:"Isso com certeza vai cair", canal:"Débora Aladim", dur:"Aula", yt:"2OuqD5qOUlo" },
+    ]},
+    { id:"redacao", nome:"Redação", cor:"#7B3FFF", aulas:[
+      { titulo:"Tudo de Redação", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxowrHHXhzfuBcEjNTNVhUMH" },
+      { titulo:"Redação ENEM", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxq5YlKcgT2LXkBPKx2GvPbE" },
+      { titulo:"Redação do ENEM Perfeita", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxoQSzyImvoNSbBhs1zb_6GS" },
+      { titulo:"Revisão — Linguagens e Redação", canal:"Professor Noslen", dur:"Aulão", yt:"wSTuQIFBW7o" },
+    ]},
+    { id:"revisao", nome:"Revisão Final / Aulões", cor:"#DC2626", aulas:[
+      { titulo:"Mapas Mentais ENEM", canal:"Me Salva!", dur:"Playlist", list:"PLf1lowbdbFIB7lokL4dFzWu1vkLvelOiI" },
+      { titulo:"Quiz ENEM — Treinando questões", canal:"Me Salva!", dur:"Playlist", list:"PLf1lowbdbFIB5ns8aBsEkg_eo3HlRD0op" },
+      { titulo:"Última live antes do ENEM", canal:"Débora Aladim", dur:"Live", yt:"dj0-6J2KDas" },
+      { titulo:"Curso ENEM — Port e Mat", canal:"Descomplica", dur:"Aulão", yt:"24zu444qWpc" },
+      { titulo:"Revisão Final — Redação 1000", canal:"ProEnem", dur:"Aulão", yt:"dUX-arx_YMk" },
+    ]},
+  ]
+};
+</script>
+
+<style>
+:root{
+  --bg:#0B0617; --bg2:#120A24; --card:#1A1030; --card2:#221540;
+  --line:rgba(255,255,255,.09); --txt:#F3EFFA; --muted:#A99FC4;
+  --roxo:#7B3FFF; --roxo2:#9D4EFF; --amarelo:#FFD60A; --verde:#2ED573;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:16px;padding:15px 28px;
+  background:linear-gradient(180deg,rgba(11,6,23,.96),rgba(11,6,23,.7) 70%,transparent);backdrop-filter:blur(6px)}
+.logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.3px;white-space:nowrap}
+.logo b{color:var(--roxo2)}
+.nav{display:flex;gap:6px;margin-left:10px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;padding:7px 12px;border-radius:99px}
+.nav a:hover{color:#fff;background:var(--card)}
+.prog-top{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);white-space:nowrap}
+.prog-top b{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+
+/* hero destaque */
+.hero{position:relative;padding:46px 28px 30px;background:
+  radial-gradient(800px 400px at 80% 0%, rgba(123,63,255,.35), transparent 60%),
+  linear-gradient(180deg,var(--bg2),var(--bg));overflow:hidden}
+.hero .tag{display:inline-block;background:rgba(255,214,10,.16);color:var(--amarelo);font-weight:700;
+  font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:6px 13px;border-radius:99px;margin-bottom:14px}
+.hero h1{font-size:34px;font-weight:800;letter-spacing:-.6px;max-width:560px;line-height:1.1;margin-bottom:12px}
+.hero p{color:var(--muted);font-size:16px;max-width:480px;margin:0 0 22px}
+.hero .acoes{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;text-decoration:none;
+  font-family:'Plus Jakarta Sans';font-weight:800;font-size:15px;padding:14px 26px;border-radius:12px}
+.btn.play{background:#fff;color:#160a2e}
+.btn.play:hover{background:#eee}
+.btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid var(--line)}
+.btn.ghost:hover{background:rgba(255,255,255,.2)}
+
+/* progresso geral */
+.barra-geral{margin:6px 28px 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:16px}
+.barra-geral .pct{font-family:'Plus Jakarta Sans';font-weight:800;font-size:26px;color:#fff}
+.barra-geral .info{flex:1}
+.barra-geral .info small{color:var(--muted);font-size:13px}
+.barra-geral .bar{height:8px;background:#0e0820;border-radius:99px;margin-top:7px;overflow:hidden}
+.barra-geral .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--roxo),var(--amarelo));border-radius:99px;transition:width .5s}
+
+/* fileiras */
+.fileira{margin:30px 0 6px}
+.fileira h2{font-size:19px;font-weight:800;padding:0 28px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.fileira h2 .dot{width:10px;height:24px;border-radius:6px;display:inline-block}
+.row-wrap{position:relative}
+.row{display:flex;gap:14px;overflow-x:auto;padding:4px 28px 14px;scroll-behavior:smooth;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.cardA{flex:0 0 260px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .2s, box-shadow .2s, border-color .2s}
+.cardA:hover{transform:scale(1.04);border-color:var(--roxo);box-shadow:0 16px 40px rgba(123,63,255,.3);z-index:5}
+.cardA .thumb{aspect-ratio:16/9;position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#241646,#160c2c)}
+.cardA .thumb .play{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;transition:transform .2s}
+.cardA:hover .thumb .play{transform:scale(1.12)}
+.cardA .thumb .play::after{content:"";border-left:15px solid #160a2e;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:3px}
+.cardA .thumb .badge{position:absolute;top:9px;left:9px;background:rgba(123,63,255,.9);color:#fff;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:99px}
+.cardA .thumb .feito{position:absolute;top:9px;right:9px;width:22px;height:22px;border-radius:50%;background:var(--verde);color:#06210f;display:none;place-items:center;font-weight:800;font-size:12px}
+.cardA.done .thumb .feito{display:grid}
+.cardA .meta{padding:12px 13px}
+.cardA .meta .t{font-weight:700;font-size:14px;line-height:1.25;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cardA .meta .c{font-size:12px;color:var(--muted)}
+.seta{position:absolute;top:0;bottom:18px;width:48px;border:0;cursor:pointer;color:#fff;font-size:22px;z-index:6;
+  background:rgba(11,6,23,.7);display:grid;place-items:center;opacity:0;transition:opacity .2s}
+.row-wrap:hover .seta{opacity:1}
+.seta.l{left:0}.seta.r{right:0}
+.seta:hover{background:rgba(123,63,255,.8)}
+
+/* vitrine upsell */
+.vitrine{margin:36px 28px 60px;background:linear-gradient(135deg,rgba(123,63,255,.18),rgba(255,214,10,.1));
+  border:1px solid rgba(123,63,255,.4);border-radius:20px;padding:28px}
+.vitrine h2{font-size:22px;font-weight:800;margin-bottom:6px}
+.vitrine p{color:var(--muted);font-size:14px;margin:0 0 18px}
+.vit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.vit{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.vit .lock{font-size:15px;opacity:.7;float:right}
+.vit h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.vit .pr{font-size:13px;color:var(--muted);min-height:36px;margin-bottom:12px}
+.vit .preco{font-weight:800;font-size:18px;margin-bottom:12px}
+.vit a{display:block;text-align:center;background:var(--amarelo);color:#1a1400;font-weight:800;
+  padding:11px;border-radius:10px;text-decoration:none;font-size:14px}
+.vit.sem a{background:var(--card2);color:var(--muted)}
+
+/* player modal */
+.modal{position:fixed;inset:0;z-index:60;background:rgba(5,2,12,.85);backdrop-filter:blur(5px);
+  display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.box{width:100%;max-width:980px;background:#0d0820;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.box .player{aspect-ratio:16/9;background:#000}
+.box .player iframe{width:100%;height:100%;border:0;display:block}
+.box .info{padding:16px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.box .info h3{font-size:17px;font-weight:700;flex:1;min-width:200px}
+.box .info .c{color:var(--muted);font-size:13px;width:100%}
+.box .x{position:absolute;top:18px;right:22px;font-size:26px;color:#fff;background:none;border:0;cursor:pointer;z-index:2}
+.box .mk{background:var(--verde);color:#06210f;border:0;font-weight:800;padding:11px 18px;border-radius:10px;cursor:pointer;font-family:'Plus Jakarta Sans'}
+.box .mk.on{background:transparent;color:var(--verde);border:1px solid var(--verde)}
+
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30}
+.overlay.on{display:block}
+
+@media(max-width:860px){
+  .nav{display:none}.menu-btn{display:block}
+  .hero h1{font-size:26px}
+  .cardA{flex-basis:200px}
+  .seta{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <button class="menu-btn" onclick="document.getElementById('mnav').classList.toggle('show')">☰</button>
+  <div class="logo">Pro do <b>ENEM</b></div>
+  <nav class="nav" id="mnav"></nav>
+  <div class="prog-top">Seu progresso: <b id="topPct">0%</b></div>
+</header>
+
+<section class="hero">
+  <div class="tag">🔥 Comece por aqui</div>
+  <h1>Sua trilha completa do ENEM, organizada pra você não se perder.</h1>
+  <p>Escolha a matéria, dê play e siga a sequência. Marque o que já assistiu e acompanhe sua evolução.</p>
+  <div class="acoes">
+    <button class="btn play" onclick="continuar()">▶ Continuar estudando</button>
+    <a class="btn ghost" href="#linguagens">Ver todas as matérias</a>
+  </div>
+</section>
+
+<div class="barra-geral">
+  <div class="pct" id="pctGrande">0%</div>
+  <div class="info">
+    <small><span id="feitas">0</span> de <span id="total">0</span> trilhas concluídas</small>
+    <div class="bar"><i id="barGeral"></i></div>
+  </div>
+</div>
+
+<main id="fileiras"></main>
+
+<!-- VITRINE / UPSELL (edite VITRINE e os checkouts) -->
+<section class="vitrine">
+  <h2>⭐ Destrave seu próximo nível</h2>
+  <p>Materiais que aceleram seu estudo. Clique e desbloqueie.</p>
+  <div class="vit-grid" id="vitGrid"></div>
+</section>
+
+<!-- MODAL PLAYER -->
+<div class="modal" id="modal">
+  <div class="box" style="position:relative">
+    <button class="x" onclick="fecharPlayer()">×</button>
+    <div class="player" id="player"></div>
+    <div class="info">
+      <div style="flex:1;min-width:200px">
+        <h3 id="mTitulo">—</h3>
+        <div class="c" id="mCanal">—</div>
+      </div>
+      <button class="mk" id="mBtn" onclick="toggleFeito()">Marcar como assistida</button>
+    </div>
+  </div>
+</div>
+<div class="overlay" id="ov" onclick="fecharPlayer()"></div>
+
+<script>
+const VITRINE = [
+  { nome:"Protocolo 8S", pr:"O método de 8 semanas que organiza sua aprovação.", preco:"R$ 47", checkout:"" },
+  { nome:"Redação Nota 900", pr:"A estrutura exata da redação que tira 900+.", preco:"R$ 37", checkout:"" },
+  { nome:"Mapas Mentais ENEM", pr:"Fixe o que cai com mapas visuais.", preco:"R$ 27", checkout:"" },
+  { nome:"Manual Pro Completo", pr:"Seu plano completo até a aprovação.", preco:"R$ 47", checkout:"" },
+];
+
+let estado = {};
+try{ estado = JSON.parse(localStorage.getItem('enem_plat')||'{}'); }catch(e){ estado={}; }
+let atual = null;
+function chave(m,a){ return CURSO.materias[m].id+'_'+a; }
+function salvar(){ try{ localStorage.setItem('enem_plat', JSON.stringify(estado)); }catch(e){} }
+function totalAulas(){ return CURSO.materias.reduce((s,m)=>s+m.aulas.length,0); }
+function totalFeitas(){ return Object.values(estado).filter(Boolean).length; }
+
+function nav(){
+  document.getElementById('mnav').innerHTML = CURSO.materias
+    .map(m=>`<a href="#${m.id}">${m.nome}</a>`).join('');
+}
+
+function render(){
+  const wrap = document.getElementById('fileiras');
+  wrap.innerHTML = CURSO.materias.map((m,mi)=>`
+    <section class="fileira" id="${m.id}">
+      <h2><span class="dot" style="background:${m.cor}"></span> ${m.nome}</h2>
+      <div class="row-wrap">
+        <button class="seta l" onclick="rolar('${m.id}',-1)">‹</button>
+        <div class="row" id="row-${m.id}">
+          ${m.aulas.map((a,ai)=>`
+            <div class="cardA ${estado[chave(mi,ai)]?'done':''}" data-k="${chave(mi,ai)}" onclick="abrir(${mi},${ai})">
+              <div class="thumb">
+                <span class="badge">${a.list?'📋 Playlist':'▶ Aula'}</span>
+                <span class="feito">✓</span>
+                <div class="play"></div>
+              </div>
+              <div class="meta"><div class="t">${a.titulo}</div><div class="c">${a.dur} · ${a.canal}</div></div>
+            </div>`).join('')}
+        </div>
+        <button class="seta r" onclick="rolar('${m.id}',1)">›</button>
+      </div>
+    </section>`).join('');
+  document.getElementById('vitGrid').innerHTML = VITRINE.map(v=>`
+    <div class="vit ${v.checkout?'':'sem'}">
+      <span class="lock">🔒</span>
+      <h3>${v.nome}</h3>
+      <div class="pr">${v.pr}</div>
+      <div class="preco">${v.preco}</div>
+      ${v.checkout?`<a href="${v.checkout}" target="_blank" rel="noopener">Desbloquear →</a>`:`<a>Em breve</a>`}
+    </div>`).join('');
+  atualizar();
+}
+
+function rolar(id,dir){ document.getElementById('row-'+id).scrollBy({left:dir*560,behavior:'smooth'}); }
+
+function abrir(m,a){
+  atual={m,a};
+  const au=CURSO.materias[m].aulas[a];
+  const src = au.list
+    ? `https://www.youtube.com/embed/videoseries?list=${au.list}&rel=0&modestbranding=1`
+    : `https://www.youtube.com/embed/${au.yt}?rel=0&modestbranding=1`;
+  document.getElementById('player').innerHTML =
+    `<iframe src="${src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  document.getElementById('mTitulo').textContent=au.titulo;
+  document.getElementById('mCanal').textContent=au.dur+' · '+au.canal;
+  setBtn(estado[chave(m,a)]);
+  document.getElementById('modal').classList.add('on');
+  document.getElementById('ov').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function fecharPlayer(){
+  document.getElementById('player').innerHTML='';
+  document.getElementById('modal').classList.remove('on');
+  document.getElementById('ov').classList.remove('on');
+  document.body.style.overflow='';
+}
+function setBtn(on){
+  const b=document.getElementById('mBtn');
+  b.classList.toggle('on',!!on);
+  b.textContent= on?'✓ Assistida':'Marcar como assistida';
+}
+function toggleFeito(){
+  if(!atual) return;
+  const k=chave(atual.m,atual.a);
+  estado[k]=!estado[k]; salvar(); setBtn(estado[k]);
+  const card=document.querySelector(`.cardA[data-k="${k}"]`);
+  if(card) card.classList.toggle('done',!!estado[k]);
+  atualizar();
+}
+function atualizar(){
+  const t=totalAulas(), f=totalFeitas(), p=t?Math.round(f/t*100):0;
+  document.getElementById('feitas').textContent=f;
+  document.getElementById('total').textContent=t;
+  document.getElementById('topPct').textContent=p+'%';
+  document.getElementById('pctGrande').textContent=p+'%';
+  document.getElementById('barGeral').style.width=p+'%';
+}
+function continuar(){
+  // abre a primeira aula não concluída
+  for(let m=0;m<CURSO.materias.length;m++)
+    for(let a=0;a<CURSO.materias[m].aulas.length;a++)
+      if(!estado[chave(m,a)]){ abrir(m,a); return; }
+  abrir(0,0);
+}
+
+nav(); render();
+</script>
+</body>
+</html>
