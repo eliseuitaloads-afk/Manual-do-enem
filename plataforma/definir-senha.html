@@ -52,8 +52,10 @@
     const {error}=await sb.auth.updateUser({password:a});
     btn.disabled=false; btn.textContent='Salvar e entrar';
     if(error){ return showMsg('Esse link expirou. Volte e peça um novo link de acesso.','erro'); }
-    showMsg('Senha criada! Entrando...','ok');
-    setTimeout(()=>location.replace('./'),900);
+    showMsg('Senha criada com sucesso! Agora é só entrar com ela.','ok');
+    // desloga a sessão temporária do link e manda pro login pra testar a senha nova
+    await sb.auth.signOut();
+    setTimeout(()=>location.replace('./login.html'),1200);
   }
 </script>
 </body>
