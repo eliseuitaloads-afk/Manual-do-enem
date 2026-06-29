@@ -3,223 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plataforma Pro do ENEM — Login</title>
+<title>Entrar — Plataforma Pro do ENEM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1013102888134689');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1013102888134689&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;
-  var ttq=w[t]=w[t]||[];
-
-  ttq.methods=[
-    "page",
-    "track",
-    "identify",
-    "instances",
-    "debug",
-    "on",
-    "off",
-    "once",
-    "ready",
-    "alias",
-    "group",
-    "enableCookie",
-    "disableCookie",
-    "holdConsent",
-    "revokeConsent",
-    "grantConsent"
-  ];
-
-  ttq.setAndDefer=function(t,e){
-    t[e]=function(){
-      t.push([e].concat(Array.prototype.slice.call(arguments,0)));
-    };
-  };
-
-  for(var i=0;i<ttq.methods.length;i++){
-    ttq.setAndDefer(ttq,ttq.methods[i]);
-  }
-
-  ttq.instance=function(t){
-    for(
-      var e=ttq._i[t]||[],
-      n=0;
-      n<ttq.methods.length;
-      n++
-    ){
-      ttq.setAndDefer(e,ttq.methods[n]);
-    }
-    return e;
-  };
-
-  ttq.load=function(e,n){
-    var r="https://analytics.tiktok.com/i18n/pixel/events.js";
-    var o=n&&n.partner;
-
-    ttq._i=ttq._i||{};
-    ttq._i[e]=[];
-    ttq._i[e]._u=r;
-    ttq._t=ttq._t||{};
-    ttq._t[e]=+new Date;
-    ttq._o=ttq._o||{};
-    ttq._o[e]=n||{};
-
-    n=document.createElement("script");
-    n.type="text/javascript";
-    n.async=true;
-    n.src=r+"?sdkid="+e+"&lib="+t;
-
-    e=document.getElementsByTagName("script")[0];
-    e.parentNode.insertBefore(n,e);
-  };
-
-  ttq.load('D8V6PMBC77U6CH9FIFQ0');
-  ttq.page();
-
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
-
 <style>
-:root{
-  --bg:#0B0617; --bg2:#120A24; --card:#1A1030; --card2:#221540;
-  --line:rgba(255,255,255,.09); --txt:#F3EFFA; --muted:#A99FC4;
-  --roxo:#7B3FFF; --roxo2:#9D4EFF; --amarelo:#FFD60A; --verde:#2ED573;
-  --vermelho:#FF4A4A;
-}
-*{box-sizing:border-box}
-body{
-  margin:0; min-height:100vh; background:var(--bg); color:var(--txt);
-  font-family:'Inter',system-ui,sans-serif; display:flex; align-items:center; justify-content:center; padding:20px;
-  background-image: radial-gradient(800px 400px at 50% 0%, rgba(123,63,255,.25), transparent 60%);
-  -webkit-font-smoothing:antialiased;
-}
-.login-box{
-  width:100%; max-width:400px; background:var(--card); border:1px solid var(--line); border-radius:20px;
-  padding:40px 30px; box-shadow:0 20px 50px rgba(0,0,0,.5);
-}
-.logo{
-  font-family:'Plus Jakarta Sans'; font-weight:800; font-size:24px; text-align:center; margin-bottom:8px; letter-spacing:-.5px;
-}
-.logo b{color:var(--roxo2)}
-.subtitle{
-  color:var(--muted); font-size:14px; text-align:center; margin-bottom:32px;
-}
-.form-group{
-  margin-bottom:20px;
-}
-.form-group label{
-  display:block; font-size:13px; color:var(--muted); margin-bottom:8px; font-weight:500;
-}
-.form-group input{
-  width:100%; background:var(--bg2); border:1px solid var(--line); border-radius:10px; padding:12px 16px;
-  color:#fff; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s;
-}
-.form-group input:focus{
-  border-color:var(--roxo2);
-}
-.btn-login{
-  width:100%; background:var(--roxo); color:#fff; font-family:'Plus Jakarta Sans'; font-weight:800;
-  font-size:15px; padding:14px; border:0; border-radius:10px; cursor:pointer; transition:background .2s; margin-top:10px;
-}
-.btn-login:hover{
-  background:var(--roxo2);
-}
-.err-msg{
-  background:rgba(255,74,74,.1); border:1px solid rgba(255,74,74,.3); color:var(--vermelho);
-  padding:12px; border-radius:8px; font-size:13px; margin-bottom:20px; display:none; text-align:center;
-}
+  :root{--bg:#0B0617;--card:#160C2C;--line:rgba(255,255,255,.1);--txt:#F3EFFA;--muted:#A99FC4;--roxo:#7B3FFF;--roxo2:#9D4EFF;--amarelo:#FFD60A;--verde:#2ED573;--erro:#FF5A6E}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:
+     radial-gradient(700px 400px at 50% -5%,rgba(123,63,255,.35),transparent 60%),var(--bg);
+     color:var(--txt);font-family:'Inter',sans-serif;display:grid;place-items:center;padding:22px}
+  .box{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 26px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+  .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:22px;text-align:center;margin-bottom:6px}
+  .logo b{color:var(--roxo2)}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:24px}
+  label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var(--muted)}
+  input{width:100%;background:#0E0820;border:1px solid var(--line);border-radius:11px;padding:14px;color:#fff;font-size:15px;font-family:inherit}
+  input:focus{outline:none;border-color:var(--roxo)}
+  .btn{width:100%;margin-top:20px;border:0;cursor:pointer;font-family:'Plus Jakarta Sans';font-weight:800;font-size:15px;padding:15px;border-radius:12px;background:linear-gradient(180deg,var(--roxo2),var(--roxo));color:#fff}
+  .btn:hover{filter:brightness(1.08)}
+  .btn:disabled{opacity:.6;cursor:default}
+  .link{background:none;border:0;color:var(--roxo2);font-size:13.5px;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0}
+  .foot{text-align:center;margin-top:18px;font-size:13px;color:var(--muted)}
+  .msg{margin-top:14px;font-size:13.5px;padding:11px 13px;border-radius:10px;display:none;line-height:1.4}
+  .msg.erro{display:block;background:rgba(255,90,110,.12);color:var(--erro);border:1px solid rgba(255,90,110,.3)}
+  .msg.ok{display:block;background:rgba(46,213,115,.12);color:var(--verde);border:1px solid rgba(46,213,115,.3)}
+  .hide{display:none}
 </style>
 </head>
 <body>
+  <div class="box">
+    <div class="logo">Pro do <b>ENEM</b></div>
 
-<div class="login-box">
-  <div class="logo">Pro do <b>ENEM</b></div>
-  <div class="subtitle">Faça login para acessar a área de aulas</div>
-
-  <div class="err-msg" id="errMsg">Email ou senha incorretos</div>
-
-  <form id="loginForm">
-    <div class="form-group">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" required placeholder="seu@email.com">
+    <!-- LOGIN -->
+    <div id="viewLogin">
+      <div class="sub">Entre para acessar suas aulas</div>
+      <label>Seu email</label>
+      <input id="email" type="email" placeholder="email da sua compra" autocomplete="email">
+      <label>Senha</label>
+      <input id="senha" type="password" placeholder="sua senha" autocomplete="current-password">
+      <button class="btn" id="btnEntrar" onclick="entrar()">Entrar</button>
+      <div class="msg" id="msgLogin"></div>
+      <div class="foot">
+        Primeiro acesso ou esqueceu a senha?<br>
+        <button class="link" onclick="mostrar('primeiro')">Criar / redefinir minha senha</button>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" required placeholder="••••••••">
+
+    <!-- PRIMEIRO ACESSO / RESET -->
+    <div id="viewPrimeiro" class="hide">
+      <div class="sub">Use o email que você usou na compra. Vamos enviar um link pra você criar sua senha.</div>
+      <label>Seu email</label>
+      <input id="emailReset" type="email" placeholder="email da sua compra" autocomplete="email">
+      <button class="btn" id="btnReset" onclick="enviarReset()">Enviar link de acesso</button>
+      <div class="msg" id="msgReset"></div>
+      <div class="foot">
+        <button class="link" onclick="mostrar('login')">← Voltar pro login</button>
+      </div>
     </div>
-    <button type="submit" class="btn-login" id="btnSubmit">Entrar</button>
-  </form>
-</div>
+  </div>
 
 <script>
-// Inicialização do Supabase Client (substitua PROJECT_URL e ANON_KEY pelos valores reais)
-const supabase = window.supabase.createClient('PROJECT_URL', 'ANON_KEY');
+  const SUPABASE_URL = "https://gcdbssvnolnsxepncbbw.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjZGJzc3Zub2xuc3hlcG5jYmJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0ODcwNTUsImV4cCI6MjA5ODA2MzA1NX0.Kxlf3f8KtVyUBo0GBw9BuRSuNnKrVjLZ3w6i24P9Adc";
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-const form = document.getElementById('loginForm');
-const errMsg = document.getElementById('errMsg');
-const btnSubmit = document.getElementById('btnSubmit');
+  // se já estiver logado, vai direto pra plataforma
+  sb.auth.getSession().then(({data})=>{ if(data.session) location.replace('./'); });
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  errMsg.style.display = 'none';
-  btnSubmit.disabled = true;
-  btnSubmit.textContent = 'Carregando...';
+  function mostrar(v){
+    document.getElementById('viewLogin').classList.toggle('hide', v!=='login');
+    document.getElementById('viewPrimeiro').classList.toggle('hide', v!=='primeiro');
+  }
+  function showMsg(id,txt,tipo){ const m=document.getElementById(id); m.textContent=txt; m.className='msg '+tipo; }
 
-  const email = document.getElementById('email').value;
-  const senha = document.getElementById('senha').value;
+  async function entrar(){
+    const email=document.getElementById('email').value.trim();
+    const senha=document.getElementById('senha').value;
+    if(!email||!senha){ return showMsg('msgLogin','Preencha email e senha.','erro'); }
+    const b=document.getElementById('btnEntrar'); b.disabled=true; b.textContent='Entrando...';
+    const {error}=await sb.auth.signInWithPassword({email,password:senha});
+    b.disabled=false; b.textContent='Entrar';
+    if(error){ return showMsg('msgLogin','Email ou senha incorretos. Se é seu primeiro acesso, clique em "Criar minha senha".','erro'); }
+    location.replace('./'); // entra na plataforma
+  }
 
-  try {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: senha
+  async function enviarReset(){
+    const email=document.getElementById('emailReset').value.trim();
+    if(!email){ return showMsg('msgReset','Digite seu email.','erro'); }
+    const b=document.getElementById('btnReset'); b.disabled=true; b.textContent='Enviando...';
+    const {error}=await sb.auth.resetPasswordForEmail(email,{
+      redirectTo: location.origin + '/plataforma/definir-senha.html'
     });
-
-    if (error) {
-      throw error;
-    }
-
-    // Login com sucesso, redireciona para a plataforma
-    window.location.href = '/plataforma/';
-  } catch (err) {
-    console.error(err);
-    errMsg.style.display = 'block';
-    btnSubmit.disabled = false;
-    btnSubmit.textContent = 'Entrar';
+    b.disabled=false; b.textContent='Enviar link de acesso';
+    if(error){ return showMsg('msgReset','Não consegui enviar agora. Tente de novo em alguns minutos.','erro'); }
+    showMsg('msgReset','Pronto! Olhe seu email (e a caixa de spam) e clique no link pra criar sua senha.','ok');
   }
-});
-
-// Verifica se já está logado para redirecionar direto
-async function checkLoggedIn() {
-  const { data: { session } } = await supabase.auth.getSession();
-  if (session) {
-    window.location.href = '/plataforma/';
-  }
-}
-checkLoggedIn();
 </script>
-
 </body>
 </html>

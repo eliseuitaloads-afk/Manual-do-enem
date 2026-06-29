@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar senha — Plataforma Pro do ENEM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root{--bg:#0B0617;--card:#160C2C;--line:rgba(255,255,255,.1);--txt:#F3EFFA;--muted:#A99FC4;--roxo:#7B3FFF;--roxo2:#9D4EFF;--verde:#2ED573;--erro:#FF5A6E}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:radial-gradient(700px 400px at 50% -5%,rgba(123,63,255,.35),transparent 60%),var(--bg);color:var(--txt);font-family:'Inter',sans-serif;display:grid;place-items:center;padding:22px}
+  .box{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 26px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+  .logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:22px;text-align:center;margin-bottom:6px}
+  .logo b{color:var(--roxo2)}
+  .sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:24px}
+  label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px;color:var(--muted)}
+  input{width:100%;background:#0E0820;border:1px solid var(--line);border-radius:11px;padding:14px;color:#fff;font-size:15px;font-family:inherit}
+  input:focus{outline:none;border-color:var(--roxo)}
+  .btn{width:100%;margin-top:20px;border:0;cursor:pointer;font-family:'Plus Jakarta Sans';font-weight:800;font-size:15px;padding:15px;border-radius:12px;background:linear-gradient(180deg,var(--roxo2),var(--roxo));color:#fff}
+  .btn:disabled{opacity:.6}
+  .msg{margin-top:14px;font-size:13.5px;padding:11px 13px;border-radius:10px;display:none;line-height:1.4}
+  .msg.erro{display:block;background:rgba(255,90,110,.12);color:var(--erro);border:1px solid rgba(255,90,110,.3)}
+  .msg.ok{display:block;background:rgba(46,213,115,.12);color:var(--verde);border:1px solid rgba(46,213,115,.3)}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="logo">Pro do <b>ENEM</b></div>
+    <div class="sub">Crie sua senha de acesso</div>
+    <label>Nova senha</label>
+    <input id="s1" type="password" placeholder="mínimo 6 caracteres" autocomplete="new-password">
+    <label>Repita a senha</label>
+    <input id="s2" type="password" placeholder="repita a senha" autocomplete="new-password">
+    <button class="btn" id="btn" onclick="salvar()">Salvar e entrar</button>
+    <div class="msg" id="msg"></div>
+  </div>
+<script>
+  const SUPABASE_URL = "https://gcdbssvnolnsxepncbbw.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjZGJzc3Zub2xuc3hlcG5jYmJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0ODcwNTUsImV4cCI6MjA5ODA2MzA1NX0.Kxlf3f8KtVyUBo0GBw9BuRSuNnKrVjLZ3w6i24P9Adc";
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  function showMsg(t,tipo){ const m=document.getElementById('msg'); m.textContent=t; m.className='msg '+tipo; }
+
+  // o link do email cria uma sessão de recuperação automaticamente
+  async function salvar(){
+    const a=document.getElementById('s1').value, b=document.getElementById('s2').value;
+    if(a.length<6){ return showMsg('A senha precisa ter pelo menos 6 caracteres.','erro'); }
+    if(a!==b){ return showMsg('As senhas não são iguais.','erro'); }
+    const btn=document.getElementById('btn'); btn.disabled=true; btn.textContent='Salvando...';
+    const {error}=await sb.auth.updateUser({password:a});
+    btn.disabled=false; btn.textContent='Salvar e entrar';
+    if(error){ return showMsg('Esse link expirou. Volte e peça um novo link de acesso.','erro'); }
+    showMsg('Senha criada! Entrando...','ok');
+    setTimeout(()=>location.replace('./'),900);
+  }
+</script>
+</body>
+</html>
