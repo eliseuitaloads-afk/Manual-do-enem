@@ -12,7 +12,7 @@
   document.documentElement.style.display = 'none';
   (function(){
     const SUPABASE_URL = "https://gcdbssvnolnsxepncbbw.supabase.co";
-    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjZGJzc3Zub2xuc3hlcG5jYmJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0ODcwNTUsImV4cCI6MjA5ODA2MzA1NX0.Kxlf3f8KtVyUBo0GBw9BuRSuNnKrVjLZ3w6i24P9Adc";
+    const SUPABASE_KEY = "sb_publishable_hnXyeiDV6UmOPKKm2GKYoA_A_wUsSj4";
     window._sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     async function checar(){
       const {data} = await window._sb.auth.getSession();
