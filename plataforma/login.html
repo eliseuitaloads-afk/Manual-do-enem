@@ -82,10 +82,21 @@
     const senha=document.getElementById('senha').value;
     if(!email||!senha){ return showMsg('msgLogin','Preencha email e senha.','erro'); }
     const b=document.getElementById('btnEntrar'); b.disabled=true; b.textContent='Entrando...';
-    const {error}=await sb.auth.signInWithPassword({email,password:senha});
-    b.disabled=false; b.textContent='Entrar';
-    if(error){ return showMsg('msgLogin','Email ou senha incorretos. Se é seu primeiro acesso, clique em "Criar minha senha".','erro'); }
-    location.replace('./'); // entra na plataforma
+    const {data,error}=await sb.auth.signInWithPassword({email,password:senha});
+    if(error){
+      b.disabled=false; b.textContent='Entrar';
+      return showMsg('msgLogin','Email ou senha incorretos. Se é seu primeiro acesso, clique em "Criar minha senha".','erro');
+    }
+    // garante que a sessão foi gravada antes de ir pra plataforma
+    showMsg('msgLogin','Entrando...','ok');
+    let tentativas=0;
+    const irPlataforma=async()=>{
+      const {data:s}=await sb.auth.getSession();
+      if(s.session){ window.location.href='./'; return; }
+      if(tentativas++ < 20){ setTimeout(irPlataforma,150); }
+      else { window.location.href='./'; }
+    };
+    irPlataforma();
   }
 
   async function enviarReset(){

@@ -14,10 +14,15 @@
     const SUPABASE_URL = "https://gcdbssvnolnsxepncbbw.supabase.co";
     const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdjZGJzc3Zub2xuc3hlcG5jYmJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0ODcwNTUsImV4cCI6MjA5ODA2MzA1NX0.Kxlf3f8KtVyUBo0GBw9BuRSuNnKrVjLZ3w6i24P9Adc";
     window._sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-    window._sb.auth.getSession().then(({data})=>{
-      if(!data.session){ location.replace('./login.html'); }
-      else { document.documentElement.style.display = ''; }
-    });
+    async function checar(){
+      const {data} = await window._sb.auth.getSession();
+      if(data.session){
+        document.documentElement.style.display = '';   // libera a página
+      } else {
+        location.replace('./login.html');
+      }
+    }
+    checar();
   })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,7 +111,8 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
 /* topo */
 .topo{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:16px;padding:15px 28px;
   background:linear-gradient(180deg,rgba(11,6,23,.96),rgba(11,6,23,.7) 70%,transparent);backdrop-filter:blur(6px)}
-.logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;letter-spacing:-.3px;white-space:nowrap}
+.logo{display:flex;align-items:center}
+.logo img{height:46px;width:auto;display:block}
 .logo b{color:var(--roxo2)}
 .nav{display:flex;gap:6px;margin-left:10px;flex-wrap:wrap}
 .nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;padding:7px 12px;border-radius:9px}
@@ -225,7 +231,7 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
 
 <header class="topo">
   <button class="menu-btn" onclick="document.getElementById('mnav').classList.toggle('show')">☰</button>
-  <div class="logo"><img src="./logo.png" alt="Manual do ENEM" style="height: 36px; display: block;"></div>
+  <div class="logo"><img src="logo.png" alt="Manual do ENEM"></div>
   <nav class="nav" id="mnav"></nav>
   <div class="prog-top">Seu progresso: <b id="topPct">0%</b></div>
   <button onclick="window._sb.auth.signOut().then(()=>location.replace('./login.html'))" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-weight:700;padding:8px 14px;border-radius:9px;cursor:pointer;margin-left:12px;font-family:inherit">Sair</button>
