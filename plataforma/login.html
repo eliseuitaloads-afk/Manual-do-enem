@@ -69,7 +69,7 @@
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
   // se já estiver logado, vai direto pra plataforma
-  sb.auth.getSession().then(({data})=>{ if(data.session) location.replace('./'); });
+  sb.auth.getSession().then(({data})=>{ if(data.session) location.replace('/plataforma/'); });
 
   function mostrar(v){
     document.getElementById('viewLogin').classList.toggle('hide', v!=='login');
@@ -92,9 +92,9 @@
     let tentativas=0;
     const irPlataforma=async()=>{
       const {data:s}=await sb.auth.getSession();
-      if(s.session){ window.location.href='./'; return; }
+      if(s.session){ window.location.href='/plataforma/'; return; }
       if(tentativas++ < 20){ setTimeout(irPlataforma,150); }
-      else { window.location.href='./'; }
+      else { window.location.href='/plataforma/'; }
     };
     irPlataforma();
   }

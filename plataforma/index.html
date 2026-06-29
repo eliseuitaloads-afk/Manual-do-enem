@@ -19,7 +19,7 @@
       if(data.session){
         document.documentElement.style.display = '';   // libera a página
       } else {
-        location.replace('./login.html');
+        location.replace('/plataforma/login.html');
       }
     }
     checar();
@@ -293,7 +293,7 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
   <div class="logo"><img src="logo.png" alt="Manual do ENEM"></div>
   <nav class="nav" id="mnav"></nav>
   <div class="prog-top">Seu progresso: <b id="topPct">0%</b></div>
-  <button onclick="window._sb.auth.signOut().then(()=>location.replace('./login.html'))" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-weight:700;padding:8px 14px;border-radius:9px;cursor:pointer;margin-left:12px;font-family:inherit">Sair</button>
+  <button onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-weight:700;padding:8px 14px;border-radius:9px;cursor:pointer;margin-left:12px;font-family:inherit">Sair</button>
 </header>
 
 <section class="hero">
