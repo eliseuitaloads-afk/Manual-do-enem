@@ -211,6 +211,9 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
 .barra-info .c{color:var(--muted);font-size:13px}
 .barra-info .mk{background:var(--verde);color:#06210f;border:0;font-weight:800;padding:11px 18px;border-radius:10px;cursor:pointer;font-family:'Plus Jakarta Sans';white-space:nowrap}
 .barra-info .mk.on{background:transparent;color:var(--verde);border:1px solid var(--verde)}
+.credito{margin:0 26px;margin-top:14px;background:rgba(123,63,255,.1);border:1px solid rgba(157,78,255,.28);
+  border-radius:11px;padding:12px 16px;font-size:13px;line-height:1.5;color:var(--muted)}
+.credito b{color:#fff}
 
 /* upsell compacto */
 .upbox{margin:24px 26px;background:linear-gradient(135deg,rgba(123,63,255,.18),rgba(255,214,10,.1));
@@ -282,6 +285,11 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
       <button class="mk" id="mkBtn" onclick="toggleFeito()">Marcar como assistida</button>
     </div>
 
+    <div class="credito" id="credito" style="display:none">
+      🎓 Aula selecionada pela nossa equipe do canal <b id="credCanal">—</b>.
+      Recomendamos a inscrição no canal original para conteúdos complementares.
+    </div>
+
     <!-- upsell -->
     <div class="upbox">
       <div class="x">
@@ -341,6 +349,8 @@ function abrir(m,a){
   document.getElementById('barraInfo').style.display='flex';
   document.getElementById('aTitulo').textContent=au.titulo;
   document.getElementById('aCanal').textContent=au.dur+' · '+au.canal;
+  document.getElementById('credCanal').textContent=au.canal;
+  document.getElementById('credito').style.display='block';
   setBtn(estado[chave(m,a)]);
   document.querySelectorAll('.aula.sel').forEach(e=>e.classList.remove('sel'));
   const el=document.getElementById('aula-'+m+'-'+a); if(el) el.classList.add('sel');
