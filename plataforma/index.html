@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- ===== AULAS ===== -->
+<!-- ===== INICIO BLOCO CURSO (NAO ALTERAR OS IDS DE VIDEO/PLAYLIST) ===== -->
 <script>
 const CURSO = {
   materias: [
@@ -147,263 +147,185 @@ const CURSO = {
   ]
 };
 </script>
+<!-- ===== FIM BLOCO CURSO ===== -->
 
 <style>
 :root{
   --bg:#0B0617; --bg2:#120A24; --card:#1A1030; --card2:#221540;
   --line:rgba(255,255,255,.09); --txt:#F3EFFA; --muted:#A99FC4;
   --roxo:#7B3FFF; --roxo2:#9D4EFF; --amarelo:#FFD60A; --verde:#2ED573;
-  --sidew:248px;
+  --sidew:330px;
 }
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%}
+html,body{margin:0;height:100%}
 body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
 
-/* ===== SIDEBAR FIXA ===== */
-.sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidew);background:var(--bg2);border-right:1px solid var(--line);
-  display:flex;flex-direction:column;z-index:50;padding:18px 0}
-.sb-logo{padding:0 20px 18px;border-bottom:1px solid var(--line);margin-bottom:12px}
-.sb-logo img{height:42px;width:auto;display:block}
-.sb-sec{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);padding:6px 22px;margin-top:8px}
-.sb-nav{flex:1;overflow-y:auto;padding:0 12px}
-.sb-nav a{display:flex;align-items:center;gap:11px;color:var(--txt);text-decoration:none;font-size:14.5px;font-weight:600;
-  padding:11px 13px;border-radius:11px;margin-bottom:3px;transition:background .15s}
-.sb-nav a .ic{width:9px;height:22px;border-radius:5px;flex:0 0 auto}
-.sb-nav a:hover{background:var(--card)}
-.sb-nav a.ativo{background:var(--card2)}
-.sb-foot{padding:14px 20px 4px;border-top:1px solid var(--line);margin-top:8px}
-.sb-prog{font-size:12px;color:var(--muted);margin-bottom:7px}
-.sb-prog b{color:#fff}
-.sb-bar{height:7px;background:#0e0820;border-radius:99px;overflow:hidden}
-.sb-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--roxo),var(--amarelo));transition:width .5s}
-.sb-sair{display:block;width:100%;margin-top:12px;background:rgba(255,255,255,.08);border:1px solid var(--line);
-  color:#fff;font-weight:700;padding:9px;border-radius:99px;cursor:pointer;font-family:inherit;font-size:13px}
-.sb-sair:hover{background:rgba(255,255,255,.14)}
+.layout{display:flex;min-height:100vh}
 
-/* ===== CONTEÚDO ===== */
-.main{margin-left:var(--sidew)}
-.topbar{display:none}
+/* ===== SIDEBAR (lista de aulas) ===== */
+.side{width:var(--sidew);flex:0 0 var(--sidew);background:var(--bg2);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
+.side-top{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.side-top img{height:38px;width:auto}
+.side-sair{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;font-weight:700;
+  padding:7px 12px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;white-space:nowrap}
+.side-sair:hover{background:rgba(255,255,255,.14)}
+.side-prog{padding:12px 18px;border-bottom:1px solid var(--line)}
+.side-prog .l{font-size:12px;color:var(--muted);margin-bottom:6px}
+.side-prog .l b{color:#fff}
+.side-prog .bar{height:7px;background:#0e0820;border-radius:99px;overflow:hidden}
+.side-prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--roxo),var(--amarelo));transition:width .5s}
+.side-list{flex:1;overflow-y:auto;padding:8px}
 
-.hero{position:relative;padding:40px 34px 26px;background:
-  radial-gradient(700px 360px at 78% 0%, rgba(123,63,255,.34), transparent 60%),
-  linear-gradient(180deg,var(--bg2),var(--bg));overflow:hidden}
-.hero .tag{display:inline-block;background:rgba(255,214,10,.16);color:var(--amarelo);font-weight:700;
-  font-size:12px;letter-spacing:.5px;text-transform:uppercase;padding:6px 13px;border-radius:99px;margin-bottom:13px}
-.hero h1{font-size:31px;font-weight:800;letter-spacing:-.6px;max-width:540px;line-height:1.12;margin-bottom:11px}
-.hero p{color:var(--muted);font-size:15.5px;max-width:470px;margin:0 0 20px}
-.hero .acoes{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;text-decoration:none;
-  font-family:'Plus Jakarta Sans';font-weight:800;font-size:15px;padding:14px 24px;border-radius:12px}
-.btn.play{background:#fff;color:#160a2e}.btn.play:hover{background:#eee}
-.btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid var(--line)}
-.btn.ghost:hover{background:rgba(255,255,255,.2)}
+.mat{margin-bottom:4px}
+.mat-h{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:14px;user-select:none}
+.mat-h:hover{background:var(--card)}
+.mat-h .dot{width:8px;height:20px;border-radius:5px;flex:0 0 auto}
+.mat-h .chev{margin-left:auto;transition:transform .2s;color:var(--muted);font-size:12px}
+.mat.open .mat-h .chev{transform:rotate(90deg)}
+.mat-aulas{display:none;padding:2px 0 6px}
+.mat.open .mat-aulas{display:block}
+.aula{display:flex;gap:10px;align-items:flex-start;padding:9px 12px 9px 30px;border-radius:99px;cursor:pointer;font-size:13px;color:var(--muted);line-height:1.3;transition:background 0.2s, color 0.2s}
+.aula:hover{background:var(--card);color:#fff}
+.aula.sel{background:var(--card2);color:#fff}
+.aula .ck{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--line);flex:0 0 auto;margin-top:1px;display:grid;place-items:center;font-size:10px}
+.aula.done .ck{background:var(--verde);border-color:var(--verde);color:#06210f}
+.aula .nm{flex:1}
+.aula .nm small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
 
-.fileira{margin:30px 0 6px}
-.fileira h2{font-size:19px;font-weight:800;padding:0 34px;margin-bottom:14px;display:flex;align-items:center;gap:10px;scroll-margin-top:14px}
-.fileira h2 .dot{width:10px;height:24px;border-radius:6px;display:inline-block}
-.row-wrap{position:relative}
-.row{display:flex;gap:15px;overflow-x:auto;padding:4px 34px 14px;scroll-behavior:smooth;scrollbar-width:none}
-.row::-webkit-scrollbar{display:none}
+/* ===== PALCO (player grande) ===== */
+.palco{flex:1;display:flex;flex-direction:column;min-width:0}
+.player-wrap{background:#000;aspect-ratio:16/9;width:100%;position:relative}
+.player-wrap iframe{width:100%;height:100%;border:0;display:block}
+/* tela de boas-vindas */
+.welcome{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background:radial-gradient(700px 400px at 50% 0%, rgba(123,63,255,.3), transparent 65%),var(--bg2);padding:30px}
+.welcome img{height:70px;margin-bottom:22px}
+.welcome h2{font-size:26px;font-weight:800;max-width:520px;line-height:1.15;margin-bottom:10px}
+.welcome p{color:var(--muted);font-size:15px;max-width:430px;margin:0}
+.welcome .seta{margin-top:22px;color:var(--amarelo);font-size:14px;font-weight:700}
+.barra-info{padding:18px 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.barra-info .ti{flex:1;min-width:200px}
+.barra-info h1{font-size:19px;font-weight:800;margin-bottom:3px}
+.barra-info .c{color:var(--muted);font-size:13px}
+.barra-info .mk{background:var(--verde);color:#06210f;border:0;font-weight:800;padding:11px 18px;border-radius:10px;cursor:pointer;font-family:'Plus Jakarta Sans';white-space:nowrap}
+.barra-info .mk.on{background:transparent;color:var(--verde);border:1px solid var(--verde)}
 
-/* ===== CARD COM CAPA GRADIENTE ===== */
-.cardA{flex:0 0 248px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
-  cursor:pointer;transition:transform .2s, box-shadow .2s, border-color .2s}
-.cardA:hover{transform:scale(1.04);border-color:var(--roxo);box-shadow:0 16px 40px rgba(123,63,255,.3);z-index:5}
-.capa{aspect-ratio:16/9;position:relative;display:flex;flex-direction:column;justify-content:space-between;
-  padding:13px;overflow:hidden}
-.capa::after{content:"";position:absolute;inset:0;background:
-  radial-gradient(120px 80px at 85% 20%, rgba(255,255,255,.18), transparent 70%);pointer-events:none}
-.capa .top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
-.capa .badge{background:rgba(0,0,0,.32);backdrop-filter:blur(3px);color:#fff;font-size:10.5px;font-weight:700;
-  padding:4px 10px;border-radius:99px}
-.capa .feito{width:24px;height:24px;border-radius:50%;background:var(--verde);color:#06210f;
-  display:none;place-items:center;font-weight:800;font-size:13px}
-.cardA.done .capa .feito{display:grid}
-.capa .ico{font-size:30px;position:relative;z-index:2;line-height:1;filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
-.capa .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;
-  background:rgba(255,255,255,.92);display:grid;place-items:center;z-index:3;transition:transform .2s;opacity:0}
-.cardA:hover .capa .play{opacity:1;transform:translate(-50%,-50%) scale(1.08)}
-.capa .play::after{content:"";border-left:15px solid #160a2e;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:3px}
-.cardA .meta{padding:12px 13px}
-.cardA .meta .t{font-weight:700;font-size:14px;line-height:1.25;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.cardA .meta .c{font-size:12px;color:var(--muted)}
+/* upsell compacto */
+.upbox{margin:24px 26px;background:linear-gradient(135deg,rgba(123,63,255,.18),rgba(255,214,10,.1));
+  border:1px solid rgba(123,63,255,.4);border-radius:16px;padding:22px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.upbox .x{flex:1;min-width:240px}
+.upbox .badge{display:inline-block;background:rgba(255,214,10,.16);color:var(--amarelo);font-weight:700;font-size:11px;letter-spacing:.4px;text-transform:uppercase;padding:5px 11px;border-radius:99px;margin-bottom:9px}
+.upbox h3{font-size:18px;font-weight:800;margin-bottom:5px}
+.upbox p{color:var(--muted);font-size:13px;margin:0}
+.upbox .cta{text-align:center}
+.upbox .preco{font-family:'Plus Jakarta Sans';font-weight:800;font-size:30px;color:#fff;line-height:1}
+.upbox .de{color:var(--muted);text-decoration:line-through;font-size:13px}
+.upbox a{display:inline-block;margin-top:8px;background:linear-gradient(180deg,#2ED573,#16A34A);color:#06210f;font-weight:800;padding:12px 22px;border-radius:11px;text-decoration:none;font-family:'Plus Jakarta Sans';font-size:14px}
 
-.seta{position:absolute;top:0;bottom:18px;width:44px;border:0;cursor:pointer;color:#fff;font-size:22px;z-index:6;
-  background:rgba(11,6,23,.72);display:grid;place-items:center;opacity:0;transition:opacity .2s}
-.row-wrap:hover .seta{opacity:1}
-.seta.l{left:0}.seta.r{right:0}
-.seta:hover{background:rgba(123,63,255,.8)}
-
-/* upsell */
-.vitrine{margin:36px 34px 60px;background:linear-gradient(135deg,rgba(123,63,255,.18),rgba(255,214,10,.1));
-  border:1px solid rgba(123,63,255,.4);border-radius:20px;padding:28px}
-.upg{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
-.upg-txt{flex:1;min-width:280px}
-.upg-badge{display:inline-block;background:rgba(255,214,10,.16);color:var(--amarelo);font-weight:700;font-size:12px;letter-spacing:.4px;text-transform:uppercase;padding:6px 13px;border-radius:99px;margin-bottom:12px}
-.upg-txt h2{font-size:23px;font-weight:800;line-height:1.15;margin-bottom:8px}
-.upg-txt p{color:var(--muted);font-size:14px;margin:0 0 14px}
-.upg-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}
-.upg-list li{font-size:14.5px;color:var(--txt)}.upg-list b{font-weight:700}
-.upg-cta{flex:0 0 230px;background:var(--card);border:1px solid rgba(123,63,255,.5);border-radius:16px;padding:24px;text-align:center}
-.upg-de{color:var(--muted);text-decoration:line-through;font-size:15px}
-.upg-por{font-family:'Plus Jakarta Sans';font-weight:800;font-size:42px;color:#fff;letter-spacing:-1px;line-height:1}
-.upg-obs{color:var(--muted);font-size:12px;margin:6px 0 16px}
-.upg-btn{display:block;background:linear-gradient(180deg,#2ED573,#16A34A);color:#06210f;font-family:'Plus Jakarta Sans';font-weight:800;font-size:15px;padding:15px;border-radius:12px;text-decoration:none;box-shadow:0 10px 24px rgba(46,213,115,.3)}
-.upg-btn:hover{filter:brightness(1.07)}
-
-/* player modal */
-.modal{position:fixed;inset:0;z-index:80;background:rgba(5,2,12,.85);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px}
-.modal.on{display:flex}
-.box{width:100%;max-width:980px;background:#0d0820;border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative}
-.box .player{aspect-ratio:16/9;background:#000}
-.box .player iframe{width:100%;height:100%;border:0;display:block}
-.box .info{padding:16px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.box .info h3{font-size:17px;font-weight:700;flex:1;min-width:200px}
-.box .info .c{color:var(--muted);font-size:13px;width:100%}
-.box .x{position:absolute;top:14px;right:18px;font-size:26px;color:#fff;background:rgba(0,0,0,.4);border:0;cursor:pointer;z-index:2;width:38px;height:38px;border-radius:50%}
-.box .mk{background:var(--verde);color:#06210f;border:0;font-weight:800;padding:11px 18px;border-radius:10px;cursor:pointer;font-family:'Plus Jakarta Sans'}
-.box .mk.on{background:transparent;color:var(--verde);border:1px solid var(--verde)}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40}
-.overlay.on{display:block}
-
-/* topo mobile */
+/* mobile */
 .mtop{display:none}
-@media(max-width:880px){
-  .sidebar{transform:translateX(-100%);transition:transform .25s;width:260px}
-  .sidebar.open{transform:translateX(0)}
-  .main{margin-left:0}
-  .mtop{display:flex;align-items:center;gap:12px;padding:13px 18px;position:sticky;top:0;z-index:45;
-    background:rgba(11,6,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-  .mtop img{height:34px}
+@media(max-width:900px){
+  .layout{flex-direction:column}
+  .side{position:fixed;left:0;top:0;bottom:0;z-index:60;transform:translateX(-100%);transition:transform .25s;width:300px;flex-basis:300px}
+  .side.open{transform:translateX(0)}
+  .palco{width:100%}
+  .mtop{display:flex;align-items:center;gap:12px;padding:12px 16px;position:sticky;top:0;z-index:50;background:rgba(11,6,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
   .mtop .burger{background:none;border:0;color:#fff;font-size:24px;cursor:pointer}
-  .hero h1{font-size:25px}
-  .seta{display:none}
-  .scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:48}
+  .mtop img{height:32px}
+  .scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:55}
   .scrim.on{display:block}
 }
 </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
-<aside class="sidebar" id="sidebar">
-  <div class="sb-logo"><img src="logo.png" alt="Manual do ENEM"></div>
-  <div class="sb-sec">Matérias</div>
-  <nav class="sb-nav" id="sbNav"></nav>
-  <div class="sb-foot">
-    <div class="sb-prog">Seu progresso: <b id="sbPct">0%</b></div>
-    <div class="sb-bar"><i id="sbBar"></i></div>
-    <button class="sb-sair" onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))">Sair</button>
-  </div>
-</aside>
-<div class="scrim" id="scrim" onclick="toggleMenu()"></div>
-
-<!-- TOPO MOBILE -->
+<!-- topo mobile -->
 <div class="mtop">
   <button class="burger" onclick="toggleMenu()">☰</button>
   <img src="logo.png" alt="Manual do ENEM">
 </div>
+<div class="scrim" id="scrim" onclick="toggleMenu()"></div>
 
-<div class="main">
-  <section class="hero">
-    <div class="tag">🔥 Comece por aqui</div>
-    <h1>Sua trilha completa do ENEM, organizada pra você não se perder.</h1>
-    <p>Escolha a matéria, dê play e siga a sequência. Marque o que já assistiu e acompanhe sua evolução.</p>
-    <div class="acoes">
-      <button class="btn play" onclick="continuar()">▶ Continuar estudando</button>
-      <a class="btn ghost" href="#linguagens">Ver todas as matérias</a>
+<div class="layout">
+
+  <!-- LISTA DE AULAS (ESQUERDA) -->
+  <aside class="side" id="side">
+    <div class="side-top">
+      <img src="logo.png" alt="Manual do ENEM">
+      <button class="side-sair" onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))">Sair</button>
     </div>
-  </section>
+    <div class="side-prog">
+      <div class="l">Seu progresso: <b id="pPct">0%</b> · <span id="pFeitas">0</span>/<span id="pTotal">0</span></div>
+      <div class="bar"><i id="pBar"></i></div>
+    </div>
+    <div class="side-list" id="lista"></div>
+  </aside>
 
-  <main id="fileiras"></main>
-
-  <section class="vitrine">
-    <div class="upg">
-      <div class="upg-txt">
-        <span class="upg-badge">⭐ Upgrade exclusivo de aluno</span>
-        <h2>Destrave o Plano Completo e gabarite a redação</h2>
-        <p>Você já tem as 100 aulas. Agora libere os materiais que faltam pra fechar sua preparação:</p>
-        <ul class="upg-list">
-          <li>✍️ <b>Redação Nota 900</b> — a estrutura exata da nota máxima</li>
-          <li>🔓 <b>Destrava Redação</b> — saia do zero mesmo travado</li>
-          <li>🧠 <b>Mapas Mentais ENEM</b> — fixe o que mais cai</li>
-          <li>📘 <b>Manual Pro Completo</b> — seu plano até a aprovação</li>
-          <li>📈 <b>Acompanhamento da sua evolução</b></li>
-        </ul>
-      </div>
-      <div class="upg-cta">
-        <div class="upg-de">de R$ 74</div>
-        <div class="upg-por">R$ 37</div>
-        <div class="upg-obs">pagamento único · acesso imediato</div>
-        <a href="https://pay.wiapy.com/0dgjmi6c0iO" target="_blank" rel="noopener" class="upg-btn">QUERO O COMPLETO →</a>
+  <!-- PALCO (PLAYER GRANDE) -->
+  <div class="palco">
+    <div class="player-wrap" id="playerWrap">
+      <div class="welcome" id="welcome">
+        <img src="logo.png" alt="Manual do ENEM">
+        <h2>Bem-vindo(a) à sua área de estudos!</h2>
+        <p>Escolha uma matéria na lista ao lado, clique numa aula e ela começa a tocar aqui.</p>
+        <div class="seta">← Comece escolhendo uma aula</div>
       </div>
     </div>
-  </section>
-</div>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="box">
-    <button class="x" onclick="fecharPlayer()">×</button>
-    <div class="player" id="player"></div>
-    <div class="info">
-      <div style="flex:1;min-width:200px">
-        <h3 id="mTitulo">—</h3><div class="c" id="mCanal">—</div>
+    <div class="barra-info" id="barraInfo" style="display:none">
+      <div class="ti">
+        <h1 id="aTitulo">—</h1>
+        <div class="c" id="aCanal">—</div>
       </div>
-      <button class="mk" id="mBtn" onclick="toggleFeito()">Marcar como assistida</button>
+      <button class="mk" id="mkBtn" onclick="toggleFeito()">Marcar como assistida</button>
+    </div>
+
+    <!-- upsell -->
+    <div class="upbox">
+      <div class="x">
+        <span class="badge">⭐ Upgrade de aluno</span>
+        <h3>Destrave o Plano Completo e gabarite a redação</h3>
+        <p>Redação Nota 900, Destrava Redação, Mapas Mentais, Manual Pro e acompanhamento da sua evolução.</p>
+      </div>
+      <div class="cta">
+        <div class="de">de R$ 74</div>
+        <div class="preco">R$ 37</div>
+        <a href="https://pay.wiapy.com/0dgjmi6c0iO" target="_blank" rel="noopener">QUERO O COMPLETO →</a>
+      </div>
     </div>
   </div>
 </div>
-<div class="overlay" id="ov" onclick="fecharPlayer()"></div>
 
 <script>
-const CHECKOUT_COMPLETO = "https://pay.wiapy.com/0dgjmi6c0iO";
-// ícone por matéria (id -> emoji) e gradiente derivado da cor
-const ICONES = {linguagens:"✍️", matematica:"📐", natureza:"🧪", humanas:"🌍", redacao:"📝", revisao:"🔥"};
-function grad(cor){ return `linear-gradient(135deg, ${cor} 0%, #160c2c 130%)`; }
-
+const ICON={linguagens:"✍️",matematica:"📐",natureza:"🧪",humanas:"🌍",redacao:"📝",revisao:"🔥"};
 let estado={};
 try{ estado=JSON.parse(localStorage.getItem('enem_plat')||'{}'); }catch(e){ estado={}; }
 let atual=null;
 function chave(m,a){ return CURSO.materias[m].id+'_'+a; }
-function salvar(){ try{ localStorage.setItem('enem_plat', JSON.stringify(estado)); }catch(e){} }
+function salvar(){ try{ localStorage.setItem('enem_plat',JSON.stringify(estado)); }catch(e){} }
 function totalAulas(){ return CURSO.materias.reduce((s,m)=>s+m.aulas.length,0); }
 function totalFeitas(){ return Object.values(estado).filter(Boolean).length; }
 
-function sidebar(){
-  document.getElementById('sbNav').innerHTML = CURSO.materias.map(m=>
-    `<a href="#${m.id}" onclick="fecharMenuMobile()"><span class="ic" style="background:${m.cor}"></span>${m.nome}</a>`
-  ).join('');
-}
-
-function render(){
-  document.getElementById('fileiras').innerHTML = CURSO.materias.map((m,mi)=>`
-    <section class="fileira" id="${m.id}">
-      <h2><span class="dot" style="background:${m.cor}"></span> ${m.nome}</h2>
-      <div class="row-wrap">
-        <button class="seta l" onclick="rolar('${m.id}',-1)">‹</button>
-        <div class="row" id="row-${m.id}">
-          ${m.aulas.map((a,ai)=>`
-            <div class="cardA ${estado[chave(mi,ai)]?'done':''}" data-k="${chave(mi,ai)}" onclick="abrir(${mi},${ai})">
-              <div class="capa" style="background:${grad(m.cor)}">
-                <div class="top">
-                  <span class="badge">${a.list?'📋 Playlist':'▶ Aula'}</span>
-                  <span class="feito">✓</span>
-                </div>
-                <span class="ico">${ICONES[m.id]||'🎓'}</span>
-                <div class="play"></div>
-              </div>
-              <div class="meta"><div class="t">${a.titulo}</div><div class="c">${a.dur} · ${a.canal}</div></div>
-            </div>`).join('')}
-        </div>
-        <button class="seta r" onclick="rolar('${m.id}',1)">›</button>
+function montarLista(){
+  document.getElementById('lista').innerHTML = CURSO.materias.map((m,mi)=>`
+    <div class="mat ${mi===0?'open':''}" id="mat-${mi}">
+      <div class="mat-h" onclick="toggleMat(${mi})">
+        <span class="dot" style="background:${m.cor}"></span>
+        <span>${ICON[m.id]||''} ${m.nome}</span>
+        <span class="chev">▶</span>
       </div>
-    </section>`).join('');
-  atualizar();
+      <div class="mat-aulas">
+        ${m.aulas.map((a,ai)=>`
+          <div class="aula ${estado[chave(mi,ai)]?'done':''}" id="aula-${mi}-${ai}" onclick="abrir(${mi},${ai})">
+            <span class="ck">✓</span>
+            <span class="nm">${a.titulo}<small>${a.dur} · ${a.canal}</small></span>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
 }
-
-function rolar(id,dir){ document.getElementById('row-'+id).scrollBy({left:dir*560,behavior:'smooth'}); }
+function toggleMat(mi){ document.getElementById('mat-'+mi).classList.toggle('open'); }
 
 function abrir(m,a){
   atual={m,a};
@@ -411,46 +333,40 @@ function abrir(m,a){
   const src = au.list
     ? `https://www.youtube.com/embed/videoseries?list=${au.list}&rel=0&modestbranding=1`
     : `https://www.youtube.com/embed/${au.yt}?rel=0&modestbranding=1`;
-  document.getElementById('player').innerHTML =
-    `<iframe src="${src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-  document.getElementById('mTitulo').textContent=au.titulo;
-  document.getElementById('mCanal').textContent=au.dur+' · '+au.canal;
+  const w=document.getElementById('playerWrap');
+  const welcome=document.getElementById('welcome'); if(welcome) welcome.remove();
+  let ifr=w.querySelector('iframe');
+  if(!ifr){ ifr=document.createElement('iframe'); ifr.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"; ifr.allowFullscreen=true; w.appendChild(ifr); }
+  ifr.src=src;
+  document.getElementById('barraInfo').style.display='flex';
+  document.getElementById('aTitulo').textContent=au.titulo;
+  document.getElementById('aCanal').textContent=au.dur+' · '+au.canal;
   setBtn(estado[chave(m,a)]);
-  document.getElementById('modal').classList.add('on');
-  document.getElementById('ov').classList.add('on');
-  document.body.style.overflow='hidden';
+  document.querySelectorAll('.aula.sel').forEach(e=>e.classList.remove('sel'));
+  const el=document.getElementById('aula-'+m+'-'+a); if(el) el.classList.add('sel');
+  if(window.innerWidth<=900){ fecharMenu(); }
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-function fecharPlayer(){
-  document.getElementById('player').innerHTML='';
-  document.getElementById('modal').classList.remove('on');
-  document.getElementById('ov').classList.remove('on');
-  document.body.style.overflow='';
-}
-function setBtn(on){ const b=document.getElementById('mBtn'); b.classList.toggle('on',!!on); b.textContent=on?'✓ Assistida':'Marcar como assistida'; }
+function setBtn(on){ const b=document.getElementById('mkBtn'); b.classList.toggle('on',!!on); b.textContent=on?'✓ Assistida':'Marcar como assistida'; }
 function toggleFeito(){
   if(!atual) return;
   const k=chave(atual.m,atual.a);
   estado[k]=!estado[k]; salvar(); setBtn(estado[k]);
-  const card=document.querySelector(`.cardA[data-k="${k}"]`);
-  if(card) card.classList.toggle('done',!!estado[k]);
+  const el=document.getElementById('aula-'+atual.m+'-'+atual.a);
+  if(el) el.classList.toggle('done',!!estado[k]);
   atualizar();
 }
 function atualizar(){
   const t=totalAulas(), f=totalFeitas(), p=t?Math.round(f/t*100):0;
-  document.getElementById('sbPct').textContent=p+'%';
-  document.getElementById('sbBar').style.width=p+'%';
+  document.getElementById('pPct').textContent=p+'%';
+  document.getElementById('pFeitas').textContent=f;
+  document.getElementById('pTotal').textContent=t;
+  document.getElementById('pBar').style.width=p+'%';
 }
-function continuar(){
-  for(let m=0;m<CURSO.materias.length;m++)
-    for(let a=0;a<CURSO.materias[m].aulas.length;a++)
-      if(!estado[chave(m,a)]){ abrir(m,a); return; }
-  abrir(0,0);
-}
-function toggleMenu(){ document.getElementById('sidebar').classList.toggle('open'); document.getElementById('scrim').classList.toggle('on'); }
-function fecharMenuMobile(){ if(window.innerWidth<=880){ document.getElementById('sidebar').classList.remove('open'); document.getElementById('scrim').classList.remove('on'); } }
-function fecharMenuMobile2(){}
+function toggleMenu(){ document.getElementById('side').classList.toggle('open'); document.getElementById('scrim').classList.toggle('on'); }
+function fecharMenu(){ document.getElementById('side').classList.remove('remove'); document.getElementById('side').classList.remove('open'); document.getElementById('scrim').classList.remove('on'); }
 
-sidebar(); render();
+montarLista(); atualizar();
 </script>
 </body>
 </html>
