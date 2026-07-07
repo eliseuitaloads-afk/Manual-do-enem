@@ -1009,31 +1009,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ===================== 2) ANTES x DEPOIS ===================== -->
-<section>
-  <div class="wrap">
-    <div class="kick">A diferença</div>
-    <h2 class="tit">Como seu estudo muda</h2>
-    <div class="ad">
-      <div class="col antes">
-        <h3>😣 Estudando sem direção</h3>
-        <div class="i"><span>✗</span> Abre o YouTube e se perde em vídeo solto</div>
-        <div class="i"><span>✗</span> Não sabe o que cai e o que ignorar</div>
-        <div class="i"><span>✗</span> Estuda muito e sente que não rende</div>
-        <div class="i"><span>✗</span> Bate aquela ansiedade de estar atrasado</div>
-        <div class="i"><span>✗</span> Começa, para, recomeça do zero</div>
+<section class="diff2">
+  <div class="diff2-wrap">
+    <span class="diff2-eyebrow">✦ A DIFERENÇA ✦</span>
+    <h2 class="diff2-title">Como seu estudo <span>muda</span></h2>
+
+    <div class="diff2-cols">
+      <!-- Sem direção -->
+      <div class="diff2-card diff2-bad">
+        <div class="diff2-head">
+          <div class="diff2-emoji diff2-emoji-bad">😵</div>
+          <h3>Estudando sem direção</h3>
+        </div>
+        <ul>
+          <li><span class="diff2-ic diff2-x">✕</span>Abre o YouTube e se perde em vídeo solto</li>
+          <li><span class="diff2-ic diff2-x">✕</span>Não sabe o que cai e o que ignorar</li>
+          <li><span class="diff2-ic diff2-x">✕</span>Estuda muito e sente que não rende</li>
+          <li><span class="diff2-ic diff2-x">✕</span>Bate aquela ansiedade de estar atrasado</li>
+          <li><span class="diff2-ic diff2-x">✕</span>Começa, para, recomeça do zero</li>
+        </ul>
       </div>
-      <div class="col depois">
-        <h3>🚀 Com a Plataforma Pro</h3>
-        <div class="i"><span>✓</span> Abre e já sabe exatamente o que estudar</div>
-        <div class="i"><span>✓</span> Foca só no que mais cai na prova</div>
-        <div class="i"><span>✓</span> Cada hora de estudo rende de verdade</div>
-        <div class="i"><span>✓</span> Tem clareza e segue uma trilha pronta</div>
-        <div class="i"><span>✓</span> Acompanha sua evolução e não desiste</div>
+
+      <!-- Com a plataforma -->
+      <div class="diff2-card diff2-good">
+        <div class="diff2-head">
+          <div class="diff2-emoji diff2-emoji-good">🚀</div>
+          <h3>Com a Plataforma Pro</h3>
+        </div>
+        <ul>
+          <li><span class="diff2-ic diff2-c">✓</span>Abre e já sabe exatamente o que estudar</li>
+          <li><span class="diff2-ic diff2-c">✓</span>Foca só no que mais cai na prova</li>
+          <li><span class="diff2-ic diff2-c">✓</span>Cada hora de estudo rende de verdade</li>
+          <li><span class="diff2-ic diff2-c">✓</span>Tem clareza e segue uma trilha pronta</li>
+          <li><span class="diff2-ic diff2-c">✓</span>Acompanha sua evolução e não desiste</li>
+        </ul>
       </div>
     </div>
-    <p class="ad-seta">A mesma dedicação, com direção. É só isso que muda — e muda tudo.</p>
+
+    <p class="diff2-foot">✦ A mesma dedicação, com direção. É só isso que muda — e muda tudo. ✦</p>
   </div>
 </section>
+
+<style>
+.diff2{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:74px 20px;overflow:hidden}
+.diff2-wrap{max-width:1120px;margin:0 auto;text-align:center}
+.diff2-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:14px;letter-spacing:3px;margin-bottom:14px}
+.diff2-title{font-size:clamp(30px,4.8vw,52px);font-weight:900;color:#1a1230;line-height:1.1;margin:0 0 46px}
+.diff2-title span{position:relative;color:#6B2FBF;display:inline-block}
+.diff2-title span::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:7px;border-radius:6px;background:#6B2FBF;opacity:.5;z-index:-1}
+.diff2-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;text-align:left}
+.diff2-card{border-radius:24px;padding:30px 28px;opacity:0;transform:translateY(26px);animation:diff2Up .55s ease forwards}
+.diff2-bad{background:linear-gradient(180deg,#fdeef0,#fbe3e7);border:1px solid #f6d0d6;box-shadow:0 12px 34px rgba(224,32,32,.08);animation-delay:.05s}
+.diff2-good{background:linear-gradient(180deg,#eaf8ec,#dff3e3);border:1px solid #c6e9cd;box-shadow:0 12px 34px rgba(46,168,80,.1);animation-delay:.18s}
+.diff2-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.diff2-emoji{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;flex:none;box-shadow:0 8px 18px rgba(0,0,0,.12),inset 0 2px 4px rgba(255,255,255,.6)}
+.diff2-emoji-bad{background:linear-gradient(145deg,#ffd0d6,#ff9aa6)}
+.diff2-emoji-good{background:linear-gradient(145deg,#c8f0cf,#8fe0a2)}
+.diff2-head h3{font-size:22px;font-weight:800;margin:0}
+.diff2-bad h3{color:#d3283a}
+.diff2-good h3{color:#1f9e4a}
+.diff2-card ul{list-style:none;margin:0;padding:0}
+.diff2-card li{display:flex;align-items:center;gap:14px;font-size:17px;color:#3a3350;line-height:1.4;padding:15px 0;border-bottom:1px dashed rgba(0,0,0,.12)}
+.diff2-card li:last-child{border-bottom:none}
+.diff2-ic{flex:none;width:34px;height:34px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;box-shadow:0 4px 10px rgba(0,0,0,.1)}
+.diff2-x{color:#e02020}
+.diff2-c{color:#1f9e4a}
+.diff2-foot{margin-top:38px;color:#6B2FBF;font-weight:700;font-size:clamp(15px,2.2vw,18px)}
+@keyframes diff2Up{to{opacity:1;transform:translateY(0)}}
+@media(max-width:820px){
+  .diff2-cols{grid-template-columns:1fr;gap:20px}
+  .diff2-title{margin-bottom:30px}
+}
+</style>
 
 <!-- ===================== SEÇÃO DE BÔNUS EXCLUSIVOS ===================== -->
 <section class="alt">
