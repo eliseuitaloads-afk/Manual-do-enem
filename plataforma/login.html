@@ -41,12 +41,11 @@
   .btn:hover{filter:brightness(1.08)}
   .btn:disabled{opacity:.6;cursor:default}
   .link{background:none;border:0;color:var(--roxo2);font-size:13.5px;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0}
-  .foot{text-align:center;margin-top:18px;font-size:13px;color:var(--muted)}
+  .foot{text-align:center;margin-top:18px;font-size:13.5px;color:var(--muted);line-height:1.6}
   .aviso-1acesso{background:rgba(123,63,255,.12);border:1px solid rgba(157,78,255,.32);border-radius:12px;padding:14px 16px;margin:16px 0 6px;font-size:13px;line-height:1.5}
   .aviso-1acesso b{color:#fff}
   .aviso-1acesso ol{margin:8px 0 8px;padding-left:20px;color:var(--muted)}
   .aviso-1acesso ol li{margin-bottom:4px}
-  .aviso-obs{display:block;color:var(--roxo2);font-size:12px;font-weight:600;margin-top:4px}
   .msg{margin-top:14px;font-size:13.5px;padding:11px 13px;border-radius:10px;display:none;line-height:1.4}
   .msg.erro{display:block;background:rgba(255,90,110,.12);color:var(--erro);border:1px solid rgba(255,90,110,.3)}
   .msg.ok{display:block;background:rgba(46,213,115,.12);color:var(--verde);border:1px solid rgba(46,213,115,.3)}
@@ -64,31 +63,45 @@
       <div class="aviso-1acesso">
         <b>É seu primeiro acesso?</b>
         <ol>
-          <li>Clique em <b>"Criar / redefinir minha senha"</b> abaixo</li>
-          <li>Digite o <b>mesmo email que você usou na compra</b></li>
-          <li>Você recebe um email para criar sua senha (veja o spam)</li>
-          <li>Crie a senha e pronto — é só estudar!</li>
+          <li>Clique em <b>"Criar conta"</b> abaixo</li>
+          <li>Cadastre seu melhor email e crie uma senha</li>
+          <li>Pronto — é só estudar!</li>
         </ol>
-        <span class="aviso-obs">Você não precisa criar email novo. Use o email que já tem.</span>
       </div>
       <label>Seu email</label>
-      <input id="email" type="email" placeholder="email da sua compra" autocomplete="email">
+      <input id="email" type="email" placeholder="Seu email cadastrado" autocomplete="email">
       <label>Senha</label>
-      <input id="senha" type="password" placeholder="sua senha" autocomplete="current-password">
+      <input id="senha" type="password" placeholder="Sua senha" autocomplete="current-password">
       <button class="btn" id="btnEntrar" onclick="entrar()">Entrar</button>
       <div class="msg" id="msgLogin"></div>
       <div class="foot">
-        Primeiro acesso ou esqueceu a senha?<br>
-        <button class="link" onclick="mostrar('primeiro')">Criar / redefinir minha senha</button>
+        Novo por aqui? <button class="link" onclick="mostrar('cadastro')">Criar conta</button><br>
+        Esqueceu a senha? <button class="link" onclick="mostrar('primeiro')">Redefinir minha senha</button>
+      </div>
+    </div>
+
+    <!-- CADASTRO -->
+    <div id="viewCadastro" class="hide">
+      <div class="sub">Cadastre seu melhor email e crie uma senha para acessar o curso.</div>
+      <label>Seu email</label>
+      <input id="emailCad" type="email" placeholder="Seu melhor email" autocomplete="email">
+      <label>Senha</label>
+      <input id="senhaCad" type="password" placeholder="Crie uma senha (mín. 6 caracteres)" autocomplete="new-password">
+      <label>Confirme a senha</label>
+      <input id="senhaConfirm" type="password" placeholder="Repita a senha" autocomplete="new-password">
+      <button class="btn" id="btnCadastrar" onclick="cadastrar()">Criar minha conta</button>
+      <div class="msg" id="msgCad"></div>
+      <div class="foot">
+        Já tem conta? <button class="link" onclick="mostrar('login')">Fazer login</button>
       </div>
     </div>
 
     <!-- PRIMEIRO ACESSO / RESET -->
     <div id="viewPrimeiro" class="hide">
-      <div class="sub">Use o email que você usou na compra. Vamos enviar um link pra você criar sua senha.</div>
+      <div class="sub">Digite seu email para receber um link de redefinição de senha.</div>
       <label>Seu email</label>
-      <input id="emailReset" type="email" placeholder="email da sua compra" autocomplete="email">
-      <button class="btn" id="btnReset" onclick="enviarReset()">Enviar link de acesso</button>
+      <input id="emailReset" type="email" placeholder="Seu email cadastrado" autocomplete="email">
+      <button class="btn" id="btnReset" onclick="enviarReset()">Enviar link de redefinição</button>
       <div class="msg" id="msgReset"></div>
       <div class="foot">
         <button class="link" onclick="mostrar('login')">← Voltar pro login</button>
@@ -106,6 +119,7 @@
 
   function mostrar(v){
     document.getElementById('viewLogin').classList.toggle('hide', v!=='login');
+    document.getElementById('viewCadastro').classList.toggle('hide', v!=='cadastro');
     document.getElementById('viewPrimeiro').classList.toggle('hide', v!=='primeiro');
   }
   function showMsg(id,txt,tipo){ const m=document.getElementById(id); m.textContent=txt; m.className='msg '+tipo; }
@@ -118,10 +132,44 @@
     const {data,error}=await sb.auth.signInWithPassword({email,password:senha});
     if(error){
       b.disabled=false; b.textContent='Entrar';
-      return showMsg('msgLogin','Email ou senha incorretos. Se é seu primeiro acesso, clique em "Criar minha senha".','erro');
+      return showMsg('msgLogin','Email ou senha incorretos. Se ainda não possui cadastro, clique em "Criar conta".','erro');
     }
     // garante que a sessão foi gravada antes de ir pra plataforma
     showMsg('msgLogin','Entrando...','ok');
+    let tentativas=0;
+    const irPlataforma=async()=>{
+      const {data:s}=await sb.auth.getSession();
+      if(s.session){ window.location.href='/plataforma/'; return; }
+      if(tentativas++ < 20){ setTimeout(irPlataforma,150); }
+      else { window.location.href='/plataforma/'; }
+    };
+    irPlataforma();
+  }
+
+  async function cadastrar(){
+    const email=document.getElementById('emailCad').value.trim();
+    const senha=document.getElementById('senhaCad').value;
+    const senhaConfirm=document.getElementById('senhaConfirm').value;
+    
+    if(!email){ return showMsg('msgCad','Digite seu email.','erro'); }
+    if(!senha){ return showMsg('msgCad','Crie uma senha.','erro'); }
+    if(senha !== senhaConfirm){ return showMsg('msgCad','As senhas não coincidem.','erro'); }
+    if(senha.length < 6){ return showMsg('msgCad','A senha precisa ter pelo menos 6 caracteres.','erro'); }
+
+    const b=document.getElementById('btnCadastrar'); b.disabled=true; b.textContent='Criando conta...';
+    const {data,error}=await sb.auth.signUp({email,password:senha});
+    
+    if(error){
+      b.disabled=false; b.textContent='Criar minha conta';
+      if(error.message.includes('already registered') || error.message.includes('already exists') || error.status === 422){
+        return showMsg('msgCad','Esse email já tem conta. Tente fazer login ou clique em "Redefinir minha senha".','erro');
+      }
+      return showMsg('msgCad',error.message || 'Erro ao criar conta. Tente novamente.','erro');
+    }
+    
+    showMsg('msgCad','Conta criada! Redirecionando...','ok');
+    
+    // login e redirecionamento automático
     let tentativas=0;
     const irPlataforma=async()=>{
       const {data:s}=await sb.auth.getSession();
@@ -139,9 +187,9 @@
     const {error}=await sb.auth.resetPasswordForEmail(email,{
       redirectTo: location.origin + '/plataforma/definir-senha.html'
     });
-    b.disabled=false; b.textContent='Enviar link de acesso';
+    b.disabled=false; b.textContent='Enviar link de redefinição';
     if(error){ return showMsg('msgReset','Não consegui enviar agora. Tente de novo em alguns minutos.','erro'); }
-    showMsg('msgReset','Pronto! Olhe seu email (e a caixa de spam) e clique no link pra criar sua senha.','ok');
+    showMsg('msgReset','Pronto! Olhe seu email (e a caixa de spam) e clique no link pra redefinir sua senha.','ok');
   }
 </script>
 </body>
