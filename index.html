@@ -42,7 +42,7 @@
   --verde-esc:#12833c;
   --vermelho:#E11D2A;    /* urgência */
   --tinta:#1A1033;       /* texto principal (roxo-quase-preto) */
-  --cinza:#6A6480;       /* texto secundário */
+  --cinza:#4c455c;       /* texto secundário (aumentado para maior contraste) */
   --linha:#E9E3F2;       /* bordas */
   --fundo:#F7F4FC;       /* fundo alternado das seções */
   --amarelo-enem:#FFD60A;/* amarelo de destaque */
@@ -149,7 +149,7 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .ov.show{display:flex}
 .modal{background:#fff;border-radius:24px;max-width:420px;width:100%;padding:30px 26px;text-align:center;position:relative;animation:pop .25s ease}
 @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-.modal .x{position:absolute;top:14px;right:16px;font-size:22px;color:#9AA3B5;cursor:pointer;line-height:1;background:none;border:0}
+.modal .x{position:absolute;top:14px;right:16px;font-size:22px;color:#5a5470;cursor:pointer;line-height:1;background:none;border:0}
 .modal .ei{font-size:13px;font-weight:800;color:var(--vermelho);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
 .modal h3{font-size:23px;font-weight:800;margin-bottom:10px;line-height:1.2}
 .modal .mp{margin:14px 0 4px}
@@ -237,8 +237,8 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .final .pp{color:#fff;font-size:15px;margin-bottom:18px}.final .pp b{font-size:26px;font-family:'Plus Jakarta Sans'}
 .final .cta{background:#fff;color:var(--verde)}
 
-footer{text-align:center;padding:32px 20px;color:#9AA3B5;font-size:13px}
-footer a{color:#9AA3B5}
+footer{text-align:center;padding:32px 20px;color:#5a5470;font-size:13px}
+footer a{color:#5a5470}
 
 .pop{position:fixed;left:18px;bottom:18px;background:#fff;border:1px solid var(--linha);border-radius:13px;box-shadow:0 12px 34px rgba(14,26,43,.18);padding:12px 15px 12px 12px;display:flex;gap:11px;align-items:center;max-width:300px;z-index:50;transform:translateY(140%);transition:.45s;font-size:13px}
 .pop.show{transform:none}
@@ -478,12 +478,13 @@ footer a{color:#9AA3B5}
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .float{animation:floatY 3s ease-in-out infinite}
 
-/* ---------- 5) PULSE-GLOW (botão que respira) ---------- */
-@keyframes pulseGlow{
-  0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,.7)}
-  50%{box-shadow:0 0 0 10px rgba(22,163,74,0)}
+/* ---------- 5) PULSE-GLOW (botão que respira - COMPOSTO) ---------- */
+.pulse{position:relative;z-index:1}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 6px rgba(22,163,74,.5);z-index:-1;opacity:1;animation:pulseGlowCompose 2s cubic-bezier(0.24,0,0.38,1) infinite}
+@keyframes pulseGlowCompose{
+  0%{transform:scale(1);opacity:1}
+  100%{transform:scale(1.12,1.3);opacity:0}
 }
-.pulse{animation:pulseGlow 2s infinite}
 
 /* ---------- 6) GLASSMORPHISM ---------- */
 .glass {
@@ -549,6 +550,7 @@ footer a{color:#9AA3B5}
 </style>
 </head>
 <body>
+<main>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QC7Q98F"
@@ -565,7 +567,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero2-video">
       <div class="hero2-glow"></div>
       <div class="hero2-frame">
-        <lt-v2 v="65d0db23-db49-4a2f-a898-36d579dcb5ed" ar="9:16" sc="0" sv="0" st="0" ap="1" io="26" ph="7" ct="[[]]"></lt-v2>
+        <img src="/video-poster.webp" alt="Poster do vídeo" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;" width="941" height="1672" fetchpriority="high">
+        <lt-v2 v="65d0db23-db49-4a2f-a898-36d579dcb5ed" ar="9:16" sc="0" sv="0" st="0" ap="1" io="26" ph="7" ct="[[]]" title="Vídeo de apresentação do Método Pro ENEM"></lt-v2>
       </div>
       <div class="hero2-podium"></div>
     </div>
@@ -587,22 +590,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .hero2-inner{max-width:900px;margin:0 auto;padding:54px 20px 0}
 .hero2-h1{font-size:clamp(30px,5.4vw,54px);font-weight:900;color:#fff;line-height:1.08;margin:0 0 20px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
 .hero2-h1 span{color:#FFD60A}
-.hero2-sub{font-size:clamp(16px,2.4vw,20px);color:#d8cff0;line-height:1.55;margin:0 auto 44px;max-width:640px}
+.hero2-sub{font-size:clamp(16px,2.4vw,20px);color:#ffffff;line-height:1.55;margin:0 auto 44px;max-width:640px}
 
 .hero2-video{position:relative;max-width:340px;margin:0 auto 48px;padding-bottom:20px}
 .hero2-glow{position:absolute;inset:-8% -6% 6% -6%;background:radial-gradient(60% 60% at 50% 45%,rgba(139,79,224,.75),rgba(107,47,191,0) 70%);filter:blur(24px);z-index:0}
-.hero2-frame{position:relative;z-index:2;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 0 1px rgba(180,140,255,.25),0 0 40px rgba(139,79,224,.4);background:#0f0720}
-.hero2-frame lt-v2{display:block;width:100%}
+.hero2-frame{position:relative;z-index:2;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 0 1px rgba(180,140,255,.25),0 0 40px rgba(139,79,224,.4);background:#0f0720;aspect-ratio:9 / 16}
+.hero2-frame lt-v2{position:absolute;inset:0;width:100%;height:100%;z-index:2}
 .hero2-podium{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:78%;height:34px;border-radius:50%;background:radial-gradient(closest-side,rgba(139,79,224,.85),rgba(139,79,224,0));z-index:1}
 
-.hero2-cta{display:inline-block;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;font-size:clamp(16px,2.4vw,21px);font-weight:800;letter-spacing:.3px;text-decoration:none;padding:20px 44px;border-radius:60px;box-shadow:0 14px 34px rgba(31,184,81,.45);transition:transform .2s ease,box-shadow .2s ease;animation:hero2Pulse 2.4s ease-in-out infinite}
+.hero2-cta{display:inline-block;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;font-size:clamp(16px,2.4vw,21px);font-weight:800;letter-spacing:.3px;text-decoration:none;padding:20px 44px;border-radius:60px;box-shadow:0 14px 34px rgba(31,184,81,.45);transition:transform .2s ease,box-shadow .2s ease;position:relative;z-index:1}
+.hero2-cta::after{content:"";position:absolute;inset:0;border-radius:inherit;background:inherit;box-shadow:0 14px 34px rgba(31,184,81,.45);z-index:-1;opacity:0.8;animation:hero2PulseCompose 2.4s cubic-bezier(0.24,0,0.38,1) infinite}
+@keyframes hero2PulseCompose{
+  0%{transform:scale(1);opacity:0.8}
+  100%{transform:scale(1.08, 1.25);opacity:0}
+}
 .hero2-cta:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(31,184,81,.6)}
 .hero2-badges{display:flex;justify-content:center;gap:24px;margin-top:28px;flex-wrap:wrap;font-size:14px;color:#d8cff0}
 .hero2-badges span{white-space:nowrap}
-@keyframes hero2Pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.025)}
-}
 @media(max-width:480px){
   .hero2-inner{padding-top:36px}
   .hero2-badges{gap:10px 14px;font-size:13px}
@@ -1068,7 +1072,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .pl2-value small{font-size:18px;font-weight:700;margin-top:8px;margin-right:3px}
 .pl2-value b{font-size:52px;font-weight:900}
 .pl2-value span{font-size:22px;font-weight:800;margin-top:6px}
-.pl2-price em{display:block;font-style:normal;font-size:12.5px;color:#8a83a0;margin-top:4px}
+.pl2-price em{display:block;font-style:normal;font-size:12.5px;color:#5a5470;margin-top:4px}
 
 .pl2-bonus-tag{display:inline-block;background:#e2f6df;color:#1f9e4a;font-weight:700;font-size:14px;padding:9px 16px;border-radius:12px;border:1px solid #b9e6c1;margin:22px 0 20px}
 
@@ -1084,7 +1088,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .pl2-btn{display:block;text-align:center;text-decoration:none;font-weight:800;border-radius:60px;margin-top:26px;transition:transform .2s ease,box-shadow .2s ease}
 .pl2-btn-ghost{color:#6B2FBF;border:2px solid #6B2FBF;padding:16px;font-size:17px;background:#faf7ff}
 .pl2-btn-ghost:hover{background:#6B2FBF;color:#fff;transform:translateY(-2px)}
-.pl2-btn-green{color:#fff;background:linear-gradient(180deg,#2ee06a,#1fb851);padding:20px;font-size:19px;letter-spacing:.3px;box-shadow:0 14px 30px rgba(31,184,81,.45);animation:pl2Pulse 2.4s ease-in-out infinite}
+.pl2-btn-green{color:#fff;background:linear-gradient(180deg,#2ee06a,#1fb851);padding:20px;font-size:19px;letter-spacing:.3px;box-shadow:0 14px 30px rgba(31,184,81,.45);position:relative;z-index:1}
+.pl2-btn-green::after{content:"";position:absolute;inset:0;border-radius:inherit;background:inherit;box-shadow:0 14px 30px rgba(31,184,81,.45);z-index:-1;opacity:0.8;animation:pl2PulseCompose 2.4s cubic-bezier(0.24,0,0.38,1) infinite}
+@keyframes pl2PulseCompose{
+  0%{transform:scale(1);opacity:0.8}
+  100%{transform:scale(1.08, 1.25);opacity:0}
+}
 .pl2-btn-green:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(31,184,81,.6)}
 
 .pl2-badge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#ff8a1e,#f06400);color:#fff;font-weight:800;font-size:14px;letter-spacing:1px;padding:9px 22px;border-radius:30px;box-shadow:0 8px 18px rgba(240,100,0,.4);white-space:nowrap}
@@ -1095,7 +1104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .pl2-curadoria p{margin:0;font-size:14px;line-height:1.5;color:#5a5470}
 .pl2-curadoria b{color:#6B2FBF}
 
-@keyframes pl2Pulse{0%,100%{box-shadow:0 14px 30px rgba(31,184,81,.45)}50%{box-shadow:0 14px 30px rgba(31,184,81,.45),0 0 0 8px rgba(46,224,106,.12)}}
+
 @media(max-width:640px){
   .pl2-price{text-align:left;margin-left:0;width:100%}
   .pl2-value{justify-content:flex-start}
@@ -1146,6 +1155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+</main>
 <footer>
   <p><b>Método Pro do ENEM</b> · Estude só o que cai.</p>
   <p style="margin-top:6px"><a href="termos.html">Termos de Uso</a> · <a href="privacidade.html">Política de Privacidade</a> · © 2026</p>
@@ -1168,9 +1178,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <style>
   .disclaimer{max-width:760px;margin:24px auto 0;padding:16px 20px;border-top:1px solid var(--linha);
-    font-size:11.5px;line-height:1.55;color:#9AA3B5;text-align:left}
+    font-size:11.5px;line-height:1.55;color:#5a5470;text-align:left}
   .disclaimer p{margin:0 0 8px}
-  .disclaimer b{color:#6A6480}
+  .disclaimer b{color:#4c455c}
   </style>
 </footer>
 

@@ -3,5 +3,13 @@
   "trailingSlash": true,
   "rewrites": [
     { "source": "/plataforma", "destination": "/plataforma/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(png|jpg|jpeg|webp|gif|svg|woff2|woff|ttf)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
   ]
 }
