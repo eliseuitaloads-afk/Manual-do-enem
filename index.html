@@ -1460,6 +1460,55 @@ fbq('track', 'PageView');
 </script>
 <!-- TikTok Pixel Code End -->
 
+<!-- STICKY CTA BAR FOR MOBILE/TABLET -->
+<div class="stickycta" id="stickycta" aria-hidden="true">
+  <div class="stickycta-price">
+    <small>A partir de</small>
+    <strong>R$ 14,90</strong>
+  </div>
+  <button class="stickycta-btn" id="stickyctaBtn">GARANTIR MEU ACESSO →</button>
+</div>
+
+<style>
+.stickycta{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:14px;background:#6B2FBF;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(0,0,0,.25);transform:translateY(120%);transition:transform .35s ease;visibility:hidden}
+.stickycta.is-visible{transform:translateY(0);visibility:visible}
+.stickycta-price{display:flex;flex-direction:column;line-height:1.1;color:#fff;flex:none}
+.stickycta-price small{font-size:12px;opacity:.85}
+.stickycta-price strong{font-size:22px;font-weight:900;color:#FFD60A}
+.stickycta-btn{flex:1;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;border:none;font-size:16px;font-weight:800;padding:15px 16px;border-radius:50px;box-shadow:0 6px 16px rgba(31,184,81,.4);cursor:pointer;white-space:nowrap;letter-spacing:.3px}
+.stickycta-btn:active{transform:scale(.97)}
+@media(min-width:901px){.stickycta{display:none}}
+</style>
+
+<script>
+(function(){
+  var bar=document.getElementById('stickycta');
+  var btn=document.getElementById('stickyctaBtn');
+  if(!bar)return;
+  var planos=document.getElementById('planos')||document.querySelector('.pl2');
+  var pastThreshold=false, planosVisible=false;
+
+  function update(){
+    if(pastThreshold && !planosVisible){bar.classList.add('is-visible');bar.setAttribute('aria-hidden','false');}
+    else{bar.classList.remove('is-visible');bar.setAttribute('aria-hidden','true');}
+  }
+  window.addEventListener('scroll',function(){
+    pastThreshold=window.scrollY>600;update();
+  },{passive:true});
+
+  if(planos && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){
+      planosVisible=e[0].isIntersecting;update();
+    },{threshold:0.15}).observe(planos);
+  }
+  if(btn){
+    btn.addEventListener('click',function(){
+      if(planos)planos.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  }
+})();
+</script>
+
 <script src="https://app.litevideo.net/p.js" async></script>
 </body>
 </html>
