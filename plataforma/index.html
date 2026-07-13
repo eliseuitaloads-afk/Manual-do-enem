@@ -168,8 +168,8 @@ const CURSO = {
 
 <style>
 :root{
-  --bg:#0B0617; --bg2:#120A24; --card:#1A1030; --card2:#221540;
-  --line:rgba(255,255,255,.09); --txt:#F3EFFA; --muted:#A99FC4;
+  --bg:#12081f; --bg2:#0f061c; --card:#1c1030; --card2:#251642;
+  --line:rgba(180,140,255,.12); --txt:#ffffff; --muted:#a99bc9;
   --roxo:#7B3FFF; --roxo2:#9D4EFF; --amarelo:#FFD60A; --verde:#2ED573;
   --sidew:330px;
 }
@@ -183,79 +183,338 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
 /* ===== SIDEBAR (lista de aulas) ===== */
 .side{width:var(--sidew);flex:0 0 var(--sidew);background:var(--bg2);border-right:1px solid var(--line);
   display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
-.side-top{padding:20px 18px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:14px}
+.side-top{padding:24px 18px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:14px}
 .side-top img{height:60px;width:auto;display:block}
-.side-sair{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;font-weight:700;
-  padding:9px 12px;border-radius:9px;cursor:pointer;font-family:inherit;font-size:13px}
-.side-sair:hover{background:rgba(255,255,255,.14)}
-.side-prog{padding:12px 18px;border-bottom:1px solid var(--line)}
-.side-prog .l{font-size:12px;color:var(--muted);margin-bottom:6px}
-.side-prog .l b{color:#fff}
-.side-prog .bar{height:7px;background:#0e0820;border-radius:99px;overflow:hidden}
-.side-prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--roxo),var(--amarelo));transition:width .5s}
+
+/* rodapé da sidebar */
+.side-footer {
+  padding: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+  background: var(--bg2);
+}
+.side-sair{
+  background:none;
+  border:none;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:500;
+  cursor:pointer;
+  text-decoration:underline;
+  opacity:0.7;
+  transition:opacity 0.2s, color 0.2s;
+  padding:8px 16px;
+  min-height:44px; /* Area de toque minima 44px */
+}
+.side-sair:hover{
+  opacity:1;
+  color:#fff;
+}
+
+/* progresso destacado */
+.side-prog{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px 20px;
+  margin:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.side-prog-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-bottom:12px;
+}
+.side-prog-header span {
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  color:var(--muted);
+}
+.side-prog-header strong {
+  font-size:26px;
+  font-weight:900;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  color:#fff;
+}
+.side-prog .bar{
+  height:8px; /* barra mais grossa (8px) */
+  background:#0e0820;
+  border-radius:99px;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+.side-prog .bar i{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,var(--roxo),var(--amarelo)); /* gradiente roxo->amarelo */
+  border-radius:99px;
+  transition:width .5s ease;
+}
+.side-prog-footer {
+  font-size:12px;
+  color:var(--muted);
+  font-weight:500;
+}
+
 .side-list{flex:1;overflow-y:auto;padding:8px}
 
-.mat{margin-bottom:4px}
-.mat-h{display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:14px;user-select:none}
+.mat{margin-bottom:12px} /* mais espaçamento vertical */
+.mat-h{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px;user-select:none;min-height:48px}
 .mat-h:hover{background:var(--card)}
 .mat-h .dot{width:8px;height:20px;border-radius:5px;flex:0 0 auto}
 .mat-h .chev{margin-left:auto;transition:transform .2s;color:var(--muted);font-size:12px}
 .mat.open .mat-h .chev{transform:rotate(90deg)}
-.mat-aulas{display:none;padding:2px 0 6px}
+.mat-aulas{display:none;padding:4px 0 8px}
 .mat.open .mat-aulas{display:block}
-.aula{display:flex;gap:10px;align-items:flex-start;padding:9px 12px 9px 30px;border-radius:9px;cursor:pointer;font-size:13px;color:var(--muted);line-height:1.3}
+
+.mat-svg {
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:var(--muted);
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex:none;
+}
+.mat-h:hover .mat-svg {
+  stroke:#fff;
+}
+
+.aula{display:flex;gap:10px;align-items:center;padding:10px 12px 10px 30px;border-radius:9px;cursor:pointer;font-size:13px;color:var(--muted);line-height:1.3;min-height:44px} /* Area de toque minima 44px */
 .aula:hover{background:var(--card);color:#fff}
 .aula.sel{background:var(--card2);color:#fff}
-.aula .ck{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--line);flex:0 0 auto;margin-top:1px;display:grid;place-items:center;font-size:10px}
+.aula .ck{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--line);flex:0 0 auto;display:grid;place-items:center;font-size:10px}
 .aula.done .ck{background:var(--verde);border-color:var(--verde);color:#06210f}
 .aula .nm{flex:1}
 .aula .nm small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
 
 /* ===== PALCO (player grande) ===== */
 .palco{flex:1;display:flex;flex-direction:column;min-width:0}
-.player-wrap{background:#000;aspect-ratio:16/9;width:100%;position:relative}
-.player-wrap iframe{width:100%;height:100%;border:0;display:block}
-/* tela de boas-vindas */
-.welcome{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  background:radial-gradient(700px 400px at 50% 0%, rgba(123,63,255,.3), transparent 65%),var(--bg2);padding:30px}
-.welcome img{height:88px;margin-bottom:24px}
-.welcome h2{font-size:26px;font-weight:800;max-width:520px;line-height:1.15;margin-bottom:10px}
-.welcome p{color:var(--muted);font-size:15px;max-width:430px;margin:0}
-.welcome .seta{margin-top:22px;color:var(--amarelo);font-size:14px;font-weight:700}
-.barra-info{padding:18px 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.barra-info .ti{flex:1;min-width:200px}
-.barra-info h1{font-size:19px;font-weight:800;margin-bottom:3px}
-.barra-info .c{color:var(--muted);font-size:13px}
-.barra-info .mk{background:var(--verde);color:#06210f;border:0;font-weight:800;padding:11px 18px;border-radius:10px;cursor:pointer;font-family:'Plus Jakarta Sans';white-space:nowrap}
-.barra-info .mk.on{background:transparent;color:var(--verde);border:1px solid var(--verde)}
-.credito{margin:0 26px;margin-top:14px;background:rgba(123,63,255,.1);border:1px solid rgba(157,78,255,.28);
-  border-radius:11px;padding:12px 16px;font-size:13px;line-height:1.5;color:var(--muted)}
+.player-wrap{background:#000;aspect-ratio:16/9;width:100%;position:relative} /* aspecto 16/9 fixo */
+.player-wrap iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0}
+
+/* tela de boas-vindas / estado vazio */
+.welcome{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(700px 400px at 50% 0%, rgba(123,63,255,.2), transparent 75%),var(--bg);padding:30px;overflow-y:auto}
+
+/* welcome card design */
+.welcome-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 95%;
+  text-align: left;
+  box-shadow: 0 12px 36px rgba(0,0,0,.3);
+}
+.welcome-badge {
+  display: inline-block;
+  background: rgba(123,63,255,.16);
+  color: var(--amarelo);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+.welcome-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.welcome-thumb-wrap {
+  position: relative;
+  width: 200px;
+  height: 112px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #000;
+  box-shadow: 0 6px 18px rgba(0,0,0,.4);
+}
+.welcome-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.welcome-playlist-thumb {
+  background: linear-gradient(135deg, var(--roxo), var(--bg2));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.welcome-playlist-thumb .playlist-icon {
+  font-size: 28px;
+}
+.welcome-playlist-thumb .playlist-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: rgba(255,255,255,.15);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+.welcome-play-btn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(123, 63, 255, 0.9);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0.9;
+  transition: transform 0.2s, background 0.2s;
+}
+.welcome-play-btn:hover {
+  transform: scale(1.1);
+  background: var(--roxo2);
+}
+.welcome-details {
+  flex: 1;
+  min-width: 200px;
+}
+.welcome-details h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+.welcome-details p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.welcome-action-btn {
+  background: linear-gradient(180deg, #2ee06a, #1fb851);
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(31,184,81,.3);
+  transition: transform 0.15s;
+  min-height: 44px; /* Area de toque minima */
+}
+.welcome-action-btn:active {
+  transform: scale(.97);
+}
+
+.barra-info {
+  padding: 24px 30px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+}
+.barra-info h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.barra-info .c {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.barra-info .mk {
+  background: linear-gradient(180deg,#2ee06a,#1fb851);
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(31,184,81,.3);
+  min-height: 46px; /* Area de toque minima 44px */
+  transition: transform 0.15s;
+}
+.barra-info .mk:active {
+  transform: scale(.97);
+}
+.barra-info .mk.on {
+  background: transparent;
+  color: var(--verde);
+  border: 2px solid var(--verde);
+  box-shadow: none;
+}
+
+.credito{margin:20px 30px;background:rgba(123,63,255,.06);border:1px solid rgba(157,78,255,.16);
+  border-radius:12px;padding:14px 18px;font-size:13px;line-height:1.55;color:var(--muted)}
 .credito b{color:#fff}
 
-/* upsell compacto */
-.upbox{margin:24px 26px;background:linear-gradient(135deg,rgba(123,63,255,.18),rgba(255,214,10,.1));
-  border:1px solid rgba(123,63,255,.4);border-radius:16px;padding:22px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.upbox .x{flex:1;min-width:240px}
-.upbox .badge{display:inline-block;background:rgba(255,214,10,.16);color:var(--amarelo);font-weight:700;font-size:11px;letter-spacing:.4px;text-transform:uppercase;padding:5px 11px;border-radius:99px;margin-bottom:9px}
-.upbox h3{font-size:18px;font-weight:800;margin-bottom:5px}
-.upbox p{color:var(--muted);font-size:13px;margin:0}
-.upbox .cta{text-align:center}
-.upbox .preco{font-family:'Plus Jakarta Sans';font-weight:800;font-size:30px;color:#fff;line-height:1}
-.upbox .de{color:var(--muted);text-decoration:line-through;font-size:13px}
-.upbox a{display:inline-block;margin-top:8px;background:linear-gradient(180deg,#2ED573,#16A34A);color:#06210f;font-weight:800;padding:12px 22px;border-radius:11px;text-decoration:none;font-family:'Plus Jakarta Sans';font-size:14px}
+/* UPBAR COMPACTA */
+.upbar{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,#2a1550,#3d1f73);border-top:1px solid rgba(180,140,255,.3);padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));box-shadow:0 -8px 28px rgba(0,0,0,.45)}
+.upbar.is-hidden{display:none}
+.upbar-close{position:absolute;top:6px;right:10px;background:none;border:none;color:#9b8ec4;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px;min-height:44px;min-width:44px;display:grid;place-items:center}
+.upbar-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.upbar-tag{color:#FFD60A;font-size:11px;font-weight:800;letter-spacing:1px}
+.upbar-txt strong{color:#fff;font-size:14.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.upbar-txt small{color:#c3b6e6;font-size:13px}
+.upbar-txt small s{color:#8d80b3}
+.upbar-txt small b{color:#fff;font-size:15px;font-weight:900}
+.upbar-btn{flex:none;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;text-decoration:none;font-size:13.5px;font-weight:800;padding:12px 16px;border-radius:40px;white-space:nowrap;box-shadow:0 6px 16px rgba(31,184,81,.4);min-height:44px;display:flex;align-items:center;justify-content:center}
+.upbar-btn:active{transform:scale(.96)}
 
 /* mobile */
 .mtop{display:none}
 @media(max-width:900px){
+  body {
+    padding-bottom: 90px; /* Evita que a barra de upgrade cubra o conteúdo final no mobile */
+  }
   .layout{flex-direction:column}
   .side{position:fixed;left:0;top:0;bottom:0;z-index:60;transform:translateX(-100%);transition:transform .25s;width:300px;flex-basis:300px}
   .side.open{transform:translateX(0)}
   .palco{width:100%}
   .mtop{display:flex;align-items:center;gap:12px;padding:12px 16px;position:sticky;top:0;z-index:50;background:rgba(11,6,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-  .mtop .burger{background:none;border:0;color:#fff;font-size:24px;cursor:pointer}
+  .mtop .burger{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;min-width:44px;min-height:44px;display:grid;place-items:center}
   .mtop img{height:32px}
   .scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:55}
   .scrim.on{display:block}
+  .welcome-card {
+    padding: 20px;
+  }
+  .welcome-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .welcome-thumb-wrap {
+    width: 100%;
+    height: 140px;
+  }
+}
+@media(max-width:420px){
+  .upbar-txt strong{font-size:13px}
+  .upbar-btn{font-size:12.5px;padding:11px 13px}
 }
 </style>
 </head>
@@ -274,23 +533,26 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
   <aside class="side" id="side">
     <div class="side-top">
       <img src="/plataforma/logo.png" alt="Manual do ENEM">
-      <button class="side-sair" onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))">Sair</button>
     </div>
     <div class="side-prog">
-      <div class="l">Seu progresso: <b id="pPct">0%</b> · <span id="pFeitas">0</span>/<span id="pTotal">0</span></div>
+      <div class="side-prog-header">
+        <span>Seu progresso</span>
+        <strong id="pPct">0%</strong>
+      </div>
       <div class="bar"><i id="pBar"></i></div>
+      <div class="side-prog-footer"><span id="pFeitas">0</span> de <span id="pTotal">0</span> aulas concluídas</div>
     </div>
     <div class="side-list" id="lista"></div>
+    <div class="side-footer">
+      <button class="side-sair" onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))">Sair da Conta</button>
+    </div>
   </aside>
 
   <!-- PALCO (PLAYER GRANDE) -->
   <div class="palco">
     <div class="player-wrap" id="playerWrap">
       <div class="welcome" id="welcome">
-        <img src="/plataforma/logo.png" alt="Manual do ENEM">
-        <h2>Bem-vindo(a) à sua área de estudos!</h2>
-        <p>Escolha uma matéria na lista ao lado, clique numa aula e ela começa a tocar aqui.</p>
-        <div class="seta">← Comece escolhendo uma aula</div>
+        <!-- será preenchido dinamicamente pelo renderWelcomeState() -->
       </div>
     </div>
 
@@ -307,24 +569,29 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
       Recomendamos a inscrição no canal original para conteúdos complementares.
     </div>
 
-    <!-- upsell -->
-    <div class="upbox">
-      <div class="x">
-        <span class="badge">⭐ Upgrade de aluno</span>
-        <h3>Destrave o Plano Completo e gabarite a redação</h3>
-        <p>Redação Nota 900, Destrava Redação, Mapas Mentais, Manual Pro e acompanhamento da sua evolução.</p>
+    <!-- UPBAR COMPACTA (Upgrade) -->
+    <!-- TODO: Exibir apenas para alunos do Plano BÁSICO (quem já é Completo não deve ver) -->
+    <div class="upbar" id="upbar">
+      <button class="upbar-close" id="upbarClose" aria-label="Fechar">×</button>
+      <div class="upbar-txt">
+        <span class="upbar-tag">⭐ UPGRADE</span>
+        <strong>Destrave a Redação e o Método completo</strong>
+        <small><s>de R$ 97</s> por <b>R$ 27,90</b></small>
       </div>
-      <div class="cta">
-        <div class="de">de R$ 74</div>
-        <div class="preco">R$ 27,90</div>
-        <a href="https://pay.wiapy.com/0dgjmi6c0iO" target="_blank" rel="noopener">QUERO O COMPLETO →</a>
-      </div>
+      <a class="upbar-btn" href="https://pay.wiapy.com/0dgjmi6c0iO">QUERO O COMPLETO →</a>
     </div>
   </div>
 </div>
 
 <script>
-const ICON={linguagens:"✍️",matematica:"📐",natureza:"🧪",humanas:"🌍",redacao:"📝",revisao:"🔥"};
+const ICON={
+  linguagens: `<svg viewBox="0 0 24 24" class="mat-svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`,
+  matematica: `<svg viewBox="0 0 24 24" class="mat-svg"><path d="m21.3 8.11-8-8a2.2 2.2 0 0 0-3.12 0L1.1 9.2a2.2 2.2 0 0 0 0 3.12l8 8a2.2 2.2 0 0 0 3.12 0l9.08-9.08a2.2 2.2 0 0 0 0-3.13z"></path><path d="m6 14 1-1"></path><path d="m8.5 11.5 1-1"></path><path d="m11 9 1-1"></path><path d="m13.5 6.5 1-1"></path><path d="m16 4 1-1"></path></svg>`,
+  natureza: `<svg viewBox="0 0 24 24" class="mat-svg"><path d="M10 2v7.586a2 2 0 0 1-.586 1.414l-4.828 4.828A2 2 0 0 0 4 17.242V20a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2.758a2 2 0 0 0-.586-1.414l-4.828-4.828A2 2 0 0 1 14 9.586V2z"></path><line x1="8" y1="2" x2="16" y2="2"></line><line x1="10" y1="9" x2="14" y2="9"></line></svg>`,
+  humanas: `<svg viewBox="0 0 24 24" class="mat-svg"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`,
+  redacao: `<svg viewBox="0 0 24 24" class="mat-svg"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>`,
+  revisao: `<svg viewBox="0 0 24 24" class="mat-svg"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>`
+};
 let estado={};
 try{ estado=JSON.parse(localStorage.getItem('enem_plat')||'{}'); }catch(e){ estado={}; }
 let atual=null;
@@ -338,7 +605,8 @@ function montarLista(){
     <div class="mat ${mi===0?'open':''}" id="mat-${mi}">
       <div class="mat-h" onclick="toggleMat(${mi})">
         <span class="dot" style="background:${m.cor}"></span>
-        <span>${ICON[m.id]||''} ${m.nome}</span>
+        ${ICON[m.id]||''}
+        <span>${m.nome}</span>
         <span class="chev">▶</span>
       </div>
       <div class="mat-aulas">
@@ -352,14 +620,61 @@ function montarLista(){
 }
 function toggleMat(mi){ document.getElementById('mat-'+mi).classList.toggle('open'); }
 
+function renderWelcomeState() {
+  const lastAulaStr = localStorage.getItem('enem_last_aula');
+  let m = 0, a = 0;
+  let isFirstAccess = true;
+
+  if (lastAulaStr) {
+    try {
+      const parsed = JSON.parse(lastAulaStr);
+      m = parsed.m;
+      a = parsed.a;
+      isFirstAccess = false;
+    } catch(e) {
+      isFirstAccess = true;
+    }
+  }
+
+  const au = CURSO.materias[m].aulas[a];
+  const thumbHtml = au.yt
+    ? `<img class="welcome-thumb" src="https://img.youtube.com/vi/${au.yt}/mqdefault.jpg" alt="${au.titulo}" width="200" height="112">`
+    : `<div class="welcome-thumb welcome-playlist-thumb"><span class="playlist-icon">📚</span><span class="playlist-tag">Playlist</span></div>`;
+
+  const welcomeHtml = `
+    <div class="welcome-card">
+      <div class="welcome-badge">${isFirstAccess ? '⭐ Comece por aqui' : '🕒 Continue de onde parou'}</div>
+      <div class="welcome-content">
+        <div class="welcome-thumb-wrap">
+          ${thumbHtml}
+          <button class="welcome-play-btn" onclick="abrir(${m}, ${a})" aria-label="Reproduzir">▶</button>
+        </div>
+        <div class="welcome-details">
+          <h3>${au.titulo}</h3>
+          <p>${au.dur} · ${au.canal}</p>
+          <button class="welcome-action-btn" onclick="abrir(${m}, ${a})">
+            ${isFirstAccess ? 'Iniciar Aula' : 'Continuar Assistindo'}
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  const el = document.getElementById('welcome');
+  if (el) {
+    el.style.display = 'flex';
+    el.innerHTML = welcomeHtml;
+  }
+}
+
 function abrir(m,a){
   atual={m,a};
+  try { localStorage.setItem('enem_last_aula', JSON.stringify({m,a})); } catch(e){}
   const au=CURSO.materias[m].aulas[a];
   const src = au.list
     ? `https://www.youtube.com/embed/videoseries?list=${au.list}&rel=0&modestbranding=1`
     : `https://www.youtube.com/embed/${au.yt}?rel=0&modestbranding=1`;
   const w=document.getElementById('playerWrap');
-  const welcome=document.getElementById('welcome'); if(welcome) welcome.remove();
+  const welcome=document.getElementById('welcome'); if(welcome) welcome.style.display='none';
   let ifr=w.querySelector('iframe');
   if(!ifr){ ifr=document.createElement('iframe'); ifr.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"; ifr.allowFullscreen=true; w.appendChild(ifr); }
   ifr.src=src;
@@ -393,7 +708,12 @@ function atualizar(){
 function toggleMenu(){ document.getElementById('side').classList.toggle('open'); document.getElementById('scrim').classList.toggle('on'); }
 function fecharMenu(){ document.getElementById('side').classList.remove('open'); document.getElementById('scrim').classList.remove('on'); }
 
-montarLista(); atualizar();
+(function(){
+  var b=document.getElementById('upbar'),c=document.getElementById('upbarClose');
+  if(c&&b)c.addEventListener('click',function(){b.classList.add('is-hidden')});
+})();
+
+montarLista(); atualizar(); renderWelcomeState();
 </script>
 </body>
 </html>
