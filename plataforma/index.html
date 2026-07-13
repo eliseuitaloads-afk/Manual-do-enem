@@ -473,12 +473,50 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
 .credito b{color:#fff}
 
 /* UPBAR COMPACTA */
-.upbar{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,#2a1550,#3d1f73);border-top:1px solid rgba(180,140,255,.3);padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));box-shadow:0 -8px 28px rgba(0,0,0,.45)}
+.upbar{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:9998;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:linear-gradient(90deg,#2a1550,#3d1f73);
+  border-top:1px solid rgba(180,140,255,.3);
+  padding:12px 38px 12px 16px; /* padding-right de 38px para reservar espaço do × */
+  padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  box-shadow:0 -8px 28px rgba(0,0,0,.45);
+}
 .upbar.is-hidden{display:none}
-.upbar-close{position:absolute;top:6px;right:10px;background:none;border:none;color:#9b8ec4;font-size:20px;line-height:1;cursor:pointer;padding:2px 6px;min-height:44px;min-width:44px;display:grid;place-items:center}
+.upbar-close{
+  position:absolute;
+  top:4px;
+  right:6px;
+  background:none;
+  border:none;
+  color:#9b8ec4;
+  font-size:20px;
+  line-height:1;
+  cursor:pointer;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  z-index:9999;
+}
 .upbar-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
 .upbar-tag{color:#FFD60A;font-size:11px;font-weight:800;letter-spacing:1px}
-.upbar-txt strong{color:#fff;font-size:14.5px;font-weight:700;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.upbar-txt strong{
+  color:#fff;
+  font-size:14.5px;
+  font-weight:700;
+  line-height:1.25;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
 .upbar-txt small{color:#c3b6e6;font-size:13px}
 .upbar-txt small s{color:#8d80b3}
 .upbar-txt small b{color:#fff;font-size:15px;font-weight:900}
@@ -575,7 +613,7 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
       <button class="upbar-close" id="upbarClose" aria-label="Fechar">×</button>
       <div class="upbar-txt">
         <span class="upbar-tag">⭐ UPGRADE</span>
-        <strong>Destrave a Redação e o Método completo</strong>
+        <strong>Destrave a Redação completa</strong>
         <small><s>de R$ 97</s> por <b>R$ 27,90</b></small>
       </div>
       <a class="upbar-btn" href="https://pay.wiapy.com/0dgjmi6c0iO">QUERO O COMPLETO →</a>
@@ -676,7 +714,15 @@ function abrir(m,a){
   const w=document.getElementById('playerWrap');
   const welcome=document.getElementById('welcome'); if(welcome) welcome.style.display='none';
   let ifr=w.querySelector('iframe');
-  if(!ifr){ ifr=document.createElement('iframe'); ifr.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"; ifr.allowFullscreen=true; w.appendChild(ifr); }
+  if(!ifr){
+    ifr=document.createElement('iframe');
+    ifr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    ifr.setAttribute('allowfullscreen', '');
+    ifr.setAttribute('width', '100%');
+    ifr.setAttribute('height', '100%');
+    w.appendChild(ifr);
+  }
+  ifr.setAttribute('title', au.titulo);
   ifr.src=src;
   document.getElementById('barraInfo').style.display='flex';
   document.getElementById('aTitulo').textContent=au.titulo;
