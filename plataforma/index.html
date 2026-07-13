@@ -14,7 +14,14 @@
     const SUPABASE_KEY = "sb_publishable_hnXyeiDV6UmOPKKm2GKYoA_A_wUsSj4";
     window._sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     window._sb.auth.getSession().then(({data})=>{
-      if(data.session){ document.documentElement.style.display=''; }
+      if(data.session){ 
+        document.documentElement.style.display=''; 
+        if (data.session.user && data.session.user.email) {
+          window._userEmail = data.session.user.email;
+          const emailEl = document.getElementById('perfilEmail');
+          if (emailEl) emailEl.textContent = data.session.user.email;
+        }
+      }
       else { location.replace('/plataforma/login.html'); }
     });
   })();
@@ -38,7 +45,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- ===== INICIO BLOCO CURSO (NAO ALTERAR OS IDS DE VIDEO/PLAYLIST) ===== -->
 <script>
@@ -86,7 +93,7 @@ const CURSO = {
       {"titulo": "Fatoração", "canal": "Professor Ferretto", "dur": "28:23", "yt": "3amBZupsIdc"},
       {"titulo": "Sistema Numeração Decimal", "canal": "Professor Ferretto", "dur": "15:00", "yt": "Jf0sA3wBqXE"},
       {"titulo": "Notação Científica", "canal": "Professor Ferretto", "dur": "20:00", "yt": "GPTxrh_mhow"},
-      {"titulo": "Sistema Métrico Decimal", "canal": "Professor Ferretto", "dur": "25:00", "yt": "epFmO0M8gDk"},
+      {"titulo": "Sistema Metric Decimal", "canal": "Professor Ferretto", "dur": "25:00", "yt": "epFmO0M8gDk"},
       {"titulo": "Equação do 1º Grau", "canal": "Professor Ferretto", "dur": "30:00", "yt": "Tu08PYjt-2Q"},
       {"titulo": "Sistemas de Equações", "canal": "Professor Ferretto", "dur": "25:00", "yt": "oT4k6bhB4Dk"},
       {"titulo": "Equação do 2º Grau (P1)", "canal": "Professor Ferretto", "dur": "35:00", "yt": "toAaUBwitFE"},
@@ -112,13 +119,13 @@ const CURSO = {
       { titulo:"750+ em Ciências da Natureza", canal:"Mestres do ENEM", dur:"22 vídeos", list:"PL8Sb1J47vKz5vvRoRhaXGiK37-rbhz2ak" },
       { titulo:"Física Básica do Zero", canal:"Mestres do ENEM", dur:"Aula", yt:"L0tDWm8QfCU" },
       { titulo:"Toda a Física em 12 horas", canal:"Mestres do ENEM", dur:"Aulão", yt:"M58XvuZ4Zy8" },
-      { titulo:"Física — 10 temas que mais caem", canal:"Mestres do ENEM", dur:"Aulão", yt:"hxciSW_B8Hw" },
+      { titulo:"Física | 10 temas que mais caem", canal:"Mestres do ENEM", dur:"Aulão", yt:"hxciSW_B8Hw" },
       { titulo:"Química em 1h (TOP dicas)", canal:"Química do Sucesso", dur:"7 vídeos", list:"PLyLiYLybj4m0HCP8a7fK1dbmgZgrZvC2-" },
       { titulo:"ENEM | Química (completo)", canal:"Curso Enem Gratuito", dur:"71 vídeos", list:"PL8vXuI6zmpdj_YFEHTaBDccdSCC1LVNH0" },
       { titulo:"Química Geral (completo)", canal:"Química do Sucesso", dur:"Playlist", list:"PLyLiYLybj4m3yRHPWgdiLwCNY3l8wtYnw" },
       { titulo:"Radioatividade", canal:"Química do Sucesso", dur:"Playlist", list:"PLyLiYLybj4m3p2CRbPlDThiMIRgBhgml-" },
       { titulo:"Videoaulas de Biologia", canal:"Paulo Jubilut", dur:"39 vídeos", list:"PLXXIkklJqmKn8tv__SljfEOVV2DFJRgvI" },
-      { titulo:"Biologia — Resoluções comentadas", canal:"Biologia Total", dur:"Playlist", list:"PLBeDi4xHURWFZef01qSpGX1-yHQguJhp6" },
+      { titulo:"Biologia | Resoluções comentadas", canal:"Biologia Total", dur:"Playlist", list:"PLBeDi4xHURWFZef01qSpGX1-yHQguJhp6" },
       { titulo:"Biologia do Zero (completo)", canal:"Biologia Total", dur:"Playlist", list:"PL8Sb1J47vKz6CAVoJA-J3UCrhBT0HJbX4" },
       { titulo:"Doenças e Ecologia que mais caem", canal:"Paulo Jubilut", dur:"Playlist", list:"PLXXIkklJqmKmvWMS8-Tsr85ZWQlGKVtQW" },
       {"titulo": "Introdução à Biologia", "canal": "Paulo Jubilut", "dur": "30:00", "yt": "IYhoJRyzijg"},
@@ -151,15 +158,15 @@ const CURSO = {
     { id:"redacao", nome:"Redação", cor:"#7B3FFF", aulas:[
       { titulo:"Tudo de Redação", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxowrHHXhzfuBcEjNTNVhUMH" },
       { titulo:"Redação ENEM", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxq5YlKcgT2LXkBPKx2GvPbE" },
-      { titulo:"Redação do ENEM Perfeita", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIqxoQSzyImvoNSbBhs1zb_6GS" },
-      { titulo:"Revisão — Linguagens e Redação", canal:"Professor Noslen", dur:"Aulão", yt:"wSTuQIFBW7o" }
+      { titulo:"Redação do ENEM Perfeita", canal:"Professor Noslen", dur:"Playlist", list:"PLVyIxkvuIxoQSzyImvoNSbBhs1zb_6GS" },
+      { titulo:"Revisão | Linguagens e Redação", canal:"Professor Noslen", dur:"Aulão", yt:"wSTuQIFBW7o" }
     ]},
     { id:"revisao", nome:"Revisão Final / Aulões", cor:"#DC2626", aulas:[
       { titulo:"Mapas Mentais ENEM", canal:"Me Salva!", dur:"Playlist", list:"PLf1lowbdbFIB7lokL4dFzWu1vkLvelOiI" },
-      { titulo:"Quiz ENEM — Treinando questões", canal:"Me Salva!", dur:"Playlist", list:"PLf1lowbdbFIB5ns8aBsEkg_eo3HlRD0op" },
+      { titulo:"Quiz ENEM | Treinando questões", canal:"Me Salva!", dur:"Playlist", list:"PLf1lowbdbFIB5ns8aBsEkg_eo3HlRD0op" },
       { titulo:"Última live antes do ENEM", canal:"Débora Aladim", dur:"Live", yt:"dj0-6J2KDas" },
-      { titulo:"Curso ENEM — Port e Mat", canal:"Descomplica", dur:"Aulão", yt:"24zu444qWpc" },
-      { titulo:"Revisão Final — Redação 1000", canal:"ProEnem", dur:"Aulão", yt:"dUX-arx_YMk" }
+      { titulo:"Curso ENEM | Port e Mat", canal:"Descomplica", dur:"Aulão", yt:"24zu444qWpc" },
+      { titulo:"Revisão Final | Redação 1000", canal:"ProEnem", dur:"Aulão", yt:"dUX-arx_YMk" }
     ]}
   ]
 };
@@ -167,110 +174,347 @@ const CURSO = {
 <!-- ===== FIM BLOCO CURSO ===== -->
 
 <style>
-:root{
-  --bg:#12081f; --bg2:#0f061c; --card:#1c1030; --card2:#251642;
-  --line:rgba(180,140,255,.12); --txt:#ffffff; --muted:#a99bc9;
-  --roxo:#7B3FFF; --roxo2:#9D4EFF; --amarelo:#FFD60A; --verde:#2ED573;
-  --sidew:330px;
-}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%}
-body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
-
-.layout{display:flex;min-height:100vh}
-
-/* ===== SIDEBAR (lista de aulas) ===== */
-.side{width:var(--sidew);flex:0 0 var(--sidew);background:var(--bg2);border-right:1px solid var(--line);
-  display:flex;flex-direction:column;height:100vh;position:sticky;top:0}
-.side-top{padding:24px 18px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:14px}
-.side-top img{height:60px;width:auto;display:block}
-
-/* rodapé da sidebar */
-.side-footer {
-  padding: 16px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: center;
-  background: var(--bg2);
-}
-.side-sair{
-  background:none;
-  border:none;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:500;
-  cursor:pointer;
-  text-decoration:underline;
-  opacity:0.7;
-  transition:opacity 0.2s, color 0.2s;
-  padding:8px 16px;
-  min-height:44px; /* Area de toque minima 44px */
-}
-.side-sair:hover{
-  opacity:1;
+/* ---------- BASE ---------- */
+.app{
+  min-height:100dvh;
+  background:
+    radial-gradient(120% 60% at 50% 0%, #3a1a6b 0%, #1a0d33 45%, #0d0618 100%);
   color:#fff;
+  font-family:'Poppins',system-ui,-apple-system,sans-serif;
+  padding-bottom:calc(78px + env(safe-area-inset-bottom));
+}
+.app *{box-sizing:border-box}
+
+/* ---------- HEADER ---------- */
+.app-header{
+  display:flex;justify-content:center;align-items:center;
+  padding:22px 20px 18px;
+}
+.app-logo{height:56px;width:auto}
+
+/* ---------- MAIN ---------- */
+.app-main{max-width:520px;margin:0 auto;padding:0 18px}
+
+/* ---------- APP SCREENS ---------- */
+.app-screen{
+  display:none;
 }
 
-/* progresso destacado */
-.side-prog{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:18px 20px;
-  margin:16px;
-  box-shadow:0 4px 12px rgba(0,0,0,.15);
+/* ---------- PROGRESSO CARD (TELA INICIO) ---------- */
+.prog-card{
+  background:linear-gradient(160deg,rgba(60,30,110,.55),rgba(30,15,55,.55));
+  border:1px solid rgba(150,110,230,.28);
+  border-radius:20px;padding:22px 20px;margin-bottom:26px;
+  backdrop-filter:blur(6px);
 }
-.side-prog-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  margin-bottom:12px;
+.prog-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.prog-icon{
+  flex:none;width:44px;height:44px;border-radius:14px;
+  background:rgba(139,79,224,.28);
+  display:flex;align-items:center;justify-content:center;
 }
-.side-prog-header span {
-  font-size:11px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  color:var(--muted);
+.prog-icon svg{width:22px;height:22px}
+.prog-label{
+  flex:1;font-size:13px;font-weight:700;letter-spacing:1.5px;
+  color:#b9a8dd;
 }
-.side-prog-header strong {
-  font-size:26px;
-  font-weight:900;
-  font-family:'Plus Jakarta Sans',sans-serif;
-  color:#fff;
+.prog-pct{font-size:38px;font-weight:900;line-height:1;color:#fff}
+.prog-bar{
+  height:10px;border-radius:20px;
+  background:rgba(255,255,255,.09);overflow:hidden;margin-bottom:12px;
 }
-.side-prog .bar{
-  height:8px; /* barra mais grossa (8px) */
-  background:#0e0820;
-  border-radius:99px;
-  overflow:hidden;
-  margin-bottom:10px;
-}
-.side-prog .bar i{
-  display:block;
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,var(--roxo),var(--amarelo)); /* gradiente roxo->amarelo */
-  border-radius:99px;
+.prog-fill{
+  height:100%;border-radius:20px;
+  background:linear-gradient(90deg,#FFD60A,#FF6500,#e0359a,#8b4fe0);
   transition:width .5s ease;
 }
-.side-prog-footer {
-  font-size:12px;
-  color:var(--muted);
-  font-weight:500;
+.prog-count{margin:0;font-size:14px;color:#a99bc9}
+
+/* ---------- MATÉRIAS GRID ---------- */
+.mat-list{display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.mat{
+  display:flex;align-items:center;gap:14px;
+  min-height:64px;padding:12px 16px;
+  background:rgba(30,17,55,.75);
+  border:1px solid rgba(139,79,224,.18);
+  border-radius:16px;
+  text-decoration:none;color:#fff;
+  transition:border-color .2s ease,transform .15s ease,box-shadow .2s ease;
+}
+.mat:hover,.mat:focus-visible{
+  border-color:rgba(180,140,255,.55);
+  box-shadow:0 0 0 1px rgba(180,140,255,.25),0 8px 26px rgba(107,47,191,.3);
+}
+.mat:active{transform:scale(.985)}
+.mat-ico{
+  flex:none;width:46px;height:46px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.25);
+}
+.mat-ico svg{width:24px;height:24px}
+.mat-ico-ling{background:linear-gradient(145deg,#f0407f,#c81e5c)}
+.mat-ico-mat {background:linear-gradient(145deg,#3d7ff0,#1f4fc0)}
+.mat-ico-nat {background:linear-gradient(145deg,#2fc45c,#178a3c)}
+.mat-ico-hum {background:linear-gradient(145deg,#ff8a1e,#e06000)}
+.mat-ico-red {background:linear-gradient(145deg,#9b5ce8,#6B2FBF)}
+.mat-ico-rev {background:linear-gradient(145deg,#f0455a,#c01e35)}
+.mat-nome{flex:1;font-size:16.5px;font-weight:700;line-height:1.25}
+.mat-seta{
+  flex:none;width:30px;height:30px;border-radius:50%;
+  border:1px solid rgba(180,140,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:#b9a8dd;font-size:17px;line-height:1;padding-bottom:2px;
 }
 
-.side-list{flex:1;overflow-y:auto;padding:8px;display:flex;flex-direction:column}
+/* ---------- BÔNUS ---------- */
+.bonus-box{
+  background:rgba(26,14,48,.7);
+  border:1px solid rgba(139,79,224,.22);
+  border-radius:20px;padding:18px 14px;margin-bottom:22px;
+}
+.bonus-head{
+  text-align:center;margin-bottom:14px;
+  color:#FFD60A;font-size:13px;font-weight:800;letter-spacing:2px;
+}
+.bonus{
+  display:flex;align-items:center;gap:14px;
+  min-height:58px;padding:10px 12px;margin-bottom:8px;
+  background:rgba(38,22,68,.7);
+  border:1px solid rgba(139,79,224,.16);
+  border-radius:14px;
+  text-decoration:none;color:#fff;
+  transition:border-color .2s ease,transform .15s ease;
+}
+.bonus:last-child{margin-bottom:0}
+.bonus:hover{border-color:rgba(180,140,255,.45)}
+.bonus:active{transform:scale(.985)}
+.bonus-ico{
+  flex:none;width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:900;color:#fff;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.25);
+}
+.bonus-ico svg{width:22px;height:22px}
+.bonus-ico-1{background:linear-gradient(145deg,#9b5ce8,#6B2FBF)}
+.bonus-ico-2{background:linear-gradient(145deg,#ff6a3d,#e0355a)}
+.bonus-ico-3{background:linear-gradient(145deg,#3d7ff0,#1f4fc0)}
+.bonus-ico-4{background:linear-gradient(145deg,#2fc45c,#178a3c)}
+.bonus-nome{flex:1;font-size:15.5px;font-weight:700}
 
-.mat{margin-bottom:12px} /* mais espaçamento vertical */
-.mat-h{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px;user-select:none;min-height:48px}
-.mat-h:hover{background:var(--card)}
-.mat-h .dot{width:8px;height:20px;border-radius:5px;flex:0 0 auto}
-.mat-h .chev{margin-left:auto;transition:transform .2s;color:var(--muted);font-size:12px}
-.mat.open .mat-h .chev{transform:rotate(90deg)}
-.mat-aulas{display:none;padding:4px 0 8px}
-.mat.open .mat-aulas{display:block}
+/* ---------- MOTIVACIONAL ---------- */
+.moti{
+  display:flex;align-items:flex-start;gap:14px;
+  background:linear-gradient(150deg,rgba(60,30,110,.5),rgba(30,15,55,.5));
+  border:1px solid rgba(139,79,224,.22);
+  border-radius:18px;padding:20px 18px;
+}
+.moti-star{font-size:26px;color:#FFD60A;line-height:1;flex:none}
+.moti strong{display:block;font-size:17px;font-weight:800;margin-bottom:4px}
+.moti p{margin:0;font-size:14px;line-height:1.5;color:#a99bc9}
+
+/* ---------- TELA AULAS: TRILHA & PLAYER ---------- */
+.player-wrap{background:#000;aspect-ratio:16/9;width:100%;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.player-wrap.has-welcome{aspect-ratio:auto;min-height:280px;display:flex;align-items:center;justify-content:center}
+.player-wrap iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0}
+
+/* welcome / empty state */
+.welcome{display:none;width:100%;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(700px 400px at 50% 0%, rgba(123,63,255,.2), transparent 75%),var(--bg);padding:24px}
+.player-wrap.has-welcome .welcome{display:flex}
+
+.welcome-card {
+  background:rgba(26,14,48,.8);
+  border:1px solid rgba(139,79,224,.28);
+  border-radius:20px;padding:22px;width:100%;
+  box-shadow:0 12px 36px rgba(0,0,0,.4);
+}
+.welcome-badge {
+  display:inline-block;
+  background:rgba(139,79,224,.16);
+  color:#FFD60A;
+  font-weight:700;font-size:11px;letter-spacing:.5px;
+  text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:16px;
+}
+.welcome-content {display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.welcome-thumb-wrap {
+  position:relative;width:160px;height:90px;border-radius:10px;
+  overflow:hidden;flex-shrink:0;background:#000;
+}
+.welcome-thumb {width:100%;height:100%;object-fit:cover;display:block}
+.welcome-playlist-thumb {
+  background:linear-gradient(135deg,#7B3FFF,#0f061c);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+}
+.welcome-playlist-thumb .playlist-icon {font-size:22px}
+.welcome-playlist-thumb .playlist-tag {
+  font-size:9px;text-transform:uppercase;font-weight:700;
+  background:rgba(255,255,255,.15);padding:2px 6px;border-radius:4px;
+}
+.welcome-play-btn {
+  position:absolute;inset:0;margin:auto;width:38px;height:38px;
+  border-radius:50%;background:rgba(123,63,255,.9);border:none;
+  color:#fff;font-size:14px;cursor:pointer;display:grid;place-items:center;
+}
+.welcome-details {flex:1;min-width:180px}
+.welcome-details h3 {font-size:15px;font-weight:800;color:#fff;margin:0 0 4px;line-height:1.3}
+.welcome-details p {font-size:12px;color:#a99bc9;margin:0 0 12px}
+.welcome-action-btn {
+  background:linear-gradient(180deg,#2ee06a,#1fb851);
+  color:#fff;border:none;font-size:12.5px;font-weight:800;
+  padding:8px 16px;border-radius:30px;cursor:pointer;
+  min-height:38px;box-shadow:0 4px 12px rgba(31,184,81,.3);
+}
+
+.barra-info {
+  padding:20px;background:rgba(26,14,48,.5);
+  border:1px solid rgba(139,79,224,.18);border-radius:18px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:16px;
+}
+.barra-info h1 {font-size:17.5px;font-weight:800;color:#fff;margin:0 0 4px;line-height:1.3}
+.barra-info .c {color:#a99bc9;font-size:13px}
+.barra-info .ti {flex:1;min-width:200px}
+.barra-info .mk {
+  background:linear-gradient(180deg,#2ee06a,#1fb851);
+  color:#fff;border:none;font-weight:800;font-size:13.5px;
+  padding:10px 20px;border-radius:30px;cursor:pointer;
+  min-height:44px;box-shadow:0 6px 14px rgba(31,184,81,.3);
+  transition:transform 0.15s;
+}
+.barra-info .mk.on {
+  background:transparent;color:#2ee06a;border:2px solid #2ee06a;box-shadow:none;
+}
+.credito {
+  margin-top:12px;background:rgba(123,63,255,.05);
+  border:1px solid rgba(157,78,255,.14);border-radius:12px;
+  padding:12px 16px;font-size:12.5px;line-height:1.5;color:#a99bc9;
+}
+.credito b {color:#fff}
+
+/* Trilha Aulas na Aba Aulas */
+.mat-card {margin-bottom:14px;background:rgba(26,14,48,.4);border:1px solid rgba(139,79,224,.15);border-radius:16px;overflow:hidden}
+.mat-card-h {
+  display:flex;align-items:center;gap:12px;padding:14px 16px;
+  cursor:pointer;font-weight:700;font-size:14.5px;user-select:none;min-height:50px;
+  transition:background .2s;
+}
+.mat-card-h:hover {background:rgba(139,79,224,.08)}
+.mat-card-h .dot {width:6px;height:18px;border-radius:3px;flex:none}
+.mat-card-h svg {flex:none}
+.mat-card-h .chev {margin-left:auto;transition:transform .25s;color:#a99bc9;font-size:12px}
+.mat-card.open .mat-card-h .chev {transform:rotate(90deg)}
+.mat-card-aulas {display:none;padding:4px 8px 12px;border-top:1px solid rgba(139,79,224,.08)}
+.mat-card.open .mat-card-aulas {display:block}
+
+.aula {
+  display:flex;gap:12px;align-items:center;padding:12px 14px;
+  border-radius:10px;cursor:pointer;font-size:13px;color:#a99bc9;
+  line-height:1.35;min-height:46px;margin-bottom:4px;
+}
+.aula:hover {background:rgba(255,255,255,.04);color:#fff}
+.aula.sel {background:rgba(139,79,224,.15);color:#fff;font-weight:600}
+.aula .ck {
+  width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);
+  flex:none;display:grid;place-items:center;font-size:9px;color:transparent;
+}
+.aula.done .ck {background:#2ee06a;border-color:#2ee06a;color:#06210f}
+.aula .nm {flex:1}
+.aula .nm small {display:block;color:#7e749c;font-size:11px;margin-top:2px}
+
+/* ---------- TELA PROGRESSO ---------- */
+.stats-summary-card {
+  background:linear-gradient(160deg,rgba(60,30,110,.55),rgba(30,15,55,.55));
+  border:1px solid rgba(150,110,230,.28);
+  border-radius:20px;padding:22px;margin-bottom:26px;
+  backdrop-filter:blur(6px);
+}
+.stats-grid {display:flex;justify-content:space-around;text-align:center}
+.stat-item {display:flex;flex-direction:column;align-items:center}
+.stat-num {
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;
+  font-weight:900;color:#fff;line-height:1.2;
+}
+.stat-lbl {
+  font-size:11px;color:#a99bc9;text-transform:uppercase;
+  letter-spacing:1px;margin-top:4px;
+}
+.subject-progress-box {
+  background:rgba(26,14,48,.6);
+  border:1px solid rgba(139,79,224,.18);
+  border-radius:20px;padding:22px 18px;
+}
+.subj-prog-item {margin-bottom:20px;cursor:pointer}
+.subj-prog-item:last-child {margin-bottom:0}
+.subj-prog-meta {display:flex;justify-content:space-between;margin-bottom:6px;font-size:13.5px;font-weight:700}
+.subj-prog-name {color:#fff}
+.subj-prog-counts {color:#a99bc9}
+.subj-prog-bar {height:8px;background:rgba(255,255,255,.09);border-radius:99px;overflow:hidden}
+.subj-prog-fill {height:100%;border-radius:99px;transition:width .4s ease}
+
+/* ---------- TELA PERFIL ---------- */
+.perfil-card {
+  background:linear-gradient(160deg,rgba(60,30,110,.55),rgba(30,15,55,.55));
+  border:1px solid rgba(150,110,230,.28);
+  border-radius:20px;padding:22px;margin-bottom:26px;
+  display:flex;align-items:center;gap:16px;backdrop-filter:blur(6px);
+}
+.perfil-avatar {
+  font-size:30px;width:58px;height:58px;
+  background:rgba(139,79,224,.28);border-radius:50%;
+  display:grid;place-items:center;flex-shrink:0;
+}
+.perfil-info {display:flex;flex-direction:column;gap:4px}
+.perfil-info strong {font-size:15.5px;color:#fff;word-break:break-all}
+.perfil-badge {
+  display:inline-block;align-self:flex-start;
+  background:rgba(255,214,10,.16);color:#FFD60A;
+  font-weight:700;font-size:11px;padding:3px 10px;
+  border-radius:99px;text-transform:uppercase;letter-spacing:.5px;
+}
+
+/* upsell no Perfil */
+.upside{margin:24px 0 28px;background:linear-gradient(160deg,#2a1550,#3d1f73);border:1px solid rgba(180,140,255,.28);border-radius:16px;padding:18px 16px 20px}
+.upside-tag{display:inline-block;color:#FFD60A;font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
+.upside h4{color:#fff;font-size:16px;font-weight:800;line-height:1.3;margin:0 0 12px}
+.upside ul{list-style:none;margin:0 0 14px;padding:0}
+.upside li{color:#c3b6e6;font-size:13.5px;line-height:1.5;padding:3px 0}
+.upside-price{display:flex;align-items:baseline;gap:8px;border-top:1px solid rgba(180,140,255,.2);padding-top:12px;margin-bottom:14px}
+.upside-price s{color:#8d80b3;font-size:13px}
+.upside-price strong{color:#fff;font-size:22px;font-weight:900}
+.upside-btn{display:block;text-align:center;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;text-decoration:none;font-size:14px;font-weight:800;padding:13px 12px;border-radius:40px;box-shadow:0 6px 16px rgba(31,184,81,.35)}
+.upside-btn:active{transform:scale(.97)}
+
+.perfil-sair-btn {
+  width:100%;background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.25);
+  color:#ff5555;font-weight:700;padding:14px;border-radius:14px;
+  cursor:pointer;font-size:14.5px;min-height:44px;margin-top:10px;
+}
+.perfil-sair-btn:hover {background:rgba(220,38,38,.2);border-color:rgba(220,38,38,.4)}
+
+/* ---------- TAB BAR ---------- */
+.tabbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:100;
+  display:flex;
+  background:rgba(15,8,28,.94);
+  backdrop-filter:blur(14px);
+  border-top:1px solid rgba(139,79,224,.22);
+  padding:8px 4px;
+  padding-bottom:calc(8px + env(safe-area-inset-bottom));
+}
+.tab{
+  flex:1;position:relative;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:8px 2px;min-height:56px;
+  text-decoration:none;color:#6f628f;
+  font-size:11px;font-weight:600;
+  transition:color .2s ease;
+}
+.tab svg{width:22px;height:22px}
+.tab.is-active{color:#a06ce8}
+.tab.is-active::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:26px;height:3px;border-radius:0 0 4px 4px;background:#a06ce8;
+}
+.tab:active{transform:scale(.94)}
 
 .mat-svg {
   width:16px;
@@ -282,263 +526,221 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
   stroke-linejoin:round;
   flex:none;
 }
-.mat-h:hover .mat-svg {
+.mat-card-h:hover .mat-svg {
   stroke:#fff;
 }
 
-.aula{display:flex;gap:10px;align-items:center;padding:10px 12px 10px 30px;border-radius:9px;cursor:pointer;font-size:13px;color:var(--muted);line-height:1.3;min-height:44px} /* Area de toque minima 44px */
-.aula:hover{background:var(--card);color:#fff}
-.aula.sel{background:var(--card2);color:#fff}
-.aula .ck{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--line);flex:0 0 auto;display:grid;place-items:center;font-size:10px}
-.aula.done .ck{background:var(--verde);border-color:var(--verde);color:#06210f}
-.aula .nm{flex:1}
-.aula .nm small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
-
-/* ===== PALCO (player grande) ===== */
-.palco{flex:1;display:flex;flex-direction:column;min-width:0}
-.player-wrap{background:#000;aspect-ratio:16/9;width:100%;position:relative} /* aspecto 16/9 por padrão */
-.player-wrap.has-welcome{aspect-ratio:auto;min-height:300px;display:flex;align-items:center;justify-content:center}
-.player-wrap iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0}
-
-/* tela de boas-vindas / estado vazio */
-.welcome{display:none;width:100%;flex-direction:column;align-items:center;justify-content:center;
-  background:radial-gradient(700px 400px at 50% 0%, rgba(123,63,255,.2), transparent 75%),var(--bg);padding:30px}
-.player-wrap.has-welcome .welcome{display:flex}
-
-/* welcome card design */
-.welcome-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 600px;
-  width: 95%;
-  text-align: left;
-  box-shadow: 0 12px 36px rgba(0,0,0,.3);
-}
-.welcome-badge {
-  display: inline-block;
-  background: rgba(123,63,255,.16);
-  color: var(--amarelo);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 99px;
-  margin-bottom: 20px;
-}
-.welcome-content {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.welcome-thumb-wrap {
-  position: relative;
-  width: 200px;
-  height: 112px;
-  border-radius: 12px;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #000;
-  box-shadow: 0 6px 18px rgba(0,0,0,.4);
-}
-.welcome-thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.welcome-playlist-thumb {
-  background: linear-gradient(135deg, var(--roxo), var(--bg2));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.welcome-playlist-thumb .playlist-icon {
-  font-size: 28px;
-}
-.welcome-playlist-thumb .playlist-tag {
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-  background: rgba(255,255,255,.15);
-  padding: 3px 8px;
-  border-radius: 6px;
-}
-.welcome-play-btn {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(123, 63, 255, 0.9);
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  opacity: 0.9;
-  transition: transform 0.2s, background 0.2s;
-}
-.welcome-play-btn:hover {
-  transform: scale(1.1);
-  background: var(--roxo2);
-}
-.welcome-details {
-  flex: 1;
-  min-width: 200px;
-}
-.welcome-details h3 {
-  font-size: 17px;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 6px;
-  line-height: 1.35;
-}
-.welcome-details p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 16px;
-}
-.welcome-action-btn {
-  background: linear-gradient(180deg, #2ee06a, #1fb851);
-  color: #fff;
-  border: none;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(31,184,81,.3);
-  transition: transform 0.15s;
-  min-height: 44px; /* Area de toque minima */
-}
-.welcome-action-btn:active {
-  transform: scale(.97);
-}
-
-.barra-info {
-  padding: 24px 30px;
-  background: var(--card);
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 20px rgba(0,0,0,.15);
-}
-.barra-info h1 {
-  font-size: 20px;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-.barra-info .c {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-}
-.barra-info .mk {
-  background: linear-gradient(180deg,#2ee06a,#1fb851);
-  color: #fff;
-  border: none;
-  font-weight: 800;
-  font-size: 14px;
-  padding: 12px 24px;
-  border-radius: 40px;
-  cursor: pointer;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  white-space: nowrap;
-  box-shadow: 0 6px 16px rgba(31,184,81,.3);
-  min-height: 46px; /* Area de toque minima 44px */
-  transition: transform 0.15s;
-}
-.barra-info .mk:active {
-  transform: scale(.97);
-}
-.barra-info .mk.on {
-  background: transparent;
-  color: var(--verde);
-  border: 2px solid var(--verde);
-  box-shadow: none;
-}
-
-.credito{margin:20px 30px;background:rgba(123,63,255,.06);border:1px solid rgba(157,78,255,.16);
-  border-radius:12px;padding:14px 18px;font-size:13px;line-height:1.55;color:var(--muted)}
-.credito b{color:#fff}
-
-/* upside */
-.upside{margin:24px 12px 28px;background:linear-gradient(160deg,#2a1550,#3d1f73);border:1px solid rgba(180,140,255,.28);border-radius:16px;padding:18px 16px 20px}
-.upside-tag{display:inline-block;color:#FFD60A;font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
-.upside h4{color:#fff;font-size:16px;font-weight:800;line-height:1.3;margin:0 0 12px}
-.upside ul{list-style:none;margin:0 0 14px;padding:0}
-.upside li{color:#c3b6e6;font-size:13.5px;line-height:1.5;padding:3px 0}
-.upside-price{display:flex;align-items:baseline;gap:8px;border-top:1px solid rgba(180,140,255,.2);padding-top:12px;margin-bottom:14px}
-.upside-price s{color:#8d80b3;font-size:13px}
-.upside-price strong{color:#fff;font-size:22px;font-weight:900}
-.upside-btn{display:block;text-align:center;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;text-decoration:none;font-size:14px;font-weight:800;padding:13px 12px;border-radius:40px;box-shadow:0 6px 16px rgba(31,184,81,.35)}
-.upside-btn:active{transform:scale(.97)}
-
-/* mobile */
-.mtop{display:none}
-@media(max-width:900px){
-  .layout{flex-direction:column}
-  .side{position:fixed;left:0;top:0;bottom:0;z-index:60;transform:translateX(-100%);transition:transform .25s;width:300px;flex-basis:300px}
-  .side.open{transform:translateX(0)}
-  .palco{width:100%}
-  .mtop{display:flex;align-items:center;gap:12px;padding:12px 16px;position:sticky;top:0;z-index:50;background:rgba(11,6,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-  .mtop .burger{background:none;border:0;color:#fff;font-size:24px;cursor:pointer;min-width:44px;min-height:44px;display:grid;place-items:center}
-  .mtop img{height:32px}
-  .scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:55}
-  .scrim.on{display:block}
-  .welcome-card {
-    padding: 20px;
-  }
-  .welcome-content {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .welcome-thumb-wrap {
-    width: 100%;
-    height: 140px;
-  }
+/* ---------- DESKTOP / RESPONSIVO ---------- */
+@media(min-width:900px){
+  .app-main{max-width:620px}
 }
 </style>
 </head>
 <body>
 
-<!-- topo mobile -->
-<div class="mtop">
-  <button class="burger" onclick="toggleMenu()">☰</button>
-  <img src="/plataforma/logo.png" alt="Manual do ENEM">
-</div>
-<div class="scrim" id="scrim" onclick="toggleMenu()"></div>
+<div class="app">
 
-<div class="layout">
+  <main class="app-main">
 
-  <!-- LISTA DE AULAS (ESQUERDA) -->
-  <aside class="side" id="side">
-    <div class="side-top">
-      <img src="/plataforma/logo.png" alt="Manual do ENEM">
+    <!-- ==================== TELA 1: INÍCIO ==================== -->
+    <div id="screen-inicio" class="app-screen">
+      <!-- HEADER -->
+      <header class="app-header">
+        <img class="app-logo" src="/plataforma/logo.png" alt="Método Pro do ENEM" width="120" height="56">
+      </header>
+
+      <!-- CARD DE PROGRESSO -->
+      <section class="prog-card">
+        <div class="prog-top">
+          <div class="prog-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/>
+            </svg>
+          </div>
+          <span class="prog-label">SEU PROGRESSO</span>
+          <strong class="prog-pct" id="progPct">0%</strong>
+        </div>
+        <div class="prog-bar">
+          <div class="prog-fill" id="progFill" style="width:0%"></div>
+        </div>
+        <p class="prog-count" id="progCount">0 de 105 aulas concluídas</p>
+      </section>
+
+      <!-- MATÉRIAS -->
+      <nav class="mat-list">
+        <a class="mat" href="#linguagens" data-materia="linguagens">
+          <span class="mat-ico mat-ico-ling">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </span>
+          <span class="mat-nome">Linguagens e Códigos</span>
+          <span class="mat-seta">›</span>
+        </a>
+
+        <a class="mat" href="#matematica" data-materia="matematica">
+          <span class="mat-ico mat-ico-mat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 4h14L12 12l7 8H5"/>
+            </svg>
+          </span>
+          <span class="mat-nome">Matemática</span>
+          <span class="mat-seta">›</span>
+        </a>
+
+        <a class="mat" href="#natureza" data-materia="natureza">
+          <span class="mat-ico mat-ico-nat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3h6M10 3v6l-5.5 9A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.5 15h9"/>
+            </svg>
+          </span>
+          <span class="mat-nome">Ciências da Natureza</span>
+          <span class="mat-seta">›</span>
+        </a>
+
+        <a class="mat" href="#humanas" data-materia="humanas">
+          <span class="mat-ico mat-ico-hum">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/>
+            </svg>
+          </span>
+          <span class="mat-nome">Ciências Humanas</span>
+          <span class="mat-seta">›</span>
+        </a>
+
+        <a class="mat" href="#redacao" data-materia="redacao">
+          <span class="mat-ico mat-ico-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5z"/>
+            </svg>
+          </span>
+          <span class="mat-nome">Redação</span>
+          <span class="mat-seta">›</span>
+        </a>
+
+        <a class="mat" href="#revisao" data-materia="revisao">
+          <span class="mat-ico mat-ico-rev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2s5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-5c0 2 1 3 2 3s1-4 1-8z"/>
+            </svg>
+          </span>
+          <span class="mat-nome">Revisão Final / Aulões</span>
+          <span class="mat-seta">›</span>
+        </a>
+      </nav>
+
+      <!-- SEUS BÔNUS -->
+      <section class="bonus-box">
+        <div class="bonus-head"><span>🎁 SEUS BÔNUS</span></div>
+
+        <a class="bonus" href="/plataforma/bonus/Protocolo%208s.pdf" target="_blank">
+          <span class="bonus-ico bonus-ico-1">8S</span>
+          <span class="bonus-nome">Protocolo 8S</span>
+          <span class="mat-seta">›</span>
+        </a>
+        <a class="bonus" href="/plataforma/bonus/MAPA%20DE%20CALOR%20ENEM.pdf" target="_blank">
+          <span class="bonus-ico bonus-ico-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </span>
+          <span class="bonus-nome">Mapa de Calor ENEM</span>
+          <span class="mat-seta">›</span>
+        </a>
+        <a class="bonus" href="/plataforma/bonus/GUIA%20MEMORIZACAO%203.0.pdf" target="_blank">
+          <span class="bonus-ico bonus-ico-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M9 3a3 3 0 0 0-3 3a3 3 0 0 0-2 5a3 3 0 0 0 2 5a3 3 0 0 0 3 3a3 3 0 0 0 3-2V5a3 3 0 0 0-3-2z"/><path d="M15 3a3 3 0 0 1 3 3a3 3 0 0 1 2 5a3 3 0 0 1-2 5a3 3 0 0 1-3 3a3 3 0 0 1-3-2"/></svg>
+          </span>
+          <span class="bonus-nome">Memorização 3.0</span>
+          <span class="mat-seta">›</span>
+        </a>
+        <a class="bonus" href="/plataforma/bonus/LISTA%20TEMAS%20QUENTES%20ENEM.pdf" target="_blank">
+          <span class="bonus-ico bonus-ico-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-5c0 2 1 3 2 3s1-4 1-8z"/></svg>
+          </span>
+          <span class="bonus-nome">Temas Quentes ENEM</span>
+          <span class="mat-seta">›</span>
+        </a>
+      </section>
+
+      <!-- MOTIVACIONAL -->
+      <section class="moti">
+        <span class="moti-star">✦</span>
+        <div>
+          <strong>Foco hoje, conquista amanhã.</strong>
+          <p>Siga firme. O seu melhor resultado está em construção.</p>
+        </div>
+      </section>
     </div>
-    <div class="side-prog">
-      <div class="side-prog-header">
-        <span>Seu progresso</span>
-        <strong id="pPct">0%</strong>
+
+    <!-- ==================== TELA 2: AULAS ==================== -->
+    <div id="screen-aulas" class="app-screen">
+      <div class="player-wrap" id="playerWrap">
+        <div class="welcome" id="welcome">
+          <!-- será preenchido dinamicamente pelo renderWelcomeState() -->
+        </div>
       </div>
-      <div class="bar"><i id="pBar"></i></div>
-      <div class="side-prog-footer"><span id="pFeitas">0</span> de <span id="pTotal">0</span> aulas concluídas</div>
+
+      <div class="barra-info" id="barraInfo" style="display:none">
+        <div class="ti">
+          <h1 id="aTitulo">—</h1>
+          <div class="c" id="aCanal">—</div>
+        </div>
+        <button class="mk" id="mkBtn" onclick="toggleFeito()">Marcar como assistida</button>
+      </div>
+
+      <div class="credito" id="credito" style="display:none">
+        🎓 Aula selecionada pela nossa equipe do canal <b id="credCanal">—</b>.
+        Recomendamos a inscrição no canal original para conteúdos complementares.
+      </div>
+
+      <div class="aulas-list-container" style="margin-top: 22px; padding-bottom: 20px;">
+        <div id="lista"></div>
+      </div>
     </div>
-    <div class="side-list">
-      <div id="lista"></div>
-      
+
+    <!-- ==================== TELA 3: PROGRESSO ==================== -->
+    <div id="screen-progresso" class="app-screen">
+      <!-- HEADER -->
+      <header class="app-header">
+        <h2 style="font-family:'Plus Jakarta Sans';font-size:22px;font-weight:900;color:#fff">Seu Progresso</h2>
+      </header>
+
+      <div class="stats-summary-card">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-num" id="statCompleted">0</span>
+            <span class="stat-lbl">Concluídas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" id="statTotal">105</span>
+            <span class="stat-lbl">Total Aulas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" id="statPctText">0%</span>
+            <span class="stat-lbl">Conclusão</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subject-progress-box" id="subjectProgressList">
+        <!-- preenchido por scriptJS -->
+      </div>
+    </div>
+
+    <!-- ==================== TELA 4: PERFIL ==================== -->
+    <div id="screen-perfil" class="app-screen">
+      <!-- HEADER -->
+      <header class="app-header">
+        <h2 style="font-family:'Plus Jakarta Sans';font-size:22px;font-weight:900;color:#fff">Meu Perfil</h2>
+      </header>
+
+      <div class="perfil-card">
+        <div class="perfil-avatar">👤</div>
+        <div class="perfil-info">
+          <strong id="perfilEmail">email@aluno.com</strong>
+          <span class="perfil-badge" id="perfilPlanBadge">Plano Básico</span>
+        </div>
+      </div>
+
       <!-- upside (Upgrade) -->
       <!-- TODO: Exibir apenas para alunos do Plano BÁSICO (quem já é Completo não deve ver) -->
       <div class="upside" id="upside">
@@ -554,33 +756,34 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
         <div class="upside-price"><s>de R$ 97</s><strong>R$ 27,90</strong></div>
         <a class="upside-btn" href="https://pay.wiapy.com/0dgjmi6c0iO">QUERO O COMPLETO →</a>
       </div>
-    </div>
-    <div class="side-footer">
-      <button class="side-sair" onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))">Sair da Conta</button>
-    </div>
-  </aside>
 
-  <!-- PALCO (PLAYER GRANDE) -->
-  <div class="palco">
-    <div class="player-wrap" id="playerWrap">
-      <div class="welcome" id="welcome">
-        <!-- será preenchido dinamicamente pelo renderWelcomeState() -->
-      </div>
+      <button class="perfil-sair-btn" onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))">
+        Sair da Conta
+      </button>
     </div>
 
-    <div class="barra-info" id="barraInfo" style="display:none">
-      <div class="ti">
-        <h1 id="aTitulo">—</h1>
-        <div class="c" id="aCanal">—</div>
-      </div>
-      <button class="mk" id="mkBtn" onclick="toggleFeito()">Marcar como assistida</button>
-    </div>
+  </main>
 
-    <div class="credito" id="credito" style="display:none">
-      🎓 Aula selecionada pela nossa equipe do canal <b id="credCanal">—</b>.
-      Recomendamos a inscrição no canal original para conteúdos complementares.
-    </div>
-  </div>
+  <!-- TAB BAR -->
+  <nav class="tabbar">
+    <a class="tab is-active" href="#inicio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      <span>Início</span>
+    </a>
+    <a class="tab" href="#aulas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h8a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2H2z"/><path d="M22 4h-8a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2H22z"/></svg>
+      <span>Aulas</span>
+    </a>
+    <a class="tab" href="#progresso">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V4a8 8 0 0 1 6.9 4z"/></svg>
+      <span>Progresso</span>
+    </a>
+    <a class="tab" href="#perfil">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      <span>Perfil</span>
+    </a>
+  </nav>
+
 </div>
 
 <script>
@@ -602,14 +805,14 @@ function totalFeitas(){ return Object.values(estado).filter(Boolean).length; }
 
 function montarLista(){
   document.getElementById('lista').innerHTML = CURSO.materias.map((m,mi)=>`
-    <div class="mat ${mi===0?'open':''}" id="mat-${mi}">
-      <div class="mat-h" onclick="toggleMat(${mi})">
+    <div class="mat-card ${mi===0?'open':''}" id="mat-${mi}">
+      <div class="mat-card-h" onclick="toggleMat(${mi})">
         <span class="dot" style="background:${m.cor}"></span>
         ${ICON[m.id]||''}
         <span>${m.nome}</span>
         <span class="chev">▶</span>
       </div>
-      <div class="mat-aulas">
+      <div class="mat-card-aulas">
         ${m.aulas.map((a,ai)=>`
           <div class="aula ${estado[chave(mi,ai)]?'done':''}" id="aula-${mi}-${ai}" onclick="abrir(${mi},${ai})">
             <span class="ck">✓</span>
@@ -618,7 +821,9 @@ function montarLista(){
       </div>
     </div>`).join('');
 }
-function toggleMat(mi){ document.getElementById('mat-'+mi).classList.toggle('open'); }
+function toggleMat(mi){
+  document.getElementById('mat-'+mi).classList.toggle('open');
+}
 
 function renderWelcomeState() {
   const lastAulaStr = localStorage.getItem('enem_last_aula');
@@ -699,10 +904,11 @@ function abrir(m,a){
   setBtn(estado[chave(m,a)]);
   document.querySelectorAll('.aula.sel').forEach(e=>e.classList.remove('sel'));
   const el=document.getElementById('aula-'+m+'-'+a); if(el) el.classList.add('sel');
-  if(window.innerWidth<=900){ fecharMenu(); }
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
 function setBtn(on){ const b=document.getElementById('mkBtn'); b.classList.toggle('on',!!on); b.textContent=on?'✓ Assistida':'Marcar como assistida'; }
+
 function toggleFeito(){
   if(!atual) return;
   const k=chave(atual.m,atual.a);
@@ -711,17 +917,119 @@ function toggleFeito(){
   if(el) el.classList.toggle('done',!!estado[k]);
   atualizar();
 }
-function atualizar(){
-  const t=totalAulas(), f=totalFeitas(), p=t?Math.round(f/t*100):0;
-  document.getElementById('pPct').textContent=p+'%';
-  document.getElementById('pFeitas').textContent=f;
-  document.getElementById('pTotal').textContent=t;
-  document.getElementById('pBar').style.width=p+'%';
-}
-function toggleMenu(){ document.getElementById('side').classList.toggle('open'); document.getElementById('scrim').classList.toggle('on'); }
-function fecharMenu(){ document.getElementById('side').classList.remove('open'); document.getElementById('scrim').classList.remove('on'); }
 
-montarLista(); atualizar(); renderWelcomeState();
+function atualizar(){
+  const t=totalAulas(), f=totalFeitas();
+  window.setProgresso(f, t);
+}
+
+// Lógica de Tabs / Telas
+function switchScreen(screenName) {
+  document.querySelectorAll('.app-screen').forEach(s => s.style.display = 'none');
+  const activeScreen = document.getElementById('screen-' + screenName);
+  if (activeScreen) {
+    activeScreen.style.display = 'block';
+  }
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('is-active'));
+  const activeTab = document.querySelector(`.tab[href="#${screenName}"]`);
+  if (activeTab) {
+    activeTab.classList.add('is-active');
+  }
+  
+  if (screenName === 'progresso') {
+    renderProgressoScreen();
+  }
+}
+
+function renderProgressoScreen() {
+  const listEl = document.getElementById('subjectProgressList');
+  if (!listEl) return;
+
+  const totalC = totalFeitas();
+  const totalA = totalAulas();
+  const pct = totalA ? Math.round((totalC / totalA) * 100) : 0;
+
+  const complEl = document.getElementById('statCompleted');
+  const totEl = document.getElementById('statTotal');
+  const pctTextEl = document.getElementById('statPctText');
+
+  if (complEl) complEl.textContent = totalC;
+  if (totEl) totEl.textContent = totalA;
+  if (pctTextEl) pctTextEl.textContent = pct + '%';
+
+  listEl.innerHTML = CURSO.materias.map((m, mi) => {
+    const totalMateriaAulas = m.aulas.length;
+    const feitasMateriaAulas = m.aulas.filter((a, ai) => estado[chave(mi, ai)]).length;
+    const materiaPct = totalMateriaAulas ? Math.round((feitasMateriaAulas / totalMateriaAulas) * 100) : 0;
+    
+    return `
+      <div class="subj-prog-item" onclick="goToSubject('${m.id}')">
+        <div class="subj-prog-meta">
+          <span class="subj-prog-name">${m.nome}</span>
+          <span class="subj-prog-counts">${feitasMateriaAulas}/${totalMateriaAulas}</span>
+        </div>
+        <div class="subj-prog-bar">
+          <div class="subj-prog-fill" style="width: ${materiaPct}%; background: ${m.cor}"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function goToSubject(matId) {
+  switchScreen('aulas');
+  window.location.hash = 'aulas';
+  const mi = CURSO.materias.findIndex(m => m.id === matId);
+  if (mi !== -1) {
+    const matEl = document.getElementById('mat-' + mi);
+    if (matEl) {
+      matEl.classList.add('open');
+      setTimeout(() => {
+        matEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  }
+}
+
+// Setup Event Listeners
+document.querySelectorAll('.tab').forEach(function(el){
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    const hash = el.getAttribute('href').substring(1);
+    switchScreen(hash);
+    window.location.hash = hash;
+  });
+});
+
+document.querySelectorAll('.mat-list .mat').forEach(function(el){
+  el.addEventListener('click', function(e){
+    e.preventDefault();
+    const matId = el.getAttribute('data-materia');
+    goToSubject(matId);
+  });
+});
+
+window.setProgresso = function(concluidas, total){
+  var pct = total ? Math.round((concluidas/total)*100) : 0;
+  var f=document.getElementById('progFill');
+  var p=document.getElementById('progPct');
+  var c=document.getElementById('progCount');
+  if(f) f.style.width = pct + '%';
+  if(p) p.textContent = pct + '%';
+  if(c) c.textContent = concluidas + ' de ' + total + ' aulas concluídas';
+};
+
+// Init
+montarLista();
+atualizar();
+renderWelcomeState();
+
+const initialHash = window.location.hash.substring(1) || 'inicio';
+if (['inicio', 'aulas', 'progresso', 'perfil'].includes(initialHash)) {
+  switchScreen(initialHash);
+} else {
+  switchScreen('inicio');
+}
 </script>
 </body>
 </html>
