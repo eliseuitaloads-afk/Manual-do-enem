@@ -261,7 +261,7 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
   font-weight:500;
 }
 
-.side-list{flex:1;overflow-y:auto;padding:8px}
+.side-list{flex:1;overflow-y:auto;padding:8px;display:flex;flex-direction:column}
 
 .mat{margin-bottom:12px} /* mais espaçamento vertical */
 .mat-h{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px;user-select:none;min-height:48px}
@@ -296,12 +296,14 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
 
 /* ===== PALCO (player grande) ===== */
 .palco{flex:1;display:flex;flex-direction:column;min-width:0}
-.player-wrap{background:#000;aspect-ratio:16/9;width:100%;position:relative} /* aspecto 16/9 fixo */
+.player-wrap{background:#000;aspect-ratio:16/9;width:100%;position:relative} /* aspecto 16/9 por padrão */
+.player-wrap.has-welcome{aspect-ratio:auto;min-height:300px;display:flex;align-items:center;justify-content:center}
 .player-wrap iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0}
 
 /* tela de boas-vindas / estado vazio */
-.welcome{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:radial-gradient(700px 400px at 50% 0%, rgba(123,63,255,.2), transparent 75%),var(--bg);padding:30px;overflow-y:auto}
+.welcome{display:none;width:100%;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(700px 400px at 50% 0%, rgba(123,63,255,.2), transparent 75%),var(--bg);padding:30px}
+.player-wrap.has-welcome .welcome{display:flex}
 
 /* welcome card design */
 .welcome-card {
@@ -472,63 +474,21 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
   border-radius:12px;padding:14px 18px;font-size:13px;line-height:1.55;color:var(--muted)}
 .credito b{color:#fff}
 
-/* UPBAR COMPACTA */
-.upbar{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:9998;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  background:linear-gradient(90deg,#2a1550,#3d1f73);
-  border-top:1px solid rgba(180,140,255,.3);
-  padding:12px 38px 12px 16px; /* padding-right de 38px para reservar espaço do × */
-  padding-bottom:calc(12px + env(safe-area-inset-bottom));
-  box-shadow:0 -8px 28px rgba(0,0,0,.45);
-}
-.upbar.is-hidden{display:none}
-.upbar-close{
-  position:absolute;
-  top:4px;
-  right:6px;
-  background:none;
-  border:none;
-  color:#9b8ec4;
-  font-size:20px;
-  line-height:1;
-  cursor:pointer;
-  width:28px;
-  height:28px;
-  display:grid;
-  place-items:center;
-  z-index:9999;
-}
-.upbar-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.upbar-tag{color:#FFD60A;font-size:11px;font-weight:800;letter-spacing:1px}
-.upbar-txt strong{
-  color:#fff;
-  font-size:14.5px;
-  font-weight:700;
-  line-height:1.25;
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-}
-.upbar-txt small{color:#c3b6e6;font-size:13px}
-.upbar-txt small s{color:#8d80b3}
-.upbar-txt small b{color:#fff;font-size:15px;font-weight:900}
-.upbar-btn{flex:none;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;text-decoration:none;font-size:13.5px;font-weight:800;padding:12px 16px;border-radius:40px;white-space:nowrap;box-shadow:0 6px 16px rgba(31,184,81,.4);min-height:44px;display:flex;align-items:center;justify-content:center}
-.upbar-btn:active{transform:scale(.96)}
+/* upside */
+.upside{margin:24px 12px 28px;background:linear-gradient(160deg,#2a1550,#3d1f73);border:1px solid rgba(180,140,255,.28);border-radius:16px;padding:18px 16px 20px}
+.upside-tag{display:inline-block;color:#FFD60A;font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:8px}
+.upside h4{color:#fff;font-size:16px;font-weight:800;line-height:1.3;margin:0 0 12px}
+.upside ul{list-style:none;margin:0 0 14px;padding:0}
+.upside li{color:#c3b6e6;font-size:13.5px;line-height:1.5;padding:3px 0}
+.upside-price{display:flex;align-items:baseline;gap:8px;border-top:1px solid rgba(180,140,255,.2);padding-top:12px;margin-bottom:14px}
+.upside-price s{color:#8d80b3;font-size:13px}
+.upside-price strong{color:#fff;font-size:22px;font-weight:900}
+.upside-btn{display:block;text-align:center;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;text-decoration:none;font-size:14px;font-weight:800;padding:13px 12px;border-radius:40px;box-shadow:0 6px 16px rgba(31,184,81,.35)}
+.upside-btn:active{transform:scale(.97)}
 
 /* mobile */
 .mtop{display:none}
 @media(max-width:900px){
-  body {
-    padding-bottom: 90px; /* Evita que a barra de upgrade cubra o conteúdo final no mobile */
-  }
   .layout{flex-direction:column}
   .side{position:fixed;left:0;top:0;bottom:0;z-index:60;transform:translateX(-100%);transition:transform .25s;width:300px;flex-basis:300px}
   .side.open{transform:translateX(0)}
@@ -549,10 +509,6 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
     width: 100%;
     height: 140px;
   }
-}
-@media(max-width:420px){
-  .upbar-txt strong{font-size:13px}
-  .upbar-btn{font-size:12.5px;padding:11px 13px}
 }
 </style>
 </head>
@@ -580,7 +536,25 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
       <div class="bar"><i id="pBar"></i></div>
       <div class="side-prog-footer"><span id="pFeitas">0</span> de <span id="pTotal">0</span> aulas concluídas</div>
     </div>
-    <div class="side-list" id="lista"></div>
+    <div class="side-list">
+      <div id="lista"></div>
+      
+      <!-- upside (Upgrade) -->
+      <!-- TODO: Exibir apenas para alunos do Plano BÁSICO (quem já é Completo não deve ver) -->
+      <div class="upside" id="upside">
+        <span class="upside-tag">⭐ UPGRADE DE ALUNO</span>
+        <h4>Destrave a Redação e o Método completo</h4>
+        <ul>
+          <li>✓ Redação Nota 900</li>
+          <li>✓ Destrava Redação</li>
+          <li>✓ Mapas Mentais</li>
+          <li>✓ Manual Pro Completo</li>
+          <li>✓ Acompanhamento da evolução</li>
+        </ul>
+        <div class="upside-price"><s>de R$ 97</s><strong>R$ 27,90</strong></div>
+        <a class="upside-btn" href="https://pay.wiapy.com/0dgjmi6c0iO">QUERO O COMPLETO →</a>
+      </div>
+    </div>
     <div class="side-footer">
       <button class="side-sair" onclick="window._sb.auth.signOut().then(()=>location.replace('/plataforma/login.html'))">Sair da Conta</button>
     </div>
@@ -605,18 +579,6 @@ h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;margin:0}
     <div class="credito" id="credito" style="display:none">
       🎓 Aula selecionada pela nossa equipe do canal <b id="credCanal">—</b>.
       Recomendamos a inscrição no canal original para conteúdos complementares.
-    </div>
-
-    <!-- UPBAR COMPACTA (Upgrade) -->
-    <!-- TODO: Exibir apenas para alunos do Plano BÁSICO (quem já é Completo não deve ver) -->
-    <div class="upbar" id="upbar">
-      <button class="upbar-close" id="upbarClose" aria-label="Fechar">×</button>
-      <div class="upbar-txt">
-        <span class="upbar-tag">⭐ UPGRADE</span>
-        <strong>Destrave a Redação completa</strong>
-        <small><s>de R$ 97</s> por <b>R$ 27,90</b></small>
-      </div>
-      <a class="upbar-btn" href="https://pay.wiapy.com/0dgjmi6c0iO">QUERO O COMPLETO →</a>
     </div>
   </div>
 </div>
@@ -698,9 +660,12 @@ function renderWelcomeState() {
     </div>
   `;
   const el = document.getElementById('welcome');
+  const w = document.getElementById('playerWrap');
   if (el) {
-    el.style.display = 'flex';
     el.innerHTML = welcomeHtml;
+  }
+  if (w) {
+    w.classList.add('has-welcome');
   }
 }
 
@@ -712,7 +677,9 @@ function abrir(m,a){
     ? `https://www.youtube.com/embed/videoseries?list=${au.list}&rel=0&modestbranding=1`
     : `https://www.youtube.com/embed/${au.yt}?rel=0&modestbranding=1`;
   const w=document.getElementById('playerWrap');
-  const welcome=document.getElementById('welcome'); if(welcome) welcome.style.display='none';
+  if (w) {
+    w.classList.remove('has-welcome');
+  }
   let ifr=w.querySelector('iframe');
   if(!ifr){
     ifr=document.createElement('iframe');
@@ -753,11 +720,6 @@ function atualizar(){
 }
 function toggleMenu(){ document.getElementById('side').classList.toggle('open'); document.getElementById('scrim').classList.toggle('on'); }
 function fecharMenu(){ document.getElementById('side').classList.remove('open'); document.getElementById('scrim').classList.remove('on'); }
-
-(function(){
-  var b=document.getElementById('upbar'),c=document.getElementById('upbarClose');
-  if(c&&b)c.addEventListener('click',function(){b.classList.add('is-hidden')});
-})();
 
 montarLista(); atualizar(); renderWelcomeState();
 </script>
