@@ -578,7 +578,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero2-glow"></div>
       <div class="hero2-frame">
         <img src="/video-poster.webp" alt="Poster do vídeo" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;" width="941" height="1672" fetchpriority="high">
-        <lt-v2 v="3f7f857f-9d03-47ec-8e6d-5ba6ff9d6ed4" ar="9:16" sc="0" sv="0" st="0" ap="1" ph="8" ct="[[]]" title="Vídeo de apresentação do Método Pro ENEM"></lt-v2>
+        <lt-v2 v="36863506-daf9-413a-afc3-0b7aeb32e4c3" ar="9:16" sc="0" cc="000000" ic="00bd65" io="21" ps="small" pe="2x" ct="[[]]"></lt-v2>
       </div>
       <div class="hero2-podium"></div>
     </div>
@@ -677,72 +677,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <!-- ===================== O QUE VOCÊ VAI RECEBER (BLOCO C) ===================== -->
-<section class="section section-white">
+<section class="section section-white" id="receber">
   <div class="container">
-    <div class="text-center" style="margin-bottom:28px;">
-      <div class="section-eyebrow-pill">🔥 O QUE VOCÊ VAI RECEBER AO ADQUIRIR SEU PRODUTO</div>
+    <div class="text-center" style="margin-bottom:36px;">
+      <span class="section-eyebrow">🎁 CONTEÚDO EXCLUSIVO</span>
+      <h2 class="section-h2">O que você vai <span>receber</span></h2>
+      <p class="section-sub">Acesso completo à plataforma de estudos + 4 bônus exclusivos.</p>
     </div>
-    <div class="produto-wrap">
-      <div class="produto-img">
-        <img src="manual-pro.png" alt="Manual Pro do ENEM">
-      </div>
-      <div class="produto-card">
-        <span class="badge-acesso">⚡ ACESSO IMEDIATO</span>
-        <h3>Método Pro do ENEM</h3>
-        <p>No <strong>Método Pro do ENEM</strong> você vai receber:</p>
-        <ul class="produto-list">
-          <li><span class="chk">✓</span> <strong>Acesso à Plataforma do Aluno</strong> — Trilhas de aulas organizadas, acompanhamento de progresso e simulados</li>
-          <li><span class="chk">✓</span> <strong>Bônus #1: Protocolo 8S</strong> — O método de 8 semanas que guia seu estudo diário</li>
-          <li><span class="chk">✓</span> <strong>Bônus #2: Mapa de Calor ENEM</strong> — Raio-X dos conteúdos estatisticamente mais cobrados</li>
-          <li><span class="chk">✓</span> <strong>Bônus #3: Memorização 3.0</strong> — Técnicas ativas de revisão para não esquecer nada</li>
-          <li><span class="chk">✓</span> <strong>Bônus #4: Temas Quentes ENEM</strong> — Compilado dos assuntos mais prováveis da prova</li>
-        </ul>
-        <p class="mais">E muito mais conteúdo prático e estruturado!</p>
-        <p class="entrega">Você recebe tudo na hora, direto no seu e-mail</p>
-      </div>
+    
+    <div class="receber-main-card">
+      <div class="receber-icon">🏆</div>
+      <h3>+100 Aulas pra Passar no ENEM</h3>
+      <p>Trilha completa de aulas do zero ao avançado organizadas por matéria (Linguagens, Matemática, Ciências da Natureza, Ciências Humanas, Redação e Revisão Final/Aulões), na ordem exata do que você precisa estudar para garantir sua aprovação.</p>
+      <div class="receber-pill">Acesso à Plataforma</div>
     </div>
   </div>
 </section>
 
 <style>
-.produto-wrap{
-  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:28px;
+.receber-main-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e9e3f2;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(107,47,191,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.produto-img{
-  background:#e2e8f4;border-radius:12px;
-  width:100%;aspect-ratio:4/3;
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;color:#64748b;font-style:italic;
-  overflow:hidden;
+.receber-main-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(107,47,191,0.1);
 }
-.produto-img img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
-.produto-card{
-  background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:32px;
+.receber-icon {
+  font-size: 40px;
+  line-height: 1;
 }
-.badge-acesso{
-  background:#16a34a;color:#fff;
-  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  padding:6px 16px;border-radius:50px;display:inline-block;margin-bottom:20px;
+.receber-main-card h3 {
+  font-size: clamp(20px, 4vw, 24px);
+  font-weight: 800;
+  color: #6B2FBF;
+  margin: 0;
 }
-.produto-card h3{font-size:26px;font-weight:800;color:#0f2540;margin-bottom:16px;}
-.produto-card p{font-size:14px;color:#475569;margin-bottom:16px;}
-.produto-list{list-style:none;}
-.produto-list li{
-  display:flex;align-items:flex-start;gap:10px;
-  padding:10px 0;border-bottom:1px solid #f1f5f9;
-  font-size:14px;color:#1e293b;font-weight:500;line-height:1.4;
+.receber-main-card p {
+  font-size: 15px;
+  color: #5a5470;
+  line-height: 1.6;
+  margin: 0;
 }
-.produto-list li:last-child{border-bottom:none;}
-.chk{color:#16a34a;font-size:16px;flex-shrink:0;}
-.produto-card .mais{font-size:16px;font-weight:800;color:#0f2540;text-align:center;margin-top:20px;}
-.produto-card .entrega{font-size:13px;color:#94a3b8;text-align:center;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:6px;}
-.produto-card .entrega::before{content:'•';color:#3b82f6;}
-
-@media(max-width:768px){
-  .produto-wrap{grid-template-columns:1fr;gap:24px;}
-  .produto-card{padding:24px 20px;}
+.receber-pill {
+  background: #f1e9ff;
+  color: #6B2FBF;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 6px 14px;
+}
+@media (max-width: 768px) {
+  .receber-main-card {
+    padding: 24px 20px;
+  }
 }
 </style>
+
 <!-- ===================== SEÇÃO DE BÔNUS EXCLUSIVOS ===================== -->
 <section class="bon2">
   <div class="bon2-wrap">
@@ -806,9 +807,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===================== APROVADOS (BLOCO D) ===================== -->
 <section class="section section-light" id="aprovados">
   <div class="container">
-    <div class="text-center" style="margin-bottom: 28px;">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <span class="section-eyebrow">🎯 PARA QUEM É</span>
       <h2 class="section-h2">Ideal para você <span>que deseja:</span></h2>
     </div>
+    
     <div class="ideal-grid">
       <div class="ideal-card"><div class="ideal-check">✓</div><span>Parar de estudar sem saber o que vai cair na prova</span></div>
       <div class="ideal-card"><div class="ideal-check">✓</div><span>Já tentou se organizar mas nunca conseguiu manter</span></div>
@@ -816,6 +819,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="ideal-card"><div class="ideal-check">✓</div><span>Precisa de uma rotina que caiba na sua vida real</span></div>
       <div class="ideal-card"><div class="ideal-check">✓</div><span>Quer tirar uma redação acima de 800 pontos</span></div>
       <div class="ideal-card"><div class="ideal-check">✓</div><span>Busca um método prático, direto ao ponto</span></div>
+    </div>
+
+    <!-- Approved Students Sub-section -->
+    <div class="text-center" style="margin-top: 80px; margin-bottom: 36px;">
+      <span class="section-eyebrow">🎓 PROVA SOCIAL</span>
+      <h2 class="section-h2">Alunos que já <span>passaram</span></h2>
+      <p class="section-sub">Eles usaram a plataforma do Método Pro do ENEM e conquistaram a vaga na faculdade.</p>
+    </div>
+
+    <div class="aprovados-grid">
+      <div class="aprovado-card">
+        <img src="aprovado-unicamp.jpg" alt="Aprovado UNICAMP" loading="lazy" decoding="async">
+        <div class="aprovado-info">
+          <h4>Lucas A.</h4>
+          <span>Aprovado na UNICAMP</span>
+        </div>
+      </div>
+      <div class="aprovado-card">
+        <img src="aprovado-ufrj.jpg" alt="Aprovado UFRJ" loading="lazy" decoding="async">
+        <div class="aprovado-info">
+          <h4>Felipe M.</h4>
+          <span>Aprovado na UFRJ</span>
+        </div>
+      </div>
+      <div class="aprovado-card">
+        <img src="aprovado-ufmg.jpg" alt="Aprovada UFMG" loading="lazy" decoding="async">
+        <div class="aprovado-info">
+          <h4>Mariana S.</h4>
+          <span>Aprovada na UFMG</span>
+        </div>
+      </div>
+      <div class="aprovado-card">
+        <img src="aprovado-usp.jpg" alt="Aprovada USP" loading="lazy" decoding="async">
+        <div class="aprovado-info">
+          <h4>Beatriz R.</h4>
+          <span>Aprovada na USP</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -835,10 +876,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 .ideal-card span{font-size:14px;font-weight:500;color:#1e293b;line-height:1.5;}
 
+.aprovados-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.aprovado-card {
+  background: #fff;
+  border: 1px solid #e9e3f2;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(107,47,191,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.aprovado-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(107,47,191,0.12);
+}
+.aprovado-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  display: block;
+}
+.aprovado-info {
+  padding: 16px;
+  text-align: center;
+}
+.aprovado-info h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1A1033;
+  margin: 0 0 4px;
+}
+.aprovado-info span {
+  font-size: 13px;
+  color: #6B2FBF;
+  font-weight: 600;
+}
+
+@media(max-width:992px) {
+  .aprovados-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
 @media(max-width:768px){
   .ideal-grid{grid-template-columns:1fr;gap:10px;}
 }
+@media(max-width:480px) {
+  .aprovados-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
 </style>
+
 <!-- DEPOIMENTOS EM IMAGEM -->
 <section class="deps2-section">
   <span class="dep2-eyebrow">✦ DEPOIMENTOS DE QUEM USA E RECOMENDA ✦</span>
