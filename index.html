@@ -662,54 +662,104 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ===================== VEJA POR DENTRO DA PLATAFORMA (BLOCO A) ===================== -->
-<section class="pv2">
-  <div class="pv2-wrap">
-    <span class="pv2-eyebrow">👀 VEJA POR DENTRO</span>
-    <h2 class="pv2-title">É isso que você vai abrir <span>hoje</span></h2>
-    <p class="pv2-sub">A plataforma por dentro — matérias organizadas, aulas prontas pra tocar, seus bônus e o seu progresso na tela.</p>
+<section class="pv3">
+  <div class="pv3-wrap">
+    <span class="pv3-eyebrow">👀 VEJA POR DENTRO</span>
+    <h2 class="pv3-title">É isso que você vai abrir <span>hoje</span></h2>
+    <p class="pv3-sub">A plataforma por dentro — matérias organizadas, aulas prontas pra tocar, seus bônus e o seu progresso na tela.</p>
   </div>
 
-  <div class="pv2-rail" id="pv2Rail">
-    <img src="/print-plataforma-1.webp" alt="Tela inicial com progresso e matérias" width="540" height="910" loading="lazy" decoding="async">
-    <img src="/print-plataforma-2.webp" alt="Aula pronta para iniciar" width="540" height="895" loading="lazy" decoding="async">
-    <img src="/print-plataforma-3.webp" alt="Seus bônus dentro da plataforma" width="540" height="1074" loading="lazy" decoding="async">
-    <img src="/print-plataforma-4.webp" alt="Progresso por matéria" width="540" height="925" loading="lazy" decoding="async">
-    <img src="/print-plataforma-5.webp" alt="Perfil do aluno" width="540" height="917" loading="lazy" decoding="async">
+  <div class="pv3-rail" id="pv3Rail">
+    <img src="plat-1-inicio.webp" alt="Tela inicial da plataforma" width="250" height="463" loading="lazy" decoding="async">
+    <img src="plat-2-bonus.webp" alt="Lista de bônus exclusivos" width="250" height="463" loading="lazy" decoding="async">
+    <img src="plat-3-aulas.webp" alt="Visualização das aulas por matéria" width="250" height="463" loading="lazy" decoding="async">
+    <img src="plat-4-progresso.webp" alt="Estatísticas de progresso do aluno" width="250" height="463" loading="lazy" decoding="async">
+    <img src="plat-5-perfil.webp" alt="Perfil do aluno e upgrade" width="250" height="463" loading="lazy" decoding="async">
   </div>
 
-  <div class="pv2-nav">
-    <button type="button" id="pv2Prev" aria-label="Anterior">‹</button>
-    <button type="button" id="pv2Next" aria-label="Próximo">›</button>
+  <div class="pv3-dots" id="pv3Dots">
+    <span class="is-on"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </section>
 
 <style>
-.pv2{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:70px 0;overflow:hidden}
-.pv2-wrap{max-width:800px;margin:0 auto 34px;padding:0 20px;text-align:center}
-.pv2-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:14px;letter-spacing:2px;margin-bottom:12px}
-.pv2-title{font-size:clamp(28px,4.6vw,46px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 0 12px}
-.pv2-title span{color:#6B2FBF}
-.pv2-sub{font-size:clamp(15px,2.2vw,18px);color:#5a5470;line-height:1.55;margin:0}
-.pv2-rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 24px 22px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.pv2-rail::-webkit-scrollbar{display:none}
-.pv2-rail img{flex:0 0 auto;width:270px;height:auto;border-radius:18px;scroll-snap-align:center;box-shadow:0 14px 36px rgba(107,47,191,.25);background:#12081f}
-.pv2-nav{display:flex;justify-content:center;gap:12px}
-.pv2-nav button{width:44px;height:44px;border-radius:50%;border:none;background:#6B2FBF;color:#fff;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 16px rgba(107,47,191,.35)}
-.pv2-nav button:active{transform:scale(.94)}
-@media(max-width:768px){
-  .pv2{padding:50px 0;}
+.pv3{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:66px 0 54px;overflow:hidden}
+.pv3-wrap{max-width:820px;margin:0 auto 36px;padding:0 20px;text-align:center}
+.pv3-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13.5px;letter-spacing:2.5px;margin-bottom:12px}
+.pv3-title{font-size:clamp(28px,4.6vw,46px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 0 12px}
+.pv3-title span{color:#6B2FBF}
+.pv3-sub{font-size:clamp(15px,2.2vw,18px);color:#5a5470;line-height:1.55;margin:0 auto;max-width:620px}
+
+.pv3-rail{
+  display:flex;gap:16px;
+  justify-content:safe center;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:6px 24px 24px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;
 }
-@media(max-width:600px){.pv2-rail img{width:70vw;max-width:290px}}
+.pv3-rail::-webkit-scrollbar{display:none}
+.pv3-rail img{
+  flex:0 0 auto;
+  width:250px;height:463px;
+  object-fit:cover;object-position:top;
+  border-radius:20px;
+  background:#0d0618;
+  scroll-snap-align:center;
+  box-shadow:0 16px 40px rgba(107,47,191,.28);
+}
+
+.pv3-dots{display:flex;justify-content:center;gap:7px}
+.pv3-dots span{
+  width:7px;height:7px;border-radius:4px;
+  background:#c9b8e8;transition:all .25s ease;
+  cursor:pointer;
+}
+.pv3-dots span.is-on{width:22px;background:#6B2FBF}
+
+@media(max-width:600px){
+  .pv3-rail{padding:6px 20px 22px;gap:14px}
+  .pv3-rail img{width:66vw;max-width:270px;height:auto;aspect-ratio:540/1000}
+}
 </style>
 
 <script>
 (function(){
-  var rail=document.getElementById('pv2Rail');
-  if(!rail)return;
-  function step(d){var c=rail.querySelector('img');if(!c)return;rail.scrollBy({left:d*(c.offsetWidth+18),behavior:'smooth'});}
-  var p=document.getElementById('pv2Prev'),n=document.getElementById('pv2Next');
-  if(p)p.addEventListener('click',function(){step(-1)});
-  if(n)n.addEventListener('click',function(){step(1)});
+  var rail = document.getElementById('pv3Rail');
+  var dots = document.querySelectorAll('.pv3-dots span');
+  if(!rail || dots.length === 0) return;
+  
+  function updateDots() {
+    var scrollLeft = rail.scrollLeft;
+    var maxScroll = rail.scrollWidth - rail.clientWidth;
+    if(maxScroll <= 0) return;
+    var index = Math.round((scrollLeft / maxScroll) * (dots.length - 1));
+    dots.forEach(function(dot, idx) {
+      if(idx === index) {
+        dot.classList.add('is-on');
+      } else {
+        dot.classList.remove('is-on');
+      }
+    });
+  }
+  
+  rail.addEventListener('scroll', updateDots);
+  
+  dots.forEach(function(dot, idx) {
+    dot.addEventListener('click', function() {
+      var imgs = rail.querySelectorAll('img');
+      if(imgs[idx]) {
+        rail.scrollTo({
+          left: imgs[idx].offsetLeft - rail.offsetLeft - (rail.clientWidth - imgs[idx].offsetWidth)/2,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 })();
 </script>
 
@@ -844,22 +894,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===================== APROVADOS (BLOCO D) ===================== -->
 <section class="section section-light" id="aprovados">
   <div class="container">
-    <div class="text-center" style="margin-bottom: 40px;">
-      <span class="section-eyebrow">🎯 PARA QUEM É</span>
-      <h2 class="section-h2">Ideal para você <span>que deseja:</span></h2>
-    </div>
-    
-    <div class="ideal-grid">
-      <div class="ideal-card"><div class="ideal-check">✓</div><span>Parar de estudar sem saber o que vai cair na prova</span></div>
-      <div class="ideal-card"><div class="ideal-check">✓</div><span>Já tentou se organizar mas nunca conseguiu manter</span></div>
-      <div class="ideal-card"><div class="ideal-check">✓</div><span>Quer aumentar a nota sem precisar estudar o dobro</span></div>
-      <div class="ideal-card"><div class="ideal-check">✓</div><span>Precisa de uma rotina que caiba na sua vida real</span></div>
-      <div class="ideal-card"><div class="ideal-check">✓</div><span>Quer tirar uma redação acima de 800 pontos</span></div>
-      <div class="ideal-card"><div class="ideal-check">✓</div><span>Busca um método prático, direto ao ponto</span></div>
-    </div>
-
     <!-- Approved Students Sub-section -->
-    <div class="text-center" style="margin-top: 80px; margin-bottom: 36px;">
+    <div class="text-center" style="margin-bottom: 36px;">
       <span class="section-eyebrow">🎓 PROVA SOCIAL</span>
       <h2 class="section-h2">Alunos que já <span>passaram</span></h2>
       <p class="section-sub">Eles usaram a plataforma do Método Pro do ENEM e conquistaram a vaga na faculdade.</p>
@@ -899,20 +935,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <style>
-.ideal-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;margin-top:36px;
-}
-.ideal-card{
-  background:#fff;border:1px solid #e2e8f0;border-radius:10px;
-  padding:18px 16px;display:flex;align-items:flex-start;gap:12px;
-}
-.ideal-check{
-  width:32px;height:32px;border-radius:50%;background:#0f2540;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;
-}
-.ideal-card span{font-size:14px;font-weight:500;color:#1e293b;line-height:1.5;}
-
 .aprovados-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -939,27 +961,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   object-fit: cover;
   display: block;
 }
-@media(max-width:768px) {
-  .aprovados-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .aprovado-card {
-    border-radius: 12px;
-  }
-  .aprovado-card img {
-    border-radius: 12px 12px 0 0;
-  }
-  .aprovado-info {
-    padding: 10px 8px;
-  }
-  .aprovado-info h4 {
-    font-size: 14px;
-  }
-  .aprovado-info span {
-    font-size: 11px;
-  }
-}
 .aprovado-info {
   padding: 16px;
   text-align: center;
@@ -981,9 +982,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-}
-@media(max-width:768px){
-  .ideal-grid{grid-template-columns:1fr;gap:10px;}
 }
 @media(max-width:480px) {
   .aprovados-grid {
