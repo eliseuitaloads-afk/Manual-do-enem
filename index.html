@@ -572,8 +572,8 @@ footer a{color:#5a5470}
 }
 @media(max-width:680px){
   .bon2-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto}
-  .bon2-badges{gap:10px}
-  .bon2-badge{width:100%;box-sizing:border-box}
+  
+  
 }
 .plano-badge {
   background: #EAF7EE;
@@ -597,6 +597,8 @@ footer a{color:#5a5470}
 </style>
 </head>
 <body>
+<div class="hero2-bar"><span>⏰ Oferta de lançamento termina em <b class="hero2-timer">10:00:00</b></span></div>
+
 <main>
 
 <!-- Google Tag Manager (noscript) -->
@@ -605,7 +607,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <section class="hero2">
-  <div class="hero2-bar"><span>⏰ Oferta de lançamento termina em <b class="hero2-timer">10:00:00</b></span></div>
+  
 
   <div class="hero2-inner">
     <h1 class="hero2-h1">Mais de 100 aulas completas do ENEM,<br><span>passo a passo</span>, num lugar só.</h1>
@@ -632,7 +634,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <style>
 .hero2{position:relative;background:radial-gradient(120% 90% at 50% 0%,#3a1c6e 0%,#241141 45%,#160a2b 100%);padding-bottom:70px;overflow:hidden;text-align:center}
-.hero2-bar{background:#e01e2b;color:#fff;font-size:15px;font-weight:700;padding:12px 16px}
+.hero2-bar{background:#e01e2b;color:#fff;font-size:15px;font-weight:700;padding:12px 16px;width:100%;margin:0;box-sizing:border-box;position:relative;z-index:100}
 .hero2-bar b{font-variant-numeric:tabular-nums}
 .hero2-inner{max-width:900px;margin:0 auto;padding:54px 20px 0}
 .hero2-h1{font-size:clamp(30px,5.4vw,54px);font-weight:900;color:#fff;line-height:1.08;margin:0 0 20px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
@@ -729,37 +731,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 (function(){
-  var rail = document.getElementById('pv3Rail');
-  var dots = document.querySelectorAll('.pv3-dots span');
-  if(!rail || dots.length === 0) return;
-  
-  function updateDots() {
-    var scrollLeft = rail.scrollLeft;
-    var maxScroll = rail.scrollWidth - rail.clientWidth;
-    if(maxScroll <= 0) return;
-    var index = Math.round((scrollLeft / maxScroll) * (dots.length - 1));
-    dots.forEach(function(dot, idx) {
-      if(idx === index) {
-        dot.classList.add('is-on');
-      } else {
-        dot.classList.remove('is-on');
-      }
-    });
+  var rail=document.getElementById('pv3Rail');
+  var dots=document.getElementById('pv3Dots');
+  if(!rail||!dots)return;
+
+  var imgs=rail.querySelectorAll('img');
+  var ds=dots.querySelectorAll('span');
+  var i=0, timer=null, paused=false;
+
+  function go(n){
+    i=(n+imgs.length)%imgs.length;
+    imgs[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
   }
-  
-  rail.addEventListener('scroll', updateDots);
-  
-  dots.forEach(function(dot, idx) {
-    dot.addEventListener('click', function() {
-      var imgs = rail.querySelectorAll('img');
-      if(imgs[idx]) {
-        rail.scrollTo({
-          left: imgs[idx].offsetLeft - rail.offsetLeft - (rail.clientWidth - imgs[idx].offsetWidth)/2,
-          behavior: 'smooth'
-        });
-      }
-    });
+  function start(){
+    stop();
+    timer=setInterval(function(){ if(!paused) go(i+1); }, 3000);
+  }
+  function stop(){ if(timer) clearInterval(timer); }
+
+  ds.forEach(function(d,n){
+    d.addEventListener('click',function(){ go(n); start(); });
   });
+
+  // pausa enquanto o usuário interage
+  ['pointerdown','touchstart','mouseenter'].forEach(function(e){
+    rail.addEventListener(e,function(){ paused=true; },{passive:true});
+  });
+  ['pointerup','touchend','mouseleave'].forEach(function(e){
+    rail.addEventListener(e,function(){
+      paused=false;
+      clearTimeout(rail._r);
+      rail._r=setTimeout(start,4000);
+    },{passive:true});
+  });
+
+  // sincroniza as bolinhas com o scroll
+  var t;
+  rail.addEventListener('scroll',function(){
+    clearTimeout(t);
+    t=setTimeout(function(){
+      var c=rail.scrollLeft+rail.clientWidth/2, best=0, min=1e9;
+      imgs.forEach(function(im,n){
+        var d=Math.abs((im.offsetLeft+im.offsetWidth/2)-c);
+        if(d<min){min=d;best=n;}
+      });
+      i=best;
+      ds.forEach(function(d,n){ d.classList.toggle('is-on', n===best); });
+    },90);
+  },{passive:true});
+
+  // só roda quando a seção está visível na tela (não gasta bateria à toa)
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){
+      e[0].isIntersecting ? start() : stop();
+    },{threshold:.25}).observe(rail);
+  } else { start(); }
 })();
 </script>
 
@@ -880,13 +906,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
     </div>
 
-    <!-- Barra de 4 selos no rodapé da seção -->
-    <div class="bon2-badges">
-      <div class="bon2-badge"><span>100% GRÁTIS</span></div>
-      <div class="bon2-badge"><span>CONTEÚDO PREMIUM</span></div>
-      <div class="bon2-badge"><span>ACESSO IMEDIATO</span></div>
-      <div class="bon2-badge"><span>PARA SEMPRE</span></div>
-    </div>
+
   </div>
 </section>
 
