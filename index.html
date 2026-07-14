@@ -214,61 +214,6 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .gar h3{font-size:19px;font-weight:800;margin-bottom:5px}
 .gar p{font-size:14.5px;color:var(--cinza);margin:0}
 
-/* DEPOIMENTOS */
-.dep2-eyebrow{display:block;text-align:center;color:#6B2FBF;font-weight:800;font-size:14px;letter-spacing:3px;margin-bottom:12px}
-.dep2-title{text-align:center;font-size:clamp(28px,4.4vw,46px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 auto 44px;max-width:900px}
-
-.deps2-section {
-  padding: 70px 20px;
-  background: linear-gradient(180deg, #faf8ff, #f1ecfb);
-  overflow: hidden;
-  text-align: center;
-}
-.deps2-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  padding: 10px 20px 30px;
-  max-width: 1120px;
-  margin: 0 auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  user-select: none;
-  cursor: grab;
-}
-.deps2-container::-webkit-scrollbar {
-  display: none;
-}
-.deps2-container:active {
-  cursor: grabbing;
-}
-.deps2-container img {
-  flex: 0 0 auto;
-  width: 320px;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(107, 47, 191, 0.1);
-  scroll-snap-align: center;
-  pointer-events: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.deps2-container img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(107, 47, 191, 0.18);
-}
-@media(max-width: 600px) {
-  .deps2-container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .deps2-container img {
-    width: 85vw;
-    max-width: 340px;
-  }
-}
-
 .faq{margin-top:22px;max-width:680px;margin-left:auto;margin-right:auto}
 .q{background:#fff;border:1px solid var(--linha);border-radius:12px;margin-bottom:10px;overflow:hidden}
 .q summary{cursor:pointer;padding:16px 18px;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
@@ -1011,23 +956,98 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 </style>
 
-<!-- DEPOIMENTOS EM IMAGEM -->
-<section class="deps2-section">
-  <span class="dep2-eyebrow">✦ DEPOIMENTOS DE QUEM USA E RECOMENDA ✦</span>
-  <h2 class="dep2-title">O que os alunos estão falando do Método Pro ENEM</h2>
-  
-  <div class="deps2-container" id="depsTrack">
-    <img src="/depoimento-1.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-2.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-3.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-4.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-5.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-6.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-7.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-8.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
-    <img src="/depoimento-9.webp" alt="Depoimento de aluno" width="320" height="400" loading="lazy" decoding="async">
+<section class="dp4">
+  <div class="dp4-wrap">
+    <span class="dp4-eyebrow">DEPOIMENTOS DE QUEM USA E RECOMENDA</span>
+    <h2 class="dp4-title">O que os alunos estão falando do <span>Método Pro ENEM</span></h2>
+  </div>
+
+  <div class="dp4-rail" id="dp4Rail">
+    <img src="/dep-1-pedro.webp"    alt="Depoimento de Pedro Henrique"  width="640" height="640" loading="lazy" decoding="async">
+    <img src="/dep-2-lucas.webp"    alt="Depoimento de Lucas Martins"   width="640" height="640" loading="lazy" decoding="async">
+    <img src="/dep-3-gabriela.webp" alt="Depoimento de Gabriela Santos" width="640" height="640" loading="lazy" decoding="async">
+    <img src="/dep-4-beatriz.webp"  alt="Depoimento de Beatriz Oliveira" width="640" height="640" loading="lazy" decoding="async">
+    <img src="/dep-5-mariana.webp"  alt="Depoimento de Mariana Souza"   width="640" height="640" loading="lazy" decoding="async">
+    <img src="/dep-6-rafael.webp"   alt="Depoimento de Rafael Lima"     width="640" height="640" loading="lazy" decoding="async">
+    <img src="/dep-7-camila.webp"   alt="Depoimento de Camila Ferreira" width="640" height="640" loading="lazy" decoding="async">
+  </div>
+
+  <div class="dp4-dots" id="dp4Dots">
+    <span class="is-on"></span><span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
 </section>
+
+<style>
+.dp4{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:66px 0 54px;overflow:hidden}
+.dp4-wrap{max-width:860px;margin:0 auto 36px;padding:0 20px;text-align:center}
+.dp4-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.dp4-title{font-size:clamp(27px,4.4vw,44px);font-weight:900;color:#1a1230;line-height:1.15;margin:0}
+.dp4-title span{color:#6B2FBF}
+
+.dp4-rail{
+  display:flex;gap:16px;
+  justify-content:safe center;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:6px 24px 24px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;
+}
+.dp4-rail::-webkit-scrollbar{display:none}
+.dp4-rail img{
+  flex:0 0 auto;
+  width:330px;height:330px;
+  object-fit:cover;
+  border-radius:18px;
+  scroll-snap-align:center;
+  box-shadow:0 12px 32px rgba(107,47,191,.16);
+}
+
+.dp4-dots{display:flex;justify-content:center;gap:7px}
+.dp4-dots span{width:7px;height:7px;border-radius:4px;background:#c9b8e8;transition:all .25s ease;cursor:pointer}
+.dp4-dots span.is-on{width:22px;background:#6B2FBF}
+
+@media(max-width:600px){
+  .dp4-rail{padding:6px 20px 22px;gap:14px}
+  .dp4-rail img{width:82vw;max-width:340px;height:auto;aspect-ratio:1/1}
+}
+</style>
+
+<script>
+(function(){
+  var rail=document.getElementById('dp4Rail'), dots=document.getElementById('dp4Dots');
+  if(!rail||!dots)return;
+  var imgs=rail.querySelectorAll('img'), ds=dots.querySelectorAll('span');
+  var i=0,timer=null,paused=false;
+
+  function go(n){i=(n+imgs.length)%imgs.length;imgs[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+  function start(){stop();timer=setInterval(function(){if(!paused)go(i+1);},3500);}
+  function stop(){if(timer)clearInterval(timer);}
+
+  ds.forEach(function(d,n){d.addEventListener('click',function(){go(n);start();})});
+
+  ['pointerdown','touchstart','mouseenter'].forEach(function(e){
+    rail.addEventListener(e,function(){paused=true;},{passive:true});
+  });
+  ['pointerup','touchend','mouseleave'].forEach(function(e){
+    rail.addEventListener(e,function(){paused=false;clearTimeout(rail._r);rail._r=setTimeout(start,4000);},{passive:true});
+  });
+
+  var t;
+  rail.addEventListener('scroll',function(){
+    clearTimeout(t);
+    t=setTimeout(function(){
+      var c=rail.scrollLeft+rail.clientWidth/2,best=0,min=1e9;
+      imgs.forEach(function(im,n){var d=Math.abs((im.offsetLeft+im.offsetWidth/2)-c);if(d<min){min=d;best=n;}});
+      i=best;
+      ds.forEach(function(d,n){d.classList.toggle('is-on',n===best)});
+    },90);
+  },{passive:true});
+
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){e[0].isIntersecting?start():stop();},{threshold:.25}).observe(rail);
+  } else { start(); }
+})();
+</script>
 
 <!-- ===================== 2) ANTES x DEPOIS ===================== -->
 
@@ -1348,88 +1368,6 @@ setTimeout(function loop(){ showPop(); setTimeout(loop,12000); },6000);
 })();
 </script>
 
-<!-- AUTO-SCROLL & DRAG SCRIPT FOR TESTIMONIALS -->
-<script>
-(function(){
-  const track = document.getElementById('depsTrack');
-  if (!track) return;
-
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-  let autoScrollInterval;
-
-  function getScrollAmount() {
-    const firstImg = track.querySelector('img');
-    const imgWidth = firstImg ? firstImg.getBoundingClientRect().width : 320;
-    return imgWidth + 20; // width + gap
-  }
-
-  function scrollNext() {
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    const amount = getScrollAmount();
-    if (track.scrollLeft >= maxScroll - 15) {
-      track.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      track.scrollTo({ left: track.scrollLeft + amount, behavior: 'smooth' });
-    }
-  }
-
-  function startAuto() {
-    stopAuto();
-    autoScrollInterval = setInterval(scrollNext, 3500);
-  }
-
-  function stopAuto() {
-    if (autoScrollInterval) clearInterval(autoScrollInterval);
-  }
-
-  // Mouse drag events
-  track.addEventListener('mousedown', (e) => {
-    isDown = true;
-    track.style.scrollSnapType = 'none';
-    track.style.scrollBehavior = 'auto';
-    startX = e.pageX - track.offsetLeft;
-    scrollLeft = track.scrollLeft;
-    stopAuto();
-  });
-
-  track.addEventListener('mouseleave', () => {
-    if (isDown) {
-      isDown = false;
-      track.style.scrollSnapType = 'x mandatory';
-      track.style.scrollBehavior = 'smooth';
-      startAuto();
-    }
-  });
-
-  track.addEventListener('mouseup', () => {
-    if (isDown) {
-      isDown = false;
-      track.style.scrollSnapType = 'x mandatory';
-      track.style.scrollBehavior = 'smooth';
-      const amount = getScrollAmount();
-      const index = Math.round(track.scrollLeft / amount);
-      track.scrollTo({ left: index * amount, behavior: 'smooth' });
-      startAuto();
-    }
-  });
-
-  track.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    track.scrollLeft = scrollLeft - walk;
-  });
-
-  // Touch events to pause/resume auto-scroll
-  track.addEventListener('touchstart', stopAuto, { passive: true });
-  track.addEventListener('touchend', startAuto, { passive: true });
-
-  startAuto();
-})();
-</script>
 <!-- THIRD-PARTY TRACKING SCRIPTS (DEFERRED FOR PERFORMANCE) -->
 <!-- Google Analytics GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B55K5327B3"></script>
