@@ -58,6 +58,43 @@
   --amarelo-enem:#FFD60A;/* amarelo de destaque */
   --laranja:#FF6500;     /* laranja de apoio */
 }
+/* GLOBAL LAYOUT & HEADINGS */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.text-center {
+  text-align: center;
+}
+.section-eyebrow {
+  display: inline-block;
+  color: #6B2FBF;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-h2 {
+  font-size: clamp(28px, 4.6vw, 42px);
+  font-weight: 900;
+  color: #1a1230;
+  line-height: 1.12;
+  margin: 0 0 10px;
+}
+.section-h2 span {
+  color: #6B2FBF;
+}
+.section-sub {
+  font-size: clamp(15px, 2.2vw, 18px);
+  color: #5a5470;
+  line-height: 1.55;
+  margin: 0 0 34px;
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:#fff;color:var(--tinta);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -688,7 +725,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="receber-main-card">
       <div class="receber-icon">🏆</div>
       <h3>+100 Aulas pra Passar no ENEM</h3>
-      <p>Trilha completa de aulas do zero ao avançado organizadas por matéria (Linguagens, Matemática, Ciências da Natureza, Ciências Humanas, Redação e Revisão Final/Aulões), na ordem exata do que você precisa estudar para garantir sua aprovação.</p>
+      <p>Trilha completa do zero ao avançado, organizada por matéria e na ordem do que mais cai na prova.</p>
       <div class="receber-pill">Acesso à Plataforma</div>
     </div>
   </div>
@@ -830,28 +867,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="aprovados-grid">
       <div class="aprovado-card">
-        <img src="aprovado-unicamp.jpg" alt="Aprovado UNICAMP" loading="lazy" decoding="async">
+        <img src="aprovado-unicamp.jpg" alt="Aprovado UNICAMP" width="270" height="360" loading="lazy" decoding="async">
         <div class="aprovado-info">
           <h4>Lucas A.</h4>
           <span>Aprovado na UNICAMP</span>
         </div>
       </div>
       <div class="aprovado-card">
-        <img src="aprovado-ufrj.jpg" alt="Aprovado UFRJ" loading="lazy" decoding="async">
+        <img src="aprovado-ufrj.jpg" alt="Aprovado UFRJ" width="270" height="360" loading="lazy" decoding="async">
         <div class="aprovado-info">
           <h4>Felipe M.</h4>
           <span>Aprovado na UFRJ</span>
         </div>
       </div>
       <div class="aprovado-card">
-        <img src="aprovado-ufmg.jpg" alt="Aprovada UFMG" loading="lazy" decoding="async">
+        <img src="aprovado-ufmg.jpg" alt="Aprovada UFMG" width="270" height="360" loading="lazy" decoding="async">
         <div class="aprovado-info">
           <h4>Mariana S.</h4>
           <span>Aprovada na UFMG</span>
         </div>
       </div>
       <div class="aprovado-card">
-        <img src="aprovado-usp.jpg" alt="Aprovada USP" loading="lazy" decoding="async">
+        <img src="aprovado-usp.jpg" alt="Aprovada USP" width="270" height="360" loading="lazy" decoding="async">
         <div class="aprovado-info">
           <h4>Beatriz R.</h4>
           <span>Aprovada na USP</span>
@@ -888,6 +925,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(107,47,191,0.06);
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 .aprovado-card:hover {
   transform: translateY(-4px);
@@ -896,9 +935,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .aprovado-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: 9/16;
+  aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
+}
+@media(max-width:768px) {
+  .aprovados-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .aprovado-card {
+    border-radius: 12px;
+  }
+  .aprovado-card img {
+    border-radius: 12px 12px 0 0;
+  }
+  .aprovado-info {
+    padding: 10px 8px;
+  }
+  .aprovado-info h4 {
+    font-size: 14px;
+  }
+  .aprovado-info span {
+    font-size: 11px;
+  }
 }
 .aprovado-info {
   padding: 16px;
@@ -954,90 +1014,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===================== 2) ANTES x DEPOIS ===================== -->
 
 <!-- ===================== COMO VOCÊ VAI ACESSAR (BLOCO B) ===================== -->
-<section class="section section-light" id="acesso">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:40px;">
-      <span class="section-eyebrow">🚀 Passo a passo</span>
-      <h2 class="section-h2">Como você vai <span>acessar</span></h2>
-      <p class="section-sub">O processo é simples, rápido e 100% seguro.</p>
-    </div>
-    
-    <div class="acesso-steps">
-      <div class="acesso-step">
-        <div class="acesso-num">1</div>
-        <h4>Confirmação da Inscrição</h4>
-        <p>Assim que o pagamento for aprovado pelo sistema (PIX e Cartão de Crédito aprovam em menos de 2 minutos), você receberá um e-mail com a confirmação.</p>
-      </div>
-      <div class="acesso-step">
-        <div class="acesso-num">2</div>
-        <h4>Definição de Senha</h4>
-        <p>No e-mail de confirmação, você receberá um link exclusivo. Clique nele para cadastrar sua senha pessoal e ativar a sua conta na plataforma Método Pro do ENEM.</p>
-      </div>
-      <div class="acesso-step">
-        <div class="acesso-num">3</div>
-        <h4>Login e Início Imediato</h4>
-        <p>Pronto! Agora é só entrar na área de membros com o seu e-mail e a senha cadastrada para começar a usar todas as aulas, mapas mentais, simulados e cronogramas.</p>
-      </div>
-    </div>
+<section class="acc3">
+  <div class="acc3-wrap">
+    <span class="acc3-eyebrow">🚀 PASSO A PASSO</span>
+    <h2 class="acc3-title">Como você vai acessar</h2>
+    <p class="acc3-sub">Simples, rápido e 100% seguro. Em menos de 2 minutos você já está estudando.</p>
+
+    <img class="acc3-img"
+         src="/passo-a-passo-acesso.webp"
+         alt="Passo a passo de acesso: 1) pagamento confirmado, 2) crie sua senha, 3) acesse e estude"
+         width="900" height="1260"
+         loading="lazy" decoding="async">
   </div>
 </section>
 
 <style>
-.acesso-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-}
-.acesso-step {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 32px 24px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-}
-.acesso-step:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-}
-.acesso-num {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6B2FBF 0%, #FFD60A 100%);
-  color: #fff;
-  font-weight: 800;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(107, 47, 191, 0.3);
-}
-.acesso-step h4 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1A1033;
-  margin-bottom: 12px;
-}
-.acesso-step p {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .acesso-steps {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .acesso-step {
-    padding: 24px;
-  }
-}
+.acc3{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:70px 20px}
+.acc3-wrap{max-width:760px;margin:0 auto;text-align:center}
+.acc3-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:14px;letter-spacing:2px;margin-bottom:12px}
+.acc3-title{font-size:clamp(28px,4.6vw,46px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 0 10px}
+.acc3-sub{font-size:clamp(15px,2.2vw,18px);color:#5a5470;line-height:1.55;margin:0 0 34px}
+.acc3-img{width:100%;max-width:620px;height:auto;border-radius:20px;box-shadow:0 16px 44px rgba(107,47,191,.22)}
 </style>
+
 <section class="pl2" id="planos">
   <div class="pl2-wrap">
     <span class="pl2-eyebrow">⭐ ESCOLHA SEU ACESSO</span>
