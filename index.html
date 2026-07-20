@@ -542,7 +542,6 @@ footer a{color:#5a5470}
 </style>
 </head>
 <body>
-<div class="hero2-bar"><span>⏰ Oferta de lançamento termina em <b class="hero2-timer">10:00:00</b></span></div>
 
 <main>
 
@@ -579,8 +578,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <style>
 .hero2{position:relative;background:radial-gradient(120% 90% at 50% 0%,#3a1c6e 0%,#241141 45%,#160a2b 100%);padding-bottom:70px;overflow:hidden;text-align:center}
-.hero2-bar{background:#e01e2b;color:#fff;font-size:15px;font-weight:700;padding:12px 16px;width:100%;margin:0;box-sizing:border-box;position:relative;z-index:100;text-align:center}
-.hero2-bar b{font-variant-numeric:tabular-nums}
+
 .hero2-inner{max-width:900px;margin:0 auto;padding:54px 20px 0}
 .hero2-h1{font-size:clamp(30px,5.4vw,54px);font-weight:900;color:#fff;line-height:1.08;margin:0 0 20px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
 .hero2-h1 span{color:#FFD60A}
@@ -856,105 +854,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 
-<!-- ===================== APROVADOS (BLOCO D) ===================== -->
-<section class="section section-light" id="aprovados">
-  <div class="container">
-    <!-- Approved Students Sub-section -->
-    <div class="text-center" style="margin-bottom: 36px;">
-      <span class="section-eyebrow">🎓 PROVA SOCIAL</span>
-      <h2 class="section-h2">Alunos que já <span>passaram</span></h2>
-      <p class="section-sub">Eles usaram a plataforma do Método Pro do ENEM e conquistaram a vaga na faculdade.</p>
-    </div>
-
-    <div class="aprovados-grid">
-      <div class="aprovado-card">
-        <img src="aprovado-unicamp.jpg" alt="Aprovado UNICAMP" width="270" height="360" loading="lazy" decoding="async">
-        <div class="aprovado-info">
-          <h4>Lucas A.</h4>
-          <span>Aprovado na UNICAMP</span>
-        </div>
-      </div>
-      <div class="aprovado-card">
-        <img src="aprovado-ufrj.jpg" alt="Aprovado UFRJ" width="270" height="360" loading="lazy" decoding="async">
-        <div class="aprovado-info">
-          <h4>Felipe M.</h4>
-          <span>Aprovado na UFRJ</span>
-        </div>
-      </div>
-      <div class="aprovado-card">
-        <img src="aprovado-ufmg.jpg" alt="Aprovada UFMG" width="270" height="360" loading="lazy" decoding="async">
-        <div class="aprovado-info">
-          <h4>Mariana S.</h4>
-          <span>Aprovada na UFMG</span>
-        </div>
-      </div>
-      <div class="aprovado-card">
-        <img src="aprovado-usp.jpg" alt="Aprovada USP" width="270" height="360" loading="lazy" decoding="async">
-        <div class="aprovado-info">
-          <h4>Beatriz R.</h4>
-          <span>Aprovada na USP</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-.aprovados-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.aprovado-card {
-  background: #fff;
-  border: 1px solid #e9e3f2;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(107,47,191,0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-.aprovado-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(107,47,191,0.12);
-}
-.aprovado-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  display: block;
-}
-.aprovado-info {
-  padding: 16px;
-  text-align: center;
-}
-.aprovado-info h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1A1033;
-  margin: 0 0 4px;
-}
-.aprovado-info span {
-  font-size: 13px;
-  color: #6B2FBF;
-  font-weight: 600;
-}
-
-@media(max-width:992px) {
-  .aprovados-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-}
-@media(max-width:480px) {
-  .aprovados-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-</style>
 
 <section class="dp4">
   <div class="dp4-wrap">
@@ -1318,14 +1217,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="pop" id="pop"><div class="ck">✓</div><div><b id="popn">Rafaela</b> garantiu o acesso agora mesmo</div></div>
 
 <script>
-function tick(){
-  const n=new Date(), f=new Date(); f.setHours(23,59,59,999);
-  let s=Math.max(0,Math.floor((f-n)/1000));
-  const h=String(Math.floor(s/3600)).padStart(2,'0'); s%=3600;
-  const m=String(Math.floor(s/60)).padStart(2,'0'); const ss=String(s%60).padStart(2,'0');
-  const el=document.querySelector('.hero2-timer'); if(el) el.textContent=h+':'+m+':'+ss;
-}
-tick(); setInterval(tick,1000);
+
 
 function abrirEspecial(){ document.getElementById('ov').classList.add('show'); document.body.style.overflow='hidden'; }
 function fecharEspecial(){ document.getElementById('ov').classList.remove('show'); document.body.style.overflow=''; }
