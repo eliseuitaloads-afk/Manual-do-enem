@@ -191,23 +191,7 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 .bp.b1{background:#fff;border:2px solid var(--azul);color:var(--azul)}
 .bp.b2{background:var(--verde);color:#fff;box-shadow:0 10px 24px rgba(22,163,74,.3)}
 
-/* MODAL condição especial */
-.ov{position:fixed;inset:0;background:rgba(8,12,24,.72);backdrop-filter:blur(3px);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
-.ov.show{display:flex}
-.modal{background:#fff;border-radius:24px;max-width:420px;width:100%;padding:30px 26px;text-align:center;position:relative;animation:pop .25s ease}
-@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-.modal .x{position:absolute;top:14px;right:16px;font-size:22px;color:#5a5470;cursor:pointer;line-height:1;background:none;border:0}
-.modal .ei{font-size:13px;font-weight:800;color:var(--vermelho);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.modal h3{font-size:23px;font-weight:800;margin-bottom:10px;line-height:1.2}
-.modal .mp{margin:14px 0 4px}
-.modal .mp .de{font-size:15px;color:var(--cinza);text-decoration:line-through}
-.modal .mp .por{font-size:42px;font-weight:800;font-family:'Plus Jakarta Sans';color:var(--tinta);letter-spacing:-1px}
-.modal .mp .por small{font-size:19px}
-.modal .mparc{font-size:13px;color:var(--cinza);margin-bottom:16px}
-.modal .mitens{list-style:none;padding:0;margin:0 0 22px;text-align:left}
-.modal .mitens li{display:flex;gap:8px;font-size:14px;padding:5px 0}
-.modal .mitens li .v{color:var(--verde);font-weight:800}
-.modal .seguir{display:inline-block;margin-top:14px;font-size:13.5px;color:var(--cinza);text-decoration:underline;cursor:pointer}
+
 
 .gar{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:28px;display:flex;gap:20px;align-items:center;margin-top:14px;max-width:640px;margin-left:auto;margin-right:auto}
 .gar .e{flex:0 0 64px;height:64px;border-radius:50%;background:#EAF7EE;display:grid;place-items:center;font-size:30px}
@@ -1014,7 +998,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
 
-      <a class="pl2-btn pl2-btn-ghost" href="#" onclick="abrirEspecial(); return false;">Escolher Plano Básico ›</a>
+      <a class="pl2-btn pl2-btn-ghost" href="https://ggcheckout.app/checkout/v5/pkbaBUjXhvltYKZhc7Ow">Escolher Plano Básico ›</a>
     </div>
 
     <!-- COMPLETO -->
@@ -1044,7 +1028,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><i>✓</i> <b>Acompanhamento da sua evolução</b></li>
       </ul>
 
-      <a class="pl2-btn pl2-btn-green" href="https://ggcheckout.app/checkout/v5/icQCzyYglsK2gUi98aYX">QUERO O PACOTE COMPLETO →</a>
+      <a class="pl2-btn pl2-btn-green" href="https://pay.wiapy.com/0dgjmi6c0iO">QUERO O PACOTE COMPLETO →</a>
     </div>
 
     <div class="pl2-secure">🛡️ Pagamento 100% seguro &nbsp;•&nbsp; 💳 Pix ou cartão</div>
@@ -1192,36 +1176,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </style>
 </footer>
 
-<!-- MODAL CONDIÇÃO ESPECIAL -->
-<div class="ov" id="ov">
-  <div class="modal">
-    <button class="x" onclick="fecharEspecial()">×</button>
-    <div class="ei">✋ Espera aí!</div>
-    <h3>Temos uma oferta melhor pra você</h3>
-    <p style="font-size: 14.5px; color: var(--cinza); margin: -4px 0 16px; line-height: 1.4;">Aproveita 25% OFF no Pacote Completo agora</p>
-    <div class="mp"><span class="de">De R$ 97</span><span class="por"><small>R$</small> 22<small>,90</small></span></div>
-    <div class="mparc">pagamento único · acesso vitalício</div>
-    <ul class="mitens">
-      <li><span class="v">✓</span> <b>Tudo do Plano Básico</b> (100 aulas + os 4 bônus)</li>
-      <li><span class="v">✓</span> <b>Redação Nota 900</b></li>
-      <li><span class="v">✓</span> <b>Destrava Redação</b></li>
-      <li><span class="v">✓</span> <b>Mapas Mentais</b></li>
-      <li><span class="v">✓</span> <b>Manual Pro</b></li>
-      <li><span class="v">✓</span> Acompanhamento da sua evolução</li>
-    </ul>
-    <a href="https://ggcheckout.app/checkout/v5/bcsXgpQqc7bGqHNG21PF" class="cta" style="display:block; text-align:center;">QUERO A OFERTA ESPECIAL</a>
-    <a href="https://ggcheckout.app/checkout/v5/pkbaBUjXhvltYKZhc7Ow" class="seguir">Não, obrigado. Quero o Plano Básico</a>
-  </div>
-</div>
+
 
 <div class="pop" id="pop"><div class="ck">✓</div><div><b id="popn">Rafaela</b> garantiu o acesso agora mesmo</div></div>
 
 <script>
 
-
-function abrirEspecial(){ document.getElementById('ov').classList.add('show'); document.body.style.overflow='hidden'; }
-function fecharEspecial(){ document.getElementById('ov').classList.remove('show'); document.body.style.overflow=''; }
-document.getElementById('ov').addEventListener('click',function(e){ if(e.target===this) fecharEspecial(); });
 
 const nomes=["Rafaela","Lucas","Beatriz","João","Mariana","Pedro","Ana","Gabriel"];
 const pop=document.getElementById('pop'), popn=document.getElementById('popn');
