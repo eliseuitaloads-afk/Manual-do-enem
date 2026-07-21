@@ -534,105 +534,100 @@ footer a{color:#5a5470}
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<section class="hero3">
-  <div class="hero3-inner">
+<section class="hero4">
 
-    <h1 class="hero3-h1">Mais de 100 aulas completas do ENEM,<br><span>passo a passo</span>, num lugar só.</h1>
+  <h1 class="sr-only">Mais de 100 aulas completas do ENEM, passo a passo, num lugar só — o curso completo para estudar com direção, com 4 bônus exclusivos.</h1>
 
-    <p class="hero3-sub">Tudo organizado por matéria, na ordem do que mais cai.<br>Você abre e estuda — não fica procurando.</p>
+  <img class="hero4-art"
+       src="/hero-100-aulas.webp"
+       alt="+100 aulas para passar no ENEM — o curso completo que vai te ajudar a estudar com direção. +100 aulas, estratégias que funcionam e 4 bônus exclusivos."
+       width="760" height="1350"
+       fetchpriority="high" decoding="async">
 
-    <div class="hero3-art">
-      <img src="/hero-100-aulas.webp"
-           alt="+100 aulas para passar no ENEM — o curso completo que vai te ajudar a estudar com direção"
-           width="760" height="1350"
-           fetchpriority="high" decoding="async">
-    </div>
+  <div class="hero4-bottom">
+    <p class="hero4-sub">Tudo organizado por matéria, na ordem do que mais cai.<br>Você abre e estuda — não fica procurando.</p>
 
-    <a class="hero3-cta" href="#planos">QUERO ESTUDAR DO JEITO CERTO →</a>
+    <a class="hero4-cta" href="#planos">QUERO ESTUDAR DO JEITO CERTO →</a>
 
-    <div class="hero3-badges">
+    <div class="hero4-badges">
       <span>⚡ Acesso imediato</span>
       <span>🔒 Pagamento seguro</span>
       <span>🛡️ Garantia de 7 dias</span>
     </div>
-
   </div>
+
 </section>
 
 <style>
-.hero3{
-  position:relative;
-  background:radial-gradient(120% 90% at 50% 0%,#3a1c6e 0%,#241141 45%,#160a2b 100%);
-  padding:44px 20px 64px;
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+.hero4{
+  background:#160a2b;
+  margin:0;padding:0;
   overflow:hidden;text-align:center;
 }
-.hero3-inner{max-width:760px;margin:0 auto}
 
-.hero3-h1{
-  font-size:clamp(28px,5.2vw,52px);font-weight:900;color:#fff;
-  line-height:1.1;margin:0 0 18px;text-shadow:0 2px 20px rgba(0,0,0,.4);
-}
-.hero3-h1 span{color:#FFD60A}
-
-.hero3-sub{
-  font-size:clamp(15px,2.4vw,20px);color:#d8cff0;line-height:1.55;
-  margin:0 auto 34px;max-width:620px;
-}
-
-.hero3-art{
-  position:relative;max-width:420px;margin:0 auto 36px;
-}
-.hero3-art::before{
-  content:"";position:absolute;inset:-6% -8%;
-  background:radial-gradient(60% 55% at 50% 45%,rgba(139,79,224,.55),rgba(107,47,191,0) 70%);
-  filter:blur(26px);z-index:0;
-}
-.hero3-art img{
-  position:relative;z-index:1;
+.hero4-art{
+  display:block;
   width:100%;height:auto;
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 0 1px rgba(180,140,255,.2);
+  margin:0;
+  max-width:100%;
 }
 
-.hero3-cta{
-  display:inline-block;
+.hero4-bottom{
+  background:radial-gradient(120% 100% at 50% 0%,#2d1656 0%,#1c0e38 60%,#160a2b 100%);
+  padding:34px 20px 54px;
+}
+
+.hero4-sub{
+  font-size:clamp(15px,2.4vw,20px);color:#d8cff0;line-height:1.55;
+  margin:0 auto 30px;max-width:620px;
+}
+
+.hero4-cta{
+  display:inline-block;position:relative;
   background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;
   font-size:clamp(16px,2.4vw,21px);font-weight:800;letter-spacing:.3px;
   text-decoration:none;padding:20px 42px;border-radius:60px;
   box-shadow:0 14px 34px rgba(31,184,81,.45);
   transition:transform .2s ease,box-shadow .2s ease;
-  position:relative;
 }
-.hero3-cta::after{
+.hero4-cta::after{
   content:"";position:absolute;inset:0;border-radius:60px;
   box-shadow:0 0 0 0 rgba(46,224,106,.5);
-  animation:hero3Pulse 2.4s ease-out infinite;
+  animation:hero4Pulse 2.4s ease-out infinite;
   pointer-events:none;
 }
-.hero3-cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(31,184,81,.6)}
+.hero4-cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(31,184,81,.6)}
 
-.hero3-badges{
+.hero4-badges{
   display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;
   margin-top:24px;color:#cdbff0;font-size:15px;font-weight:600;
 }
 
-@keyframes hero3Pulse{
+@keyframes hero4Pulse{
   0%{box-shadow:0 0 0 0 rgba(46,224,106,.45)}
   70%{box-shadow:0 0 0 14px rgba(46,224,106,0)}
   100%{box-shadow:0 0 0 0 rgba(46,224,106,0)}
 }
 
+@media(min-width:900px){
+  .hero4-art{max-width:620px;margin:0 auto}
+}
+
 @media(max-width:600px){
-  .hero3{padding:32px 18px 52px}
-  .hero3-art{max-width:330px;margin-bottom:30px}
-  .hero3-cta{width:100%;box-sizing:border-box;padding:18px 16px}
-  .hero3-badges{gap:10px 18px;font-size:13.5px}
+  .hero4-bottom{padding:28px 18px 46px}
+  .hero4-cta{width:100%;box-sizing:border-box;padding:18px 16px}
+  .hero4-badges{gap:10px 18px;font-size:13.5px}
 }
 </style>
 
 <script>
 (function(){
-  var b=document.querySelector('.hero3-cta');
+  var b=document.querySelector('.hero4-cta');
   if(!b)return;
   b.addEventListener('click',function(e){
     var alvo=document.getElementById('planos')||document.querySelector('.pl2');
