@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://app.litevideo.net" crossorigin>
 <script
   src="https://cdn.utmify.com.br/scripts/utms/latest.js"
   data-utmify-prevent-xcod-sck
@@ -501,6 +502,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>Mais de 100 Aulas Completas<br>para <span>Passar no ENEM</span></h1>
     <p class="hs-sub">Organizadas por matéria, na ordem do que mais cai — prontas pra você abrir e estudar, sem ficar procurando.</p>
     <div class="hs-badge">✅ Na ordem do que mais cai na prova</div>
+    <div class="hs-video">
+      <lt-v2 v="33916df2-39d0-48d0-b8b4-8df525dab4e1" ar="9:16" sc="0" ap="1" io="34" ph="6" ct="[[]]"></lt-v2>
+    </div>
     <a class="hs-cta" href="#planos">👇 Quero começar agora</a>
     <div class="hs-trust">⚡ Acesso imediato · 🔒 Pagamento seguro · 🛡️ Garantia de 7 dias</div>
   </div>
@@ -516,6 +520,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .hs-cta{display:inline-block;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;font-size:clamp(16px,2.4vw,20px);font-weight:800;text-decoration:none;padding:19px 42px;border-radius:100px;box-shadow:0 12px 30px rgba(31,184,81,.35);transition:transform .18s ease}
 .hs-cta:hover{transform:translateY(-2px)}
 .hs-trust{margin-top:20px;color:#8a83a0;font-size:14px;font-weight:600}
+.hs-video{position:relative;width:min(78vw,300px);aspect-ratio:9/16;margin:6px auto 28px;border-radius:18px;overflow:hidden;background:#160a2b;box-shadow:0 18px 44px rgba(107,47,191,.25)}
+.hs-video lt-v2{position:absolute;inset:0;width:100%;height:100%;display:block}
 @media(max-width:600px){.hs{padding:44px 18px 46px}.hs-cta{width:100%;box-sizing:border-box}}
 </style>
 
@@ -870,18 +876,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="tt-title">O que os alunos estão dizendo 💬</h2>
     <div class="tt-grid">
       <article class="tt-card">
-        <div class="tt-head"><span class="tt-av" style="background:#6B2FBF">PH</span><div><strong>Pedro Henrique</strong><small>Aluno do Método Pro</small></div></div>
-        <p>“Eu tava perdido sem saber o que estudar pro ENEM. Depois que entrei, ficou muito mais fácil seguir uma ordem. As +100 aulas já estão organizadas e isso me ajudou demais.”</p>
+        <div class="tt-head"><img class="tt-photo" src="/aluna-1.webp" alt="" width="240" height="240" loading="lazy"><div><strong>Mariana Souza</strong><small>Aluna do Método Pro</small></div></div>
+        <p>"Eu estudo pelo celular e gostei muito porque a plataforma é simples. Dá pra abrir e já encontrar as aulas do ENEM sem ficar perdida."</p>
         <div class="tt-stars">⭐⭐⭐⭐⭐</div>
       </article>
       <article class="tt-card">
-        <div class="tt-head"><span class="tt-av" style="background:#e0355a">MS</span><div><strong>Mariana Souza</strong><small>Aluna do Método Pro</small></div></div>
-        <p>“Eu estudo pelo celular e gostei muito porque a plataforma é simples. Dá pra abrir e já encontrar as aulas do ENEM sem ficar perdida.”</p>
+        <div class="tt-head"><img class="tt-photo" src="/aluna-2.webp" alt="" width="240" height="240" loading="lazy"><div><strong>Gabriela Santos</strong><small>Aluna do Método Pro</small></div></div>
+        <p>"Eu sempre começava a estudar e parava porque não sabia qual aula assistir depois. No Método Pro ENEM, a sequência das aulas deixou tudo mais fácil."</p>
         <div class="tt-stars">⭐⭐⭐⭐⭐</div>
       </article>
       <article class="tt-card">
-        <div class="tt-head"><span class="tt-av" style="background:#1f9e4a">RL</span><div><strong>Rafael Lima</strong><small>Aluno do Método Pro</small></div></div>
-        <p>“O que mais gostei foi ter as aulas separadas por área: Matemática, Linguagens, Natureza, Humanas e Redação. Fica muito mais fácil saber por onde continuar.”</p>
+        <div class="tt-head"><img class="tt-photo" src="/aluna-3.webp" alt="" width="240" height="240" loading="lazy"><div><strong>Camila Ferreira</strong><small>Aluna do Método Pro</small></div></div>
+        <p>"Eu comprei achando que seria complicado, mas achei bem simples. As aulas e os bônus aparecem de forma organizada. Isso já me deu mais vontade de estudar."</p>
         <div class="tt-stars">⭐⭐⭐⭐⭐</div>
       </article>
     </div>
@@ -896,7 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .tt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
 .tt-card{background:#fff;border:1px solid #e9e1f8;border-radius:18px;padding:22px 20px;box-shadow:0 10px 28px rgba(107,47,191,.08)}
 .tt-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.tt-av{flex:none;width:46px;height:46px;border-radius:50%;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+.tt-photo{flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,.15)}
 .tt-head strong{display:block;font-size:15.5px;color:#1a1230}
 .tt-head small{font-size:12.5px;color:#8a83a0}
 .tt-card p{font-size:14.5px;color:#3a3350;line-height:1.6;margin:0 0 12px}
@@ -940,7 +946,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <article class="pk-card">
         <h3>Plano Básico <b>R$ 14,90</b></h3>
-        <img src="/plat-1-inicio.webp" alt="Plataforma do Método Pro ENEM" width="540" height="1000" loading="lazy">
+        <img class="pk-art" src="/plano-basico-art.webp" alt="Plano Básico" width="560" height="420" loading="lazy" decoding="async">
         <ul>
           <li>✅ Plataforma + 100 aulas completas do ENEM</li>
           <li>✅ 🎁 Bônus: Protocolo 8S</li>
@@ -956,12 +962,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="pk-card pk-best">
         <div class="pk-flag">🔥 Mais completo</div>
         <h3>Pacote Completo <b><s>R$ 97</s> R$ 27,90</b></h3>
-        <div class="pk-covers">
-          <img src="/bonus-protocolo-8s.webp" alt="" width="360" height="540" loading="lazy">
-          <img src="/bonus-mapa-calor.webp" alt="" width="360" height="540" loading="lazy">
-          <img src="/bonus-memorizacao.webp" alt="" width="360" height="540" loading="lazy">
-          <img src="/bonus-temas-quentes.webp" alt="" width="360" height="540" loading="lazy">
-        </div>
+<img class="pk-art" src="/plano-completo-art.webp" alt="Pacote Completo" width="560" height="420" loading="lazy" decoding="async">
         <ul>
           <li>✅ Tudo do Plano Básico (100 aulas + 4 bônus)</li>
           <li>✅ 🎁 Redação Nota 900</li>
@@ -997,9 +998,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .pk-card h3{font-size:21px;font-weight:900;color:#1a1230;margin:0 0 16px;text-align:center;line-height:1.35}
 .pk-card h3 b{display:block;color:#6B2FBF;font-size:26px}
 .pk-card h3 s{color:#a49dbb;font-size:16px;font-weight:600;margin-right:6px}
-.pk-card > img{width:60%;max-width:200px;height:auto;margin:0 auto 18px;border-radius:14px;box-shadow:0 10px 26px rgba(107,47,191,.2)}
-.pk-covers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 18px}
-.pk-covers img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,.14)}
+.pk-art{width:88%;max-width:300px;height:auto;margin:0 auto 18px;display:block;border-radius:14px;box-shadow:0 4px 12px rgba(107,47,191,.08)}
 .pk-card ul{list-style:none;margin:0 0 20px;padding:0;flex:1}
 .pk-card li{font-size:15px;color:#2f2a45;line-height:1.5;padding:7px 0;border-bottom:1px dashed #eee6fa}
 .pk-card li:last-child{border-bottom:none}
@@ -1227,5 +1226,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 </script>
 
 
+<script src="https://app.litevideo.net/p.js" async></script>
 </body>
 </html>
