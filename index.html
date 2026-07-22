@@ -217,10 +217,7 @@ h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max
 footer{text-align:center;padding:32px 20px;color:#5a5470;font-size:13px}
 footer a{color:#5a5470}
 
-.pop{position:fixed;left:18px;bottom:18px;background:#fff;border:1px solid var(--linha);border-radius:13px;box-shadow:0 12px 34px rgba(14,26,43,.18);padding:12px 15px 12px 12px;display:flex;gap:11px;align-items:center;max-width:300px;z-index:50;transform:translateY(140%);transition:.45s;font-size:13px}
-.pop.show{transform:none}
-.pop .ck{width:30px;height:30px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 30px}
-.pop b{font-weight:700}
+
 
 @media(max-width:760px){
   .hero h1{font-size:27px}.hero .sub{font-size:16px}
@@ -269,8 +266,6 @@ footer a{color:#5a5470}
     linear-gradient(180deg,#1A0B33 0%, #25104A 55%, #1A0B33 100%) !important;
 }
 /* a 3ª linha da headline em AMARELO (no lugar do verde) — dá a cara de ENEM */
-.hx-h .b3{color:var(--amarelo-enem) !important}
-.hx-pill b{color:var(--amarelo-enem) !important}
 
 /* ---- selo "MAIS ESCOLHIDO" e detalhes ganham amarelo/laranja ---- */
 .selo{background:linear-gradient(90deg,var(--laranja),#FF8A00) !important}
@@ -501,213 +496,32 @@ footer a{color:#5a5470}
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<section class="hx">
-
-  <h1 class="sr-only">Mais de 100 aulas para passar no ENEM — o curso completo que vai te ajudar a estudar com direção: +100 aulas, estratégias que funcionam e 4 bônus exclusivos.</h1>
-
-  <!-- decorações -->
-  <svg class="hx-deco hx-deco-cap" viewBox="0 0 24 24" fill="none" stroke="#c9a6ff" stroke-width="1.4" aria-hidden="true"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 8v5"/><circle cx="22" cy="14" r=".8" fill="#c9a6ff"/></svg>
-  <svg class="hx-deco hx-deco-star" viewBox="0 0 24 24" fill="none" stroke="#b592ec" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l2.6 6.2 6.9.5-5.2 4.4 1.6 6.6-5.9-3.6-5.9 3.6 1.6-6.6L2.5 9.2l6.9-.5z"/></svg>
-
-  <div class="hx-spark hx-spark-1" aria-hidden="true"><i class="hx-w"></i><i class="hx-y"></i></div>
-  <div class="hx-spark hx-spark-2" aria-hidden="true"><i class="hx-w"></i><i class="hx-y"></i></div>
-  <div class="hx-spark hx-spark-3" aria-hidden="true"><i class="hx-y"></i><i class="hx-w"></i></div>
-
-  <div class="hx-inner" aria-hidden="true">
-
-    <div class="hx-100">+100</div>
-    <div class="hx-aulas">AULAS</div>
-    <div class="hx-para">PARA PASSAR</div>
-    <div class="hx-no">NO <span>ENEM</span></div>
-
-    <svg class="hx-brush" viewBox="0 0 360 26" preserveAspectRatio="none">
-      <path d="M6 16 C60 8, 120 20, 180 13 S 300 9, 354 15" stroke="#FFC400" stroke-width="9" fill="none" stroke-linecap="round" opacity=".95"/>
-      <path d="M30 20 C90 14, 170 22, 250 17 S 320 14, 348 18" stroke="#e8a800" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
-    </svg>
-
-    <p class="hx-kicker">O <b>CURSO COMPLETO</b> QUE<br>VAI TE AJUDAR A ESTUDAR COM DIREÇÃO.</p>
-
-    <div class="hx-feats">
-      <div class="hx-feat">
-        <span class="hx-fi">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#FFC400" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="3.2"/><path d="M10 9.6l4.6 2.4-4.6 2.4z" fill="#FFC400" stroke="none"/></svg>
-        </span>
-        <strong>+100</strong>
-        <small>AULAS</small>
-      </div>
-      <span class="hx-vdiv"></span>
-      <div class="hx-feat hx-feat-mid">
-        <span class="hx-fi">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#FFC400" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.2"/><circle cx="11" cy="13" r="1.2" fill="#FFC400" stroke="none"/><path d="M11 13l7-7"/><path d="M18 6l3-1-1 3z" fill="#FFC400"/></svg>
-        </span>
-        <strong>ESTRATÉGIAS</strong>
-        <small>QUE FUNCIONAM</small>
-      </div>
-      <span class="hx-vdiv"></span>
-      <div class="hx-feat">
-        <span class="hx-fi">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#FFC400" stroke-width="2" stroke-linejoin="round"><rect x="3" y="9.5" width="18" height="11" rx="1.8"/><path d="M3 13.5h18M12 9.5v11"/><path d="M12 9.5S9.2 4.4 7.1 6.1 8.6 9.5 12 9.5zM12 9.5s2.8-5.1 4.9-3.4S15.4 9.5 12 9.5z"/></svg>
-        </span>
-        <strong>4 BÔNUS</strong>
-        <small>EXCLUSIVOS</small>
-      </div>
-    </div>
-
-    <div class="hx-glow"></div>
-
+<section class="hs">
+  <div class="hs-wrap">
+    <h1>Mais de 100 Aulas Completas<br>para <span>Passar no ENEM</span></h1>
+    <p class="hs-sub">Organizadas por matéria, na ordem do que mais cai — prontas pra você abrir e estudar, sem ficar procurando.</p>
+    <div class="hs-badge">✅ Na ordem do que mais cai na prova</div>
+    <a class="hs-cta" href="#planos">👇 Quero começar agora</a>
+    <div class="hs-trust">⚡ Acesso imediato · 🔒 Pagamento seguro · 🛡️ Garantia de 7 dias</div>
   </div>
-
-  <!-- botão e selos -->
-  <div class="hx-action">
-    <a class="hx-cta" href="#planos">QUERO ESTUDAR DO JEITO CERTO →</a>
-    <div class="hx-badges">
-      <span>⚡ Acesso imediato</span>
-      <span>🔒 Pagamento seguro</span>
-      <span>🛡️ Garantia de 7 dias</span>
-    </div>
-  </div>
-
 </section>
 
 <style>
-.sr-only{
-  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
-  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
-}
-
-.hx{
-  position:relative;
-  background:radial-gradient(140% 90% at 50% 8%,#3d1d75 0%,#2a1454 40%,#1c0d3a 75%,#150929 100%);
-  padding:48px 20px 56px;
-  text-align:center;overflow:hidden;
-}
-.hx-inner{position:relative;max-width:720px;margin:0 auto;z-index:2}
-
-/* decorações */
-.hx-deco{position:absolute;z-index:1;pointer-events:none}
-.hx-deco-cap{top:34px;left:7%;width:56px;height:56px;opacity:.25}
-.hx-deco-star{top:44%;right:5%;width:48px;height:48px;opacity:.3}
-
-.hx-spark{position:absolute;z-index:1;pointer-events:none}
-.hx-spark i{display:block;height:5px;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.3)}
-.hx-w{background:#fff}
-.hx-y{background:#FFC400}
-.hx-spark-1{top:29%;left:6%}
-.hx-spark-1 i:nth-child(1){width:26px;transform:rotate(-28deg);margin-bottom:9px}
-.hx-spark-1 i:nth-child(2){width:20px;transform:rotate(-14deg);margin-left:-6px}
-.hx-spark-2{top:15%;right:8%}
-.hx-spark-2 i:nth-child(1){width:24px;transform:rotate(26deg);margin-bottom:9px}
-.hx-spark-2 i:nth-child(2){width:18px;transform:rotate(40deg);margin-left:10px}
-.hx-spark-3{top:54%;left:7%}
-.hx-spark-3 i:nth-child(1){width:22px;transform:rotate(24deg);margin-bottom:8px}
-.hx-spark-3 i:nth-child(2){width:16px;transform:rotate(8deg);margin-left:-4px}
-
-/* título 3D */
-.hx-100{
-  font-size:clamp(88px,21vw,168px);font-weight:900;line-height:.85;
-  letter-spacing:-4px;color:#FFC400;transform:rotate(-2deg);
-  -webkit-text-stroke:2px #fff;
-  text-shadow:0 2px 0 #f0b000,0 4px 0 #dca000,0 6px 0 #c89000,0 8px 0 #b48000,0 11px 0 #3a2a08,0 16px 30px rgba(0,0,0,.6);
-}
-.hx-aulas{
-  font-size:clamp(58px,13.5vw,110px);font-weight:900;line-height:.92;
-  letter-spacing:-2px;color:#fff;transform:rotate(-2deg);margin-top:6px;
-  text-shadow:0 2px 0 #ddd6ec,0 4px 0 #bcb2d4,0 6px 0 #9a8fbc,0 9px 0 #2a1d4a,0 14px 26px rgba(0,0,0,.55);
-}
-.hx-para{
-  font-size:clamp(34px,8vw,64px);font-weight:900;line-height:1;
-  letter-spacing:-1px;color:#fff;transform:rotate(-2deg);margin-top:10px;
-  text-shadow:0 2px 0 #ddd6ec,0 4px 0 #bcb2d4,0 6px 0 #2a1d4a,0 10px 22px rgba(0,0,0,.55);
-}
-.hx-no{
-  font-size:clamp(38px,9vw,72px);font-weight:900;line-height:1;
-  color:#fff;transform:rotate(-2deg);margin-top:8px;
-  text-shadow:0 2px 0 #ddd6ec,0 4px 0 #bcb2d4,0 6px 0 #2a1d4a,0 10px 22px rgba(0,0,0,.55);
-}
-.hx-no span{
-  color:#FFC400;
-  text-shadow:0 2px 0 #f0b000,0 4px 0 #dca000,0 6px 0 #c89000,0 9px 0 #3a2a08,0 12px 24px rgba(0,0,0,.6);
-}
-
-.hx-brush{width:min(78%,360px);height:26px;margin:14px auto 0;display:block}
-
-.hx-kicker{
-  font-size:clamp(14px,2.8vw,19px);color:#fff;letter-spacing:.6px;
-  line-height:1.55;margin:20px 0 0;font-weight:600;
-}
-.hx-kicker b{color:#FFC400}
-
-/* 3 destaques */
-.hx-feats{
-  display:flex;justify-content:center;align-items:flex-start;
-  max-width:430px;margin:34px auto 0;
-}
-.hx-feat{flex:1;padding:0 4px}
-.hx-feat-mid{flex:1.15}
-.hx-fi{
-  width:62px;height:62px;margin:0 auto 12px;border-radius:50%;
-  background:radial-gradient(circle at 32% 28%,#4a2a86,#2c1858);
-  border:2px solid rgba(160,108,232,.65);
-  box-shadow:0 0 24px rgba(139,79,224,.5),inset 0 2px 6px rgba(255,255,255,.12);
-  display:flex;align-items:center;justify-content:center;
-}
-.hx-fi svg{width:27px;height:27px}
-.hx-feat strong{
-  display:block;color:#FFC400;font-weight:900;line-height:1.1;
-  font-size:clamp(14px,3.2vw,19px);
-}
-.hx-feat small{
-  display:block;color:#fff;font-weight:800;letter-spacing:.4px;
-  font-size:clamp(11px,2.5vw,13px);
-}
-.hx-vdiv{width:1px;background:rgba(255,255,255,.18);align-self:stretch;margin:6px 2px 0}
-
-.hx-glow{
-  width:min(70%,320px);height:10px;margin:34px auto 0;border-radius:50%;
-  background:radial-gradient(closest-side,rgba(160,108,232,.8),rgba(160,108,232,0));
-}
-
-/* botão + selos */
-.hx-action{position:relative;z-index:2;margin-top:30px}
-.hx-cta{
-  display:inline-block;position:relative;
-  background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;
-  font-size:clamp(16px,2.4vw,21px);font-weight:800;letter-spacing:.3px;
-  text-decoration:none;padding:20px 42px;border-radius:60px;
-  box-shadow:0 14px 34px rgba(31,184,81,.45);
-  transition:transform .2s ease,box-shadow .2s ease;
-}
-.hx-cta::after{
-  content:"";position:absolute;inset:0;border-radius:60px;
-  box-shadow:0 0 0 0 rgba(46,224,106,.5);
-  animation:hxPulse 2.4s ease-out infinite;pointer-events:none;
-}
-.hx-cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(31,184,81,.6)}
-.hx-cta:active{transform:translateY(0)}
-
-.hx-badges{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;
-  margin-top:22px;color:#cdbff0;font-size:15px;font-weight:600;
-}
-
-@keyframes hxPulse{
-  0%{box-shadow:0 0 0 0 rgba(46,224,106,.45)}
-  70%{box-shadow:0 0 0 14px rgba(46,224,106,0)}
-  100%{box-shadow:0 0 0 0 rgba(46,224,106,0)}
-}
-
-@media(max-width:600px){
-  .hx{padding:36px 16px 48px}
-  .hx-deco-cap{width:42px;height:42px;top:24px}
-  .hx-deco-star{width:36px;height:36px}
-  .hx-cta{width:100%;box-sizing:border-box;padding:18px 14px}
-  .hx-badges{gap:10px 18px;font-size:13.5px}
-}
+.hs{background:linear-gradient(180deg,#f4effc,#faf8ff);padding:64px 20px 56px;text-align:center}
+.hs-wrap{max-width:760px;margin:0 auto}
+.hs h1{font-size:clamp(30px,5.6vw,52px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 0 16px}
+.hs h1 span{color:#6B2FBF}
+.hs-sub{font-size:clamp(16px,2.5vw,20px);color:#5a5470;line-height:1.55;margin:0 auto 22px;max-width:600px}
+.hs-badge{display:inline-block;background:#e2f6df;border:1px solid #b9e6c1;color:#1f9e4a;font-size:14.5px;font-weight:700;padding:10px 20px;border-radius:100px;margin-bottom:28px}
+.hs-cta{display:inline-block;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;font-size:clamp(16px,2.4vw,20px);font-weight:800;text-decoration:none;padding:19px 42px;border-radius:100px;box-shadow:0 12px 30px rgba(31,184,81,.35);transition:transform .18s ease}
+.hs-cta:hover{transform:translateY(-2px)}
+.hs-trust{margin-top:20px;color:#8a83a0;font-size:14px;font-weight:600}
+@media(max-width:600px){.hs{padding:44px 18px 46px}.hs-cta{width:100%;box-sizing:border-box}}
 </style>
 
 <script>
 (function(){
-  var b=document.querySelector('.hx-cta');
+  var b=document.querySelector('.hs-cta');
   if(!b)return;
   b.addEventListener('click',function(e){
     var alvo=document.getElementById('planos')||document.querySelector('.pl2');
@@ -924,7 +738,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rcb-b-txt">
           <span class="rcb-free">GRÁTIS</span>
           <h4>Mapa de Calor ENEM</h4>
-          <p>A análise estatística que mostra exatamente as matérias e assuntos mais cobrados in cada prova do ENEM.</p>
+          <p>A análise estatística que mostra exatamente as matérias e assuntos mais cobrados em cada prova do ENEM.</p>
           <div class="rcb-price"><s>De R$ 37</s><b>Por R$ 0,00</b></div>
         </div>
       </article>
@@ -1050,98 +864,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<section class="dp4">
-  <div class="dp4-wrap">
-    <span class="dp4-eyebrow">DEPOIMENTOS DE QUEM USA E RECOMENDA</span>
-    <h2 class="dp4-title">O que os alunos estão falando do <span>Método Pro ENEM</span></h2>
-  </div>
-
-  <div class="dp4-rail" id="dp4Rail">
-    <img src="/dep-1-pedro.webp"    alt="Depoimento de Pedro Henrique"  width="640" height="640" loading="lazy" decoding="async">
-    <img src="/dep-2-lucas.webp"    alt="Depoimento de Lucas Martins"   width="640" height="640" loading="lazy" decoding="async">
-    <img src="/dep-3-gabriela.webp" alt="Depoimento de Gabriela Santos" width="640" height="640" loading="lazy" decoding="async">
-    <img src="/dep-4-beatriz.webp"  alt="Depoimento de Beatriz Oliveira" width="640" height="640" loading="lazy" decoding="async">
-    <img src="/dep-5-mariana.webp"  alt="Depoimento de Mariana Souza"   width="640" height="640" loading="lazy" decoding="async">
-    <img src="/dep-6-rafael.webp"   alt="Depoimento de João Victor"     width="640" height="640" loading="lazy" decoding="async">
-    <img src="/dep-7-camila.webp"   alt="Depoimento de Ana Clara" width="640" height="640" loading="lazy" decoding="async">
-  </div>
-
-  <div class="dp4-dots" id="dp4Dots">
-    <span class="is-on"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+<section class="tt">
+  <div class="tt-wrap">
+    <span class="tt-eyebrow">DEPOIMENTOS</span>
+    <h2 class="tt-title">O que os alunos estão dizendo 💬</h2>
+    <div class="tt-grid">
+      <article class="tt-card">
+        <div class="tt-head"><span class="tt-av" style="background:#6B2FBF">PH</span><div><strong>Pedro Henrique</strong><small>Aluno do Método Pro</small></div></div>
+        <p>“Eu tava perdido sem saber o que estudar pro ENEM. Depois que entrei, ficou muito mais fácil seguir uma ordem. As +100 aulas já estão organizadas e isso me ajudou demais.”</p>
+        <div class="tt-stars">⭐⭐⭐⭐⭐</div>
+      </article>
+      <article class="tt-card">
+        <div class="tt-head"><span class="tt-av" style="background:#e0355a">MS</span><div><strong>Mariana Souza</strong><small>Aluna do Método Pro</small></div></div>
+        <p>“Eu estudo pelo celular e gostei muito porque a plataforma é simples. Dá pra abrir e já encontrar as aulas do ENEM sem ficar perdida.”</p>
+        <div class="tt-stars">⭐⭐⭐⭐⭐</div>
+      </article>
+      <article class="tt-card">
+        <div class="tt-head"><span class="tt-av" style="background:#1f9e4a">RL</span><div><strong>Rafael Lima</strong><small>Aluno do Método Pro</small></div></div>
+        <p>“O que mais gostei foi ter as aulas separadas por área: Matemática, Linguagens, Natureza, Humanas e Redação. Fica muito mais fácil saber por onde continuar.”</p>
+        <div class="tt-stars">⭐⭐⭐⭐⭐</div>
+      </article>
+    </div>
   </div>
 </section>
 
 <style>
-.dp4{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:66px 0 54px;overflow:hidden}
-.dp4-wrap{max-width:860px;margin:0 auto 36px;padding:0 20px;text-align:center}
-.dp4-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13px;letter-spacing:2px;margin-bottom:12px}
-.dp4-title{font-size:clamp(27px,4.4vw,44px);font-weight:900;color:#1a1230;line-height:1.15;margin:0}
-.dp4-title span{color:#6B2FBF}
-
-.dp4-rail{
-  display:flex;gap:16px;
-  justify-content:safe center;
-  overflow-x:auto;scroll-snap-type:x mandatory;
-  padding:6px 24px 24px;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch;
-  scroll-behavior:smooth;
-}
-.dp4-rail::-webkit-scrollbar{display:none}
-.dp4-rail img{
-  flex:0 0 auto;
-  width:330px;height:330px;
-  object-fit:cover;
-  border-radius:18px;
-  scroll-snap-align:center;
-  box-shadow:0 12px 32px rgba(107,47,191,.16);
-}
-
-.dp4-dots{display:flex;justify-content:center;gap:7px}
-.dp4-dots span{width:7px;height:7px;border-radius:4px;background:#c9b8e8;transition:all .25s ease;cursor:pointer}
-.dp4-dots span.is-on{width:22px;background:#6B2FBF}
-
-@media(max-width:600px){
-  .dp4-rail{padding:6px 20px 22px;gap:14px}
-  .dp4-rail img{width:82vw;max-width:340px;height:auto;aspect-ratio:1/1}
-}
+.tt{background:linear-gradient(180deg,#faf8ff,#f1ecfb);padding:66px 20px}
+.tt-wrap{max-width:1000px;margin:0 auto;text-align:center}
+.tt-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13.5px;letter-spacing:2.5px;margin-bottom:10px}
+.tt-title{font-size:clamp(26px,4.4vw,40px);font-weight:900;color:#1a1230;margin:0 0 34px}
+.tt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
+.tt-card{background:#fff;border:1px solid #e9e1f8;border-radius:18px;padding:22px 20px;box-shadow:0 10px 28px rgba(107,47,191,.08)}
+.tt-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tt-av{flex:none;width:46px;height:46px;border-radius:50%;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+.tt-head strong{display:block;font-size:15.5px;color:#1a1230}
+.tt-head small{font-size:12.5px;color:#8a83a0}
+.tt-card p{font-size:14.5px;color:#3a3350;line-height:1.6;margin:0 0 12px}
+.tt-stars{font-size:14px}
+@media(max-width:820px){.tt-grid{grid-template-columns:1fr}}
 </style>
-
-<script>
-(function(){
-  var rail=document.getElementById('dp4Rail'), dots=document.getElementById('dp4Dots');
-  if(!rail||!dots)return;
-  var imgs=rail.querySelectorAll('img'), ds=dots.querySelectorAll('span');
-  var i=0,timer=null,paused=false;
-
-  function go(n){i=(n+imgs.length)%imgs.length;imgs[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
-  function start(){stop();timer=setInterval(function(){if(!paused)go(i+1);},3500);}
-  function stop(){if(timer)clearInterval(timer);}
-
-  ds.forEach(function(d,n){d.addEventListener('click',function(){go(n);start();})});
-
-  ['pointerdown','touchstart','mouseenter'].forEach(function(e){
-    rail.addEventListener(e,function(){paused=true;},{passive:true});
-  });
-  ['pointerup','touchend','mouseleave'].forEach(function(e){
-    rail.addEventListener(e,function(){paused=false;clearTimeout(rail._r);rail._r=setTimeout(start,4000);},{passive:true});
-  });
-
-  var t;
-  rail.addEventListener('scroll',function(){
-    clearTimeout(t);
-    t=setTimeout(function(){
-      var c=rail.scrollLeft+rail.clientWidth/2,best=0,min=1e9;
-      imgs.forEach(function(im,n){var d=Math.abs((im.offsetLeft+im.offsetWidth/2)-c);if(d<min){min=d;best=n;}});
-      i=best;
-      ds.forEach(function(d,n){d.classList.toggle('is-on',n===best)});
-    },90);
-  },{passive:true});
-
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(e){e[0].isIntersecting?start():stop();},{threshold:.25}).observe(rail);
-  } else { start(); }
-})();
-</script>
 
 <!-- ===================== 2) ANTES x DEPOIS ===================== -->
 
@@ -1169,80 +930,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .acc3-img{width:100%;max-width:620px;height:auto;border-radius:20px;box-shadow:0 16px 44px rgba(107,47,191,.22)}
 </style>
 
-<section class="pl2" id="planos">
-  <div class="pl2-wrap">
-    <span class="pl2-eyebrow">⭐ ESCOLHA SEU ACESSO</span>
-    <h2 class="pl2-title">Garanta o seu <span>agora</span></h2>
-    <p class="pl2-sub">Acesso vitalício. Paga uma vez, usa até o dia da prova.</p>
+<section class="pk" id="planos">
+  <div class="pk-wrap">
+    <span class="pk-eyebrow">⭐ ESCOLHA SEU ACESSO</span>
+    <h2 class="pk-title">Garanta o seu agora ✨</h2>
+    <p class="pk-sub">Acesso vitalício. Paga uma vez, usa até o dia da prova.</p>
 
-    <!-- BÁSICO -->
-    <div class="pl2-card pl2-basico">
-      <div class="pl2-head">
-        <div class="pl2-ico pl2-ico-star"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2l3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17.3 5.7 20.6l1.6-6.9L2 9.1l7-.6z"/></svg></div>
-        <div class="pl2-name">
-          <h3>Plano Básico</h3>
-          <p>Só a plataforma de aulas, no celular e no computador.</p>
-        </div>
-        <div class="pl2-price">
-          <div class="pl2-value"><small>R$</small><b>14</b><span>,90</span></div>
-          <em>pagamento único • acesso vitalício</em>
-        </div>
-      </div>
+    <div class="pk-grid">
 
-      <div class="pl2-bonus-tag">✓ Inclui os 4 bônus exclusivos (R$ 150+)</div>
-
-      <div class="pl2-list-2col">
-        <ul class="pl2-in">
-          <li><i>✓</i> Plataforma + 100 aulas completas do ENEM</li>
-          <li><i>✓</i> Acesso no celular e no computador</li>
-          <li><i>✓</i> <b>Bônus:</b> Protocolo 8S</li>
-          <li><i>✓</i> <b>Bônus:</b> Mapa de Calor ENEM</li>
-          <li><i>✓</i> <b>Bônus:</b> Memorização 3.0</li>
-          <li><i>✓</i> <b>Bônus:</b> Temas Quentes ENEM</li>
+      <article class="pk-card">
+        <h3>Plano Básico <b>R$ 14,90</b></h3>
+        <img src="/plat-1-inicio.webp" alt="Plataforma do Método Pro ENEM" width="540" height="1000" loading="lazy">
+        <ul>
+          <li>✅ Plataforma + 100 aulas completas do ENEM</li>
+          <li>✅ 🎁 Bônus: Protocolo 8S</li>
+          <li>✅ 🎁 Bônus: Mapa de Calor ENEM</li>
+          <li>✅ 🎁 Bônus: Memorização 3.0</li>
+          <li>✅ 🎁 Bônus: Temas Quentes ENEM</li>
+          <li>✅ Acesso imediato</li>
+          <li>✅ 7 dias de garantia</li>
         </ul>
-        <ul class="pl2-out">
-          <li><i>✕</i> Redação Nota 900</li>
-          <li><i>✕</i> Destrava Redação</li>
-          <li><i>✕</i> Mapas Mentais</li>
-          <li><i>✕</i> Manual Pro</li>
-          <li><i>✕</i> Acompanhamento da evolução</li>
+        <a class="pk-btn pk-btn-b" href="https://ggcheckout.app/checkout/v5/pkbaBUjXhvltYKZhc7Ow">COMPRAR AGORA</a>
+      </article>
+
+      <article class="pk-card pk-best">
+        <div class="pk-flag">🔥 Mais completo</div>
+        <h3>Pacote Completo <b><s>R$ 97</s> R$ 27,90</b></h3>
+        <div class="pk-covers">
+          <img src="/bonus-protocolo-8s.webp" alt="" width="360" height="540" loading="lazy">
+          <img src="/bonus-mapa-calor.webp" alt="" width="360" height="540" loading="lazy">
+          <img src="/bonus-memorizacao.webp" alt="" width="360" height="540" loading="lazy">
+          <img src="/bonus-temas-quentes.webp" alt="" width="360" height="540" loading="lazy">
+        </div>
+        <ul>
+          <li>✅ Tudo do Plano Básico (100 aulas + 4 bônus)</li>
+          <li>✅ 🎁 Redação Nota 900</li>
+          <li>✅ 🎁 Destrava Redação</li>
+          <li>✅ 🎁 Mapas Mentais</li>
+          <li>✅ 🎁 Manual Pro Completo</li>
+          <li>✅ Acompanhamento da sua evolução</li>
+          <li>✅ Acesso imediato · 7 dias de garantia</li>
         </ul>
-      </div>
+        <a class="pk-btn pk-btn-c" href="https://pay.wiapy.com/0dgjmi6c0iO">COMPRAR AGORA</a>
+      </article>
 
-      <a class="pl2-btn pl2-btn-ghost" href="https://ggcheckout.app/checkout/v5/pkbaBUjXhvltYKZhc7Ow">Escolher Plano Básico ›</a>
     </div>
-
-    <!-- COMPLETO -->
-    <div class="pl2-card pl2-completo">
-      <div class="pl2-badge">🔥 MAIS ESCOLHIDO</div>
-      <div class="pl2-head">
-        <div class="pl2-ico pl2-ico-crown"><svg viewBox="0 0 24 24" fill="#FFD60A"><path d="M3 7l4 4 5-7 5 7 4-4-2 12H5z"/></svg></div>
-        <div class="pl2-name">
-          <h3>Pacote Completo</h3>
-          <p>A plataforma + todo o Método Pro. O caminho completo até a prova.</p>
-        </div>
-        <div class="pl2-price">
-          <s>De R$ 97</s>
-          <div class="pl2-value"><small>R$</small><b>27</b><span>,90</span></div>
-          <em>ou 6x de R$ 4,72 • acesso vitalício</em>
-        </div>
-      </div>
-
-      <div class="pl2-bonus-tag">✓ Inclui os 4 bônus exclusivos (R$ 150+)</div>
-
-      <ul class="pl2-in pl2-in-full">
-        <li><i>✓</i> <b>Tudo do Plano Básico</b> (100 aulas + os 4 bônus)</li>
-        <li><i>✓</i> <b>Redação Nota 900</b></li>
-        <li><i>✓</i> <b>Destrava Redação</b></li>
-        <li><i>✓</i> <b>Mapas Mentais</b></li>
-        <li><i>✓</i> <b>Manual Pro</b></li>
-        <li><i>✓</i> <b>Acompanhamento da sua evolução</b></li>
-      </ul>
-
-      <a class="pl2-btn pl2-btn-green" href="https://pay.wiapy.com/0dgjmi6c0iO">QUERO O PACOTE COMPLETO →</a>
-    </div>
-
-    <div class="pl2-secure">🛡️ Pagamento 100% seguro &nbsp;•&nbsp; 💳 Pix ou cartão</div>
+    <p class="pk-secure">🛡️ Pagamento 100% seguro · 💳 Pix ou cartão</p>
 
     <div class="pl2-curadoria">
       <span class="pl2-cur-ico">🎓</span>
@@ -1252,68 +985,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <style>
-.pl2{background:linear-gradient(180deg,#f6f3fd,#efeafb);padding:70px 18px}
-.pl2-wrap{max-width:760px;margin:0 auto;text-align:center}
-.pl2-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:14px;letter-spacing:2px;margin-bottom:12px}
-.pl2-title{font-size:clamp(32px,5.6vw,54px);font-weight:900;color:#1a1230;margin:0 0 6px}
-.pl2-title span{color:#6B2FBF;position:relative}
-.pl2-title span::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:#FFD60A;border-radius:4px;opacity:.8}
-.pl2-sub{font-size:clamp(15px,2.4vw,19px);color:#5a5470;margin:0 0 40px}
-
-.pl2-card{position:relative;background:#fff;border-radius:24px;padding:34px 30px;text-align:left;box-shadow:0 16px 44px rgba(107,47,191,.12);margin-bottom:26px}
-.pl2-completo{border:3px solid #6B2FBF;box-shadow:0 22px 56px rgba(107,47,191,.28);margin-top:34px}
-
-.pl2-head{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
-.pl2-ico{flex:none;width:60px;height:60px;border-radius:16px;background:linear-gradient(145deg,#8b4fe0,#6B2FBF);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(107,47,191,.4),inset 0 2px 4px rgba(255,255,255,.4)}
-.pl2-ico svg{width:32px;height:32px}
-.pl2-name{flex:1;min-width:180px}
-.pl2-name h3{font-size:26px;font-weight:900;color:#1a1230;margin:0 0 4px}
-.pl2-name p{font-size:15px;color:#5a5470;line-height:1.45;margin:0}
-.pl2-price{text-align:right;min-width:150px;margin-left:auto}
-.pl2-price s{color:#c02020;font-size:15px;display:block;margin-bottom:2px}
-.pl2-value{display:flex;align-items:flex-start;justify-content:flex-end;color:#6B2FBF;line-height:1}
-.pl2-value small{font-size:18px;font-weight:700;margin-top:8px;margin-right:3px}
-.pl2-value b{font-size:52px;font-weight:900}
-.pl2-value span{font-size:22px;font-weight:800;margin-top:6px}
-.pl2-price em{display:block;font-style:normal;font-size:12.5px;color:#5a5470;margin-top:4px}
-
-.pl2-bonus-tag{display:inline-block;background:#e2f6df;color:#1f9e4a;font-weight:700;font-size:14px;padding:9px 16px;border-radius:12px;border:1px solid #b9e6c1;margin:22px 0 20px}
-
-.pl2-list-2col{display:grid;grid-template-columns:1.15fr 1fr;gap:8px 26px}
-.pl2-in,.pl2-out{list-style:none;margin:0;padding:0}
-.pl2-in li,.pl2-out li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;line-height:1.4;padding:8px 0;color:#2f2a45}
-.pl2-out li{color:#a49dbb}
-.pl2-in i,.pl2-out i{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;margin-top:1px}
-.pl2-in i{background:#3ea832;color:#fff}
-.pl2-out i{background:#d9d2e8;color:#fff}
-.pl2-in-full li{font-size:16px}
-
-.pl2-btn{display:block;text-align:center;text-decoration:none;font-weight:800;border-radius:60px;margin-top:26px;transition:transform .2s ease,box-shadow .2s ease}
-.pl2-btn-ghost{color:#6B2FBF;border:2px solid #6B2FBF;padding:16px;font-size:17px;background:#faf7ff}
-.pl2-btn-ghost:hover{background:#6B2FBF;color:#fff;transform:translateY(-2px)}
-.pl2-btn-green{color:#fff;background:linear-gradient(180deg,#2ee06a,#1fb851);padding:20px;font-size:19px;letter-spacing:.3px;box-shadow:0 14px 30px rgba(31,184,81,.45);position:relative;z-index:1}
-.pl2-btn-green::after{content:"";position:absolute;inset:0;border-radius:inherit;background:inherit;box-shadow:0 14px 30px rgba(31,184,81,.45);z-index:-1;opacity:0.8;animation:pl2PulseCompose 2.4s cubic-bezier(0.24,0,0.38,1) infinite}
-@keyframes pl2PulseCompose{
-  0%{transform:scale(1);opacity:0.8}
-  100%{transform:scale(1.08, 1.25);opacity:0}
-}
-.pl2-btn-green:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(31,184,81,.6)}
-
-.pl2-badge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#ff8a1e,#f06400);color:#fff;font-weight:800;font-size:14px;letter-spacing:1px;padding:9px 22px;border-radius:30px;box-shadow:0 8px 18px rgba(240,100,0,.4);white-space:nowrap}
-
-.pl2-secure{margin:30px 0 22px;color:#5a5470;font-weight:600;font-size:15px}
-.pl2-curadoria{display:flex;align-items:center;gap:14px;text-align:left;background:#efe9fb;border-radius:16px;padding:18px 20px}
-.pl2-cur-ico{flex:none;width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 12px rgba(107,47,191,.15)}
-.pl2-curadoria p{margin:0;font-size:14px;line-height:1.5;color:#5a5470}
-.pl2-curadoria b{color:#6B2FBF}
-
-
-@media(max-width:640px){
-  .pl2-price{text-align:left;margin-left:0;width:100%}
-  .pl2-value{justify-content:flex-start}
-  .pl2-list-2col{grid-template-columns:1fr;gap:0}
-  .pl2-out{margin-top:4px;padding-top:10px;border-top:1px dashed #e0d8f0}
-}
+.pk{background:#fff;padding:70px 20px}
+.pk-wrap{max-width:900px;margin:0 auto;text-align:center}
+.pk-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13.5px;letter-spacing:2.5px;margin-bottom:10px}
+.pk-title{font-size:clamp(28px,4.8vw,44px);font-weight:900;color:#1a1230;margin:0 0 6px}
+.pk-sub{font-size:16px;color:#5a5470;margin:0 0 36px}
+.pk-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left}
+.pk-card{position:relative;background:#faf8ff;border:1px solid #e9e1f8;border-radius:20px;padding:26px 22px;display:flex;flex-direction:column}
+.pk-best{border:3px solid #6B2FBF;box-shadow:0 18px 46px rgba(107,47,191,.18)}
+.pk-flag{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#ff8a1e,#f06400);color:#fff;font-weight:800;font-size:13.5px;padding:8px 20px;border-radius:30px;white-space:nowrap}
+.pk-card h3{font-size:21px;font-weight:900;color:#1a1230;margin:0 0 16px;text-align:center;line-height:1.35}
+.pk-card h3 b{display:block;color:#6B2FBF;font-size:26px}
+.pk-card h3 s{color:#a49dbb;font-size:16px;font-weight:600;margin-right:6px}
+.pk-card > img{width:60%;max-width:200px;height:auto;margin:0 auto 18px;border-radius:14px;box-shadow:0 10px 26px rgba(107,47,191,.2)}
+.pk-covers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 18px}
+.pk-covers img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,.14)}
+.pk-card ul{list-style:none;margin:0 0 20px;padding:0;flex:1}
+.pk-card li{font-size:15px;color:#2f2a45;line-height:1.5;padding:7px 0;border-bottom:1px dashed #eee6fa}
+.pk-card li:last-child{border-bottom:none}
+.pk-btn{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:17px;padding:17px;border-radius:100px;transition:transform .18s ease}
+.pk-btn:hover{transform:translateY(-2px)}
+.pk-btn-b{background:#fff;color:#6B2FBF;border:2px solid #6B2FBF}
+.pk-btn-b:hover{background:#6B2FBF;color:#fff}
+.pk-btn-c{background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;box-shadow:0 12px 28px rgba(31,184,81,.4)}
+.pk-secure{margin-top:26px;color:#5a5470;font-weight:600;font-size:15px}
+@media(max-width:760px){.pk-grid{grid-template-columns:1fr;gap:30px}}
 </style>
 
 
@@ -1389,17 +1085,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<div class="pop" id="pop"><div class="ck">✓</div><div><b id="popn">Rafaela</b> garantiu o acesso agora mesmo</div></div>
-
-<script>
 
 
-const nomes=["Rafaela","Lucas","Beatriz","João","Mariana","Pedro","Ana","Gabriel"];
-const pop=document.getElementById('pop'), popn=document.getElementById('popn');
-let i=0;
-function showPop(){ popn.textContent=nomes[i%nomes.length]; i++; pop.classList.add('show'); setTimeout(function(){pop.classList.remove('show');},4500); }
-setTimeout(function loop(){ showPop(); setTimeout(loop,12000); },6000);
-</script>
+
 
 <!-- ====== cole antes de </body> ====== -->
 <script>
