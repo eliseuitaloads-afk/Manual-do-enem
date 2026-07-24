@@ -167,8 +167,17 @@ a{text-decoration:none}
 .print-slot{aspect-ratio:9/16;border:2px dashed var(--dark-borda);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--dark-texto-sec);font-size:14px;text-align:center;padding:20px;background:rgba(139,92,246,.05)}
 .print-slot svg{opacity:.6}
 
-.infografico{max-width:680px;margin:0 auto}
-.infografico img{width:100%;border-radius:var(--radius)}
+.badge-verde{display:inline-flex;align-items:center;gap:8px;background:var(--verde);color:#fff;font-weight:700;font-size:15px;padding:10px 24px;border-radius:999px;box-shadow:0 4px 16px rgba(22,163,74,.35)}
+
+/* Passos "Como funciona" em HTML nativo */
+.passos{max-width:620px;margin:0 auto;position:relative}
+.passos::before{content:"";position:absolute;left:30px;top:24px;bottom:24px;width:2px;background:linear-gradient(to bottom,var(--roxo-luz),rgba(139,92,246,.15))}
+.passo{display:flex;gap:18px;background:var(--dark-card);border:1px solid var(--dark-borda);border-radius:var(--radius);padding:20px;margin-bottom:14px;position:relative;text-align:left}
+.passo-icone{flex:none;width:60px;height:60px;border:2px solid var(--roxo-luz);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--dark-bg)}
+.passo-num{position:absolute;left:50px;top:12px;width:25px;height:25px;background:var(--amarelo);color:var(--tinta);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.passo h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;font-size:17px;color:var(--dark-texto);margin-bottom:3px}
+.passo p{color:var(--dark-texto-sec);font-size:14.5px}
+.passo p .verde{color:#4ADE80;font-weight:700}
 
 /* ---------- PLANOS ---------- */
 .planos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:880px;margin:0 auto}
@@ -236,7 +245,7 @@ footer .legal strong{color:var(--tinta)}
   <div class="hero-conteudo">
     <h1 class="display">Mais de 100 aulas completas<br><span class="amarelo">para passar no ENEM</span></h1>
     <p class="subtitulo">Organizadas por matéria, na ordem do que mais cai — prontas pra você abrir e estudar, sem ficar procurando.</p>
-    <p class="checkline">✅ Na ordem do que mais cai na prova</p>
+    <p class="checkline"><span class="badge-verde">✓ Alinhado à Matriz de Referência do ENEM</span></p>
     <a class="btn btn-amarelo" href="#planos">👇 Quero começar agora</a>
     <div class="selos"><span>⚡ Acesso imediato</span><span>🔒 Pagamento seguro</span><span>🛡️ Garantia de 7 dias</span></div>
   </div>
@@ -286,6 +295,7 @@ footer .legal strong{color:var(--tinta)}
       <span class="tag">MÉTODO PRO ENEM</span>
       <h3>+100 Aulas para Passar no ENEM</h3>
       <p>Trilha completa do zero ao avançado, organizada por matéria e na ordem do que mais cai na prova.</p>
+      <img src="mockup-3-celulares.webp" alt="Plataforma Método Pro do ENEM em três celulares" style="width:100%;max-width:540px;margin:0 auto 26px;display:block">
       <div class="materias">
         <div class="materia"><span class="emoji">💬</span> Linguagens <span class="pct">100%</span></div>
         <div class="materia"><span class="emoji">📐</span> Matemática <span class="pct">100%</span></div>
@@ -395,10 +405,35 @@ footer .legal strong{color:var(--tinta)}
   </div>
 </section>
 
-<!-- ============ FAIXA ESCURA: COMO FUNCIONA (INFOGRÁFICO) ============ -->
+<!-- ============ FAIXA ESCURA: COMO FUNCIONA (HTML NATIVO) ============ -->
 <section class="faixa-escura" id="como-funciona" style="padding:0 20px 76px">
-  <div class="infografico">
-    <img src="como-funciona-acesso.webp" alt="Como funciona seu acesso: você realiza sua compra, recebe o link da plataforma por e-mail, cria sua senha e começa a estudar">
+  <div style="max-width:760px;margin:0 auto;text-align:center">
+    <span class="eyebrow eyebrow-dark">🚀 Passo a passo</span>
+    <h2 class="display h2 h2-dark">Como funciona<br><span class="destaque">seu acesso</span></h2>
+    <p class="sub sub-dark">Simples, rápido e seguro. Em poucos passos você garante acesso à plataforma e começa a estudar para o <strong style="color:var(--amarelo)">ENEM</strong>.</p>
+    <img src="mockup-notebook-celular.webp" alt="Plataforma Método Pro do ENEM no notebook e no celular" style="width:100%;max-width:640px;margin:0 auto 40px;display:block">
+    <div class="passos">
+      <div class="passo">
+        <div class="passo-icone"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+        <span class="passo-num">1</span>
+        <div><h3>Você realiza sua compra</h3><p>Escolhe seu acesso e finaliza sua compra com segurança.</p></div>
+      </div>
+      <div class="passo">
+        <div class="passo-icone"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <span class="passo-num">2</span>
+        <div><h3>Você recebe o link da plataforma</h3><p>Enviamos no e-mail cadastrado o link para acessar a plataforma.</p></div>
+      </div>
+      <div class="passo">
+        <div class="passo-icone"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <span class="passo-num">3</span>
+        <div><h3>Cria sua senha com o mesmo e-mail</h3><p>Dentro da plataforma, você entra com o e-mail da compra e cria sua senha.</p></div>
+      </div>
+      <div class="passo">
+        <div class="passo-icone"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="#FFD60A" stroke="none"/></svg></div>
+        <span class="passo-num">4</span>
+        <div><h3>Acessa e começa a estudar</h3><p>Pronto! Agora é só entrar e estudar com <span class="verde">+100 aulas</span> e materiais organizados.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
