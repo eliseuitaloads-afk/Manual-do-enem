@@ -1,1144 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<link rel="preconnect" href="https://cdn.utmify.com.br" crossorigin>
-<link rel="preconnect" href="https://cdn.pagesense.io" crossorigin>
-
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://app.litevideo.net" crossorigin>
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
-<script src="https://cdn.pagesense.io/js/mtodoproenem/7366b69507ce475db37f126e71aa88ea.js"></script>
-
-<meta charset="utf-8">
-<meta http-equiv="Content-Language" content="pt-BR">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plataforma Pro do ENEM — Aulas completas, passo a passo</title>
 <meta name="description" content="Acesso a mais de 100 aulas completas do ENEM, 100% no passo a passo, organizadas por matéria. Já fez a prova ou nunca fez: você vai se sair bem.">
-<meta property="og:type" content="website">
 <meta property="og:title" content="Plataforma Pro do ENEM — Aulas completas, passo a passo">
 <meta property="og:description" content="Mais de 100 aulas completas do ENEM, organizadas por matéria, na ordem do que mais cai. Acesso imediato.">
 <meta property="og:image" content="https://metodoproenem.vercel.app/og-image.png">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://metodoproenem.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Plataforma Pro do ENEM — Aulas completas, passo a passo">
 <meta name="twitter:description" content="Mais de 100 aulas completas do ENEM, na ordem do que mais cai.">
 <meta name="twitter:image" content="https://metodoproenem.vercel.app/og-image.png">
 
-<!-- ================================================================= -->
-<!--  CHECKOUT — troque os "#" pelos seus links (Ctrl+F):              -->
-<!--   #CHECKOUT_BASICO    →  https://pay.wiapy.com/e1LN3Mq3kr8            -->
-<!--   #CHECKOUT_PREMIUM   →  https://pay.wiapy.com/0dgjmi6c0iO            -->
-<!--   #CHECKOUT_ESPECIAL  →  https://ggcheckout.app/checkout/v5/bcsXgpQqc7bGqHNG21PF            -->
-<!--                                                                   -->
-<!--  IMAGENS DA SEQUÊNCIA: troque os data-img / background quando     -->
-<!--  tiver prints reais da plataforma (procure "SEQ-IMG").            -->
-<!-- ================================================================= -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --azul:#6B2FBF;        /* roxo principal (era azul) */
-  --azul-esc:#4A1E8F;    /* roxo escuro */
-  --azul-claro:#F1E9FF;  /* roxo bem claro (fundos) */
-  --verde:#16A34A;       /* CTA continua verde (converte e contrasta no roxo) */
-  --verde-esc:#12833c;
-  --vermelho:#E11D2A;    /* urgência */
-  --tinta:#1A1033;       /* texto principal (roxo-quase-preto) */
-  --cinza:#4c455c;       /* texto secundário (aumentado para maior contraste) */
-  --linha:#E9E3F2;       /* bordas */
-  --fundo:#F7F4FC;       /* fundo alternado das seções */
-  --amarelo-enem:#FFD60A;/* amarelo de destaque */
-  --laranja:#FF6500;     /* laranja de apoio */
-}
-/* GLOBAL LAYOUT & HEADINGS */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.text-center {
-  text-align: center;
-}
-.section-eyebrow {
-  display: inline-block;
-  color: #6B2FBF;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.section-h2 {
-  font-size: clamp(28px, 4.6vw, 42px);
-  font-weight: 900;
-  color: #1a1230;
-  line-height: 1.12;
-  margin: 0 0 10px;
-}
-.section-h2 span {
-  color: #6B2FBF;
-}
-.section-sub {
-  font-size: clamp(15px, 2.2vw, 18px);
-  color: #5a5470;
-  line-height: 1.55;
-  margin: 0 0 34px;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--tinta);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.16;margin:0}
-p{margin:0 0 14px}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
-.kick{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--azul);text-align:center;margin-bottom:10px}
-
-.urg{background:var(--vermelho);color:#fff;text-align:center;font-size:14px;padding:10px;font-weight:600}
-.urg b{font-variant-numeric:tabular-nums}
-
-.cta{display:inline-block;background:var(--verde);color:#fff;text-decoration:none;font-family:'Plus Jakarta Sans';font-weight:800;font-size:18px;padding:18px 36px;border-radius:999px;box-shadow:0 10px 26px rgba(22,163,74,.32);transition:.15s;cursor:pointer;border:0}
-.cta:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(22,163,74,.4)}
-.badges{font-size:13.5px;color:var(--cinza);margin-top:15px}
-
-.hero{background:linear-gradient(180deg,var(--azul-claro),#fff);padding:42px 0 44px;text-align:center}
-.hero h1{font-size:35px;font-weight:800;letter-spacing:-.6px;max-width:730px;margin:0 auto 16px}
-.hero h1 .az{color:var(--azul)}
-.hero .sub{font-size:18px;color:var(--cinza);max-width:600px;margin:0 auto 24px}
-
-/* caixa explicativa */
-.caixa{background:#fff;border:1px solid var(--linha);border-left:5px solid var(--azul);border-radius:14px;padding:22px 24px;max-width:640px;margin:0 auto 26px;text-align:left;box-shadow:0 10px 30px rgba(14,26,43,.06)}
-.caixa p{font-size:15.5px;margin:0 0 12px}
-.caixa p:last-child{margin:0}
-.caixa b{color:var(--tinta)}
-
-/* mockup celular */
-.device{position:relative;max-width:300px;margin:32px auto 0;display:flex;justify-content:center}
-.device .glow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.35),transparent 65%);top:10%;left:50%;transform:translateX(-50%);filter:blur(10px);z-index:0}
-.phone{position:relative;z-index:1;width:248px;background:#0A0A1F;border-radius:34px;padding:11px;box-shadow:0 30px 70px rgba(14,26,43,.35),inset 0 0 0 2px #2a2a52;border:1px solid rgba(255,255,255,.06)}
-.phone::before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:80px;height:6px;background:#1b1b3a;border-radius:99px;z-index:3}
-.screen{background:#0A0A1F;border-radius:24px;overflow:hidden;padding:26px 13px 14px;text-align:left}
-.ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
-.ptop b{color:#fff;font-family:'Plus Jakarta Sans';font-size:14px}
-.ptop span{font-size:11px;color:#7B3FFF;font-weight:700;background:rgba(123,63,255,.15);padding:3px 9px;border-radius:99px}
-.pplayer{aspect-ratio:16/9;border-radius:11px;background:linear-gradient(135deg,#1c1c44,#0d0d24);position:relative;display:grid;place-items:center;margin-bottom:12px}
-.pp-play{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
-.pp-play::after{content:"";border-left:12px solid #1b1b3a;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
-.pp-tag{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;padding:3px 8px;border-radius:6px}
-.pi{display:flex;align-items:center;gap:9px;background:#101028;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:9px 11px;margin-bottom:7px}
-.pi.on{border-color:rgba(255,101,0,.4)}
-.pd{width:17px;height:17px;border-radius:50%;border:1.5px solid #6f6f8a;flex:0 0 17px;display:grid;place-items:center;font-size:10px;color:#062b12}
-.pd.done{background:#2ED573;border-color:#2ED573}
-.pt{color:#e7e7f2;font-size:12px;font-weight:600;line-height:1.2}
-.pt small{display:block;color:#8a8aa5;font-size:10px;font-weight:500}
-.pbar{height:6px;background:#15153A;border-radius:99px;margin-top:11px;overflow:hidden}
-.pbar i{display:block;height:100%;width:32%;background:linear-gradient(90deg,#FF6500,#7B3FFF)}
-
-section{padding:46px 0}
-.alt{background:var(--fundo)}
-h2.tit{font-size:28px;font-weight:800;letter-spacing:-.4px;text-align:center;max-width:640px;margin:0 auto 14px}
-.lead{font-size:17px;color:var(--cinza);text-align:center;max-width:600px;margin:0 auto}
-
-.dentro{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:30px}
-.dcard{background:#fff;border:1px solid var(--linha);border-radius:15px;padding:22px;text-align:center}
-.dcard .em{font-size:30px;margin-bottom:10px}
-.dcard h3{font-size:16px;font-weight:700;margin-bottom:6px}
-.dcard p{font-size:13.5px;color:var(--cinza);margin:0}
-
-.dor p{font-size:17.5px;text-align:center;max-width:620px;margin:0 auto 14px}
-.dor strong{color:var(--vermelho)}
-
-.virada{max-width:560px;margin:26px auto 0}
-.virada .l{display:flex;gap:12px;align-items:flex-start;font-size:16.5px;padding:11px 0;border-bottom:1px solid var(--linha)}
-.virada .l:last-child{border:0}
-.virada .l .s{font-weight:800;flex:0 0 22px;font-size:18px}
-.virada .l.sim .s{color:var(--verde)}.virada .l.nao .s{color:#C2C8D2}
-.virada .l.nao{color:var(--cinza)}
-
-.matgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
-.matgrid img{width:100%;border-radius:12px;box-shadow:0 8px 22px rgba(14,26,43,.12);display:block;background:#fff}
-@media(max-width:760px){.matgrid{grid-template-columns:1fr 1fr}}
-
-/* PLANOS empilhados */
-.planos{max-width:460px;margin:32px auto 0;display:flex;flex-direction:column;gap:20px}
-.plano{background:#fff;border:2px solid var(--linha);border-radius:22px;padding:28px;position:relative}
-.plano:not(.dest){opacity:0.92;transition:opacity 0.2s ease}
-.plano:not(.dest):hover{opacity:1}
-.plano.dest{border:2.5px solid var(--azul);box-shadow:0 20px 50px rgba(37,99,235,.16);background:linear-gradient(180deg, #F2F7FF 0%, #FFFFFF 60%);opacity:1}
-.plano.dest:hover{opacity:1}
-.selo{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--azul);color:#fff;font-size:12px;font-weight:800;padding:6px 18px;border-radius:99px;white-space:nowrap;font-family:'Plus Jakarta Sans';letter-spacing:.4px}
-.plano h3{font-size:21px;font-weight:800;text-align:center}
-.plano .pdesc{font-size:13.5px;color:var(--cinza);margin:6px 0 16px;text-align:center}
-.pre{text-align:center;margin-bottom:4px}
-.pre .de{font-size:15px;color:var(--cinza);text-decoration:line-through;display:block}
-.pre .por{font-size:44px;font-weight:800;font-family:'Plus Jakarta Sans';letter-spacing:-1.5px}
-.pre .por small{font-size:20px}
-.parc{font-size:13.5px;color:var(--cinza);text-align:center;margin:2px 0 20px}
-.itens{list-style:none;padding:0;margin:0 0 22px}
-.itens li{display:flex;gap:9px;font-size:14.5px;padding:7px 0;align-items:flex-start}
-.itens li .v{color:var(--verde);font-weight:800;flex:0 0 16px}
-.itens li.off{color:#AAB2C0}.itens li.off .v{color:#CDD3DD}
-.bp{display:block;width:100%;text-decoration:none;text-align:center;font-family:'Plus Jakarta Sans';font-weight:800;font-size:16px;padding:17px;border-radius:999px;cursor:pointer;border:0}
-.bp.b1{background:#fff;border:2px solid var(--azul);color:var(--azul)}
-.bp.b2{background:var(--verde);color:#fff;box-shadow:0 10px 24px rgba(22,163,74,.3)}
-
-
-
-.gar{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:28px;display:flex;gap:20px;align-items:center;margin-top:14px;max-width:640px;margin-left:auto;margin-right:auto}
-.gar .e{flex:0 0 64px;height:64px;border-radius:50%;background:#EAF7EE;display:grid;place-items:center;font-size:30px}
-.gar h3{font-size:19px;font-weight:800;margin-bottom:5px}
-.gar p{font-size:14.5px;color:var(--cinza);margin:0}
-
-.faq{margin-top:22px;max-width:680px;margin-left:auto;margin-right:auto}
-.q{background:#fff;border:1px solid var(--linha);border-radius:12px;margin-bottom:10px;overflow:hidden}
-.q summary{cursor:pointer;padding:16px 18px;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
-.q summary::-webkit-details-marker{display:none}
-.q summary::after{content:"▼";font-size:12px;color:var(--azul);transition:transform 0.3s ease-out;display:inline-block}
-.q[open] summary::after{transform:rotate(180deg)}
-.q .a{font-size:14px;color:var(--cinza);transition:max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;max-height:0;opacity:0;overflow:hidden;padding:0 18px 0}
-.q[open] .a{max-height:300px;opacity:1;padding:0 18px 16px}
-
-.final{background:linear-gradient(135deg,var(--azul),var(--azul-esc));border-radius:22px;padding:46px 26px;text-align:center;color:#fff;margin:8px 0}
-.final h2{font-size:28px;font-weight:800;color:#fff;max-width:560px;margin:0 auto 12px}
-.final p{color:#D6E2FF;font-size:16.5px;max-width:480px;margin:0 auto 20px}
-.final .pp{color:#fff;font-size:15px;margin-bottom:18px}.final .pp b{font-size:26px;font-family:'Plus Jakarta Sans'}
-.final .cta{background:#fff;color:var(--verde)}
-
-footer{text-align:center;padding:32px 20px;color:#5a5470;font-size:13px}
-footer a{color:#5a5470}
-
-
-
-@media(max-width:760px){
-  .hero h1{font-size:27px}.hero .sub{font-size:16px}
-  h2.tit{font-size:23px}
-  .dentro{grid-template-columns:1fr}
-  .final h2{font-size:23px}
-}
-
-/* ---- PRA QUEM É ---- */
-.praquem{max-width:640px;margin:28px auto 0}
-.pq-grupo{margin-bottom:22px}
-.pq-h{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;gap:9px;margin-bottom:6px}
-.pq-h .ic{width:26px;height:26px;border-radius:50%;background:#EAF7EE;color:var(--verde);display:grid;place-items:center;font-weight:800;font-size:14px;flex:0 0 26px}
-.pq-grupo p{font-size:14.5px;color:var(--cinza);margin:0 0 0 35px}
-.pq-nao{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:18px 20px;margin-top:24px}
-.pq-nao .l{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;padding:6px 0}
-.pq-nao .l .x{color:var(--vermelho);font-weight:800;flex:0 0 18px}
-
-/* ---- ANTES x DEPOIS ---- */
-.ad{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:30px auto 0}
-.ad .col{border-radius:18px;padding:24px}
-.ad .antes{background:#FDF0F0;border:1px solid #F6D5D5}
-.ad .depois{background:#EAF7EE;border:1px solid #CDEBD6}
-.ad .col h3{font-family:'Plus Jakarta Sans';font-size:16px;font-weight:800;margin:0 0 14px;display:flex;align-items:center;gap:8px}
-.ad .antes h3{color:#C0392B}
-.ad .depois h3{color:var(--verde-esc)}
-.ad .col .i{display:flex;gap:9px;font-size:14px;padding:7px 0;align-items:flex-start;line-height:1.4}
-.ad .antes .i span{color:#D9534F;font-weight:800;flex:0 0 16px}
-.ad .depois .i span{color:var(--verde);font-weight:800;flex:0 0 16px}
-.ad-seta{text-align:center;font-size:13px;color:var(--cinza);margin-top:16px}
-@media(max-width:680px){.ad{grid-template-columns:1fr}}
-
-/* ---- GARANTIA REFORÇADA ---- */
-.gar2{background:linear-gradient(160deg,#EAF7EE,#fff);border:1px solid #CDEBD6;border-radius:22px;padding:34px 28px;max-width:680px;margin:14px auto 0;text-align:center}
-.gar2 .escudo{width:84px;height:84px;border-radius:50%;background:#fff;border:2px solid var(--verde);display:grid;place-items:center;font-size:40px;margin:0 auto 16px;box-shadow:0 10px 30px rgba(22,163,74,.18)}
-.gar2 .tagp{font-size:12.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--verde-esc);margin-bottom:8px}
-.gar2 h3{font-family:'Plus Jakarta Sans';font-size:24px;font-weight:800;margin:0 0 12px}
-.gar2 h3 b{color:var(--verde)}
-.gar2 p{font-size:15px;color:var(--cinza);max-width:520px;margin:0 auto 10px}
-.gar2 p b{color:var(--tinta)}
-
-/* ---- HERO ESCURO em ROXO (substitui o fundo do .heroX) ---- */
-.heroX{
-  background:
-    radial-gradient(900px 500px at 50% -8%, rgba(157,78,255,.30), transparent 60%),
-    linear-gradient(180deg,#1A0B33 0%, #25104A 55%, #1A0B33 100%) !important;
-}
-/* a 3ª linha da headline em AMARELO (no lugar do verde) — dá a cara de ENEM */
-
-/* ---- selo "MAIS ESCOLHIDO" e detalhes ganham amarelo/laranja ---- */
-.selo{background:linear-gradient(90deg,var(--laranja),#FF8A00) !important}
-.kick{color:var(--azul)}              /* rótulos das seções em roxo */
-.hero h1 .az{color:var(--azul)}       /* caso ainda use o hero claro */
-
-/* ---- HERO ESCURO TEXTO ---- */
-.heroX { color: #fff; }
-.heroX h1 { color: #fff !important; }
-.heroX h1 .az { color: var(--amarelo-enem) !important; }
-.heroX .sub { color: #D6E2FF !important; }
-.heroX .badges { color: #D6E2FF !important; }
-
-/* ---- MOCKUP IMAGEM HERO ---- */
-.hero-prod{position:relative;max-width:380px;margin:28px auto 42px}
-.hero-prod::before{
-  content:"";position:absolute;top:8%;left:50%;transform:translateX(-50%);
-  width:78%;height:80%;border-radius:50%;
-  background:radial-gradient(circle, rgba(157,78,255,.55), transparent 65%);
-  filter:blur(36px);z-index:0;
-}
-.hero-prod img, .hero-img{position:relative;z-index:1;width:100%;display:block;
-  filter:drop-shadow(0 26px 50px rgba(0,0,0,.55));}
-@media(max-width:760px){
-  .hero-prod{max-width:86%}
-}
-
-/* ---------- 1) FADE-IN + SLIDE-UP AO ROLAR ---------- */
-/* aplicado automático em toda <section> via script */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease-out, transform .7s ease-out}
-.reveal.in{opacity:1;transform:translateY(0)}
-
-/* ---------- 2) CASCATA (stagger) ---------- */
-/* adicione class="stagger" no container; os filhos entram em sequência */
-.stagger > *{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out, transform .6s ease-out}
-.stagger.in > *{opacity:1;transform:translateY(0)}
-.stagger.in > *:nth-child(1){transition-delay:0ms}
-.stagger.in > *:nth-child(2){transition-delay:90ms}
-.stagger.in > *:nth-child(3){transition-delay:180ms}
-.stagger.in > *:nth-child(4){transition-delay:270ms}
-.stagger.in > *:nth-child(5){transition-delay:360ms}
-.stagger.in > *:nth-child(6){transition-delay:450ms}
-.stagger.in > *:nth-child(7){transition-delay:540ms}
-.stagger.in > *:nth-child(8){transition-delay:630ms}
-
-/* ---------- 3) INTERATIVE EFFECTS (cards, botões e imagens) ---------- */
-/* Botões Gerais */
-.cta, .bp {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s, filter 0.25s;
-  z-index: 1;
-}
-.cta:hover, .bp:hover {
-  transform: scale(1.05);
-}
-.cta:active, .bp:active {
-  transform: scale(0.98) !important;
-}
-
-/* Shimmer (efeito de brilho) */
-.cta::after, .bp::after {
-  content: "";
-  position: absolute;
-  top: 0; left: -150%;
-  width: 50%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transform: skewX(-20deg);
-  z-index: 2;
-}
-.cta:hover::after, .bp:hover::after {
-  left: 150%;
-  transition: left 0.5s ease-in-out;
-}
-
-/* Ripple (efeito de ondulação) */
-.cta::before, .bp::before {
-  content: "";
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 0; height: 0;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease-out, height 0.6s ease-out;
-  z-index: 0;
-}
-.cta:hover::before, .bp:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-/* Botão Roxo Contornado */
-.bp.b1 {
-  transition: background-color 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s, transform 0.25s, box-shadow 0.25s;
-}
-.bp.b1::after {
-  background: linear-gradient(90deg, transparent, rgba(107, 47, 191, 0.15), transparent);
-}
-.bp.b1:hover {
-  background: var(--azul);
-  color: #fff;
-  box-shadow: 0 10px 24px rgba(107, 47, 191, 0.3);
-}
-.bp.b1:hover::after {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-}
-
-/* Botão Verde Cheio */
-.bp.b2:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 14px 28px rgba(22, 163, 74, 0.4);
-}
-
-
-
-/* Imagens de Grid de Matérias */
-.matgrid img {
-  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s, filter 0.45s;
-}
-.matgrid img:hover {
-  transform: scale(1.08) rotate(1deg);
-  box-shadow: 0 16px 36px rgba(107, 47, 191, 0.25);
-  filter: brightness(1.05) saturate(1.1);
-}
-
-/* Imagem Hero */
-.hero-prod img {
-  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.45s;
-}
-.hero-prod:hover img {
-  transform: scale(1.05) rotate(-1deg);
-  filter: brightness(1.10) drop-shadow(0 30px 60px rgba(0,0,0,.65));
-}
-
-/* Cards de Recursos (.dcard) */
-.dcard {
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s, border-color 0.35s;
-}
-.dcard:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: var(--azul);
-  box-shadow: 0 12px 28px rgba(107, 47, 191, 0.15);
-}
-
-/* Cards de Planos (.plano) */
-.plano {
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s, border-color 0.35s, opacity 0.2s ease;
-}
-.plano:hover {
-  transform: translateY(-6px);
-  border-color: var(--azul);
-  box-shadow: 0 20px 40px rgba(107, 47, 191, 0.18);
-}
-
-/* Garantia Reforçada (.gar2) */
-.gar2 {
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.35s, box-shadow 0.35s;
-}
-.gar2:hover {
-  transform: translateY(-4px);
-  border-color: var(--verde);
-  box-shadow: 0 16px 36px rgba(22, 163, 74, 0.15);
-}
-.gar2 .escudo {
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.gar2:hover .escudo {
-  transform: scale(1.1) rotate(10deg);
-}
-
-/* FAQ/Accordion (.q) */
-.q {
-  transition: border-color 0.35s, box-shadow 0.35s;
-}
-.q:hover {
-  border-color: var(--azul);
-  box-shadow: 0 8px 20px rgba(107, 47, 191, 0.08);
-}
-
-/* ---------- 4) FLOAT (flutuação suave) ---------- */
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.float{animation:floatY 3s ease-in-out infinite}
-
-/* ---------- 5) PULSE-GLOW (botão que respira - COMPOSTO) ---------- */
-.pulse{position:relative;z-index:1}
-.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 6px rgba(22,163,74,.5);z-index:-1;opacity:1;animation:pulseGlowCompose 2s cubic-bezier(0.24,0,0.38,1) infinite}
-@keyframes pulseGlowCompose{
-  0%{transform:scale(1);opacity:1}
-  100%{transform:scale(1.12,1.3);opacity:0}
-}
-
-/* ---------- 6) GLASSMORPHISM ---------- */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  bormplate-columns:1fr;max-width:340px;margin:0 auto}
-  
-  
-}
-.plano-badge {
-  background: #EAF7EE;
-  color: var(--verde);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 6px;
-  margin: 12px 0 16px;
-  display: inline-block;
-  text-align: center;
-}
-
-
-
-/* respeita quem prefere menos movimento (acessibilidade) */
-@media (prefers-reduced-motion: reduce){
-  .reveal,.stagger > *{opacity:1 !important;transform:none !important;transition:none}
-  .float,.pulse{animation:none}
-}
-</style>
-</head>
-<body>
-
-<main>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QC7Q98F"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<section class="hs">
-  <div class="hs-wrap">
-    <h1>Mais de 100 Aulas Completas<br>para <span>Passar no ENEM</span></h1>
-    <p class="hs-sub">Organizadas por matéria, na ordem do que mais cai — prontas pra você abrir e estudar, sem ficar procurando.</p>
-    <div class="hs-badge">✅ Na ordem do que mais cai na prova</div>
-    <div class="hs-video">
-      <lt-v2 v="33916df2-39d0-48d0-b8b4-8df525dab4e1" ar="9:16" sc="0" ap="1" io="34" ph="6" ct="[[]]"></lt-v2>
-    </div>
-    <a class="hs-cta" href="#planos">👇 Quero começar agora</a>
-    <div class="hs-trust">⚡ Acesso imediato · 🔒 Pagamento seguro · 🛡️ Garantia de 7 dias</div>
-  </div>
-</section>
-
-<style>
-.hs{background:linear-gradient(180deg,#f4effc,#faf8ff);padding:64px 20px 56px;text-align:center}
-.hs-wrap{max-width:760px;margin:0 auto}
-.hs h1{font-size:clamp(30px,5.6vw,52px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 0 16px}
-.hs h1 span{color:#6B2FBF}
-.hs-sub{font-size:clamp(16px,2.5vw,20px);color:#5a5470;line-height:1.55;margin:0 auto 22px;max-width:600px}
-.hs-badge{display:inline-block;background:#e2f6df;border:1px solid #b9e6c1;color:#1f9e4a;font-size:14.5px;font-weight:700;padding:10px 20px;border-radius:100px;margin-bottom:28px}
-.hs-cta{display:inline-block;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;font-size:clamp(16px,2.4vw,20px);font-weight:800;text-decoration:none;padding:19px 42px;border-radius:100px;box-shadow:0 12px 30px rgba(31,184,81,.35);transition:transform .18s ease}
-.hs-cta:hover{transform:translateY(-2px)}
-.hs-trust{margin-top:20px;color:#8a83a0;font-size:14px;font-weight:600}
-.hs-video{position:relative;width:min(78vw,300px);aspect-ratio:9/16;margin:6px auto 28px;border-radius:18px;overflow:hidden;background:#160a2b;box-shadow:0 18px 44px rgba(107,47,191,.25)}
-.hs-video lt-v2{position:absolute;inset:0;width:100%;height:100%;display:block}
-@media(max-width:600px){.hs{padding:44px 18px 46px}.hs-cta{width:100%;box-sizing:border-box}}
-</style>
-
-<script>
-(function(){
-  var b=document.querySelector('.hs-cta');
-  if(!b)return;
-  b.addEventListener('click',function(e){
-    var alvo=document.getElementById('planos')||document.querySelector('.pl2');
-    if(alvo){e.preventDefault();alvo.scrollIntoView({behavior:'smooth',block:'start'});}
-  });
-})();
-</script>
-
-
-<!-- ===================== VEJA POR DENTRO DA PLATAFORMA (BLOCO A) ===================== -->
-<section class="pv3">
-  <div class="pv3-wrap">
-    <span class="pv3-eyebrow">👀 VEJA POR DENTRO</span>
-    <h2 class="pv3-title">É isso que você vai abrir <span>hoje</span></h2>
-    <p class="pv3-sub">A plataforma por dentro — matérias organizadas, aulas prontas pra tocar, seus bônus e o seu progresso na tela.</p>
-  </div>
-
-  <div class="pv3-rail" id="pv3Rail">
-    <img src="plat-1-inicio.webp" alt="Tela inicial da plataforma" width="250" height="463" loading="lazy" decoding="async">
-    <img src="plat-2-bonus.webp" alt="Lista de bônus exclusivos" width="250" height="463" loading="lazy" decoding="async">
-    <img src="plat-3-aulas.webp" alt="Visualização das aulas por matéria" width="250" height="463" loading="lazy" decoding="async">
-    <img src="plat-4-progresso.webp" alt="Estatísticas de progresso do aluno" width="250" height="463" loading="lazy" decoding="async">
-    <img src="plat-5-perfil.webp" alt="Perfil do aluno e upgrade" width="250" height="463" loading="lazy" decoding="async">
-  </div>
-
-  <div class="pv3-dots" id="pv3Dots">
-    <span class="is-on"></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</section>
-
-<style>
-.pv3{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:66px 0 54px;overflow:hidden}
-.pv3-wrap{max-width:820px;margin:0 auto 36px;padding:0 20px;text-align:center}
-.pv3-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13.5px;letter-spacing:2.5px;margin-bottom:12px}
-.pv3-title{font-size:clamp(28px,4.6vw,46px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 0 12px}
-.pv3-title span{color:#6B2FBF}
-.pv3-sub{font-size:clamp(15px,2.2vw,18px);color:#5a5470;line-height:1.55;margin:0 auto;max-width:620px}
-
-.pv3-rail{
-  display:flex;gap:16px;
-  justify-content:safe center;
-  overflow-x:auto;scroll-snap-type:x mandatory;
-  padding:6px 24px 24px;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch;
-  scroll-behavior:smooth;
-}
-.pv3-rail::-webkit-scrollbar{display:none}
-.pv3-rail img{
-  flex:0 0 auto;
-  width:250px;height:463px;
-  object-fit:cover;object-position:top;
-  border-radius:20px;
-  background:#0d0618;
-  scroll-snap-align:center;
-  box-shadow:0 16px 40px rgba(107,47,191,.28);
-}
-
-.pv3-dots{display:flex;justify-content:center;gap:7px}
-.pv3-dots span{
-  width:7px;height:7px;border-radius:4px;
-  background:#c9b8e8;transition:all .25s ease;
-  cursor:pointer;
-}
-.pv3-dots span.is-on{width:22px;background:#6B2FBF}
-
-@media(max-width:600px){
-  .pv3-rail{padding:6px 20px 22px;gap:14px}
-  .pv3-rail img{width:66vw;max-width:270px;height:auto;aspect-ratio:540/1000}
-}
-</style>
-
-<script>
-(function(){
-  var rail=document.getElementById('pv3Rail');
-  var dots=document.getElementById('pv3Dots');
-  if(!rail||!dots)return;
-
-  var imgs=rail.querySelectorAll('img');
-  var ds=dots.querySelectorAll('span');
-  var i=0, timer=null, paused=false;
-
-  function go(n){
-    i=(n+imgs.length)%imgs.length;
-    imgs[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-  }
-  function start(){
-    stop();
-    timer=setInterval(function(){ if(!paused) go(i+1); }, 3000);
-  }
-  function stop(){ if(timer) clearInterval(timer); }
-
-  ds.forEach(function(d,n){
-    d.addEventListener('click',function(){ go(n); start(); });
-  });
-
-  // pausa enquanto o usuário interage
-  ['pointerdown','touchstart','mouseenter'].forEach(function(e){
-    rail.addEventListener(e,function(){ paused=true; },{passive:true});
-  });
-  ['pointerup','touchend','mouseleave'].forEach(function(e){
-    rail.addEventListener(e,function(){
-      paused=false;
-      clearTimeout(rail._r);
-      rail._r=setTimeout(start,4000);
-    },{passive:true});
-  });
-
-  // sincroniza as bolinhas com o scroll
-  var t;
-  rail.addEventListener('scroll',function(){
-    clearTimeout(t);
-    t=setTimeout(function(){
-      var c=rail.scrollLeft+rail.clientWidth/2, best=0, min=1e9;
-      imgs.forEach(function(im,n){
-        var d=Math.abs((im.offsetLeft+im.offsetWidth/2)-c);
-        if(d<min){min=d;best=n;}
-      });
-      i=best;
-      ds.forEach(function(d,n){ d.classList.toggle('is-on', n===best); });
-    },90);
-  },{passive:true});
-
-  // só roda quando a seção está visível na tela (não gasta bateria à toa)
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(e){
-      e[0].isIntersecting ? start() : stop();
-    },{threshold:.25}).observe(rail);
-  } else { start(); }
-})();
-</script>
-
-<!-- ===================== SEÇÃO — O QUE VOCÊ VAI RECEBER + BÔNUS ===================== -->
-<section class="rcb">
-  <div class="rcb-wrap">
-
-    <span class="rcb-eyebrow">🎁 CONTEÚDO EXCLUSIVO</span>
-    <h2 class="rcb-title">O que você vai <span>receber</span></h2>
-    <p class="rcb-sub">Acesso completo à plataforma de estudos + 4 bônus exclusivos.</p>
-
-    <!-- CARD PRINCIPAL -->
-    <div class="rcb-main">
-
-      <!-- troféu -->
-      <div class="rcb-trophy">
-        <svg viewBox="0 0 120 140" width="130" height="152" aria-hidden="true">
-          <defs>
-            <linearGradient id="rcbGold" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#ffe694"/><stop offset=".45" stop-color="#f5c944"/><stop offset="1" stop-color="#d99e1b"/>
-            </linearGradient>
-            <linearGradient id="rcbRoxo" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#7c47d6"/><stop offset="1" stop-color="#4c2492"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="60" cy="132" rx="42" ry="7" fill="rgba(107,47,191,.18)"/>
-          <path d="M30 18h60v26c0 20-13 34-30 34S30 64 30 44z" fill="url(#rcbGold)"/>
-          <path d="M30 22c-12 1-18 8-16 18 2 9 10 14 20 14l-3-8c-6-1-10-4-11-8-1-5 3-8 10-9z" fill="url(#rcbGold)"/>
-          <path d="M90 22c12 1 18 8 16 18-2 9-10 14-20 14l3-8c6-1 10-4 11-8 1-5-3-8-10-9z" fill="url(#rcbGold)"/>
-          <path d="M60 34l4.6 9.4 10.4 1.5-7.5 7.3 1.8 10.3L60 57.6l-9.3 4.9 1.8-10.3-7.5-7.3 10.4-1.5z" fill="#fff" opacity=".92"/>
-          <rect x="52" y="78" width="16" height="12" fill="url(#rcbGold)"/>
-          <rect x="42" y="90" width="36" height="10" rx="2" fill="url(#rcbGold)"/>
-          <rect x="34" y="100" width="52" height="18" rx="4" fill="url(#rcbRoxo)"/>
-          <rect x="41" y="105" width="38" height="8" rx="2" fill="#f5c944"/>
-          <text x="60" y="111.5" text-anchor="middle" font-size="5.2" font-weight="800" fill="#4c2492">MÉTODO PRO ENEM</text>
-        </svg>
-      </div>
-
-      <!-- texto -->
-      <div class="rcb-info">
-        <div class="rcb-info-head">
-          <span class="rcb-cap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg>
-          </span>
-          <h3><span>+100 Aulas</span> para Passar no ENEM</h3>
-        </div>
-        <p>Trilha completa do zero ao avançado, organizada por matéria e na ordem do que mais cai na prova.</p>
-        <div class="rcb-pill">🔒 Acesso à Plataforma</div>
-      </div>
-
-      <!-- jornada -->
-      <div class="rcb-journey">
-        <div class="rcb-j-head"><i></i>Sua jornada de estudos</div>
-        <div class="rcb-j-row"><span class="rcb-ji" style="background:#e0355a">💬</span><em>Linguagens</em><b class="rcb-bar"></b><small>100%</small></div>
-        <div class="rcb-j-row"><span class="rcb-ji" style="background:#2f6fe0">Σ</span><em>Matemática</em><b class="rcb-bar"></b><small>100%</small></div>
-        <div class="rcb-j-row"><span class="rcb-ji" style="background:#2fa855">⚗</span><em>C. da Natureza</em><b class="rcb-bar"></b><small>100%</small></div>
-        <div class="rcb-j-row"><span class="rcb-ji" style="background:#e07a1e">🌎</span><em>C. Humanas</em><b class="rcb-bar"></b><small>100%</small></div>
-        <div class="rcb-j-row"><span class="rcb-ji" style="background:#8b4fe0">✍</span><em>Redação</em><b class="rcb-bar"></b><small>100%</small></div>
-      </div>
-
-    </div>
-
-    <!-- BÔNUS -->
-    <span class="rcb-eyebrow rcb-eyebrow-2">✦ BÔNUS EXCLUSIVOS ✦</span>
-    <h2 class="rcb-title2">Leve tudo isso sem pagar nada a mais</h2>
-    <p class="rcb-sub2">tudo <b>GRÁTIS</b> com seu acesso</p>
-
-    <div class="rcb-grid">
-
-      <article class="rcb-bonus">
-        <img src="/bonus-protocolo-8s.webp" alt="Capa do Protocolo 8S" width="360" height="540" loading="lazy" decoding="async">
-        <div class="rcb-b-txt">
-          <span class="rcb-free">GRÁTIS</span>
-          <h4>Protocolo 8S</h4>
-          <p>O método definitivo de 8 semanas para organizar sua rotina de estudos e acelerar sua preparação do zero.</p>
-          <div class="rcb-price"><s>De R$ 49</s><b>Por R$ 0,00</b></div>
-        </div>
-      </article>
-
-      <article class="rcb-bonus">
-        <img src="/bonus-mapa-calor.webp" alt="Capa do Mapa de Calor ENEM" width="360" height="540" loading="lazy" decoding="async">
-        <div class="rcb-b-txt">
-          <span class="rcb-free">GRÁTIS</span>
-          <h4>Mapa de Calor ENEM</h4>
-          <p>A análise estatística que mostra exatamente as matérias e assuntos mais cobrados em cada prova do ENEM.</p>
-          <div class="rcb-price"><s>De R$ 37</s><b>Por R$ 0,00</b></div>
-        </div>
-      </article>
-
-      <article class="rcb-bonus">
-        <img src="/bonus-memorizacao.webp" alt="Capa do Memorização 3.0" width="360" height="540" loading="lazy" decoding="async">
-        <div class="rcb-b-txt">
-          <span class="rcb-free">GRÁTIS</span>
-          <h4>Memorização 3.0</h4>
-          <p>Técnicas científicas de memorização ativa e repetição espaçada para não esquecer o conteúdo no dia da prova.</p>
-          <div class="rcb-price"><s>De R$ 37</s><b>Por R$ 0,00</b></div>
-        </div>
-      </article>
-
-      <article class="rcb-bonus">
-        <img src="/bonus-temas-quentes.webp" alt="Capa do Temas Quentes ENEM" width="360" height="540" loading="lazy" decoding="async">
-        <div class="rcb-b-txt">
-          <span class="rcb-free">GRÁTIS</span>
-          <h4>Temas Quentes ENEM</h4>
-          <p>A análise estratégica detalhada com os assuntos e temas com maior probabilidade de cair na prova.</p>
-          <div class="rcb-price"><s>De R$ 27</s><b>Por R$ 0,00</b></div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<style>
-.rcb{background:linear-gradient(180deg,#faf8ff,#f1ecfb);padding:70px 20px;overflow:hidden}
-.rcb-wrap{max-width:1000px;margin:0 auto;text-align:center}
-
-.rcb-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13.5px;letter-spacing:2.5px;margin-bottom:12px}
-.rcb-title{font-size:clamp(28px,4.8vw,46px);font-weight:900;color:#1a1230;line-height:1.1;margin:0 0 8px}
-.rcb-title span{color:#6B2FBF}
-.rcb-sub{font-size:clamp(14.5px,2.2vw,17px);color:#5a5470;margin:0 0 36px}
-
-/* CARD PRINCIPAL */
-.rcb-main{
-  background:#fff;border:1px solid #e9e1f8;border-radius:24px;
-  padding:30px 26px;box-shadow:0 16px 44px rgba(107,47,191,.1);
-  display:flex;flex-wrap:wrap;gap:26px;align-items:center;text-align:left;
-}
-.rcb-trophy{flex:0 0 130px;margin:0 auto}
-.rcb-trophy text{font-family:system-ui,-apple-system,sans-serif}
-
-.rcb-info{flex:1;min-width:240px}
-.rcb-info-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.rcb-cap{
-  flex:none;width:44px;height:44px;border-radius:13px;
-  background:linear-gradient(145deg,#8b4fe0,#6B2FBF);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 6px 14px rgba(107,47,191,.35);
-}
-.rcb-cap svg{width:23px;height:23px}
-.rcb-info h3{font-size:clamp(20px,3.4vw,27px);font-weight:900;color:#1a1230;line-height:1.2;margin:0}
-.rcb-info h3 span{color:#6B2FBF}
-.rcb-info p{font-size:15px;color:#5a5470;line-height:1.55;margin:0 0 16px}
-.rcb-pill{
-  display:inline-flex;align-items:center;gap:8px;
-  background:#f2eafc;border:1px solid #ddc9f5;color:#6B2FBF;
-  font-size:14px;font-weight:700;padding:11px 18px;border-radius:12px;
-}
-
-.rcb-journey{
-  flex:1;min-width:230px;
-  background:#faf7ff;border:1px solid #ece3fa;border-radius:16px;padding:18px 16px;
-}
-.rcb-j-head{
-  display:flex;align-items:center;gap:8px;
-  font-size:13.5px;font-weight:800;color:#1a1230;margin-bottom:14px;
-}
-.rcb-j-head i{width:8px;height:8px;border-radius:50%;background:#a06ce8}
-.rcb-j-row{display:flex;align-items:center;gap:10px;padding:5px 0}
-.rcb-ji{
-  flex:none;width:28px;height:28px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:13px;font-weight:800;font-style:normal;
-}
-.rcb-j-row em{font-style:normal;font-size:13px;font-weight:600;color:#3a3350;text-align:left}
-.rcb-bar{flex:none;width:64px;height:6px;border-radius:4px;background:linear-gradient(90deg,#8b4fe0,#a06ce8)}
-.rcb-j-row small{flex:none;font-size:11px;font-weight:700;color:#8a83a0}
-
-/* BÔNUS */
-.rcb-eyebrow-2{margin-top:46px}
-.rcb-title2{font-size:clamp(24px,4.2vw,36px);font-weight:900;color:#1a1230;margin:0 0 6px}
-.rcb-sub2{font-size:15px;color:#5a5470;margin:0 0 30px}
-.rcb-sub2 b{color:#1f9e4a}
-
-.rcb-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left;
-}
-.rcb-bonus{
-  background:#fff;border:1px solid #e9e1f8;border-radius:18px;
-  padding:16px;display:flex;gap:16px;
-  box-shadow:0 10px 28px rgba(107,47,191,.08);
-  transition:transform .22s ease,box-shadow .22s ease;
-}
-.rcb-bonus:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(107,47,191,.16)}
-.rcb-bonus img{
-  flex:0 0 86px;width:86px;height:auto;align-self:flex-start;
-  border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.14);
-}
-.rcb-b-txt{flex:1;min-width:0}
-.rcb-free{
-  display:inline-block;background:#e2f6df;color:#1f9e4a;
-  font-size:10.5px;font-weight:800;letter-spacing:1px;
-  padding:4px 11px;border-radius:20px;border:1px solid #b9e6c1;margin-bottom:7px;
-}
-.rcb-b-txt h4{font-size:17.5px;font-weight:800;color:#1a1230;margin:0 0 5px}
-.rcb-b-txt p{font-size:13.5px;color:#5a5470;line-height:1.5;margin:0 0 10px}
-.rcb-price{display:flex;align-items:baseline;gap:9px;border-top:1px dashed #e6dcf5;padding-top:9px}
-.rcb-price s{color:#a49dbb;font-size:13px}
-.rcb-price b{color:#1f9e4a;font-size:16px;font-weight:900}
-
-@media(max-width:820px){
-  .rcb-main{flex-direction:column;text-align:center}
-  .rcb-info-head{justify-content:center}
-  .rcb-journey{width:100%}
-  .rcb-grid{grid-template-columns:1fr}
-}
-</style>
-
-
-
-<section class="tt">
-  <div class="tt-wrap">
-    <span class="tt-eyebrow">DEPOIMENTOS</span>
-    <h2 class="tt-title">O que os alunos estão dizendo 💬</h2>
-    <div class="tt-grid">
-      <article class="tt-card">
-        <div class="tt-head"><img class="tt-photo" src="aluna-1.webp" alt="" width="240" height="240" loading="lazy"><div><strong>Mariana Souza</strong><small>Aluna do Método Pro</small></div></div>
-        <p>"Eu estudo pelo celular e gostei muito porque a plataforma é simples. Dá pra abrir e já encontrar as aulas do ENEM sem ficar perdida."</p>
-        <div class="tt-stars">⭐⭐⭐⭐⭐</div>
-      </article>
-      <article class="tt-card">
-        <div class="tt-head"><img class="tt-photo" src="aluna-2.webp" alt="" width="240" height="240" loading="lazy"><div><strong>Gabriela Santos</strong><small>Aluna do Método Pro</small></div></div>
-        <p>"Eu sempre começava a estudar e parava porque não sabia qual aula assistir depois. No Método Pro ENEM, a sequência das aulas deixou tudo mais fácil."</p>
-        <div class="tt-stars">⭐⭐⭐⭐⭐</div>
-      </article>
-      <article class="tt-card">
-        <div class="tt-head"><img class="tt-photo" src="aluna-3.webp" alt="" width="240" height="240" loading="lazy"><div><strong>Camila Ferreira</strong><small>Aluna do Método Pro</small></div></div>
-        <p>"Eu comprei achando que seria complicado, mas achei bem simples. As aulas e os bônus aparecem de forma organizada. Isso já me deu mais vontade de estudar."</p>
-        <div class="tt-stars">⭐⭐⭐⭐⭐</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<style>
-.tt{background:linear-gradient(180deg,#faf8ff,#f1ecfb);padding:66px 20px}
-.tt-wrap{max-width:1000px;margin:0 auto;text-align:center}
-.tt-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13.5px;letter-spacing:2.5px;margin-bottom:10px}
-.tt-title{font-size:clamp(26px,4.4vw,40px);font-weight:900;color:#1a1230;margin:0 0 34px}
-.tt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
-.tt-card{background:#fff;border:1px solid #e9e1f8;border-radius:18px;padding:22px 20px;box-shadow:0 10px 28px rgba(107,47,191,.08)}
-.tt-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.tt-photo{flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,.15)}
-.tt-head strong{display:block;font-size:15.5px;color:#1a1230}
-.tt-head small{font-size:12.5px;color:#8a83a0}
-.tt-card p{font-size:14.5px;color:#3a3350;line-height:1.6;margin:0 0 12px}
-.tt-stars{font-size:14px}
-@media(max-width:820px){.tt-grid{grid-template-columns:1fr}}
-</style>
-
-<!-- ===================== 2) ANTES x DEPOIS ===================== -->
-
-<!-- ===================== COMO VOCÊ VAI ACESSAR (BLOCO B) ===================== -->
-<section class="acc3">
-  <div class="acc3-wrap">
-    <span class="acc3-eyebrow">🚀 PASSO A PASSO</span>
-    <h2 class="acc3-title">Como você vai acessar</h2>
-    <p class="acc3-sub">Simples, rápido e 100% seguro. Em menos de 2 minutos você já está estudando.</p>
-
-    <img class="acc3-img"
-         src="passo-a-passo-acesso.webp"
-         alt="Passo a passo de acesso: 1) pagamento confirmado, 2) crie sua senha, 3) acesse e estude"
-         width="900" height="1260"
-         loading="lazy" decoding="async">
-  </div>
-</section>
-
-<style>
-.acc3{background:linear-gradient(180deg,#f7f4fd,#efeafb);padding:70px 20px}
-.acc3-wrap{max-width:760px;margin:0 auto;text-align:center}
-.acc3-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:14px;letter-spacing:2px;margin-bottom:12px}
-.acc3-title{font-size:clamp(28px,4.6vw,46px);font-weight:900;color:#1a1230;line-height:1.12;margin:0 0 10px}
-.acc3-sub{font-size:clamp(15px,2.2vw,18px);color:#5a5470;line-height:1.55;margin:0 0 34px}
-.acc3-img{width:100%;max-width:620px;height:auto;border-radius:20px;box-shadow:0 16px 44px rgba(107,47,191,.22)}
-</style>
-
-<section class="pk" id="planos">
-  <div class="pk-wrap">
-    <span class="pk-eyebrow">⭐ ESCOLHA SEU ACESSO</span>
-    <h2 class="pk-title">Garanta o seu agora ✨</h2>
-    <p class="pk-sub">Acesso vitalício. Paga uma vez, usa até o dia da prova.</p>
-
-    <div class="pk-grid">
-
-      <article class="pk-card">
-        <h3>Plano Básico <b>R$ 14,90</b></h3>
-        <img class="pk-art" src="plano-basico-art.webp" alt="Plano Básico" width="560" height="420" loading="lazy" decoding="async">
-        <ul>
-          <li>✅ Plataforma + 100 aulas completas do ENEM</li>
-          <li>✅ 🎁 Bônus: Protocolo 8S</li>
-          <li>✅ 🎁 Bônus: Mapa de Calor ENEM</li>
-          <li>✅ 🎁 Bônus: Memorização 3.0</li>
-          <li>✅ 🎁 Bônus: Temas Quentes ENEM</li>
-          <li>✅ Acesso imediato</li>
-          <li>✅ 7 dias de garantia</li>
-        </ul>
-        <a class="pk-btn pk-btn-b" href="https://pay.wiapy.com/e1LN3Mq3kr8">COMPRAR AGORA</a>
-      </article>
-
-      <article class="pk-card pk-best">
-        <div class="pk-flag">🔥 Mais completo</div>
-        <h3>Pacote Completo <b><s>R$ 97</s> R$ 27,90</b></h3>
-<img class="pk-art" src="plano-completo-art.webp" alt="Pacote Completo" width="560" height="420" loading="lazy" decoding="async">
-        <ul>
-          <li>✅ Tudo do Plano Básico (100 aulas + 4 bônus)</li>
-          <li>✅ 🎁 Redação Nota 900</li>
-          <li>✅ 🎁 Destrava Redação</li>
-          <li>✅ 🎁 Mapas Mentais</li>
-          <li>✅ 🎁 Manual Pro Completo</li>
-          <li>✅ Acompanhamento da sua evolução</li>
-          <li>✅ Acesso imediato · 7 dias de garantia</li>
-        </ul>
-        <a class="pk-btn pk-btn-c" href="https://pay.wiapy.com/0dgjmi6c0iO">COMPRAR AGORA</a>
-      </article>
-
-    </div>
-    <p class="pk-secure">🛡️ Pagamento 100% seguro · 💳 Pix ou cartão</p>
-
-  </div>
-</section>
-
-<style>
-.pk{background:#fff;padding:70px 20px}
-.pk-wrap{max-width:900px;margin:0 auto;text-align:center}
-.pk-eyebrow{display:inline-block;color:#6B2FBF;font-weight:800;font-size:13.5px;letter-spacing:2.5px;margin-bottom:10px}
-.pk-title{font-size:clamp(28px,4.8vw,44px);font-weight:900;color:#1a1230;margin:0 0 6px}
-.pk-sub{font-size:16px;color:#5a5470;margin:0 0 36px}
-.pk-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left}
-.pk-card{position:relative;background:#faf8ff;border:1px solid #e9e1f8;border-radius:20px;padding:26px 22px;display:flex;flex-direction:column}
-.pk-best{border:3px solid #6B2FBF;box-shadow:0 18px 46px rgba(107,47,191,.18)}
-.pk-flag{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#ff8a1e,#f06400);color:#fff;font-weight:800;font-size:13.5px;padding:8px 20px;border-radius:30px;white-space:nowrap}
-.pk-card h3{font-size:21px;font-weight:900;color:#1a1230;margin:0 0 16px;text-align:center;line-height:1.35}
-.pk-card h3 b{display:block;color:#6B2FBF;font-size:26px}
-.pk-card h3 s{color:#a49dbb;font-size:16px;font-weight:600;margin-right:6px}
-.pk-art{width:88%;max-width:300px;height:auto;margin:0 auto 18px;display:block;border-radius:14px;box-shadow:0 4px 12px rgba(107,47,191,.08)}
-.pk-card ul{list-style:none;margin:0 0 20px;padding:0;flex:1}
-.pk-card li{font-size:15px;color:#2f2a45;line-height:1.5;padding:7px 0;border-bottom:1px dashed #eee6fa}
-.pk-card li:last-child{border-bottom:none}
-.pk-btn{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:17px;padding:17px;border-radius:100px;transition:transform .18s ease}
-.pk-btn:hover{transform:translateY(-2px)}
-.pk-btn-b{background:#fff;color:#6B2FBF;border:2px solid #6B2FBF}
-.pk-btn-b:hover{background:#6B2FBF;color:#fff}
-.pk-btn-c{background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;box-shadow:0 12px 28px rgba(31,184,81,.4)}
-.pk-secure{margin-top:26px;color:#5a5470;font-weight:600;font-size:15px}
-@media(max-width:760px){.pk-grid{grid-template-columns:1fr;gap:30px}}
-</style>
-
-
-
-<!-- ===================== 3) GARANTIA REFORÇADA ===================== -->
-<section class="alt">
-  <div class="wrap">
-    <div class="gar2">
-      <div class="escudo">🛡️</div>
-      <div class="tagp">🔒 Compra protegida</div>
-      <h3>Garantia incondicional de <b>7 dias</b></h3>
-      <p>Você tem <b>7 dias</b> pra entrar, ver as aulas e testar a plataforma com calma.</p>
-      <p>Se achar que não é pra você, é só pedir o reembolso e <b>todo o valor volta pra você</b>. Sem pergunta, sem burocracia, sem risco.</p>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="kick">Antes de comprar</div>
-    <h2 class="tit">Tire suas dúvidas</h2>
-    <div class="faq">
-      <details class="q"><summary>Como funcionam as aulas?</summary><div class="a">São aulas completas em vídeo, organizadas por matéria e na ordem do que mais cai no ENEM. Tudo numa plataforma só — você abre, escolhe a matéria e segue a trilha, sem caçar vídeo solto.</div></details>
-      <details class="q"><summary>Como recebo o acesso depois de comprar?</summary><div class="a">Na hora. Assim que o pagamento é aprovado, o acesso chega no seu e-mail. Você entra e já começa a estudar.</div></details>
-      <details class="q"><summary>Funciona no celular?</summary><div class="a">Funciona. Celular, tablet ou computador. Dá pra estudar no ônibus, na fila, em qualquer lugar com internet.</div></details>
-      <details class="q"><summary>Serve pra quem nunca fez o ENEM?</summary><div class="a">Serve. Cada matéria começa do básico e vai subindo. Já fez antes ou é a primeira vez, você pega do começo ou vai direto no ponto que tem mais dificuldade.</div></details>
-      <details class="q"><summary>Qual a diferença dos planos?</summary><div class="a">No básico você leva a plataforma de aulas. No completo, leva a plataforma <b>mais</b> o Método Pro: Método Redação Nota 900, Método Destrava Redação, Mapas Mentais ENEM e Método Manual Pro Completo do ENEM. As aulas dão o conteúdo; o método dá a estratégia.</div></details>
-      <details class="q"><summary>E se eu não gostar?</summary><div class="a">Você tem 7 dias de garantia. Não gostou, devolvo o valor sem pergunta nenhuma.</div></details>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="final">
-      <div class="kick" style="color:#BBD0FF">Última chamada</div>
-      <h2>O ENEM não espera você se organizar</h2>
-      <p>Cada dia procurando aula no YouTube é um dia que você não estudou. Comece hoje com tudo no lugar certo.</p>
-      <div class="pp">a partir de <b>R$ 14,90</b></div>
-      <a href="#planos" class="cta">GARANTIR MEU ACESSO →</a>
-    </div>
-  </div>
-</section>
-
-</main>
-<footer>
-  <p><b>Método Pro do ENEM</b> · Estude só o que cai.</p>
-  <p style="margin-top:6px"><a href="termos.html">Termos de Uso</a> · <a href="privacidade.html">Política de Privacidade</a> · © 2026</p>
-  <div class="disclaimer">
-    <p>
-      <b>Aviso Legal.</b> O Método Pro do ENEM é um serviço de <b>curadoria e
-      organização pedagógica</b>. As videoaulas são públicas e gratuitas,
-      selecionadas do YouTube e exibidas via incorporação oficial (embed),
-      <b>permanecendo de propriedade de seus respectivos autores e canais</b>,
-      sempre com o devido crédito. O valor cobrado refere-se ao nosso trabalho
-      de pesquisa, curadoria e organização — e aos materiais de apoio próprios —
-      não à venda das aulas de terceiros.
-    </p>
-    <p>
-      Material independente. <b>Sem vínculo, patrocínio ou endosso do INEP ou
-      do MEC.</b> "ENEM" é citado apenas para indicar o exame a que o conteúdo
-      se destina.
-    </p>
-  </div>
-
-  <style>
-  .disclaimer{max-width:760px;margin:24px auto 0;padding:16px 20px;border-top:1px solid var(--linha);
-    font-size:11.5px;line-height:1.55;color:#5a5470;text-align:left}
-  .disclaimer p{margin:0 0 8px}
-  .disclaimer b{color:#4c455c}
-  </style>
-</footer>
-
-
-
-
-
-
-
-<!-- ====== cole antes de </body> ====== -->
-<script>
-(function(){
-  // marca toda <section> e o header do hero pra revelar ao rolar
-  var alvos = document.querySelectorAll('section, header.heroX, header.hero');
-  alvos.forEach(function(el){
-    // não esconde o primeiro (hero) pra não dar "flash" no topo
-    if(el.matches('header')) return;
-    el.classList.add('reveal');
-  });
-
-  if(!('IntersectionObserver' in window)){
-    // navegador antigo: mostra tudo
-    document.querySelectorAll('.reveal,.stagger').forEach(function(e){e.classList.add('in');});
-    return;
-  }
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){
-        en.target.classList.add('in');
-        io.unobserve(en.target);
-      }
-    });
-  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-
-  document.querySelectorAll('.reveal, .stagger').forEach(function(e){ io.observe(e); });
-})();
-</script>
-
-<!-- THIRD-PARTY TRACKING SCRIPTS (DEFERRED FOR PERFORMANCE) -->
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B55K5327B3"></script>
-<script defer>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-B55K5327B3');
-</script>
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript" defer>
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "xi740tcsi1");
-</script>
 <!-- Google Tag Manager -->
-<script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5QC7Q98F');</script>
 <!-- End Google Tag Manager -->
+
+<!-- Utmify -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
 <!-- Meta Pixel Code -->
 <script defer>
@@ -1158,70 +44,487 @@ fbq('track', 'PageView');
 </noscript>
 <!-- End Meta Pixel Code -->
 
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-  ttq.load('D9CIHCRC77UBUU504340');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
-
-<!-- STICKY CTA BAR FOR MOBILE/TABLET -->
-<div class="stickycta" id="stickycta" aria-hidden="true">
-  <div class="stickycta-price">
-    <small>Garanta sua vaga</small>
-    <strong style="font-size:15px;color:#fff;font-weight:800">Acesso vitalício</strong>
-  </div>
-  <button class="stickycta-btn" id="stickyctaBtn">QUERO AGORA</button>
-</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-.stickycta{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:14px;background:#6B2FBF;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(0,0,0,.25);transform:translateY(120%);transition:transform .35s ease;visibility:hidden}
-.stickycta.is-visible{transform:translateY(0);visibility:visible}
-.stickycta-price{display:flex;flex-direction:column;line-height:1.1;color:#fff;flex:none}
-.stickycta-price small{font-size:12px;opacity:.85}
-.stickycta-price strong{font-size:22px;font-weight:900;color:#FFD60A}
-.stickycta-btn{flex:1;background:linear-gradient(180deg,#2ee06a,#1fb851);color:#fff;border:none;font-size:16px;font-weight:800;padding:15px 16px;border-radius:50px;box-shadow:0 6px 16px rgba(31,184,81,.4);cursor:pointer;white-space:nowrap;letter-spacing:.3px}
-.stickycta-btn:active{transform:scale(.97)}
-@media(min-width:901px){.stickycta{display:none}}
+/* ==================================================================
+   MÉTODO PRO DO ENEM — página completa
+   Identidade: base clara + faixas escuras roxas (contraste AprovaFlix)
+   ================================================================== */
+:root{
+  --roxo:#6B2FBF;
+  --roxo-escuro:#4A1D8C;
+  --roxo-luz:#8B5CF6;
+  --amarelo:#FFD60A;
+  --verde:#16A34A;
+  --tinta:#1A1130;          /* texto sobre fundo claro */
+  --tinta-sec:#5E5574;
+  --fundo:#FFFFFF;
+  --fundo-suave:#F7F5FB;
+  --borda-clara:#E8E3F2;
+  /* faixa escura */
+  --dark-bg:#12081F;
+  --dark-card:#1D1030;
+  --dark-texto:#F5F3FA;
+  --dark-texto-sec:#B4ABC7;
+  --dark-borda:rgba(139,92,246,.30);
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fundo);color:var(--tinta);font-family:'Poppins',sans-serif;line-height:1.6;padding-bottom:74px}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;line-height:1.12}
+.secao{padding:72px 0}
+.eyebrow{display:inline-block;background:rgba(107,47,191,.08);border:1px solid rgba(107,47,191,.25);color:var(--roxo);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:8px 22px;border-radius:999px;margin-bottom:20px}
+.eyebrow-dark{background:rgba(255,214,10,.10);border-color:rgba(255,214,10,.35);color:var(--amarelo)}
+.h2{font-size:clamp(28px,5vw,42px);text-align:center;margin-bottom:14px}
+.h2 .destaque{color:var(--roxo)}
+.h2-dark{color:var(--dark-texto)}
+.h2-dark .destaque{color:var(--amarelo)}
+.sub{color:var(--tinta-sec);text-align:center;font-size:clamp(15px,2.5vw,18px);max-width:640px;margin:0 auto 44px}
+.sub-dark{color:var(--dark-texto-sec)}
+.centro{text-align:center}
+.btn{display:inline-block;font-weight:800;font-size:17px;padding:17px 34px;border-radius:12px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-amarelo{background:var(--amarelo);color:var(--tinta);box-shadow:0 6px 22px rgba(255,214,10,.35)}
+.btn-roxo{background:var(--roxo);color:#fff;box-shadow:0 6px 22px rgba(107,47,191,.30)}
+.btn-contorno{background:transparent;border:2px solid var(--roxo);color:var(--roxo)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- HERO ---------- */
+.hero{background:linear-gradient(180deg,var(--dark-bg) 0%,#1A0D30 100%);padding:84px 20px 64px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:560px;height:560px;background:radial-gradient(circle,rgba(139,92,246,.28) 0%,transparent 65%);pointer-events:none}
+.hero-conteudo{position:relative;max-width:760px;margin:0 auto}
+.hero h1{color:var(--dark-texto);font-size:clamp(32px,6.4vw,54px)}
+.hero h1 .amarelo{color:var(--amarelo)}
+.hero .subtitulo{color:var(--dark-texto-sec);font-size:clamp(16px,2.8vw,20px);max-width:600px;margin:18px auto 14px}
+.hero .checkline{color:var(--dark-texto);font-weight:600;font-size:15px;margin-bottom:28px}
+.hero .selos{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;color:var(--dark-texto-sec);font-size:14px;margin-top:18px}
+
+/* ---------- TICKER ---------- */
+.ticker{background:var(--roxo);overflow:hidden;white-space:nowrap;padding:12px 0;border-top:2px solid var(--amarelo);border-bottom:2px solid var(--amarelo)}
+.ticker-track{display:inline-block;animation:ticker-scroll 22s linear infinite}
+.ticker span{color:#fff;font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin:0 16px}
+.ticker .am{color:var(--amarelo)}
+.ticker .seta{color:var(--amarelo);margin:0 4px}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- VEJA POR DENTRO ---------- */
+.carrossel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px;-webkit-overflow-scrolling:touch}
+.carrossel::-webkit-scrollbar{height:8px}
+.carrossel::-webkit-scrollbar-thumb{background:var(--roxo-luz);border-radius:999px}
+.carrossel img{flex:0 0 78%;max-width:340px;scroll-snap-align:center;border-radius:var(--radius);border:1px solid var(--borda-clara);box-shadow:0 10px 30px rgba(26,17,48,.10)}
+@media(min-width:820px){.carrossel img{flex:0 0 30%}}
+
+/* ---------- O QUE VOCÊ VAI RECEBER ---------- */
+.receber-card{background:var(--dark-bg);border-radius:22px;padding:38px 30px;color:var(--dark-texto);max-width:860px;margin:0 auto;border:1px solid var(--dark-borda)}
+.receber-card .tag{display:inline-block;background:rgba(255,214,10,.12);color:var(--amarelo);font-size:12px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:999px;margin-bottom:14px}
+.receber-card h3{font-size:clamp(22px,4vw,30px);font-weight:800;margin-bottom:8px}
+.receber-card p{color:var(--dark-texto-sec);margin-bottom:24px}
+.materias{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.materia{background:var(--dark-card);border:1px solid var(--dark-borda);border-radius:12px;padding:14px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px}
+.materia .emoji{font-size:18px}
+.materia .pct{margin-left:auto;color:var(--amarelo);font-weight:800;font-size:13px}
+
+/* ---------- BÔNUS ---------- */
+.grid-bonus{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;max-width:1000px;margin:0 auto}
+.bonus{background:#fff;border:1px solid var(--borda-clara);border-radius:var(--radius);padding:16px;text-align:center;position:relative;box-shadow:0 8px 24px rgba(26,17,48,.06)}
+.bonus-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--amarelo);color:var(--tinta);font-weight:800;font-size:12px;letter-spacing:1px;padding:5px 16px;border-radius:999px;white-space:nowrap}
+.bonus img{width:100%;border-radius:10px;margin:14px 0 12px;aspect-ratio:3/4;object-fit:cover}
+.bonus h4{font-size:16px;font-weight:700;margin-bottom:4px}
+.bonus p{color:var(--tinta-sec);font-size:13.5px;margin-bottom:10px}
+.bonus .antes{color:var(--tinta-sec);text-decoration:line-through;font-size:14px}
+.bonus .gratis{color:var(--verde);font-family:'Anton',sans-serif;font-size:19px;letter-spacing:1px}
+.total-bonus{max-width:1000px;margin:36px auto 0;background:#FFFBEB;border:1.5px solid var(--amarelo);border-radius:var(--radius);padding:26px;text-align:center}
+.total-bonus .rotulo{color:var(--tinta-sec);font-size:16px;margin-bottom:6px}
+.total-bonus .antes{color:var(--tinta-sec);text-decoration:line-through;font-size:clamp(20px,4vw,28px);margin-right:14px}
+.total-bonus .gratis{color:var(--verde);font-family:'Anton',sans-serif;font-size:clamp(30px,6vw,44px);letter-spacing:1px}
+
+/* ---------- FAIXA ESCURA: MOCKUP + DEPOIMENTOS + COMO FUNCIONA ---------- */
+.faixa-escura{background:var(--dark-bg)}
+.mockup-wrap{max-width:820px;margin:0 auto;text-align:center}
+.mockup-wrap img{width:100%;border-radius:var(--radius)}
+.recursos-duplos{display:flex;justify-content:center;gap:64px;margin-top:34px;flex-wrap:wrap}
+.recurso-item{text-align:center}
+.recurso-item .icone{width:72px;height:72px;margin:0 auto 12px;border-radius:50%;background:rgba(139,92,246,.14);border:1.5px solid var(--roxo-luz);display:flex;align-items:center;justify-content:center}
+.recurso-item h4{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:1px;font-size:16px;color:var(--dark-texto)}
+.recurso-item p{color:var(--dark-texto-sec);font-size:14px;margin-top:4px}
+
+.barra-membros{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;background:var(--dark-card);border:1px solid var(--amarelo);border-radius:var(--radius);padding:18px 26px;max-width:560px;margin:0 auto 42px}
+.barra-membros .local{color:var(--dark-texto);font-weight:600;font-size:17px;display:flex;align-items:center;gap:9px}
+.grid-prints{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:960px;margin:0 auto}
+.print-card{background:var(--dark-card);border:1px solid var(--dark-borda);border-radius:var(--radius);overflow:hidden}
+.print-card img{width:100%}
+/* Slot vazio enquanto os prints reais não chegam */
+.print-slot{aspect-ratio:9/16;border:2px dashed var(--dark-borda);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--dark-texto-sec);font-size:14px;text-align:center;padding:20px;background:rgba(139,92,246,.05)}
+.print-slot svg{opacity:.6}
+
+.infografico{max-width:680px;margin:0 auto}
+.infografico img{width:100%;border-radius:var(--radius)}
+
+/* ---------- PLANOS ---------- */
+.planos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:880px;margin:0 auto}
+.plano{background:#fff;border:1px solid var(--borda-clara);border-radius:20px;padding:30px 26px;display:flex;flex-direction:column;position:relative;box-shadow:0 10px 32px rgba(26,17,48,.07)}
+.plano.destaque-plano{border:2px solid var(--roxo);box-shadow:0 14px 44px rgba(107,47,191,.18)}
+.plano-selo{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--roxo);color:#fff;font-weight:800;font-size:12px;letter-spacing:1.5px;padding:6px 20px;border-radius:999px;white-space:nowrap}
+.plano img.arte{border-radius:12px;margin-bottom:18px}
+.plano h3{font-size:22px;font-weight:800;margin-bottom:14px}
+.plano ul{list-style:none;margin-bottom:22px}
+.plano li{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;margin-bottom:10px}
+.plano li::before{content:"✅";flex:none;font-size:13px;margin-top:2px}
+.preco-box{background:var(--fundo-suave);border:1px solid var(--borda-clara);border-radius:12px;padding:16px;margin-bottom:20px}
+.preco-box .linha{display:flex;justify-content:space-between;color:var(--tinta-sec);font-size:14px;margin-bottom:4px}
+.preco-box .riscado{text-decoration:line-through}
+.preco-box .agora{display:flex;justify-content:space-between;align-items:baseline}
+.preco-box .agora .rotulo{font-weight:600;font-size:15px}
+.preco-box .agora .valor{color:var(--roxo);font-family:'Anton',sans-serif;font-size:32px;letter-spacing:1px}
+.plano .btn{display:block;text-align:center;margin-top:auto}
+.selos-pagamento{text-align:center;color:var(--tinta-sec);font-size:14px;margin-top:28px}
+
+/* ---------- GARANTIA ---------- */
+.garantia-card{max-width:720px;margin:0 auto;background:var(--fundo-suave);border:1px solid var(--borda-clara);border-radius:20px;padding:36px 30px;text-align:center}
+.garantia-card .escudo{font-size:42px;margin-bottom:10px}
+.garantia-card h3{font-size:clamp(22px,4vw,28px);font-weight:800;margin-bottom:12px}
+.garantia-card h3 .destaque{color:var(--roxo)}
+.garantia-card p{color:var(--tinta-sec)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:760px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--borda-clara);border-radius:12px;padding:0;margin-bottom:12px;overflow:hidden}
+.faq summary{cursor:pointer;font-weight:700;font-size:16px;padding:18px 20px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--roxo);font-weight:400;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .resposta{padding:0 20px 18px;color:var(--tinta-sec);font-size:15px}
+
+/* ---------- ÚLTIMA CHAMADA ---------- */
+.ultima{background:linear-gradient(180deg,var(--dark-bg),#1A0D30);text-align:center;padding:76px 20px}
+.ultima h2{color:var(--dark-texto);font-size:clamp(26px,5vw,40px);margin-bottom:14px}
+.ultima p{color:var(--dark-texto-sec);max-width:560px;margin:0 auto 10px}
+.ultima .apartir{color:var(--dark-texto);font-size:17px;margin-bottom:24px}
+.ultima .apartir strong{color:var(--amarelo);font-family:'Anton',sans-serif;font-size:26px;letter-spacing:1px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--fundo-suave);border-top:1px solid var(--borda-clara);padding:40px 20px 110px;color:var(--tinta-sec);font-size:13px}
+footer .marca{font-weight:800;color:var(--tinta);font-size:15px;margin-bottom:8px}
+footer .links{margin-bottom:20px}
+footer .links a{color:var(--roxo)}
+footer .legal{max-width:820px;line-height:1.7}
+footer .legal strong{color:var(--tinta)}
+
+/* ---------- STICKY CTA ---------- */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:var(--dark-bg);border-top:2px solid var(--amarelo);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;z-index:99}
+.sticky-cta .texto{color:var(--dark-texto);font-size:14px;line-height:1.3}
+.sticky-cta .texto strong{color:var(--amarelo)}
+.sticky-cta .btn{padding:12px 22px;font-size:15px;white-space:nowrap}
 </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QC7Q98F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<script>
-(function(){
-  var bar=document.getElementById('stickycta');
-  var btn=document.getElementById('stickyctaBtn');
-  if(!bar)return;
-  var planos=document.getElementById('planos')||document.querySelector('.pl2');
-  var pastThreshold=false, planosVisible=false;
+<!-- ============ HERO (sem vídeo) ============ -->
+<header class="hero">
+  <div class="hero-conteudo">
+    <h1 class="display">Mais de 100 aulas completas<br><span class="amarelo">para passar no ENEM</span></h1>
+    <p class="subtitulo">Organizadas por matéria, na ordem do que mais cai — prontas pra você abrir e estudar, sem ficar procurando.</p>
+    <p class="checkline">✅ Na ordem do que mais cai na prova</p>
+    <a class="btn btn-amarelo" href="#planos">👇 Quero começar agora</a>
+    <div class="selos"><span>⚡ Acesso imediato</span><span>🔒 Pagamento seguro</span><span>🛡️ Garantia de 7 dias</span></div>
+  </div>
+</header>
 
-  function update(){
-    if(pastThreshold && !planosVisible){bar.classList.add('is-visible');bar.setAttribute('aria-hidden','false');}
-    else{bar.classList.remove('is-visible');bar.setAttribute('aria-hidden','true');}
-  }
-  window.addEventListener('scroll',function(){
-    pastThreshold=window.scrollY>600;update();
-  },{passive:true});
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Método Pro do ENEM</span><span class="seta">&raquo;</span>
+    <span class="am">Preço de lançamento</span><span class="seta">&raquo;</span>
+    <span>Acesso imediato</span><span class="seta">&raquo;</span>
+    <span class="am">+100 aulas organizadas</span><span class="seta">&raquo;</span>
+    <span>Acesso vitalício</span><span class="seta">&raquo;</span>
+    <span class="am">Garantia de 7 dias</span><span class="seta">&raquo;</span>
+    <span>Método Pro do ENEM</span><span class="seta">&raquo;</span>
+    <span class="am">Preço de lançamento</span><span class="seta">&raquo;</span>
+    <span>Acesso imediato</span><span class="seta">&raquo;</span>
+    <span class="am">+100 aulas organizadas</span><span class="seta">&raquo;</span>
+    <span>Acesso vitalício</span><span class="seta">&raquo;</span>
+    <span class="am">Garantia de 7 dias</span><span class="seta">&raquo;</span>
+  </div>
+</div>
 
-  if(planos && 'IntersectionObserver' in window){
-    new IntersectionObserver(function(e){
-      planosVisible=e[0].isIntersecting;update();
-    },{threshold:0.15}).observe(planos);
-  }
-  if(btn){
-    btn.addEventListener('click',function(){
-      if(planos)planos.scrollIntoView({behavior:'smooth',block:'start'});
-    });
-  }
-})();
-</script>
+<!-- ============ VEJA POR DENTRO ============ -->
+<section class="secao">
+  <div class="container">
+    <div class="centro"><span class="eyebrow">👀 Veja por dentro</span></div>
+    <h2 class="display h2">É isso que você vai <span class="destaque">abrir hoje</span></h2>
+    <p class="sub">A plataforma por dentro — matérias organizadas, aulas prontas pra tocar, seus bônus e o seu progresso na tela.</p>
+    <div class="carrossel">
+      <img src="plat-1-inicio.webp" alt="Tela inicial da plataforma">
+      <img src="plat-2-bonus.webp" alt="Lista de bônus exclusivos">
+      <img src="plat-3-aulas.webp" alt="Visualização das aulas por matéria">
+      <img src="plat-4-progresso.webp" alt="Estatísticas de progresso do aluno">
+      <img src="plat-5-perfil.webp" alt="Perfil do aluno">
+    </div>
+  </div>
+</section>
 
+<!-- ============ O QUE VOCÊ VAI RECEBER ============ -->
+<section class="secao" style="padding-top:20px">
+  <div class="container">
+    <div class="centro"><span class="eyebrow">🎁 Conteúdo exclusivo</span></div>
+    <h2 class="display h2">O que você vai <span class="destaque">receber</span></h2>
+    <p class="sub">Acesso completo à plataforma de estudos + 4 bônus exclusivos.</p>
+    <div class="receber-card">
+      <span class="tag">MÉTODO PRO ENEM</span>
+      <h3>+100 Aulas para Passar no ENEM</h3>
+      <p>Trilha completa do zero ao avançado, organizada por matéria e na ordem do que mais cai na prova.</p>
+      <div class="materias">
+        <div class="materia"><span class="emoji">💬</span> Linguagens <span class="pct">100%</span></div>
+        <div class="materia"><span class="emoji">📐</span> Matemática <span class="pct">100%</span></div>
+        <div class="materia"><span class="emoji">⚗️</span> C. da Natureza <span class="pct">100%</span></div>
+        <div class="materia"><span class="emoji">🌎</span> C. Humanas <span class="pct">100%</span></div>
+        <div class="materia"><span class="emoji">✍️</span> Redação <span class="pct">100%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<script src="https://app.litevideo.net/p.js" async></script>
+<!-- ============ BÔNUS + VALOR TOTAL ============ -->
+<section class="secao" style="background:var(--fundo-suave)">
+  <div class="container">
+    <div class="centro"><span class="eyebrow">✦ Bônus exclusivos ✦</span></div>
+    <h2 class="display h2"><span class="destaque">4 bônus</span> especiais</h2>
+    <p class="sub">Leve tudo isso sem pagar nada a mais — tudo <strong>GRÁTIS</strong> com seu acesso.</p>
+    <div class="grid-bonus">
+      <div class="bonus"><span class="bonus-tag">BÔNUS #1</span>
+        <img src="bonus-protocolo-8s.webp" alt="Capa do Protocolo 8S">
+        <h4>Protocolo 8S</h4>
+        <p>O método definitivo de 8 semanas para organizar sua rotina de estudos e acelerar sua preparação do zero.</p>
+        <div class="antes">De R$ 49</div><div class="gratis">GRÁTIS</div>
+      </div>
+      <div class="bonus"><span class="bonus-tag">BÔNUS #2</span>
+        <img src="bonus-mapa-calor.webp" alt="Capa do Mapa de Calor ENEM">
+        <h4>Mapa de Calor ENEM</h4>
+        <p>A análise estatística que mostra exatamente as matérias e assuntos mais cobrados em cada prova do ENEM.</p>
+        <div class="antes">De R$ 37</div><div class="gratis">GRÁTIS</div>
+      </div>
+      <div class="bonus"><span class="bonus-tag">BÔNUS #3</span>
+        <img src="bonus-memorizacao.webp" alt="Capa do Memorização 3.0">
+        <h4>Memorização 3.0</h4>
+        <p>Técnicas científicas de memorização ativa e repetição espaçada para não esquecer o conteúdo no dia da prova.</p>
+        <div class="antes">De R$ 37</div><div class="gratis">GRÁTIS</div>
+      </div>
+      <div class="bonus"><span class="bonus-tag">BÔNUS #4</span>
+        <img src="bonus-temas-quentes.webp" alt="Capa do Temas Quentes ENEM">
+        <h4>Temas Quentes ENEM</h4>
+        <p>A análise estratégica detalhada com os assuntos e temas com maior probabilidade de cair na prova.</p>
+        <div class="antes">De R$ 27</div><div class="gratis">GRÁTIS</div>
+      </div>
+    </div>
+    <div class="total-bonus">
+      <div class="rotulo">Valor total dos bônus:</div>
+      <span class="antes">R$ 150,00</span><span class="gratis">GRÁTIS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAIXA ESCURA: MOCKUP ============ -->
+<section class="faixa-escura" style="padding:76px 20px 60px">
+  <div class="mockup-wrap">
+    <h2 class="display h2 h2-dark">Além das <span class="destaque">+100 aulas</span>, você também<br>recebe <span class="destaque">atualizações constantes</span></h2>
+    <p class="sub sub-dark">Aulas, bônus e materiais organizados por matéria, com seu progresso acompanhado aula por aula.</p>
+    <img src="mockup-celulares-plataforma.webp" alt="Plataforma Método Pro do ENEM no celular">
+    <div class="recursos-duplos">
+      <div class="recurso-item">
+        <div class="icone"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+        <h4>Atualizações</h4><p>Novas aulas e materiais</p>
+      </div>
+      <div class="recurso-item">
+        <div class="icone"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h4>Por matérias</h4><p>Tudo organizado por área</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAIXA ESCURA: DEPOIMENTOS (estilo AprovaFlix) ============ -->
+<section class="faixa-escura" id="depoimentos" style="padding:60px 20px 76px">
+  <div style="max-width:1000px;margin:0 auto;text-align:center">
+    <span class="eyebrow eyebrow-dark">Depoimentos</span>
+    <h2 class="display h2 h2-dark">O que nossos <span class="destaque">alunos</span> dizem</h2>
+    <p class="sub sub-dark">Veja os feedbacks reais de quem já usa o Método Pro e está transformando seus estudos.</p>
+
+    <div class="barra-membros">
+      <span class="local">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Alunos em todo o Brasil
+      </span>
+    </div>
+
+    <!-- =========================================================
+         SLOTS DOS PRINTS REAIS DE WHATSAPP
+         Quando os prints chegarem, salve como print-aluno-1.webp,
+         print-aluno-2.webp e print-aluno-3.webp e troque cada
+         .print-slot pelo bloco comentado logo abaixo dele.
+         ========================================================= -->
+    <div class="grid-prints">
+      <div class="print-slot">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        Print real de aluno<br>(WhatsApp)
+      </div>
+      <!-- <div class="print-card"><img src="print-aluno-1.webp" alt="Feedback de aluno no WhatsApp"></div> -->
+      <div class="print-slot">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        Print real de aluno<br>(WhatsApp)
+      </div>
+      <!-- <div class="print-card"><img src="print-aluno-2.webp" alt="Feedback de aluno no WhatsApp"></div> -->
+      <div class="print-slot">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        Print real de aluno<br>(WhatsApp)
+      </div>
+      <!-- <div class="print-card"><img src="print-aluno-3.webp" alt="Feedback de aluno no WhatsApp"></div> -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAIXA ESCURA: COMO FUNCIONA (INFOGRÁFICO) ============ -->
+<section class="faixa-escura" id="como-funciona" style="padding:0 20px 76px">
+  <div class="infografico">
+    <img src="como-funciona-acesso.webp" alt="Como funciona seu acesso: você realiza sua compra, recebe o link da plataforma por e-mail, cria sua senha e começa a estudar">
+  </div>
+</section>
+
+<!-- ============ PLANOS ============ -->
+<section class="secao" id="planos">
+  <div class="container">
+    <div class="centro"><span class="eyebrow">⭐ Escolha seu acesso</span></div>
+    <h2 class="display h2">Garanta o <span class="destaque">seu agora</span></h2>
+    <p class="sub">Acesso vitalício. Paga uma vez, usa até o dia da prova. Preço de lançamento — vai subir nas próximas turmas.</p>
+    <div class="planos">
+
+      <div class="plano">
+        <img class="arte" src="plano-basico-art.webp" alt="Plano Básico">
+        <h3>Plano Básico</h3>
+        <ul>
+          <li>Plataforma + 100 aulas completas do ENEM</li>
+          <li>🎁 Bônus: Protocolo 8S</li>
+          <li>🎁 Bônus: Mapa de Calor ENEM</li>
+          <li>🎁 Bônus: Memorização 3.0</li>
+          <li>🎁 Bônus: Temas Quentes ENEM</li>
+          <li>Acesso imediato</li>
+          <li>7 dias de garantia</li>
+        </ul>
+        <div class="preco-box">
+          <div class="agora"><span class="rotulo">Hoje por</span><span class="valor">R$ 14,90</span></div>
+        </div>
+        <a class="btn btn-contorno" href="https://pay.wiapy.com/e1LN3Mq3kr8">COMPRAR AGORA</a>
+      </div>
+
+      <div class="plano destaque-plano">
+        <span class="plano-selo">🔥 MAIS COMPLETO</span>
+        <img class="arte" src="plano-completo-art.webp" alt="Pacote Completo">
+        <h3>Pacote Completo</h3>
+        <ul>
+          <li>Tudo do Plano Básico (100 aulas + 4 bônus)</li>
+          <li>🎁 Redação Nota 900</li>
+          <li>🎁 Destrava Redação</li>
+          <li>🎁 Mapas Mentais</li>
+          <li>🎁 Manual Pro Completo</li>
+          <li>Acompanhamento da sua evolução</li>
+          <li>Acesso imediato · 7 dias de garantia</li>
+        </ul>
+        <div class="preco-box">
+          <div class="linha"><span>De</span><span class="riscado">R$ 97,00</span></div>
+          <div class="agora"><span class="rotulo">Hoje por</span><span class="valor">R$ 27,90</span></div>
+        </div>
+        <a class="btn btn-roxo" href="https://pay.wiapy.com/0dgjmi6c0iO">COMPRAR AGORA</a>
+      </div>
+
+    </div>
+    <p class="selos-pagamento">🛡️ Pagamento 100% seguro · 💳 Pix ou cartão</p>
+  </div>
+</section>
+
+<!-- ============ GARANTIA ============ -->
+<section class="secao" style="padding-top:20px">
+  <div class="container">
+    <div class="garantia-card">
+      <div class="escudo">🛡️</div>
+      <span class="eyebrow">🔒 Compra protegida</span>
+      <h3>Garantia incondicional de <span class="destaque">7 dias</span></h3>
+      <p>Você tem <strong>7 dias</strong> pra entrar, ver as aulas e testar a plataforma com calma. Se achar que não é pra você, é só pedir o reembolso e <strong>todo o valor volta pra você</strong>. Sem pergunta, sem burocracia, sem risco.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="secao" style="background:var(--fundo-suave)">
+  <div class="container">
+    <div class="centro"><span class="eyebrow">Antes de comprar</span></div>
+    <h2 class="display h2">Tire suas <span class="destaque">dúvidas</span></h2>
+    <div class="faq" style="margin-top:36px">
+      <details>
+        <summary>Como funcionam as aulas?</summary>
+        <div class="resposta">São aulas completas em vídeo, organizadas por matéria e na ordem do que mais cai no ENEM. Tudo numa plataforma só — você abre, escolhe a matéria e segue a trilha, sem caçar vídeo solto.</div>
+      </details>
+      <details>
+        <summary>Como recebo o acesso depois de comprar?</summary>
+        <div class="resposta">Na hora. Assim que o pagamento é aprovado, o acesso chega no seu e-mail. Você entra e já começa a estudar.</div>
+      </details>
+      <details>
+        <summary>Funciona no celular?</summary>
+        <div class="resposta">Funciona. Celular, tablet ou computador. Dá pra estudar no ônibus, na fila, em qualquer lugar com internet.</div>
+      </details>
+      <details>
+        <summary>Serve pra quem nunca fez o ENEM?</summary>
+        <div class="resposta">Serve. Cada matéria começa do básico e vai subindo. Já fez antes ou é a primeira vez, você pega do começo ou vai direto no ponto que tem mais dificuldade.</div>
+      </details>
+      <details>
+        <summary>Qual a diferença dos planos?</summary>
+        <div class="resposta">No básico você leva a plataforma de aulas. No completo, leva a plataforma <strong>mais</strong> o Método Pro: Método Redação Nota 900, Método Destrava Redação, Mapas Mentais ENEM e Método Manual Pro Completo do ENEM. As aulas dão o conteúdo; o método dá a estratégia.</div>
+      </details>
+      <details>
+        <summary>E se eu não gostar?</summary>
+        <div class="resposta">Você tem 7 dias de garantia. Não gostou, devolvo o valor sem pergunta nenhuma.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÚLTIMA CHAMADA ============ -->
+<section class="ultima">
+  <span class="eyebrow eyebrow-dark">Última chamada</span>
+  <h2 class="display">O ENEM não espera<br>você se organizar</h2>
+  <p>Cada dia procurando aula no YouTube é um dia que você não estudou. Comece hoje com tudo no lugar certo.</p>
+  <p class="apartir">a partir de <strong>R$ 14,90</strong></p>
+  <a class="btn btn-amarelo" href="#planos">GARANTIR MEU ACESSO →</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="marca">Método Pro do ENEM · Estude só o que cai.</div>
+    <div class="links"><a href="termos.html">Termos de Uso</a> · <a href="privacidade.html">Política de Privacidade</a> · © 2026</div>
+    <div class="legal">
+      <p><strong>Aviso Legal.</strong> O Método Pro do ENEM é um serviço de <strong>curadoria e organização pedagógica</strong>. As videoaulas são públicas e gratuitas, selecionadas do YouTube e exibidas via incorporação oficial (embed), <strong>permanecendo de propriedade de seus respectivos autores e canais</strong>, sempre com o devido crédito. O valor cobrado refere-se ao nosso trabalho de pesquisa, curadoria e organização — e aos materiais de apoio próprios — não à venda das aulas de terceiros.</p>
+      <p style="margin-top:10px">Material independente. <strong>Sem vínculo, patrocínio ou endosso do INEP ou do MEC.</strong> "ENEM" é citado apenas para indicar o exame a que o conteúdo se destina.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY CTA ============ -->
+<div class="sticky-cta">
+  <div class="texto">Garanta sua vaga<br><strong>Acesso vitalício</strong></div>
+  <a class="btn btn-amarelo" href="#planos">QUERO AGORA</a>
+</div>
+
 </body>
 </html>
